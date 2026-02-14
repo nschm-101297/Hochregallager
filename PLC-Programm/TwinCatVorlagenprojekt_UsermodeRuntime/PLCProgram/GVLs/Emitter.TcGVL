@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <GVL Name="Emitter" Id="{546306e6-6e6a-46b1-83d9-446781607f98}">
+    <Declaration><![CDATA[VAR_GLOBAL
+	instEmitterZufuehrband	:	FactoryIO.FB_Emitter;	//Instanz FB_Emitter Zufuehrband Einlauf
+	
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

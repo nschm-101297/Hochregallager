@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <GVL Name="Betriebsarten" Id="{c6370a8f-09ee-48de-964a-204ce261ab37}">
+    <Declaration><![CDATA[VAR_GLOBAL
+	instOperatingmode	:	FactoryIO.FB_OperatingMode;
+	currentStateOperatingMode	:	FactoryIO.OperatingMode;
+	permissionHardware	:	BOOL := TRUE;
+	permissionSafety	:	BOOL := TRUE;
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

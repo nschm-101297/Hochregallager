@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<project xmlns="http://www.plcopen.org/xml/tc6_0200">
+  <fileHeader companyName="Beckhoff Automation GmbH" productName="TwinCAT PLC Control" productVersion="3.5.20.60" creationDateTime="2025-10-26T16:01:15.3425101" />
+  <contentHeader name="FactoryIO" modificationDateTime="2025-10-26T16:01:15.3475117">
+    <coordinateInfo>
+      <fbd>
+        <scaling x="1" y="1" />
+      </fbd>
+      <ld>
+        <scaling x="1" y="1" />
+      </ld>
+      <sfc>
+        <scaling x="1" y="1" />
+      </sfc>
+    </coordinateInfo>
+    <addData>
+      <data name="http://www.3s-software.com/plcopenxml/projectinformation" handleUnknown="implementation">
+        <ProjectInformation />
+      </data>
+    </addData>
+  </contentHeader>
+  <types>
+    <dataTypes />
+    <pous />
+  </types>
+  <instances>
+    <configurations />
+  </instances>
+  <addData>
+    <data name="http://www.3s-software.com/plcopenxml/globalvars" handleUnknown="implementation">
+      <globalVars name="Signalmapping"><variable name="RFID_Zufuehr_Auslauf_Dat_Schr"><type><baseType><WORD /></baseType></type><documentation><xhtml xmlns="http://www.w3.org/1999/xhtml">RFID Zufuehrband Auslauf zu schreibende Daten</xhtml></documentation></variable><variable name="RFID_Zufuehr_Auslauf_Speich_Ind"><type><baseType><WORD /></baseType></type><documentation><xhtml xmlns="http://www.w3.org/1999/xhtml">RFID Zufuehrband Auslauf Speicherindex</xhtml></documentation></variable><variable name="RFID_Zufuehr_Auslauf_Kommando"><type><baseType><WORD /></baseType></type><documentation><xhtml xmlns="http://www.w3.org/1999/xhtml">RFID Zufuehrband Auslauf Command_ID</xhtml></documentation></variable><variable name="Regbedien_Sollpos_ZAchse"><type><baseType><WORD /></baseType></type><documentation><xhtml xmlns="http://www.w3.org/1999/xhtml">Sollposition Z_Achse Regalbediengeraet </xhtml></documentation></variable><variable name="Regbedien_Sollpos_XAchse"><type><baseType><WORD /></baseType></type><documentation><xhtml xmlns="http://www.w3.org/1999/xhtml">Sollposition X_Achse Regalbediengeraet </xhtml></documentation></variable><variable name="RFID_Zufuehr_Auslauf_Dat_Gelesen"><type><baseType><WORD /></baseType></type><documentation><xhtml xmlns="http://www.w3.org/1999/xhtml">RFID Zufuehrband Auslauf gelesene Daten</xhtml></documentation></variable><variable name="RFID_Zufuehr_Auslauf_Status"><type><baseType><WORD /></baseType></type><documentation><xhtml xmlns="http://www.w3.org/1999/xhtml">RFID Zufuehrband Auslauf Status Reader</xhtml></documentation></variable><variable name="RFID_Zufuehr_Auslauf_Rueck_Kommand_ID"><type><baseType><WORD /></baseType></type><documentation><xhtml xmlns="http://www.w3.org/1999/xhtml">RFID Zufuehrband Auslauf Command_ID gespiegelt</xhtml></documentation></variable><variable name="Regbedien_Istpos_ZAchse"><type><baseType><WORD /></baseType></type><documentation><xhtml xmlns="http://www.w3.org/1999/xhtml">Istposition Z_Achse Regalbediengeraet </xhtml></documentation></variable><variable name="Regbedien_Istpos_XAchse"><type><baseType><WORD /></baseType></type><documentation><xhtml xmlns="http://www.w3.org/1999/xhtml">Istposition X_Achse Regalbediengeraet </xhtml></documentation></variable><variable name="RFID_Zufuehr_Aufuehren"><type><baseType><BOOL /></baseType></type><documentation><xhtml xmlns="http://www.w3.org/1999/xhtml">RFID_Sensor Auslaufband Befehl ausfuehren</xhtml></documentation></variable><variable name="Gabel_zu_Pos_Rechts"><type><baseType><BOOL /></baseType></type><documentation><xhtml xmlns="http://www.w3.org/1999/xhtml">Gabel in Position Rechts fahren</xhtml></documentation></variable><variable name="Gabel_zu_Pos_Links"><type><baseType><BOOL /></baseType></type><documentation><xhtml xmlns="http://www.w3.org/1999/xhtml">Gabel in Position Links fahren</xhtml></documentation></variable><variable name="Abholband_Vor"><type><baseType><BOOL /></baseType></type><documentation><xhtml xmlns="http://www.w3.org/1999/xhtml">Abholband Drehrichtung vorwaerts</xhtml></documentation></variable><variable name="Zufuehrb_Vor"><type><baseType><BOOL /></baseType></type><documentation><xhtml xmlns="http://www.w3.org/1999/xhtml">Zufuehrband Drehrichtung vorwaerts</xhtml></documentation></variable><variable name="Bauteil_Erzeugen"><type><baseType><BOOL /></baseType></type><documentation><xhtml xmlns="http://www.w3.org/1999/xhtml">Bauteilerzeuger Bauteil erzeugen</xhtml></documentation></variable><variable name="Button_Quit_LED"><type><baseType><BOOL /></baseType></type><documentation><xhtml xmlns="http://www.w3.org/1999/xhtml">Anzeige Quit Aktiv</xhtml></documentation></variable><variable name="Button_Reset_LED"><type><baseType><BOOL /></baseType></type><documentation><xhtml xmlns="http://www.w3.org/1999/xhtml">Anzeige Reset Aktiv</xhtml></documentation></variable><variable name="Button_Grundstellung_LED"><type><baseType><BOOL /></baseType></type><documentation><xhtml xmlns="http://www.w3.org/1999/xhtml">Anzeige Automatik Grundstellung Aktiv</xhtml></documentation></variable><variable name="Button_Stop_LED"><type><baseType><BOOL /></baseType></type><documentation><xhtml xmlns="http://www.w3.org/1999/xhtml">Anzeige Automatik Stop Aktiv</xhtml></documentation></variable><variable name="Button_Start_LED"><type><baseType><BOOL /></baseType></type><documentation><xhtml xmlns="http://www.w3.org/1999/xhtml">Anzeige Automatik Start Aktiv</xhtml></documentation></variable><variable name="Gabel_InPos_Rechts"><type><baseType><BOOL /></baseType></type><documentation><xhtml xmlns="http://www.w3.org/1999/xhtml">Gabel in Position rechts</xhtml></documentation></variable><variable name="Gabel_InPos_Mitte"><type><baseType><BOOL /></baseType></type><documentation><xhtml xmlns="http://www.w3.org/1999/xhtml">Gabel in Position mitte</xhtml></documentation></variable><variable name="Gabel_InPos_Links"><type><baseType><BOOL /></baseType></type><documentation><xhtml xmlns="http://www.w3.org/1999/xhtml">Gabel in Position links</xhtml></documentation></variable><variable name="Bauteil_Vorh_Auslaufb_Ein"><type><baseType><BOOL /></baseType></type><documentation><xhtml xmlns="http://www.w3.org/1999/xhtml">Sensor Bauteil vorhanden Zufuehrband Auslauf</xhtml></documentation></variable><variable name="Bauteil_Vorh_Zufuehrb_Aus"><type><baseType><BOOL /></baseType></type><documentation><xhtml xmlns="http://www.w3.org/1999/xhtml">Sensor Bauteil vorhanden Zufuehrband Auslauf</xhtml></documentation></variable><variable name="Bauteil_Vorh_Zufuehrb_Ein"><type><baseType><BOOL /></baseType></type><documentation><xhtml xmlns="http://www.w3.org/1999/xhtml">Sensor Bauteil vorhanden Zufuehrband Einlauf</xhtml></documentation></variable><variable name="Quit_Hochregallager"><type><baseType><BOOL /></baseType></type><documentation><xhtml xmlns="http://www.w3.org/1999/xhtml">Quit Hochregallager</xhtml></documentation></variable><variable name="Reset_Hochregallager"><type><baseType><BOOL /></baseType></type><documentation><xhtml xmlns="http://www.w3.org/1999/xhtml">Reset Hochregallager</xhtml></documentation></variable><variable name="Grundstellung_Automatik_Hochregallager"><type><baseType><BOOL /></baseType></type><documentation><xhtml xmlns="http://www.w3.org/1999/xhtml">Automatik Grundstellung Hochregallager</xhtml></documentation></variable><variable name="Stop_Automatik_Hochregallager"><type><baseType><BOOL /></baseType></type><documentation><xhtml xmlns="http://www.w3.org/1999/xhtml">Automatik Stop Hochregallager</xhtml></documentation></variable><variable name="Start_Automatik_Hochregallager"><type><baseType><BOOL /></baseType></type><documentation><xhtml xmlns="http://www.w3.org/1999/xhtml">Automatik Start Hochregallager</xhtml></documentation></variable><variable name="BA_Automatik"><type><baseType><BOOL /></baseType></type><documentation><xhtml xmlns="http://www.w3.org/1999/xhtml">Betriebsart Automatik angewaehlt</xhtml></documentation></variable><variable name="BA_Manuel"><type><baseType><BOOL /></baseType></type><documentation><xhtml xmlns="http://www.w3.org/1999/xhtml">Betriebsart Manuel angewaehlt</xhtml></documentation></variable><variable name="NotAus_Hochregallager"><type><baseType><BOOL /></baseType></type><documentation><xhtml xmlns="http://www.w3.org/1999/xhtml">Not_Aus Hochregallager</xhtml></documentation></variable>
+        <addData>
+          <data name="http://www.3s-software.com/plcopenxml/attributes" handleUnknown="implementation">
+            <Attributes>
+              <Attribute Name="qualified_only" Value="" />
+            </Attributes>
+          </data>
+          <data name="http://www.3s-software.com/plcopenxml/buildproperties" handleUnknown="implementation">
+            <BuildProperties>
+              <LinkAlways>true</LinkAlways>
+            </BuildProperties>
+          </data>
+          <data name="http://www.3s-software.com/plcopenxml/interfaceasplaintext" handleUnknown="implementation">
+            <InterfaceAsPlainText>
+              <xhtml xmlns="http://www.w3.org/1999/xhtml">{attribute 'qualified_only'}
+VAR_GLOBAL
+
+	NotAus_Hochregallager	:	BOOL;	//Not_Aus Hochregallager
+	BA_Manuel	:	BOOL;	//Betriebsart Manuel angewaehlt
+	BA_Automatik	:	BOOL;	//Betriebsart Automatik angewaehlt
+	Start_Automatik_Hochregallager	:	BOOL;	//Automatik Start Hochregallager
+	Stop_Automatik_Hochregallager	:	BOOL;	//Automatik Stop Hochregallager
+	Grundstellung_Automatik_Hochregallager	:	BOOL;	//Automatik Grundstellung Hochregallager
+	Reset_Hochregallager	:	BOOL;	//Reset Hochregallager
+	Quit_Hochregallager	:	BOOL;	//Quit Hochregallager
+	Bauteil_Vorh_Zufuehrb_Ein	:	BOOL;	//Sensor Bauteil vorhanden Zufuehrband Einlauf
+	Bauteil_Vorh_Zufuehrb_Aus	:	BOOL;	//Sensor Bauteil vorhanden Zufuehrband Auslauf
+	Bauteil_Vorh_Auslaufb_Ein	:	BOOL;	//Sensor Bauteil vorhanden Zufuehrband Auslauf
+	Gabel_InPos_Links	:	BOOL;	//Gabel in Position links
+	Gabel_InPos_Mitte	:	BOOL;	//Gabel in Position mitte
+	Gabel_InPos_Rechts	:	BOOL;	//Gabel in Position rechts
+	Button_Start_LED	:	BOOL;	//Anzeige Automatik Start Aktiv
+	Button_Stop_LED	:	BOOL;	//Anzeige Automatik Stop Aktiv
+	Button_Grundstellung_LED	:	BOOL;	//Anzeige Automatik Grundstellung Aktiv
+	Button_Reset_LED	:	BOOL;	//Anzeige Reset Aktiv
+	Button_Quit_LED	:	BOOL;	//Anzeige Quit Aktiv
+	Bauteil_Erzeugen	:	BOOL;	//Bauteilerzeuger Bauteil erzeugen
+	Zufuehrb_Vor	:	BOOL;	//Zufuehrband Drehrichtung vorwaerts
+	Abholband_Vor	:	BOOL;	//Abholband Drehrichtung vorwaerts
+	Gabel_zu_Pos_Links	:	BOOL;	//Gabel in Position Links fahren
+	Gabel_zu_Pos_Rechts	:	BOOL;	//Gabel in Position Rechts fahren
+	RFID_Zufuehr_Aufuehren	:	BOOL;	//RFID_Sensor Auslaufband Befehl ausfuehren
+	Regbedien_Istpos_XAchse	:	WORD;	//Istposition X_Achse Regalbediengeraet 
+	Regbedien_Istpos_ZAchse	:	WORD;	//Istposition Z_Achse Regalbediengeraet 
+	RFID_Zufuehr_Auslauf_Rueck_Kommand_ID	:	WORD;	//RFID Zufuehrband Auslauf Command_ID gespiegelt
+	RFID_Zufuehr_Auslauf_Status	:	WORD;	//RFID Zufuehrband Auslauf Status Reader
+	RFID_Zufuehr_Auslauf_Dat_Gelesen	:	WORD;	//RFID Zufuehrband Auslauf gelesene Daten
+	Regbedien_Sollpos_XAchse	:	WORD;	//Sollposition X_Achse Regalbediengeraet 
+	Regbedien_Sollpos_ZAchse	:	WORD;	//Sollposition Z_Achse Regalbediengeraet 
+	RFID_Zufuehr_Auslauf_Kommando	:	WORD;	//RFID Zufuehrband Auslauf Command_ID
+	RFID_Zufuehr_Auslauf_Speich_Ind	:	WORD;	//RFID Zufuehrband Auslauf Speicherindex
+	RFID_Zufuehr_Auslauf_Dat_Schr	:	WORD;	//RFID Zufuehrband Auslauf zu schreibende Daten
+
+END_VAR</xhtml>
+            </InterfaceAsPlainText>
+          </data>
+          <data name="http://www.3s-software.com/plcopenxml/objectid" handleUnknown="discard">
+            <ObjectId>3580ce7d-c045-4185-9552-523be545c0fe</ObjectId>
+          </data>
+        </addData>
+      </globalVars>
+    </data>
+    <data name="http://www.3s-software.com/plcopenxml/projectstructure" handleUnknown="discard">
+      <ProjectStructure>
+        <Object Name="GVL" ObjectId="3580ce7d-c045-4185-9552-523be545c0fe" />
+      </ProjectStructure>
+    </data>
+  </addData>
+</project>

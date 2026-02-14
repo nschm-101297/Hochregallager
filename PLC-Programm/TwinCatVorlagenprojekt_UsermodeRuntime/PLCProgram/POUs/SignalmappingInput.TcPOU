@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <POU Name="SignalmappingInput" Id="{729d2361-3cc3-4a8e-b7fa-add898f7db27}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION SignalmappingInput
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[(*=============== Digitale Eingaenge ===============*)
+NotAus_Hochregallager	:=	GVL.mb_Output_Coils[0];
+BA_Manuel	:=	GVL.mb_Output_Coils[1];
+BA_Automatik	:=	GVL.mb_Output_Coils[2];
+Start_Automatik_Hochregallager	:=	GVL.mb_Output_Coils[3];
+Stop_Automatik_Hochregallager	:=	GVL.mb_Output_Coils[4];
+Grundstellung_Automatik_Hochregallager	:=	GVL.mb_Output_Coils[5];
+Reset_Hochregallager	:=	GVL.mb_Output_Coils[6];
+Quit_Hochregallager	:=	GVL.mb_Output_Coils[7];
+Bauteil_Vorh_Zufuehrb_Ein	:=	GVL.mb_Output_Coils[9];
+Bauteil_Vorh_Zufuehrb_Aus	:=	GVL.mb_Output_Coils[10];
+Bauteil_Vorh_Auslaufb_Ein	:=	GVL.mb_Output_Coils[11];
+Gabel_InPos_Links	:=	GVL.mb_Output_Coils[12];
+Gabel_InPos_Mitte	:=	GVL.mb_Output_Coils[13];
+Gabel_InPos_Rechts	:=	GVL.mb_Output_Coils[14];
+
+
+(*=============== Analoge Eingaenge ===============*)
+Regbedien_Istpos_XAchse	:=	GVL.mb_Output_Registers[0];
+Regbedien_Istpos_ZAchse	:=	GVL.mb_Output_Registers[1];
+RFID_Zufuehr_Auslauf_Rueck_Kommand_ID	:=	GVL.mb_Output_Registers[3];
+RFID_Zufuehr_Auslauf_Status	:=	GVL.mb_Output_Registers[4];
+RFID_Zufuehr_Auslauf_Dat_Gelesen	:=	GVL.mb_Output_Registers[5];]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

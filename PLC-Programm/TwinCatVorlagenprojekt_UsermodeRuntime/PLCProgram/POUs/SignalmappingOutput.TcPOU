@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <POU Name="SignalmappingOutput" Id="{2bdbb390-18c0-4372-a0ff-04e8c4b60455}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION SignalmappingOutput]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[(*=============== Digitale Ausgaenge ===============*)
+GVL.mb_Input_Coils[3]	:=	Button_Start_LED;
+GVL.mb_Input_Coils[4]	:=	Button_Stop_LED;
+GVL.mb_Input_Coils[5]	:=	Button_Grundstellung_LED;
+GVL.mb_Input_Coils[6]	:=	Button_Reset_LED;
+GVL.mb_Input_Coils[7]	:=	Button_Quit_LED;
+GVL.mb_Input_Coils[9]	:=	Bauteil_Erzeugen;
+GVL.mb_Input_Coils[10]	:=	Zufuehrb_Vor;
+GVL.mb_Input_Coils[11]	:=	Abholband_Vor;
+GVL.mb_Input_Coils[12]	:=	Gabel_zu_Pos_Links;
+GVL.mb_Input_Coils[13]	:=	Gabel_zu_Pos_Rechts;
+GVL.mb_Input_Coils[16]	:=	RFID_Zufuehr_Aufuehren;
+
+(*=============== Analoge Ausgaenge ===============*)
+GVL.mb_Input_Registers[0]	:=	Regbedien_Sollpos_XAchse;
+GVL.mb_Input_Registers[1]	:=	Regbedien_Sollpos_ZAchse;
+GVL.mb_Input_Registers[3]	:=	RFID_Zufuehr_Auslauf_Kommando;
+GVL.mb_Input_Registers[4]	:=	RFID_Zufuehr_Auslauf_Speich_Ind;
+GVL.mb_Input_Registers[5]	:=	RFID_Zufuehr_Auslauf_Dat_Schr;
+]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

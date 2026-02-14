@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <GVL Name="Signalmapping" Id="{7fb94de4-f931-49df-abb3-2984cb3c14b9}">
+    <Declaration><![CDATA[VAR_GLOBAL
+
+	NotAus_Hochregallager	:	BOOL;	//Not_Aus Hochregallager
+	BA_Manuel	:	BOOL;	//Betriebsart Manuel angewaehlt
+	BA_Automatik	:	BOOL;	//Betriebsart Automatik angewaehlt
+	Start_Automatik_Hochregallager	:	BOOL;	//Automatik Start Hochregallager
+	Stop_Automatik_Hochregallager	:	BOOL;	//Automatik Stop Hochregallager
+	Grundstellung_Automatik_Hochregallager	:	BOOL;	//Automatik Grundstellung Hochregallager
+	Reset_Hochregallager	:	BOOL;	//Reset Hochregallager
+	Quit_Hochregallager	:	BOOL;	//Quit Hochregallager
+	Bauteil_Vorh_Zufuehrb_Ein	:	BOOL;	//Sensor Bauteil vorhanden Zufuehrband Einlauf
+	Bauteil_Vorh_Zufuehrb_Aus	:	BOOL;	//Sensor Bauteil vorhanden Zufuehrband Auslauf
+	Bauteil_Vorh_Auslaufb_Ein	:	BOOL;	//Sensor Bauteil vorhanden Zufuehrband Auslauf
+	Gabel_InPos_Links	:	BOOL;	//Gabel in Position links
+	Gabel_InPos_Mitte	:	BOOL;	//Gabel in Position mitte
+	Gabel_InPos_Rechts	:	BOOL;	//Gabel in Position rechts
+	Button_Start_LED	:	BOOL;	//Anzeige Automatik Start Aktiv
+	Button_Stop_LED	:	BOOL;	//Anzeige Automatik Stop Aktiv
+	Button_Grundstellung_LED	:	BOOL;	//Anzeige Automatik Grundstellung Aktiv
+	Button_Reset_LED	:	BOOL;	//Anzeige Reset Aktiv
+	Button_Quit_LED	:	BOOL;	//Anzeige Quit Aktiv
+	Bauteil_Erzeugen	:	BOOL;	//Bauteilerzeuger Bauteil erzeugen
+	Zufuehrb_Vor	:	BOOL;	//Zufuehrband Drehrichtung vorwaerts
+	Abholband_Vor	:	BOOL;	//Abholband Drehrichtung vorwaerts
+	Gabel_zu_Pos_Links	:	BOOL;	//Gabel in Position Links fahren
+	Gabel_zu_Pos_Rechts	:	BOOL;	//Gabel in Position Rechts fahren
+	RFID_Zufuehr_Aufuehren	:	BOOL;	//RFID_Sensor Auslaufband Befehl ausfuehren
+	Regbedien_Istpos_XAchse	:	WORD;	//Istposition X_Achse Regalbediengeraet 
+	Regbedien_Istpos_ZAchse	:	WORD;	//Istposition Z_Achse Regalbediengeraet 
+	RFID_Zufuehr_Auslauf_Rueck_Kommand_ID	:	WORD;	//RFID Zufuehrband Auslauf Command_ID gespiegelt
+	RFID_Zufuehr_Auslauf_Status	:	WORD;	//RFID Zufuehrband Auslauf Status Reader
+	RFID_Zufuehr_Auslauf_Dat_Gelesen	:	WORD;	//RFID Zufuehrband Auslauf gelesene Daten
+	Regbedien_Sollpos_XAchse	:	WORD;	//Sollposition X_Achse Regalbediengeraet 
+	Regbedien_Sollpos_ZAchse	:	WORD;	//Sollposition Z_Achse Regalbediengeraet 
+	RFID_Zufuehr_Auslauf_Kommando	:	WORD;	//RFID Zufuehrband Auslauf Command_ID
+	RFID_Zufuehr_Auslauf_Speich_Ind	:	WORD;	//RFID Zufuehrband Auslauf Speicherindex
+	RFID_Zufuehr_Auslauf_Dat_Schr	:	WORD;	//RFID Zufuehrband Auslauf zu schreibende Daten
+
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <GVL Name="GVL" Id="{3580ce7d-c045-4185-9552-523be545c0fe}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+VAR_GLOBAL
+	//Hier die Array-Grenzen anpassen auf die maximale Anzahl an Signalen.
+	//Der Name der Liste, darf nicht verändert werden.
+	mb_Input_Coils        : ARRAY [0..255] OF BOOL;	//Digital outputs of the PLC
+    mb_Output_Coils       : ARRAY [0..255] OF BOOL;	//Digital inputs of the PLC
+    mb_Input_Registers    : ARRAY [0..255] OF WORD;	//Analog outputs of the PLC
+    mb_Output_Registers   : ARRAY [0..255] OF WORD;	//Analog inputs of the PLC	
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

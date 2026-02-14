@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <POU Name="Call_Emitter" Id="{6e7476dd-b85e-4b73-a561-c0a06f7c7226}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION Call_Emitter
+VAR_INPUT
+END_VAR
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[instEmitterZufuehrband(PartPresent:= Bauteil_Vorh_Zufuehrb_Ein, 
+					   CreatePart=> Bauteil_Erzeugen);
+					   
+IF Bauteil_Vorh_Zufuehrb_Ein AND currentStateOperatingMode.AutomaticStart.IsActive
+THEN
+	instEmitterZufuehrband.Create();
+END_IF]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

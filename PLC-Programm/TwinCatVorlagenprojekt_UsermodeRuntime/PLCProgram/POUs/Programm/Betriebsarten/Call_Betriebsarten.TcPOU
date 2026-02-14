@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <POU Name="Call_Betriebsarten" Id="{b6b8fca4-252c-44b2-a398-fb83b9e36074}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION Call_Betriebsarten]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[Betriebsarten.instOperatingmode(PermissionHardware := permissionHardware,
+								PermissionSoftware := permissionSafety,
+								E_Stop := NotAus_Hochregallager,
+								OperatingModeManual:= BA_Manuel, 
+				  				OperatingModeAutomatic:= BA_Automatik, 
+				  				LEDStart=> Button_Start_LED, 
+				  				LEDStop=> Button_Stop_LED, 
+				  				LEDHome=> Button_Grundstellung_LED, 
+				  				LEDReset=> Button_Reset_LED, 
+				  				LEDQuit=> Button_Quit_LED);
+
+instOperatingMode.Start_On(Start_Automatik_Hochregallager);
+instOperatingMode.Stop_On(Stop_Automatik_Hochregallager);
+instOperatingMode.Homeing_On(Grundstellung_Automatik_Hochregallager);
+instOperatingMode.Reset_On(Reset_Hochregallager);
+instOperatingMode.Quit_On(Quit_Hochregallager);
+
+currentStateOperatingMode := instOperatingmode.StateOperatingMode;
+
+]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

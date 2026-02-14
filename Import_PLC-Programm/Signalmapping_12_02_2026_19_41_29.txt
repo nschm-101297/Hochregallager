@@ -1,0 +1,34 @@
+(*=============== Digitale Eingaenge ===============*)
+NotAus_Hochregallager	:=	GVL.mb_Output_Coils[0];
+Start_Automatik_Hochregallager	:=	GVL.mb_Output_Coils[1];
+Stop_Automatik_Hochregallager	:=	GVL.mb_Output_Coils[2];
+Grundstellung_Automatik_Hochregallager	:=	GVL.mb_Output_Coils[3];
+Reset_Hochregallager	:=	GVL.mb_Output_Coils[4];
+Quit_Hochregallager	:=	GVL.mb_Output_Coils[5];
+Bauteil_Vorh_Zufuehrb_Ein	:=	GVL.mb_Output_Coils[7];
+Bauteil_Vorh_Zufuehrb_Aus	:=	GVL.mb_Output_Coils[8];
+Bauteil_Vorh_Auslaufb_Ein	:=	GVL.mb_Output_Coils[9];
+Gabel_InPos_Links	:=	GVL.mb_Output_Coils[10];
+Gabel_InPos_Mitte	:=	GVL.mb_Output_Coils[11];
+Gabel_InPos_Rechts	:=	GVL.mb_Output_Coils[12];
+
+(*=============== Digitale Ausgaenge ===============*)
+GVL.mb_Input_Coils[1]	:=	Button_Start_LED;
+GVL.mb_Input_Coils[2]	:=	Button_Stop_LED;
+GVL.mb_Input_Coils[3]	:=	Button_Grundstellung_LED;
+GVL.mb_Input_Coils[4]	:=	Button_Reset_LED;
+GVL.mb_Input_Coils[5]	:=	Button_Quit_LED;
+GVL.mb_Input_Coils[7]	:=	Bauteil_Erzeugen;
+GVL.mb_Input_Coils[8]	:=	Zufuehrb_Vor;
+GVL.mb_Input_Coils[9]	:=	Abholband_Vor;
+GVL.mb_Input_Coils[10]	:=	Gabel_zu_Pos_Links;
+GVL.mb_Input_Coils[11]	:=	Gabel_zu_Pos_Rechts;
+
+(*=============== Analoge Eingaenge ===============*)
+Regbedien_Istpos_XAchse	:=	GVL.mb_Output_Registers[0];
+Regbedien_Istpos_ZAchse	:=	GVL.mb_Output_Registers[1];
+
+(*=============== Analoge Ausgaenge ===============*)
+GVL.mb_Input_Registers[0]	:=	Regbedien_Sollpos_XAchse;
+GVL.mb_Input_Registers[1]	:=	Regbedien_Sollpos_ZAchse;
+

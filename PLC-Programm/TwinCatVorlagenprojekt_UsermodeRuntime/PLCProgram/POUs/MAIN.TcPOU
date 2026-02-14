@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <POU Name="MAIN" Id="{7aa52cb8-d531-4a9c-a3e7-eb662cc7341b}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR
+	
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[SignalmappingInput();
+Call_Betriebsarten();
+Call_Emitter();
+SignalmappingOutput();]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>
