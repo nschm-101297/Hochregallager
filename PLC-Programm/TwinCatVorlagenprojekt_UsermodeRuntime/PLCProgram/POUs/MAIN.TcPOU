@@ -8,8 +8,10 @@ END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[SignalmappingInput();
-Call_Betriebsarten();
+Call_Operatingmode();
 Call_Emitter();
+Call_Conveyorbelts();
+Call_Warehouse();
 SignalmappingOutput();]]></ST>
     </Implementation>
   </POU>

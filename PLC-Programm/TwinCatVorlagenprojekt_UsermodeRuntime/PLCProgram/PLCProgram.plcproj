@@ -18,6 +18,13 @@
     <LibraryReferences>{3125a2d2-4046-486a-8164-24d971afc251}</LibraryReferences>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="DUTs\Program\Warehouse\StackerCraneSteps.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GVLs\Conveyorbelts.TcGVL">
+      <SubType>Code</SubType>
+      <LinkAlways>true</LinkAlways>
+    </Compile>
     <Compile Include="GVLs\Emitter.TcGVL">
       <SubType>Code</SubType>
       <LinkAlways>true</LinkAlways>
@@ -34,16 +41,26 @@
       <SubType>Code</SubType>
       <LinkAlways>true</LinkAlways>
     </Compile>
+    <Compile Include="GVLs\Warehouse.TcGVL">
+      <SubType>Code</SubType>
+      <LinkAlways>true</LinkAlways>
+    </Compile>
     <Compile Include="PlcTask.TcTTO">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\MAIN.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\Programm\Abschnitte\Conveyorbelts\Call_Conveyorbelts.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\Programm\Abschnitte\Emitter\Call_Emitter.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\Programm\Betriebsarten\Call_Betriebsarten.TcPOU">
+    <Compile Include="POUs\Programm\Abschnitte\Warehouse\Call_Warehouse.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\Programm\Betriebsarten\Call_Operatingmode.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\SignalmappingInput.TcPOU">
@@ -55,9 +72,13 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DUTs" />
+    <Folder Include="DUTs\Program" />
+    <Folder Include="DUTs\Program\Warehouse" />
     <Folder Include="GVLs" />
     <Folder Include="POUs\Programm" />
     <Folder Include="POUs\Programm\Abschnitte\Emitter" />
+    <Folder Include="POUs\Programm\Abschnitte\Conveyorbelts" />
+    <Folder Include="POUs\Programm\Abschnitte\Warehouse" />
     <Folder Include="POUs\Programm\Betriebsarten" />
     <Folder Include="POUs\Programm\Abschnitte" />
     <Folder Include="VISUs" />
@@ -88,6 +109,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="FactoryIOPLCProject.tmc">
+      <SubType>Content</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="PLCProgram.tmc">
       <SubType>Content</SubType>
     </None>
   </ItemGroup>

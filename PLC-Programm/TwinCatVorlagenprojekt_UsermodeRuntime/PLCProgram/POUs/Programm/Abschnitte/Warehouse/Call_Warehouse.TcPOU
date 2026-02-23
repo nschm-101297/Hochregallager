@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <POU Name="Call_Warehouse" Id="{f6c8f4cf-ee39-4374-8fe6-66362c853c49}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION Call_Warehouse
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[instStackerCrane(StackerCraneCurrentPositionXAxis := Regbedien_Istpos_XAchse,
+                 StackerCraneCurrentPositionZAxis := Regbedien_Istpos_ZAchse,
+				 OperatingMode := instOperatingMode.StateOperatingMode,
+				 SetPointToXAxis => Regbedien_Sollpos_XAchse, 
+                 SetPointToZAxis => Regbedien_Sollpos_ZAchse, 
+                 MoveForkLeft => Gabel_zu_Pos_Links,	
+                 MoveForkRight => Gabel_zu_Pos_Rechts);
+				 
+(*================ Steps ================*)
+IF instOperatingMode.StateOperatingMode.Reset.IsActive THEN
+	processSteps := StackerCraneSteps.Waiting;
+END_IF
+
+CASE processSteps OF
+	StackerCraneSteps.Waiting:
+		instStackerCrane.MoveForkToMiddle_ON(TRUE);
+		IF instOperatingMode.StateOperatingMode.AutomaticStart.IsActive THEN
+			processSteps := StackerCraneSteps.DriveToLoadingPosition;
+		END_IF
+StackerCraneSteps.DriveToLoadingPosition:
+		instStackerCrane.MoveAxesStackerCrane_ON(TRUE, 0.0, 0.0);
+		instStackerCrane.EvaluatePosition();
+		IF instStackerCrane.InPositionXAxis AND instStackerCrane.InPositionZAxis   
+		AND Bauteil_Vorh_Auslaufb_Aus
+		THEN
+			InUnloading	:= FALSE;
+			processSteps := StackerCraneSteps.ForkUnderLoad;
+		END_IF
+StackerCraneSteps.ForkUnderLoad:
+		InUnloading	:= FALSE;
+		instStackerCrane.MoveForkToLeft_ON(TRUE);
+		IF Gabel_InPos_Links THEN
+			processSteps := StackerCraneSteps.LiftLoadItem;
+		END_IF
+StackerCraneSteps.LiftLoadItem:
+		instStackerCrane.MoveForkToLeft_ON(TRUE);
+		instStackerCrane.MoveAxesStackerCrane_ON(TRUE, 0.0, 1.0);
+		instStackerCrane.EvaluatePosition();
+		IF instStackerCrane.InPositionXAxis AND instStackerCrane.InPositionZAxis 
+		AND TRUE
+		THEN
+			processSteps := StackerCraneSteps.ForkToMiddle;
+		END_IF
+StackerCraneSteps.ForkToMiddle:
+		instStackerCrane.MoveForkToMiddle_ON(TRUE);
+		IF Gabel_InPos_Mitte AND NOT InUnloading AND FALSE THEN
+			processSteps := StackerCraneSteps.DriveToUnloadPrePosition;
+		ELSIF Gabel_InPos_Mitte AND InUnloading THEN
+			processSteps := StackerCraneSteps.DriveToLoadingPosition;
+		END_IF
+StackerCraneSteps.DriveToUnloadPrePosition:
+		instStackerCrane.MoveAxesStackerCrane_ON(TRUE, 1.10, 1.86);
+		instStackerCrane.EvaluatePosition();
+		IF instStackerCrane.InPositionXAxis AND instStackerCrane.InPositionZAxis   
+		AND TRUE
+		THEN
+			processSteps := StackerCraneSteps.ForkInWarehouse;
+		END_IF
+StackerCraneSteps.ForkInWarehouse:
+		instStackerCrane.MoveForkToRight_ON(TRUE);
+		IF Gabel_InPos_Rechts THEN
+			processSteps := StackerCraneSteps.DriveToUnloadPosition;
+		END_IF
+StackerCraneSteps.DriveToUnloadPosition:
+		instStackerCrane.MoveForkToRight_ON(TRUE);
+		instStackerCrane.MoveAxesStackerCrane_ON(TRUE, 1.15, 1.26);
+		instStackerCrane.EvaluatePosition();
+		IF instStackerCrane.InPositionXAxis AND instStackerCrane.InPositionZAxis  
+		AND TRUE
+		THEN
+			InUnloading	:= TRUE;
+			processSteps := StackerCraneSteps.ForkToMiddle;
+		END_IF
+END_CASE]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

@@ -13,7 +13,7 @@
 	Quit_Hochregallager	:	BOOL;	//Quit Hochregallager
 	Bauteil_Vorh_Zufuehrb_Ein	:	BOOL;	//Sensor Bauteil vorhanden Zufuehrband Einlauf
 	Bauteil_Vorh_Zufuehrb_Aus	:	BOOL;	//Sensor Bauteil vorhanden Zufuehrband Auslauf
-	Bauteil_Vorh_Auslaufb_Ein	:	BOOL;	//Sensor Bauteil vorhanden Zufuehrband Auslauf
+	Bauteil_Vorh_Auslaufb_Aus	:	BOOL;	//Sensor Bauteil vorhanden Auslaufband Auslauf
 	Gabel_InPos_Links	:	BOOL;	//Gabel in Position links
 	Gabel_InPos_Mitte	:	BOOL;	//Gabel in Position mitte
 	Gabel_InPos_Rechts	:	BOOL;	//Gabel in Position rechts
