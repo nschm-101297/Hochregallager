@@ -1,0 +1,380 @@
+{
+  "ProjectName": "Hochregallager_FactoryIO-Model",
+  "FactoryIOFilePath": "D:\\Beckhoff\\Projekte\\Hochregallager\\FactoryIO-Model\\Hochregallager_FactoryIO-Model.factoryio",
+  "ExportDirectoryPath": "D:\\Beckhoff\\Projekte\\Hochregallager\\Import_PLC-Programm",
+  "ExportFormat": "Txt",
+  "ModeOfConncetion": "Modbus TCP/IP Client",
+  "ChoosenControllertype": "Beckhoff",
+  "LastChangeFactoryIOFile": "2026-08-01T20:13:26.2861769+02:00",
+  "AllSignals": [
+    {
+      "SignalName": "Manuel",
+      "Key": "649151a0-1d10-47ea-8ded-5961d4bced07",
+      "IOName": "BitInput0",
+      "VariableNameInControlsystem": "BA_Manuel",
+      "CommentInControlsystem": "Operatingmode manual",
+      "IONumber": 0,
+      "Signaltype": 0
+    },
+    {
+      "SignalName": "Automatik",
+      "Key": "94101cf3-b61d-4e47-a50d-cf44c16c60be",
+      "IOName": "BitInput1",
+      "VariableNameInControlsystem": "BA_Automatik",
+      "CommentInControlsystem": "Operatingmode automatic",
+      "IONumber": 1,
+      "Signaltype": 0
+    },
+    {
+      "SignalName": "E-Stop",
+      "Key": "1327712b-3d85-4faf-8009-65d32423dd1c",
+      "IOName": "BitInput2",
+      "VariableNameInControlsystem": "NotAus_Hochregallager",
+      "CommentInControlsystem": "E_Stop",
+      "IONumber": 2,
+      "Signaltype": 0
+    },
+    {
+      "SignalName": "Start",
+      "Key": "a4fc1301-8b9f-4f89-8f72-7dec47c1f185",
+      "IOName": "BitInput3",
+      "VariableNameInControlsystem": "Start_Automatik_Hochregallager",
+      "CommentInControlsystem": "Automatic Start",
+      "IONumber": 3,
+      "Signaltype": 0
+    },
+    {
+      "SignalName": "Stop",
+      "Key": "f0789fc1-6c82-447c-bc5e-0a11491dfd9c",
+      "IOName": "BitInput4",
+      "VariableNameInControlsystem": "Stop_Automatik_Hochregallager",
+      "CommentInControlsystem": "Automatic Stop",
+      "IONumber": 4,
+      "Signaltype": 0
+    },
+    {
+      "SignalName": "Homing",
+      "Key": "7c8ac89f-c10a-4042-bd79-df0fba3c6261",
+      "IOName": "BitInput5",
+      "VariableNameInControlsystem": "Grundstellung_Automatik_Hochregallager",
+      "CommentInControlsystem": "Homing",
+      "IONumber": 5,
+      "Signaltype": 0
+    },
+    {
+      "SignalName": "Reset",
+      "Key": "2aad700b-71e9-46f5-9362-ce5c033202a8",
+      "IOName": "BitInput6",
+      "VariableNameInControlsystem": "Reset_Hochregallager",
+      "CommentInControlsystem": "Reset",
+      "IONumber": 6,
+      "Signaltype": 0
+    },
+    {
+      "SignalName": "Quit",
+      "Key": "8c38cfcb-54bd-48e9-b49e-cfd75e90360b",
+      "IOName": "BitInput7",
+      "VariableNameInControlsystem": "Quit_Hochregallager",
+      "CommentInControlsystem": "Quit",
+      "IONumber": 7,
+      "Signaltype": 0
+    },
+    {
+      "SignalName": "SensorFeedInEmitter",
+      "Key": "3145c671-5158-4e75-8335-475102ed49b3",
+      "IOName": "BitInput9",
+      "VariableNameInControlsystem": "Bauteil_Vorh_Zufuehrb_Ein",
+      "CommentInControlsystem": "Sensor Emitter part present",
+      "IONumber": 9,
+      "Signaltype": 0
+    },
+    {
+      "SignalName": "SensorConveyorFeedInOutput",
+      "Key": "94e1ef6c-a7d7-4287-a52b-23d47a7fb32e",
+      "IOName": "BitInput10",
+      "VariableNameInControlsystem": "Bauteil_Vorh_Zufuehrb_Aus",
+      "CommentInControlsystem": "Sensor conveyor feed in part present",
+      "IONumber": 10,
+      "Signaltype": 0
+    },
+    {
+      "SignalName": "SensorFeedInConveyorStackerCrane",
+      "Key": "051d23c3-fcf9-48bc-892d-f0e1249d34ef",
+      "IOName": "BitInput11",
+      "VariableNameInControlsystem": "Bauteil_Vorh_Auslaufb_Aus",
+      "CommentInControlsystem": "Sensor conveyor feed in stacker crane part present",
+      "IONumber": 11,
+      "Signaltype": 0
+    },
+    {
+      "SignalName": "StackerCrane1XAxisMoving",
+      "Key": "8a722320-5f55-402b-9fd7-1bc42bbb6876",
+      "IOName": "BitInput13",
+      "VariableNameInControlsystem": "StackerCraneOneXAxisIsMoving",
+      "CommentInControlsystem": "Stacker crane X axis is moving",
+      "IONumber": 13,
+      "Signaltype": 0
+    },
+    {
+      "SignalName": "StackerCrane1ZAxisMoving",
+      "Key": "4eb9e623-e1fc-4453-936e-c98c1394d8b6",
+      "IOName": "BitInput14",
+      "VariableNameInControlsystem": "StackerCraneOneZAxisIsMoving",
+      "CommentInControlsystem": "Stacker crane Z axis is moving",
+      "IONumber": 14,
+      "Signaltype": 0
+    },
+    {
+      "SignalName": "StackerCrane1PosLeft",
+      "Key": "08857dd8-a3ad-4774-9389-2039f55051e5",
+      "IOName": "BitInput15",
+      "VariableNameInControlsystem": "Gabel_InPos_Links",
+      "CommentInControlsystem": "Stacker crane fork in pos left",
+      "IONumber": 15,
+      "Signaltype": 0
+    },
+    {
+      "SignalName": "StackerCrane1PosRight",
+      "Key": "86e4b5f6-85d3-4d8d-a016-aa0b40d0c6a8",
+      "IOName": "BitInput16",
+      "VariableNameInControlsystem": "Gabel_InPos_Mitte",
+      "CommentInControlsystem": "Stacker crane fork in pos middle",
+      "IONumber": 16,
+      "Signaltype": 0
+    },
+    {
+      "SignalName": "StackerCrane1PosMiddle",
+      "Key": "6e8132f5-7f00-469c-ab5a-c7706fab139c",
+      "IOName": "BitInput17",
+      "VariableNameInControlsystem": "Gabel_InPos_Rechts",
+      "CommentInControlsystem": "Stacker crane fork in pos right",
+      "IONumber": 17,
+      "Signaltype": 0
+    },
+    {
+      "SignalName": "SensorConveyorFeedOutStackerCrane",
+      "Key": "da127c27-edf0-4d73-b2a9-9244479dbb5a",
+      "IOName": "BitInput19",
+      "VariableNameInControlsystem": "SensorConveyorOutfeedStackerCrane",
+      "CommentInControlsystem": "Sensor conveyor feed out stacker crane part present",
+      "IONumber": 19,
+      "Signaltype": 0
+    },
+    {
+      "SignalName": "SensorConveyorFeedOutLong",
+      "Key": "46d22f4e-0ebc-445b-93c6-ca9cf1595698",
+      "IOName": "BitInput20",
+      "VariableNameInControlsystem": "SensorConveyorOutfeedEnd",
+      "CommentInControlsystem": "Sensor conveyor feed out part present",
+      "IONumber": 20,
+      "Signaltype": 0
+    },
+    {
+      "SignalName": "StartLED",
+      "Key": "20f9e7d2-e2df-4eb9-b587-cdce736c965a",
+      "IOName": "BitOutput3",
+      "VariableNameInControlsystem": "Button_Start_LED",
+      "CommentInControlsystem": "LED start button",
+      "IONumber": 3,
+      "Signaltype": 1
+    },
+    {
+      "SignalName": "StopLED",
+      "Key": "9c7853a6-c53d-440e-9147-1235367127dd",
+      "IOName": "BitOutput4",
+      "VariableNameInControlsystem": "Button_Stop_LED",
+      "CommentInControlsystem": "LED stop button",
+      "IONumber": 4,
+      "Signaltype": 1
+    },
+    {
+      "SignalName": "HomingLED",
+      "Key": "88ebe4c0-53cc-42d1-9a8d-e02b6b61b8dc",
+      "IOName": "BitOutput5",
+      "VariableNameInControlsystem": "Button_Grundstellung_LED",
+      "CommentInControlsystem": "LED homing button",
+      "IONumber": 5,
+      "Signaltype": 1
+    },
+    {
+      "SignalName": "ResetLED",
+      "Key": "4aa4cc53-9669-4330-8608-898fa70c34f4",
+      "IOName": "BitOutput6",
+      "VariableNameInControlsystem": "Button_Reset_LED",
+      "CommentInControlsystem": "LED reset button",
+      "IONumber": 6,
+      "Signaltype": 1
+    },
+    {
+      "SignalName": "QuitLED",
+      "Key": "2c8226a7-4aa7-4e01-bd44-b6a000059969",
+      "IOName": "BitOutput7",
+      "VariableNameInControlsystem": "Button_Quit_LED",
+      "CommentInControlsystem": "LED quit button",
+      "IONumber": 7,
+      "Signaltype": 1
+    },
+    {
+      "SignalName": "FeedInEmitter",
+      "Key": "f4563f6d-ebe4-44f2-96e2-3679deecd782",
+      "IOName": "BitOutput9",
+      "VariableNameInControlsystem": "Bauteil_Erzeugen",
+      "CommentInControlsystem": "Emitter",
+      "IONumber": 9,
+      "Signaltype": 1
+    },
+    {
+      "SignalName": "ConveyorFeedIn",
+      "Key": "018fd2da-a3fd-4a7d-8fba-21e57d2da848",
+      "IOName": "BitOutput10",
+      "VariableNameInControlsystem": "Zufuehrb_Vor",
+      "CommentInControlsystem": "Conveyor feed in forward",
+      "IONumber": 10,
+      "Signaltype": 1
+    },
+    {
+      "SignalName": "ConveyorFeedInStackerCrane",
+      "Key": "4e561bfb-277b-41ab-ae22-93abe295631c",
+      "IOName": "BitOutput11",
+      "VariableNameInControlsystem": "Abholband_Vor",
+      "CommentInControlsystem": "Conveyor feed in stacker crane forward",
+      "IONumber": 11,
+      "Signaltype": 1
+    },
+    {
+      "SignalName": "RFIDFeedInOutputExecuteCommand",
+      "Key": "b4c5b391-244c-4937-bb1f-d783f44d5f6b",
+      "IOName": "BitOutput12",
+      "VariableNameInControlsystem": "RFID_Zufuehr_Aufuehren",
+      "CommentInControlsystem": "RFID feed in stacker crane execute command",
+      "IONumber": 12,
+      "Signaltype": 1
+    },
+    {
+      "SignalName": "StackerCrane1ForkLeft",
+      "Key": "9cd62bb2-523c-447e-a75a-64c30b78a1fe",
+      "IOName": "BitOutput15",
+      "VariableNameInControlsystem": "Gabel_zu_Pos_Links",
+      "CommentInControlsystem": "Stacker crane fork left",
+      "IONumber": 15,
+      "Signaltype": 1
+    },
+    {
+      "SignalName": "StackerCrane1ForkRight",
+      "Key": "46f0dd61-4ddf-4d67-aa58-5d99edf31fd2",
+      "IOName": "BitOutput16",
+      "VariableNameInControlsystem": "Gabel_zu_Pos_Rechts",
+      "CommentInControlsystem": "Stacker crane fork right",
+      "IONumber": 16,
+      "Signaltype": 1
+    },
+    {
+      "SignalName": "StackerCrane1Lift",
+      "Key": "af911c2d-cbef-40c2-8bee-60b8f4baaded",
+      "IOName": "BitOutput17",
+      "VariableNameInControlsystem": "StackerCraneOneLiftFork",
+      "CommentInControlsystem": "Stacker crane lift fork",
+      "IONumber": 17,
+      "Signaltype": 1
+    },
+    {
+      "SignalName": "ConveyorFeedOutStackerCrane",
+      "Key": "3ce37cb4-ca9f-4e2f-aa59-0c9b28305c6b",
+      "IOName": "BitOutput19",
+      "VariableNameInControlsystem": "ConveyorFeedOutStackerCrane",
+      "CommentInControlsystem": "Conveyor feed out stacker crane forward",
+      "IONumber": 19,
+      "Signaltype": 1
+    },
+    {
+      "SignalName": "ConveyorFeedOutTwoMeter",
+      "Key": "d53e188a-8f05-4599-b2ba-e66d945b2c43",
+      "IOName": "BitOutput20",
+      "VariableNameInControlsystem": "ConveyorFeedOutTwoMeter  ",
+      "CommentInControlsystem": "Conveyor feed out forward",
+      "IONumber": 20,
+      "Signaltype": 1
+    },
+    {
+      "SignalName": "ConveyorCurveFeedOut",
+      "Key": "425ffda3-182d-472e-8ea3-aafba8a60344",
+      "IOName": "BitOutput21",
+      "VariableNameInControlsystem": "ConveyorCurveFeedOut  ",
+      "CommentInControlsystem": "Conveyor curvefeed out forward",
+      "IONumber": 21,
+      "Signaltype": 1
+    },
+    {
+      "SignalName": "ConveyorFeedOutLong",
+      "Key": "32daa6b5-eb10-4efd-9c57-026bea8149a9",
+      "IOName": "BitOutput22",
+      "VariableNameInControlsystem": "ConveyorFeedOutLong  ",
+      "CommentInControlsystem": "Conveyor feed out long forward",
+      "IONumber": 22,
+      "Signaltype": 1
+    },
+    {
+      "SignalName": "RFIDFeedInOutputCommandID",
+      "Key": "84792a42-7fd4-4b9e-94ac-616c3e9e53a9",
+      "IOName": "NumericInput3",
+      "VariableNameInControlsystem": "RFID_Zufuehr_Auslauf_Rueck_Kommand_ID",
+      "CommentInControlsystem": "RFID feed in stacker crane feedback command ID",
+      "IONumber": 3,
+      "Signaltype": 2
+    },
+    {
+      "SignalName": "RFIDFeedInOutputStatus",
+      "Key": "cd96049b-63df-4822-a22b-999ca0eb2f12",
+      "IOName": "NumericInput4",
+      "VariableNameInControlsystem": "RFID_Zufuehr_Auslauf_Status",
+      "CommentInControlsystem": "RFID feed in stacker crane status",
+      "IONumber": 4,
+      "Signaltype": 2
+    },
+    {
+      "SignalName": "RFIDFeedInOutputReadData",
+      "Key": "6f22b29f-3d94-47c9-9cbc-07c0ba2d7130",
+      "IOName": "NumericInput5",
+      "VariableNameInControlsystem": "RFID_Zufuehr_Auslauf_Dat_Gelesen",
+      "CommentInControlsystem": "RFID feed in stacker crane read data",
+      "IONumber": 5,
+      "Signaltype": 2
+    },
+    {
+      "SignalName": "RFIDFeedInOutputFeedbackCommand",
+      "Key": "9198395e-d8c5-4da1-8984-0727b1430226",
+      "IOName": "NumericOutput3",
+      "VariableNameInControlsystem": "RFID_Zufuehr_Auslauf_Kommando",
+      "CommentInControlsystem": "RFID stacker crane feed in command",
+      "IONumber": 3,
+      "Signaltype": 3
+    },
+    {
+      "SignalName": "RFIDFeedInOutputMemoryIndex",
+      "Key": "ca5cece8-c343-43b1-9fae-50ff7bb6da8b",
+      "IOName": "NumericOutput4",
+      "VariableNameInControlsystem": "RFID_Zufuehr_Auslauf_Speich_Ind",
+      "CommentInControlsystem": "RFID stacker crane feed in memory index",
+      "IONumber": 4,
+      "Signaltype": 3
+    },
+    {
+      "SignalName": "RFIDFeedInOutputWriteData",
+      "Key": "9e9d2cae-ba9e-4dbd-b8ad-5c53f54ed63b",
+      "IOName": "NumericOutput5",
+      "VariableNameInControlsystem": "RFID_Zufuehr_Auslauf_Dat_Schr",
+      "CommentInControlsystem": "RFID stacker crane feed in data write",
+      "IONumber": 5,
+      "Signaltype": 3
+    },
+    {
+      "SignalName": "StackerCrane1TargetPos",
+      "Key": "341fc731-3d59-4bd1-9337-7ebe85ad8918",
+      "IOName": "NumericOutput7",
+      "VariableNameInControlsystem": "StackerCraneOneTargetPos  ",
+      "CommentInControlsystem": "Stacker crane one index position",
+      "IONumber": 7,
+      "Signaltype": 3
+    }
+  ]
+}
