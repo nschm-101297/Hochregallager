@@ -3,7 +3,7 @@
   <GVL Name="Warehouse" Id="{ca157c31-864b-49ab-96d9-0cfaf46a1877}">
     <Declaration><![CDATA[VAR_GLOBAL
 	InUnloading	:	BOOL;
-	instStackerCrane	:	FB_StackerCrane;
+	instStackerCrane	:	FB_StackerCrane_Numerical;
 	processSteps	: StackerCraneSteps;	
 END_VAR]]></Declaration>
   </GVL>
