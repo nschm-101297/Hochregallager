@@ -5,9 +5,9 @@
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[(*=============== Digitale Eingaenge ===============*)
-NotAus_Hochregallager	:=	GVL.mb_Output_Coils[0];
-BA_Manuel	:=	GVL.mb_Output_Coils[1];
-BA_Automatik	:=	GVL.mb_Output_Coils[2];
+BA_Manuel	:=	GVL.mb_Output_Coils[0];
+BA_Automatik	:=	GVL.mb_Output_Coils[1];
+NotAus_Hochregallager	:=	GVL.mb_Output_Coils[2];
 Start_Automatik_Hochregallager	:=	GVL.mb_Output_Coils[3];
 Stop_Automatik_Hochregallager	:=	GVL.mb_Output_Coils[4];
 Grundstellung_Automatik_Hochregallager	:=	GVL.mb_Output_Coils[5];
@@ -16,17 +16,19 @@ Quit_Hochregallager	:=	GVL.mb_Output_Coils[7];
 Bauteil_Vorh_Zufuehrb_Ein	:=	GVL.mb_Output_Coils[9];
 Bauteil_Vorh_Zufuehrb_Aus	:=	GVL.mb_Output_Coils[10];
 Bauteil_Vorh_Auslaufb_Aus	:=	GVL.mb_Output_Coils[11];
-Gabel_InPos_Links	:=	GVL.mb_Output_Coils[12];
-Gabel_InPos_Mitte	:=	GVL.mb_Output_Coils[13];
-Gabel_InPos_Rechts	:=	GVL.mb_Output_Coils[14];
-
+StackerCraneOneXAxisIsMoving	:=	GVL.mb_Output_Coils[13];
+StackerCraneOneZAxisIsMoving	:=	GVL.mb_Output_Coils[14];
+Gabel_InPos_Links	:=	GVL.mb_Output_Coils[15];
+Gabel_InPos_Mitte	:=	GVL.mb_Output_Coils[16];
+Gabel_InPos_Rechts	:=	GVL.mb_Output_Coils[17];
+SensorConveyorOutfeedStackerCrane	:=	GVL.mb_Output_Coils[19];
+SensorConveyorOutfeedEnd	:=	GVL.mb_Output_Coils[20];
 
 (*=============== Analoge Eingaenge ===============*)
-Regbedien_Istpos_XAchse	:=	GVL.mb_Output_Registers[0];
-Regbedien_Istpos_ZAchse	:=	GVL.mb_Output_Registers[1];
 RFID_Zufuehr_Auslauf_Rueck_Kommand_ID	:=	GVL.mb_Output_Registers[3];
 RFID_Zufuehr_Auslauf_Status	:=	GVL.mb_Output_Registers[4];
-RFID_Zufuehr_Auslauf_Dat_Gelesen	:=	GVL.mb_Output_Registers[5];]]></ST>
+RFID_Zufuehr_Auslauf_Dat_Gelesen	:=	GVL.mb_Output_Registers[5];
+]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

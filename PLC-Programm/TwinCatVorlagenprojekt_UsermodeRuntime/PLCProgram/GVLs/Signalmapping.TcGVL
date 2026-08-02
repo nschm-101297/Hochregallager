@@ -2,43 +2,47 @@
 <TcPlcObject Version="1.1.0.1">
   <GVL Name="Signalmapping" Id="{7fb94de4-f931-49df-abb3-2984cb3c14b9}">
     <Declaration><![CDATA[VAR_GLOBAL
-
-	NotAus_Hochregallager	:	BOOL;	//Not_Aus Hochregallager
-	BA_Manuel	:	BOOL;	//Betriebsart Manuel angewaehlt
-	BA_Automatik	:	BOOL;	//Betriebsart Automatik angewaehlt
-	Start_Automatik_Hochregallager	:	BOOL;	//Automatik Start Hochregallager
-	Stop_Automatik_Hochregallager	:	BOOL;	//Automatik Stop Hochregallager
-	Grundstellung_Automatik_Hochregallager	:	BOOL;	//Automatik Grundstellung Hochregallager
-	Reset_Hochregallager	:	BOOL;	//Reset Hochregallager
-	Quit_Hochregallager	:	BOOL;	//Quit Hochregallager
-	Bauteil_Vorh_Zufuehrb_Ein	:	BOOL;	//Sensor Bauteil vorhanden Zufuehrband Einlauf
-	Bauteil_Vorh_Zufuehrb_Aus	:	BOOL;	//Sensor Bauteil vorhanden Zufuehrband Auslauf
-	Bauteil_Vorh_Auslaufb_Aus	:	BOOL;	//Sensor Bauteil vorhanden Auslaufband Auslauf
-	Gabel_InPos_Links	:	BOOL;	//Gabel in Position links
-	Gabel_InPos_Mitte	:	BOOL;	//Gabel in Position mitte
-	Gabel_InPos_Rechts	:	BOOL;	//Gabel in Position rechts
-	Button_Start_LED	:	BOOL;	//Anzeige Automatik Start Aktiv
-	Button_Stop_LED	:	BOOL;	//Anzeige Automatik Stop Aktiv
-	Button_Grundstellung_LED	:	BOOL;	//Anzeige Automatik Grundstellung Aktiv
-	Button_Reset_LED	:	BOOL;	//Anzeige Reset Aktiv
-	Button_Quit_LED	:	BOOL;	//Anzeige Quit Aktiv
-	Bauteil_Erzeugen	:	BOOL;	//Bauteilerzeuger Bauteil erzeugen
-	Zufuehrb_Vor	:	BOOL;	//Zufuehrband Drehrichtung vorwaerts
-	Abholband_Vor	:	BOOL;	//Abholband Drehrichtung vorwaerts
-	Gabel_zu_Pos_Links	:	BOOL;	//Gabel in Position Links fahren
-	Gabel_zu_Pos_Rechts	:	BOOL;	//Gabel in Position Rechts fahren
-	RFID_Zufuehr_Aufuehren	:	BOOL;	//RFID_Sensor Auslaufband Befehl ausfuehren
-	Regbedien_Istpos_XAchse	:	WORD;	//Istposition X_Achse Regalbediengeraet 
-	Regbedien_Istpos_ZAchse	:	WORD;	//Istposition Z_Achse Regalbediengeraet 
-	RFID_Zufuehr_Auslauf_Rueck_Kommand_ID	:	WORD;	//RFID Zufuehrband Auslauf Command_ID gespiegelt
-	RFID_Zufuehr_Auslauf_Status	:	WORD;	//RFID Zufuehrband Auslauf Status Reader
-	RFID_Zufuehr_Auslauf_Dat_Gelesen	:	WORD;	//RFID Zufuehrband Auslauf gelesene Daten
-	Regbedien_Sollpos_XAchse	:	WORD;	//Sollposition X_Achse Regalbediengeraet 
-	Regbedien_Sollpos_ZAchse	:	WORD;	//Sollposition Z_Achse Regalbediengeraet 
-	RFID_Zufuehr_Auslauf_Kommando	:	WORD;	//RFID Zufuehrband Auslauf Command_ID
-	RFID_Zufuehr_Auslauf_Speich_Ind	:	WORD;	//RFID Zufuehrband Auslauf Speicherindex
-	RFID_Zufuehr_Auslauf_Dat_Schr	:	WORD;	//RFID Zufuehrband Auslauf zu schreibende Daten
-
+	BA_Manuel	:	BOOL;	//Operatingmode manual
+	BA_Automatik	:	BOOL;	//Operatingmode automatic
+	NotAus_Hochregallager	:	BOOL;	//E_Stop
+	Start_Automatik_Hochregallager	:	BOOL;	//Automatic Start
+	Stop_Automatik_Hochregallager	:	BOOL;	//Automatic Stop
+	Grundstellung_Automatik_Hochregallager	:	BOOL;	//Homing
+	Reset_Hochregallager	:	BOOL;	//Reset
+	Quit_Hochregallager	:	BOOL;	//Quit
+	Bauteil_Vorh_Zufuehrb_Ein	:	BOOL;	//Sensor Emitter part present
+	Bauteil_Vorh_Zufuehrb_Aus	:	BOOL;	//Sensor conveyor feed in part present
+	Bauteil_Vorh_Auslaufb_Aus	:	BOOL;	//Sensor conveyor feed in stacker crane part present
+	StackerCraneOneXAxisIsMoving	:	BOOL;	//Stacker crane X axis is moving
+	StackerCraneOneZAxisIsMoving	:	BOOL;	//Stacker crane Z axis is moving
+	Gabel_InPos_Links	:	BOOL;	//Stacker crane fork in pos left
+	Gabel_InPos_Mitte	:	BOOL;	//Stacker crane fork in pos middle
+	Gabel_InPos_Rechts	:	BOOL;	//Stacker crane fork in pos right
+	SensorConveyorOutfeedStackerCrane	:	BOOL;	//Sensor conveyor feed out stacker crane part present
+	SensorConveyorOutfeedEnd	:	BOOL;	//Sensor conveyor feed out part present
+	Button_Start_LED	:	BOOL;	//LED start button
+	Button_Stop_LED	:	BOOL;	//LED stop button
+	Button_Grundstellung_LED	:	BOOL;	//LED homing button
+	Button_Reset_LED	:	BOOL;	//LED reset button
+	Button_Quit_LED	:	BOOL;	//LED quit button
+	Bauteil_Erzeugen	:	BOOL;	//Emitter
+	Zufuehrb_Vor	:	BOOL;	//Conveyor feed in forward
+	Abholband_Vor	:	BOOL;	//Conveyor feed in stacker crane forward
+	RFID_Zufuehr_Aufuehren	:	BOOL;	//RFID feed in stacker crane execute command
+	Gabel_zu_Pos_Links	:	BOOL;	//Stacker crane fork left
+	Gabel_zu_Pos_Rechts	:	BOOL;	//Stacker crane fork right
+	StackerCraneOneLiftFork	:	BOOL;	//Stacker crane lift fork
+	ConveyorFeedOutStackerCrane	:	BOOL;	//Conveyor feed out stacker crane forward
+	ConveyorFeedOutTwoMeter  	:	BOOL;	//Conveyor feed out forward
+	ConveyorCurveFeedOut  	:	BOOL;	//Conveyor curvefeed out forward
+	ConveyorFeedOutLong  	:	BOOL;	//Conveyor feed out long forward
+	RFID_Zufuehr_Auslauf_Rueck_Kommand_ID	:	WORD;	//RFID feed in stacker crane feedback command ID
+	RFID_Zufuehr_Auslauf_Status	:	WORD;	//RFID feed in stacker crane status
+	RFID_Zufuehr_Auslauf_Dat_Gelesen	:	WORD;	//RFID feed in stacker crane read data
+	RFID_Zufuehr_Auslauf_Kommando	:	WORD;	//RFID stacker crane feed in command
+	RFID_Zufuehr_Auslauf_Speich_Ind	:	WORD;	//RFID stacker crane feed in memory index
+	RFID_Zufuehr_Auslauf_Dat_Schr	:	WORD;	//RFID stacker crane feed in data write
+	StackerCraneOneTargetPos  	:	WORD;	//Stacker crane one index position
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>
