@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <GVL Name="HMI" Id="{42b8ab01-74f8-4d3b-9b14-9c080998c4d7}">
+    <Declaration><![CDATA[VAR_GLOBAL
+	hmiHeaderInstance	:	FB_HMIHeader;
+	hmiHeaderInterface	:	HMIHeader;	
+	hmiOperatingmodeInterface	:	HMIInterfaceOperatingMode;
+	
+	hmiAdsCommunicationInterfaceInstance	:	FB_ADSCommunicationStatus;
+	hmiAdsCommunicationInterface	:	ADSCommunicationInterface;
+	
+	hmiMachineSectionInterface	:	MachineSectionHMIInterface;
+	
+	hmiEmitterInstances	:	ARRAY[0..1] OF STRING := [
+														'Zufuehrband',
+														'SubParts'
+													];
+	hmiConveyorInstances	:	ARRAY[0..1] OF STRING := [
+															'Foerderband 6',
+															'Zufuehrung'
+														 ];
+	hmiStackerCraneInstances	:	ARRAY[0..1] OF STRING := [
+															'Einlagerung',
+															'Auslagerung'
+														 ];		
+	hmiRFIDInstances	:	ARRAY[0..2] OF STRING := [
+															'Einlagerung',
+															'Zufuehrung',
+															'Warehouse-Infeed'
+														 ];
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

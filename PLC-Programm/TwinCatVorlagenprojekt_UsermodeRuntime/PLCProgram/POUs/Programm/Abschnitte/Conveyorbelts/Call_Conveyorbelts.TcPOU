@@ -8,6 +8,9 @@ instZufuehrbConveyorbelt(
 	SensorInfeed:= Bauteil_Vorh_Zufuehrb_Ein, 
 	SensorOutfeed:= Bauteil_Vorh_Zufuehrb_Aus, 
 	MaximumTimeRuncontrol:= T#30S, 
+	ActorInstanceIndex := 0,
+	ActorInstanceName := 'FeedIn',
+	HMIInterface := hmiMachineSectionInterface,
 	MotorForward=> Zufuehrb_Vor, 
 	RuncontrolForwardActive=> zufuehrbRunControlForwardActiv, 
 	OperatingMode:= instOperatingMode.StateOperatingMode);
@@ -20,7 +23,10 @@ instZufuehrbConveyorbelt.Motor_Off(Bauteil_Vorh_Zufuehrb_Aus AND Bauteil_Vorh_Au
 instAbholbConveyor(
 	SensorInfeed:= Bauteil_Vorh_Zufuehrb_Aus, 
 	SensorOutfeed:= Bauteil_Vorh_Auslaufb_Aus, 
-	MaximumTimeRuncontrol:= T#30S, 
+	MaximumTimeRuncontrol:= T#30S,  
+	ActorInstanceIndex := 0,
+	ActorInstanceName := 'FeedIn Stacker Crane',
+	HMIInterface := hmiMachineSectionInterface,
 	MotorForward=> Abholband_Vor, 
 	RuncontrolForwardActive=> abholbRunControlForwardActiv, 
 	OperatingMode:= instOperatingMode.StateOperatingMode);

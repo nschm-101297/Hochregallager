@@ -9,6 +9,9 @@ END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[instEmitterZufuehrband(PartPresent:= Bauteil_Vorh_Zufuehrb_Ein, 
+					   ActorInstanceIndex := 0,
+					   ActorInstanceName := 'Feed In',
+					   HMIInterface := hmiMachineSectionInterface,
 					   CreatePart=> Bauteil_Erzeugen);
 					   
 IF NOT Bauteil_Vorh_Zufuehrb_Ein AND 

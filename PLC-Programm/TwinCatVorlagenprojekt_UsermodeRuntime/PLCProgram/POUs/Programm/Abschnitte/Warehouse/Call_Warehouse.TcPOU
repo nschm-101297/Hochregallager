@@ -4,13 +4,19 @@
     <Declaration><![CDATA[FUNCTION Call_Warehouse
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[instStackerCrane(StackerCraneCurrentPositionXAxis := Regbedien_Istpos_XAchse,
-                 StackerCraneCurrentPositionZAxis := Regbedien_Istpos_ZAchse,
+      <ST><![CDATA[instStackerCrane(XAxisMoving := StackerCraneOneXAxisIsMoving,
+				 ZAxisMoving := StackerCraneOneZAxisIsMoving,
+				 ActorInstanceIndex := 1,
+				 ActorInstanceName := 'Zufuehrung',
+				 ForkInPosLeft := Gabel_InPos_Links,
+				 ForkInPosMiddle := Gabel_InPos_Mitte,
+				 ForkInPosRight := Gabel_InPos_Rechts,
 				 OperatingMode := instOperatingMode.StateOperatingMode,
-				 SetPointToXAxis => Regbedien_Sollpos_XAchse, 
-                 SetPointToZAxis => Regbedien_Sollpos_ZAchse, 
-                 MoveForkLeft => Gabel_zu_Pos_Links,	
-                 MoveForkRight => Gabel_zu_Pos_Rechts);
+				 HMIInterface := HMI.hmiMachineSectionInterface,
+				 LiftFork => StackerCraneOneLiftFork,
+				 MoveForkLeft => Gabel_zu_Pos_Links,
+				 MoveForkRight => Gabel_zu_Pos_Rechts,
+				 TargetPos => StackerCraneOneTargetPos);
 				 
 (*================ Steps ================*)
 IF instOperatingMode.StateOperatingMode.Reset.IsActive THEN
@@ -24,8 +30,7 @@ CASE processSteps OF
 			processSteps := StackerCraneSteps.DriveToLoadingPosition;
 		END_IF
 StackerCraneSteps.DriveToLoadingPosition:
-		instStackerCrane.MoveAxesStackerCrane_ON(TRUE, 0.0, 0.0);
-		instStackerCrane.EvaluatePosition();
+		instStackerCrane.MoveAxesStackerCrane_ON(TRUE, 55);
 		IF instStackerCrane.InPositionXAxis AND instStackerCrane.InPositionZAxis   
 		AND Bauteil_Vorh_Auslaufb_Aus
 		THEN
@@ -40,8 +45,7 @@ StackerCraneSteps.ForkUnderLoad:
 		END_IF
 StackerCraneSteps.LiftLoadItem:
 		instStackerCrane.MoveForkToLeft_ON(TRUE);
-		instStackerCrane.MoveAxesStackerCrane_ON(TRUE, 0.0, 1.0);
-		instStackerCrane.EvaluatePosition();
+		instStackerCrane.LiftForkUp(TRUE);
 		IF instStackerCrane.InPositionXAxis AND instStackerCrane.InPositionZAxis 
 		AND TRUE
 		THEN
@@ -55,8 +59,7 @@ StackerCraneSteps.ForkToMiddle:
 			processSteps := StackerCraneSteps.DriveToLoadingPosition;
 		END_IF
 StackerCraneSteps.DriveToUnloadPrePosition:
-		instStackerCrane.MoveAxesStackerCrane_ON(TRUE, 1.10, 1.86);
-		instStackerCrane.EvaluatePosition();
+		instStackerCrane.MoveAxesStackerCrane_ON(TRUE, 1);
 		IF instStackerCrane.InPositionXAxis AND instStackerCrane.InPositionZAxis   
 		AND TRUE
 		THEN
@@ -69,8 +72,7 @@ StackerCraneSteps.ForkInWarehouse:
 		END_IF
 StackerCraneSteps.DriveToUnloadPosition:
 		instStackerCrane.MoveForkToRight_ON(TRUE);
-		instStackerCrane.MoveAxesStackerCrane_ON(TRUE, 1.15, 1.26);
-		instStackerCrane.EvaluatePosition();
+		instStackerCrane.LowerForkUp(TRUE);
 		IF instStackerCrane.InPositionXAxis AND instStackerCrane.InPositionZAxis  
 		AND TRUE
 		THEN

@@ -8,6 +8,7 @@
 								E_Stop := NotAus_Hochregallager,
 								OperatingModeManual:= BA_Manuel, 
 				  				OperatingModeAutomatic:= BA_Automatik, 
+								HMIInterface := hmiOperatingmodeInterface,
 				  				LEDStart=> Button_Start_LED, 
 				  				LEDStop=> Button_Stop_LED, 
 				  				LEDHome=> Button_Grundstellung_LED, 
