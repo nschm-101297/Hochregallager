@@ -1,7 +1,7 @@
 ---
 name: SubIssueFunctionBlockCreationFactoryIO
 about: Sub issue for creating/adopting a FactoryIO scene
-title: "[Name Main issue]"
+title: "[Name Main issue] - FactoryIO"
 labels: ["Task", "PLC", "FactoryIO"]
 ---
 

@@ -1,7 +1,7 @@
 ---
 name: SubIssueFunctionBlockCreationConcept
 about: Sub issue for creating a concept for a new PLC function block with HMI integration
-title: "[Name of the MainIssue] Concept"
+title: "[Name of the MainIssue] - Concept"
 labels: ["Task", "PLC", "HMI", "FactoryIO", "helpwanted"]
 ---
 

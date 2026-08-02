@@ -1,7 +1,7 @@
 ---
 name: SubIssueFunctionBlockCreationPLC
 about: Sub issue for creating a new PLC function block
-title: "[Name Main issue] Function block"
+title: "[Name Main issue] - Function block"
 labels: ["Task", "PLC"]
 ---
 

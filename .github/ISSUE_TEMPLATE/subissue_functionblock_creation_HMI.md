@@ -1,7 +1,7 @@
 ---
 name: SubIssueFunctionBlockCreationHMI
 about: Sub issue for creating a HMI integration
-title: "[Name of the main issue] HMI"
+title: "[Name of the main issue] - HMI"
 labels: ["Task", "HMI"]
 ---
 
