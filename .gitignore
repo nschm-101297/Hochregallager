@@ -81,3 +81,7 @@ project.nuget.cache
 *.g.i.cs
 *.tmp
 *.wpftmp*
+# =========================
+# Documentation
+# =========================
+*.xlsx
