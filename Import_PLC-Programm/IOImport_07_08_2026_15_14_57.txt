@@ -1,0 +1,42 @@
+BA_Manuel	:	BOOL;	//Operatingmode manual
+BA_Automatik	:	BOOL;	//Operatingmode automatic
+NotAus_Hochregallager	:	BOOL;	//E_Stop
+Start_Automatik_Hochregallager	:	BOOL;	//Automatic Start
+Stop_Automatik_Hochregallager	:	BOOL;	//Automatic Stop
+Grundstellung_Automatik_Hochregallager	:	BOOL;	//Homing
+Reset_Hochregallager	:	BOOL;	//Reset
+Quit_Hochregallager	:	BOOL;	//Quit
+Bauteil_Vorh_Zufuehrb_Ein	:	BOOL;	//Sensor Emitter part present
+Bauteil_Vorh_Zufuehrb_Aus	:	BOOL;	//Sensor conveyor feed in part present
+Bauteil_Vorh_Auslaufb_Aus	:	BOOL;	//Sensor conveyor feed in stacker crane part present
+StackerCraneOneXAxisIsMoving	:	BOOL;	//Stacker crane X axis is moving
+StackerCraneOneZAxisIsMoving	:	BOOL;	//Stacker crane Z axis is moving
+Gabel_InPos_Links	:	BOOL;	//Stacker crane fork in pos left
+Gabel_InPos_Rechts	:	BOOL;	//Stacker crane fork in pos middle
+Gabel_InPos_Mitte	:	BOOL;	//Stacker crane fork in pos right
+SensorConveyorOutfeedStackerCrane	:	BOOL;	//Sensor conveyor feed out stacker crane part present
+SensorConveyorOutfeedEnd	:	BOOL;	//Sensor conveyor feed out part present
+Button_Start_LED	:	BOOL;	//LED start button
+Button_Stop_LED	:	BOOL;	//LED stop button
+Button_Grundstellung_LED	:	BOOL;	//LED homing button
+Button_Reset_LED	:	BOOL;	//LED reset button
+Button_Quit_LED	:	BOOL;	//LED quit button
+Bauteil_Erzeugen	:	BOOL;	//Emitter
+Zufuehrb_Vor	:	BOOL;	//Conveyor feed in forward
+Abholband_Vor	:	BOOL;	//Conveyor feed in stacker crane forward
+RFID_Zufuehr_Aufuehren	:	BOOL;	//RFID feed in stacker crane execute command
+Gabel_zu_Pos_Links	:	BOOL;	//Stacker crane fork left
+Gabel_zu_Pos_Rechts	:	BOOL;	//Stacker crane fork right
+StackerCraneOneLiftFork	:	BOOL;	//Stacker crane lift fork
+ConveyorFeedOutStackerCrane	:	BOOL;	//Conveyor feed out stacker crane forward
+ConveyorFeedOutTwoMeter  	:	BOOL;	//Conveyor feed out forward
+ConveyorCurveFeedOut  	:	BOOL;	//Conveyor curvefeed out forward
+ConveyorFeedOutLong  	:	BOOL;	//Conveyor feed out long forward
+ConveyorFeedOutLongRemover	:	BOOL;	//Conveyor feed out long remover
+RFID_Zufuehr_Auslauf_Rueck_Kommand_ID	:	WORD;	//RFID feed in stacker crane feedback command ID
+RFID_Zufuehr_Auslauf_Status	:	WORD;	//RFID feed in stacker crane status
+RFID_Zufuehr_Auslauf_Dat_Gelesen	:	WORD;	//RFID feed in stacker crane read data
+RFID_Zufuehr_Auslauf_Kommando	:	WORD;	//RFID stacker crane feed in command
+RFID_Zufuehr_Auslauf_Speich_Ind	:	WORD;	//RFID stacker crane feed in memory index
+RFID_Zufuehr_Auslauf_Dat_Schr	:	WORD;	//RFID stacker crane feed in data write
+StackerCraneOneTargetPos  	:	WORD;	//Stacker crane one index position

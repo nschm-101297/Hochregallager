@@ -1,11 +1,11 @@
 {
   "ProjectName": "Hochregallager_FactoryIO-Model",
-  "FactoryIOFilePath": "D:\\Beckhoff\\Projekte\\Hochregallager\\FactoryIO-Model\\Hochregallager_FactoryIO-Model.factoryio",
-  "ExportDirectoryPath": "D:\\Beckhoff\\Projekte\\Hochregallager\\Import_PLC-Programm",
+  "FactoryIOFilePath": "E:\\Beckhoff\\Projekte\\Hochregallager\\FactoryIO-Model\\Hochregallager_FactoryIO-Model.factoryio",
+  "ExportDirectoryPath": "E:\\Beckhoff\\Projekte\\Hochregallager\\Import_PLC-Programm",
   "ExportFormat": "Txt",
   "ModeOfConncetion": "Modbus TCP/IP Client",
   "ChoosenControllertype": "Beckhoff",
-  "LastChangeFactoryIOFile": "2026-08-01T20:13:26.2861769+02:00",
+  "LastChangeFactoryIOFile": "2026-08-07T15:10:10.6940083+02:00",
   "AllSignals": [
     {
       "SignalName": "Manuel",
@@ -137,7 +137,7 @@
       "SignalName": "StackerCrane1PosRight",
       "Key": "86e4b5f6-85d3-4d8d-a016-aa0b40d0c6a8",
       "IOName": "BitInput16",
-      "VariableNameInControlsystem": "Gabel_InPos_Mitte",
+      "VariableNameInControlsystem": "Gabel_InPos_Rechts",
       "CommentInControlsystem": "Stacker crane fork in pos middle",
       "IONumber": 16,
       "Signaltype": 0
@@ -146,7 +146,7 @@
       "SignalName": "StackerCrane1PosMiddle",
       "Key": "6e8132f5-7f00-469c-ab5a-c7706fab139c",
       "IOName": "BitInput17",
-      "VariableNameInControlsystem": "Gabel_InPos_Rechts",
+      "VariableNameInControlsystem": "Gabel_InPos_Mitte",
       "CommentInControlsystem": "Stacker crane fork in pos right",
       "IONumber": 17,
       "Signaltype": 0
@@ -311,6 +311,15 @@
       "VariableNameInControlsystem": "ConveyorFeedOutLong  ",
       "CommentInControlsystem": "Conveyor feed out long forward",
       "IONumber": 22,
+      "Signaltype": 1
+    },
+    {
+      "SignalName": "RemoverFeedOut",
+      "Key": "78571b41-3ba9-4665-9c1d-f583261df1a4",
+      "IOName": "BitOutput23",
+      "VariableNameInControlsystem": "ConveyorFeedOutLongRemover",
+      "CommentInControlsystem": "Conveyor feed out long remover",
+      "IONumber": 23,
       "Signaltype": 1
     },
     {

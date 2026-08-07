@@ -19,8 +19,8 @@ Bauteil_Vorh_Auslaufb_Aus	:=	GVL.mb_Output_Coils[11];
 StackerCraneOneXAxisIsMoving	:=	GVL.mb_Output_Coils[13];
 StackerCraneOneZAxisIsMoving	:=	GVL.mb_Output_Coils[14];
 Gabel_InPos_Links	:=	GVL.mb_Output_Coils[15];
-Gabel_InPos_Mitte	:=	GVL.mb_Output_Coils[16];
-Gabel_InPos_Rechts	:=	GVL.mb_Output_Coils[17];
+Gabel_InPos_Rechts	:=	GVL.mb_Output_Coils[16];
+Gabel_InPos_Mitte	:=	GVL.mb_Output_Coils[17];
 SensorConveyorOutfeedStackerCrane	:=	GVL.mb_Output_Coils[19];
 SensorConveyorOutfeedEnd	:=	GVL.mb_Output_Coils[20];
 

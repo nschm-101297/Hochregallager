@@ -20,6 +20,7 @@ GVL.mb_Input_Coils[19]	:=	ConveyorFeedOutStackerCrane;
 GVL.mb_Input_Coils[20]	:=	ConveyorFeedOutTwoMeter;
 GVL.mb_Input_Coils[21]	:=	ConveyorCurveFeedOut;
 GVL.mb_Input_Coils[22]	:=	ConveyorFeedOutLong;
+GVL.mb_Input_Coils[23]	:=	ConveyorFeedOutLongRemover;
 
 (*=============== Analoge Ausgaenge ===============*)
 GVL.mb_Input_Registers[3]	:=	RFID_Zufuehr_Auslauf_Kommando;

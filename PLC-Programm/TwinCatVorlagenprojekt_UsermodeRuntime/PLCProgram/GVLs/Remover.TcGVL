@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <GVL Name="Remover" Id="{4cbc536a-47e3-4fc1-95fa-ad5e0e7be6b2}">
+    <Declaration><![CDATA[VAR_GLOBAL
+	ConveyorFeedOutLongRemover	:	BOOL;	//Conveyor feed out long remover
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>
