@@ -123,11 +123,6 @@
     </PlaceholderReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="FactoryIOPLCProject.tmc">
-      <SubType>Content</SubType>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="PLCProgram.tmc">
       <SubType>Content</SubType>
     </None>
