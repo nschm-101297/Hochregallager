@@ -10,7 +10,7 @@ END_VAR
     <Implementation>
       <ST><![CDATA[instEmitterZufuehrband(PartPresent:= Bauteil_Vorh_Zufuehrb_Ein, 
 					   ActorInstanceIndex := 0,
-					   ActorInstanceName := 'Feed In',
+					   ActorInstanceName := 'Part Creation',
 					   HMIInterface := hmiMachineSectionInterface,
 					   CreatePart=> Bauteil_Erzeugen);
 					   
