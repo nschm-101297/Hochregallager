@@ -11,22 +11,22 @@
 	
 	hmiMachineSectionInterface	:	MachineSectionHMIInterface;
 	
-	hmiEmitterInstances	:	ARRAY[0..1] OF STRING := [
-														'Zufuehrband',
-														'SubParts'
+	hmiEmitterInstances	:	ARRAY[0..0] OF STRING := [
+														'FeedIn'
 													];
-	hmiConveyorInstances	:	ARRAY[0..1] OF STRING := [
-															'Foerderband 6',
-															'Zufuehrung'
+	hmiConveyorInstances	:	ARRAY[0..5] OF STRING := [
+															'FeedIn',
+															'FeedIn StackerCrane',
+															'FeedOut StackerCrane',
+															'FeedOut Two meter',
+															'FeedOut Curve',
+															'FeedOut long'
 														 ];
-	hmiStackerCraneInstances	:	ARRAY[0..1] OF STRING := [
-															'Einlagerung',
-															'Auslagerung'
+	hmiStackerCraneInstances	:	ARRAY[0..0] OF STRING := [
+															'StackerCrane'
 														 ];		
-	hmiRFIDInstances	:	ARRAY[0..2] OF STRING := [
-															'Einlagerung',
-															'Zufuehrung',
-															'Warehouse-Infeed'
+	hmiRFIDInstances	:	ARRAY[0..0] OF STRING := [
+															'FeedIn StackerCrane'
 														 ];
 END_VAR]]></Declaration>
   </GVL>

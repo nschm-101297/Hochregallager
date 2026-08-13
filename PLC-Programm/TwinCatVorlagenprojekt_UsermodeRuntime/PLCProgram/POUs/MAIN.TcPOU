@@ -9,6 +9,7 @@ END_VAR
     <Implementation>
       <ST><![CDATA[SignalmappingInput();
 Call_Operatingmode();
+Call_HMI();
 Call_Emitter();
 Call_Conveyorbelts();
 Call_Warehouse();
