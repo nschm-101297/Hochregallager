@@ -1,0 +1,105 @@
+<div id="OperatingMode" data-tchmi-type="TcHmi.Controls.System.TcHmiContent" data-tchmi-top="0" data-tchmi-left="0" data-tchmi-width="100" data-tchmi-width-unit="%" data-tchmi-height="100" data-tchmi-height-unit="%" data-tchmi-height-mode="Value" data-tchmi-creator-viewport-width="1024">
+
+  
+  <div id="OperatinModeMainContainer" data-tchmi-type="TcHmi.Controls.System.TcHmiGrid" data-tchmi-height="100" data-tchmi-height-unit="%" data-tchmi-width="100" data-tchmi-width-unit="%">
+
+<script data-tchmi-target-attribute="data-tchmi-row-options" type="application/json">
+[
+  {
+    "height": 15.0,
+    "heightMode": "Value",
+    "heightUnit": "%",
+    "overflow": false
+  },
+  {
+    "height": 1,
+    "heightMode": "Value",
+    "heightUnit": "factor"
+  }
+]
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-column-options" type="application/json">
+[
+  {
+    "overflow": false,
+    "width": 1,
+    "widthMode": "Value",
+    "widthUnit": "factor"
+  }
+]
+</script>
+
+
+<div id="OperatingModeHeader" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="100" data-tchmi-height-unit="%" data-tchmi-text="Operatingmode" data-tchmi-width="100" data-tchmi-width-unit="%" data-tchmi-word-wrap="True" data-tchmi-text-horizontal-alignment="Center" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-font-size="60" data-tchmi-zindex="1">
+</div>
+<div id="TcHmiGrid_3" data-tchmi-type="TcHmi.Controls.System.TcHmiGrid" data-tchmi-grid-column-index="0" data-tchmi-grid-row-index="1" data-tchmi-height="100" data-tchmi-height-unit="%" data-tchmi-width="100" data-tchmi-width-unit="%">
+
+<script data-tchmi-target-attribute="data-tchmi-column-options" type="application/json">
+[
+  {
+    "overflow": false,
+    "width": 2.0,
+    "widthMode": "Value",
+    "widthUnit": "%"
+  },
+  {
+    "width": 1,
+    "widthMode": "Value",
+    "widthUnit": "factor"
+  },
+  {
+    "width": 2.0,
+    "widthMode": "Value",
+    "widthUnit": "%"
+  },
+  {
+    "width": 1,
+    "widthMode": "Value",
+    "widthUnit": "factor"
+  },
+  {
+    "width": 2.0,
+    "widthMode": "Value",
+    "widthUnit": "%"
+  },
+  {
+    "width": 1,
+    "widthMode": "Value",
+    "widthUnit": "factor"
+  },
+  {
+    "width": 2.0,
+    "widthMode": "Value",
+    "widthUnit": "%"
+  }
+]
+</script>
+<div id="OperatinmodeButtons" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-grid-column-index="1" data-tchmi-grid-row-index="0" data-tchmi-height="100" data-tchmi-height-unit="%" data-tchmi-target-user-control="UserControls/FourButtonSection.usercontrol" data-tchmi-width="100" data-tchmi-width-unit="%" data-tchmi-captionfirstbutton="Manuel" data-tchmi-captionsecondbutton="Automatic" data-tchmi-visibilitythirdbutton="Hidden" data-tchmi-visibilityfourthbutton="Hidden" data-tchmi-variablefirstbutton="%s%ADS.PLC1.HMI.hmiOperatingmodeInterface.HMIToPLC.Manuel.IsSelected|BindingMode=TwoWay|SubscriptionMode=Change%/s%" data-tchmi-variablesecondbutton="%s%ADS.PLC1.HMI.hmiOperatingmodeInterface.HMIToPLC.Automatic.IsSelected|BindingMode=TwoWay|SubscriptionMode=Change%/s%" data-tchmi-isenabledfirstbutton="%s%ADS.PLC1.HMI.hmiOperatingmodeInterface.PLCToHMI.Manuel.PreconditionsFullfilled|BindingMode=TwoWay|SubscriptionMode=Change%/s%" data-tchmi-isenabledsecondbutton="%s%ADS.PLC1.HMI.hmiOperatingmodeInterface.PLCToHMI.Automatic.PreconditionsFullfilled|BindingMode=TwoWay|SubscriptionMode=Change%/s%" data-tchmi-isactivefirstbutton="%s%ADS.PLC1.HMI.hmiOperatingmodeInterface.PLCToHMI.Manuel.IsActive|BindingMode=TwoWay|SubscriptionMode=Change%/s%" data-tchmi-isactivesecondbutton="%s%ADS.PLC1.HMI.hmiOperatingmodeInterface.PLCToHMI.Automatic.IsActive|BindingMode=TwoWay|SubscriptionMode=Change%/s%">
+</div>
+<div id="OperatingmodeActions" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-grid-column-index="3" data-tchmi-grid-row-index="0" data-tchmi-height="100" data-tchmi-height-unit="%" data-tchmi-target-user-control="UserControls/FourButtonSection.usercontrol" data-tchmi-width="100" data-tchmi-width-unit="%" data-tchmi-visibilitythirdbutton="Visible" data-tchmi-visibilityfourthbutton="Hidden" data-tchmi-captionfirstbutton="Start" data-tchmi-captionsecondbutton="Stop" data-tchmi-captionthirdbutton="Homing" data-tchmi-variablefirstbutton="%s%ADS.PLC1.HMI.hmiOperatingmodeInterface.HMIToPLC.AutomaticStart.IsSelected%/s%" data-tchmi-variablesecondbutton="%s%ADS.PLC1.HMI.hmiOperatingmodeInterface.HMIToPLC.AutomaticStop.IsSelected%/s%" data-tchmi-variablethirdbutton="%s%ADS.PLC1.HMI.hmiOperatingmodeInterface.HMIToPLC.AutomaticHome.IsSelected%/s%" data-tchmi-isenabledfirstbutton="%s%ADS.PLC1.HMI.hmiOperatingmodeInterface.PLCToHMI.AutomaticStart.PreconditionsFullfilled%/s%" data-tchmi-isenabledsecondbutton="%s%ADS.PLC1.HMI.hmiOperatingmodeInterface.PLCToHMI.Automaticstop.PreconditionsFullfilled%/s%" data-tchmi-isenabledthirdbutton="%s%ADS.PLC1.HMI.hmiOperatingmodeInterface.PLCToHMI.AutomaticHome.PreconditionsFullfilled%/s%" data-tchmi-isactivefirstbutton="%s%ADS.PLC1.HMI.hmiOperatingmodeInterface.PLCToHMI.AutomaticStart.IsActive%/s%" data-tchmi-isactivesecondbutton="%s%ADS.PLC1.HMI.hmiOperatingmodeInterface.PLCToHMI.Automaticstop.IsActive%/s%" data-tchmi-isactivethirdbutton="%s%ADS.PLC1.HMI.hmiOperatingmodeInterface.PLCToHMI.AutomaticHome.IsActive%/s%">
+</div>
+<div id="ErrorHandlingButtons" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-grid-column-index="5" data-tchmi-grid-row-index="0" data-tchmi-height="100" data-tchmi-height-unit="%" data-tchmi-target-user-control="UserControls/FourButtonSection.usercontrol" data-tchmi-width="100" data-tchmi-width-unit="%" data-tchmi-captionfirstbutton="Quit" data-tchmi-captionsecondbutton="Reset" data-tchmi-visibilitythirdbutton="Hidden" data-tchmi-visibilityfourthbutton="Hidden" data-tchmi-variablefirstbutton="%s%ADS.PLC1.HMI.hmiOperatingmodeInterface.HMIToPLC.Quit.IsSelected%/s%" data-tchmi-variablesecondbutton="%s%ADS.PLC1.HMI.hmiOperatingmodeInterface.HMIToPLC.Reset.IsSelected%/s%" data-tchmi-isenabledfirstbutton="True" data-tchmi-isenabledsecondbutton="True" data-tchmi-isactivefirstbutton="%s%ADS.PLC1.HMI.hmiOperatingmodeInterface.PLCToHMI.Quit.IsActive%/s%" data-tchmi-isactivesecondbutton="%s%ADS.PLC1.HMI.hmiOperatingmodeInterface.PLCToHMI.Reset.IsActive%/s%">
+</div>
+</div>
+</div>
+
+<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">[
+  {
+    "event": "%ctx%owner::Id|EventRegistrationMode=Resolve%/ctx%.onDestroyed",
+    "actions": [
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%i%cpLastPageSaved%/i%",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:framework#/definitions/ContentPath",
+          "value": "Contents/OperatingMode.content"
+        },
+        "asyncWait": true
+      }
+    ]
+  }
+]</script>
+</div>

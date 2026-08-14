@@ -1,0 +1,1223 @@
+<div id="SettingLine" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControl" data-tchmi-width="500" data-tchmi-height="200" data-tchmi-width-unit="px" data-tchmi-height-unit="px" data-tchmi-creator-viewport-width="500" data-tchmi-creator-viewport-height="500">
+
+<div id="SettingLineMainContainer" data-tchmi-type="TcHmi.Controls.System.TcHmiGrid" data-tchmi-height="100" data-tchmi-height-unit="%" data-tchmi-width="100" data-tchmi-width-unit="%">
+
+<script data-tchmi-target-attribute="data-tchmi-column-options" type="application/json">
+[
+  {
+    "width": 1,
+    "widthMode": "Value",
+    "widthUnit": "factor"
+  }
+]
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-cell-options" type="application/json">
+[
+  {
+    "borderColor": {
+      "color": "rgba(0, 0, 0, 1)"
+    },
+    "borderStyle": {
+      "left": "Solid",
+      "right": "Solid",
+      "top": "Solid",
+      "bottom": "Solid"
+    },
+    "borderWidth": {
+      "left": 2,
+      "right": 2,
+      "top": 2,
+      "bottom": 2,
+      "leftUnit": "px",
+      "rightUnit": "px",
+      "topUnit": "px",
+      "bottomUnit": "px"
+    },
+    "columnIndex": 0,
+    "padding": {
+      "left": 5,
+      "right": 5,
+      "top": 5,
+      "bottom": 5,
+      "leftUnit": "px",
+      "rightUnit": "px",
+      "topUnit": "px",
+      "bottomUnit": "px"
+    },
+    "rowIndex": 0
+  },
+  {
+    "borderColor": {
+      "color": "rgba(0, 0, 0, 1)"
+    },
+    "borderStyle": {
+      "left": "Solid",
+      "right": "Solid",
+      "top": "None",
+      "bottom": "Solid"
+    },
+    "borderWidth": {
+      "left": 2,
+      "right": 2,
+      "top": 0,
+      "bottom": 2,
+      "leftUnit": "px",
+      "rightUnit": "px",
+      "topUnit": "px",
+      "bottomUnit": "px"
+    },
+    "columnIndex": 0,
+    "padding": {
+      "left": 5,
+      "right": 5,
+      "top": 5,
+      "bottom": 5,
+      "leftUnit": "px",
+      "rightUnit": "px",
+      "topUnit": "px",
+      "bottomUnit": "px"
+    },
+    "rowIndex": 1
+  }
+]
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-row-options" type="application/json">
+[
+  {
+    "height": 30.0,
+    "heightMode": "Value",
+    "heightUnit": "%",
+    "overflow": false
+  },
+  {
+    "height": 1,
+    "heightMode": "Value",
+    "heightUnit": "factor"
+  }
+]
+</script>
+<div id="txtSettingLineCaption" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="100" data-tchmi-height-unit="%" data-tchmi-text="%pp%Interface::CaptionSettingLine%/pp%" data-tchmi-width="100" data-tchmi-width-unit="%" data-tchmi-word-wrap="True" data-tchmi-text-horizontal-alignment="Center" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-font-size="20">
+
+<script data-tchmi-target-attribute="data-tchmi-border-width" type="application/json">
+{
+  "left": 2,
+  "right": 2,
+  "top": 2,
+  "bottom": 2,
+  "leftUnit": "px",
+  "rightUnit": "px",
+  "topUnit": "px",
+  "bottomUnit": "px"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-border-style" type="application/json">
+{
+  "left": "Solid",
+  "right": "Solid",
+  "top": "Solid",
+  "bottom": "Solid"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-border-radius" type="application/json">
+{
+  "topLeft": 10.0,
+  "topRight": 10.0,
+  "bottomLeft": 10.0,
+  "bottomRight": 10.0,
+  "topLeftUnit": "px",
+  "topRightUnit": "px",
+  "bottomLeftUnit": "px",
+  "bottomRightUnit": "px"
+}
+</script>
+</div>
+
+<script data-tchmi-target-attribute="data-tchmi-border-radius" type="application/json">
+{
+  "topLeft": 0.0,
+  "topRight": 0.0,
+  "bottomLeft": 0.0,
+  "bottomRight": 0.0,
+  "topLeftUnit": "px",
+  "topRightUnit": "px",
+  "bottomLeftUnit": "px",
+  "bottomRightUnit": "px"
+}
+</script>
+<div id="SettingLineButtonConatiner" data-tchmi-type="TcHmi.Controls.System.TcHmiGrid" data-tchmi-grid-column-index="0" data-tchmi-grid-row-index="1" data-tchmi-height="100" data-tchmi-height-unit="%" data-tchmi-width="100" data-tchmi-width-unit="%">
+
+<script data-tchmi-target-attribute="data-tchmi-column-options" type="application/json">
+[
+  {
+    "overflow": false,
+    "width": 1,
+    "widthMode": "Value",
+    "widthUnit": "factor"
+  },
+  {
+    "overflow": false,
+    "width": 10.0,
+    "widthMode": "Value",
+    "widthUnit": "%"
+  },
+  {
+    "overflow": false,
+    "width": 1,
+    "widthMode": "Value",
+    "widthUnit": "factor"
+  },
+  {
+    "overflow": false,
+    "width": 10.0,
+    "widthMode": "Value",
+    "widthUnit": "%"
+  },
+  {
+    "overflow": false,
+    "width": 1,
+    "widthMode": "Value",
+    "widthUnit": "factor"
+  },
+  {
+    "overflow": false,
+    "width": 10.0,
+    "widthMode": "Value",
+    "widthUnit": "%"
+  }
+]
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-row-options" type="application/json">
+[
+  {
+    "height": 1,
+    "heightMode": "Value",
+    "heightUnit": "factor",
+    "overflow": false
+  },
+  {
+    "height": 30.0,
+    "heightMode": "Content",
+    "heightUnit": "%"
+  }
+]
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-cell-options" type="application/json">
+[
+  {
+    "borderColor": {
+      "color": "rgba(0, 0, 0, 1)"
+    },
+    "borderStyle": {
+      "left": "Solid",
+      "right": "Solid",
+      "top": "Solid",
+      "bottom": "Solid"
+    },
+    "borderWidth": {
+      "left": 1,
+      "right": 1,
+      "top": 1,
+      "bottom": 1,
+      "leftUnit": "px",
+      "rightUnit": "px",
+      "topUnit": "px",
+      "bottomUnit": "px"
+    },
+    "columnIndex": 0,
+    "padding": {
+      "left": 1,
+      "right": 1,
+      "top": 1,
+      "bottom": 1,
+      "leftUnit": "px",
+      "rightUnit": "px",
+      "topUnit": "px",
+      "bottomUnit": "px"
+    },
+    "rowIndex": 0
+  },
+  {
+    "borderColor": {
+      "color": "rgba(0, 0, 0, 1)"
+    },
+    "borderStyle": {
+      "left": "None",
+      "right": "None",
+      "top": "Solid",
+      "bottom": "Solid"
+    },
+    "borderWidth": {
+      "left": 0,
+      "right": 0,
+      "top": 1,
+      "bottom": 1,
+      "leftUnit": "px",
+      "rightUnit": "px",
+      "topUnit": "px",
+      "bottomUnit": "px"
+    },
+    "columnIndex": 1,
+    "padding": {
+      "left": 5,
+      "right": 5,
+      "top": 3,
+      "bottom": 3,
+      "leftUnit": "px",
+      "rightUnit": "px",
+      "topUnit": "px",
+      "bottomUnit": "px"
+    },
+    "rowIndex": 0
+  },
+  {
+    "borderColor": {
+      "color": "rgba(0, 0, 0, 1)"
+    },
+    "borderStyle": {
+      "left": "Solid",
+      "right": "Solid",
+      "top": "Solid",
+      "bottom": "Solid"
+    },
+    "borderWidth": {
+      "left": 1,
+      "right": 1,
+      "top": 1,
+      "bottom": 1,
+      "leftUnit": "px",
+      "rightUnit": "px",
+      "topUnit": "px",
+      "bottomUnit": "px"
+    },
+    "columnIndex": 2,
+    "padding": {
+      "left": 1,
+      "right": 1,
+      "top": 1,
+      "bottom": 1,
+      "leftUnit": "px",
+      "rightUnit": "px",
+      "topUnit": "px",
+      "bottomUnit": "px"
+    },
+    "rowIndex": 0
+  },
+  {
+    "borderColor": {
+      "color": "rgba(0, 0, 0, 1)"
+    },
+    "borderStyle": {
+      "left": "None",
+      "right": "None",
+      "top": "Solid",
+      "bottom": "Solid"
+    },
+    "borderWidth": {
+      "left": 0,
+      "right": 0,
+      "top": 1,
+      "bottom": 1,
+      "leftUnit": "px",
+      "rightUnit": "px",
+      "topUnit": "px",
+      "bottomUnit": "px"
+    },
+    "columnIndex": 3,
+    "padding": {
+      "left": 5,
+      "right": 5,
+      "top": 3,
+      "bottom": 3,
+      "leftUnit": "px",
+      "rightUnit": "px",
+      "topUnit": "px",
+      "bottomUnit": "px"
+    },
+    "rowIndex": 0
+  },
+  {
+    "borderColor": {
+      "color": "rgba(0, 0, 0, 1)"
+    },
+    "borderStyle": {
+      "left": "Solid",
+      "right": "Solid",
+      "top": "Solid",
+      "bottom": "Solid"
+    },
+    "borderWidth": {
+      "left": 1,
+      "right": 1,
+      "top": 1,
+      "bottom": 1,
+      "leftUnit": "px",
+      "rightUnit": "px",
+      "topUnit": "px",
+      "bottomUnit": "px"
+    },
+    "columnIndex": 4,
+    "padding": {
+      "left": 1,
+      "right": 1,
+      "top": 1,
+      "bottom": 1,
+      "leftUnit": "px",
+      "rightUnit": "px",
+      "topUnit": "px",
+      "bottomUnit": "px"
+    },
+    "rowIndex": 0
+  },
+  {
+    "borderColor": {
+      "color": "rgba(0, 0, 0, 1)"
+    },
+    "borderStyle": {
+      "left": "None",
+      "right": "Solid",
+      "top": "Solid",
+      "bottom": "Solid"
+    },
+    "borderWidth": {
+      "left": 0,
+      "right": 1,
+      "top": 1,
+      "bottom": 1,
+      "leftUnit": "px",
+      "rightUnit": "px",
+      "topUnit": "px",
+      "bottomUnit": "px"
+    },
+    "columnIndex": 5,
+    "padding": {
+      "left": 5,
+      "right": 5,
+      "top": 3,
+      "bottom": 3,
+      "leftUnit": "px",
+      "rightUnit": "px",
+      "topUnit": "px",
+      "bottomUnit": "px"
+    },
+    "rowIndex": 0
+  },
+  {
+    "borderColor": {
+      "color": "rgba(0, 0, 0, 1)"
+    },
+    "borderStyle": {
+      "left": "Solid",
+      "right": "Solid",
+      "top": "None",
+      "bottom": "Solid"
+    },
+    "borderWidth": {
+      "left": 1,
+      "right": 1,
+      "top": 0,
+      "bottom": 1,
+      "leftUnit": "px",
+      "rightUnit": "px",
+      "topUnit": "px",
+      "bottomUnit": "px"
+    },
+    "columnIndex": 0,
+    "padding": {
+      "left": 2,
+      "right": 2,
+      "top": 2,
+      "bottom": 2,
+      "leftUnit": "px",
+      "rightUnit": "px",
+      "topUnit": "px",
+      "bottomUnit": "px"
+    },
+    "rowIndex": 1
+  },
+  {
+    "borderColor": {
+      "color": "rgba(0, 0, 0, 1)"
+    },
+    "borderStyle": {
+      "left": "Solid",
+      "right": "Solid",
+      "top": "None",
+      "bottom": "Solid"
+    },
+    "borderWidth": {
+      "left": 1,
+      "right": 1,
+      "top": 0,
+      "bottom": 1,
+      "leftUnit": "px",
+      "rightUnit": "px",
+      "topUnit": "px",
+      "bottomUnit": "px"
+    },
+    "columnIndex": 2,
+    "padding": {
+      "left": 2,
+      "right": 2,
+      "top": 2,
+      "bottom": 2,
+      "leftUnit": "px",
+      "rightUnit": "px",
+      "topUnit": "px",
+      "bottomUnit": "px"
+    },
+    "rowIndex": 1
+  },
+  {
+    "borderColor": {
+      "color": "rgba(0, 0, 0, 1)"
+    },
+    "borderStyle": {
+      "left": "Solid",
+      "right": "Solid",
+      "top": "None",
+      "bottom": "Solid"
+    },
+    "borderWidth": {
+      "left": 1,
+      "right": 1,
+      "top": 0,
+      "bottom": 1,
+      "leftUnit": "px",
+      "rightUnit": "px",
+      "topUnit": "px",
+      "bottomUnit": "px"
+    },
+    "columnIndex": 4,
+    "padding": {
+      "left": 2,
+      "right": 2,
+      "top": 2,
+      "bottom": 2,
+      "leftUnit": "px",
+      "rightUnit": "px",
+      "topUnit": "px",
+      "bottomUnit": "px"
+    },
+    "rowIndex": 1
+  }
+]
+</script>
+<div id="btnSettingLineOne" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiButton" data-tchmi-height="100" data-tchmi-height-unit="%" data-tchmi-text="%pp%Interface::SettingLineButtons[0]::CaptionButton%/pp%" data-tchmi-width="100" data-tchmi-width-unit="%" data-tchmi-word-wrap="True" data-tchmi-text-horizontal-alignment="Center" data-tchmi-text-vertical-alignment="Bottom" data-tchmi-text-font-size="20" data-tchmi-background-image-width="30" data-tchmi-background-image-height="30" data-tchmi-background-image-vertical-alignment="Top" data-tchmi-background-image="%pp%Interface::SettingLineButtons[0]::PathImageButton%/pp%" data-tchmi-is-enabled="%pp%Interface::SettingLineButtons[0]::IsEnabled%/pp%">
+
+<script data-tchmi-target-attribute="data-tchmi-border-radius" type="application/json">
+{
+  "topLeft": 10.0,
+  "topRight": 10.0,
+  "bottomLeft": 10.0,
+  "bottomRight": 10.0,
+  "topLeftUnit": "px",
+  "topRightUnit": "px",
+  "bottomLeftUnit": "px",
+  "bottomRightUnit": "px"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">[
+  {
+    "event": "%pp%Interface%/pp%",
+    "actions": [
+      {
+        "objectType": "Condition",
+        "active": true,
+        "parts": [
+          {
+            "if": [
+              {
+                "compare1": {
+                  "objectType": "Symbol",
+                  "valueType": "tchmi:general#/definitions/BOOL",
+                  "symbolExpression": "%pp%Interface::SettingLineButtons[0]::IsVisibleButton%/pp%"
+                },
+                "compare2": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:general#/definitions/BOOL",
+                  "value": false
+                },
+                "compareOperator": "==",
+                "logic": null
+              }
+            ],
+            "then": [
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%ctrl%btnSettingLineOne::Visibility%/ctrl%",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:framework#/definitions/Visibility",
+                  "value": "Hidden"
+                },
+                "asyncWait": true
+              }
+            ]
+          },
+          {
+            "else": [
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%ctrl%btnSettingLineOne::Visibility%/ctrl%",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:framework#/definitions/Visibility",
+                  "value": "Visible"
+                },
+                "asyncWait": true
+              }
+            ]
+          }
+        ],
+        "asyncWait": true
+      }
+    ]
+  },
+  {
+    "event": "%ctx%owner::Id|EventRegistrationMode=Resolve%/ctx%.onMouseDown",
+    "actions": [
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%pp%Interface::SettingLineButtons[0]::IsPressed%/pp%",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:general#/definitions/BOOL",
+          "value": true
+        },
+        "asyncWait": true
+      }
+    ]
+  },
+  {
+    "event": "%ctx%owner::Id|EventRegistrationMode=Resolve%/ctx%.onMouseUp",
+    "actions": [
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%pp%Interface::SettingLineButtons[0]::IsPressed%/pp%",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:general#/definitions/BOOL",
+          "value": false
+        },
+        "asyncWait": true
+      }
+    ]
+  }
+]</script>
+</div>
+<div id="btnSettingLineTwo" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiButton" data-tchmi-grid-column-index="2" data-tchmi-grid-row-index="0" data-tchmi-height="100" data-tchmi-height-unit="%" data-tchmi-text="%pp%Interface::SettingLineButtons[1]::CaptionButton%/pp%" data-tchmi-width="100" data-tchmi-width-unit="%" data-tchmi-word-wrap="True" data-tchmi-background-image-vertical-alignment="Top" data-tchmi-background-image-width="30" data-tchmi-background-image-height="30" data-tchmi-text-horizontal-alignment="Center" data-tchmi-text-vertical-alignment="Bottom" data-tchmi-text-font-size="20" data-tchmi-is-enabled="%pp%Interface::SettingLineButtons[1]::IsEnabled%/pp%" data-tchmi-background-image="%pp%Interface::SettingLineButtons[1]::PathImageButton%/pp%">
+
+<script data-tchmi-target-attribute="data-tchmi-border-radius" type="application/json">
+{
+  "topLeft": 10.0,
+  "topRight": 10.0,
+  "bottomLeft": 10.0,
+  "bottomRight": 10.0,
+  "topLeftUnit": "px",
+  "topRightUnit": "px",
+  "bottomLeftUnit": "px",
+  "bottomRightUnit": "px"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">[
+  {
+    "event": "%pp%Interface%/pp%",
+    "actions": [
+      {
+        "objectType": "Condition",
+        "active": true,
+        "parts": [
+          {
+            "if": [
+              {
+                "compare1": {
+                  "objectType": "Symbol",
+                  "valueType": "tchmi:general#/definitions/BOOL",
+                  "symbolExpression": "%pp%Interface::SettingLineButtons[1]::IsVisibleButton%/pp%"
+                },
+                "compare2": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:general#/definitions/BOOL",
+                  "value": false
+                },
+                "compareOperator": "==",
+                "logic": null
+              }
+            ],
+            "then": [
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%ctrl%btnSettingLineTwo::Visibility%/ctrl%",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:framework#/definitions/Visibility",
+                  "value": "Hidden"
+                },
+                "asyncWait": true
+              }
+            ]
+          },
+          {
+            "else": [
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%ctrl%btnSettingLineTwo::Visibility%/ctrl%",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:framework#/definitions/Visibility",
+                  "value": "Visible"
+                },
+                "asyncWait": true
+              }
+            ]
+          }
+        ],
+        "asyncWait": true
+      }
+    ]
+  },
+  {
+    "event": "%ctx%owner::Id|EventRegistrationMode=Resolve%/ctx%.onMouseDown",
+    "actions": [
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%pp%Interface::SettingLineButtons[1]::IsPressed%/pp%",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:general#/definitions/BOOL",
+          "value": true
+        },
+        "asyncWait": true
+      }
+    ]
+  },
+  {
+    "event": "%ctx%owner::Id|EventRegistrationMode=Resolve%/ctx%.onMouseUp",
+    "actions": [
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%pp%Interface::SettingLineButtons[1]::IsPressed%/pp%",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:general#/definitions/BOOL",
+          "value": false
+        },
+        "asyncWait": true
+      }
+    ]
+  }
+]</script>
+</div>
+<div id="btnSettingLineButtonThree" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiButton" data-tchmi-grid-column-index="4" data-tchmi-grid-row-index="0" data-tchmi-height="100" data-tchmi-height-unit="%" data-tchmi-text="%pp%Interface::SettingLineButtons[2]::CaptionButton%/pp%" data-tchmi-width="100" data-tchmi-width-unit="%" data-tchmi-word-wrap="True" data-tchmi-background-image-vertical-alignment="Top" data-tchmi-background-image-width="30" data-tchmi-background-image-height="30" data-tchmi-text-horizontal-alignment="Center" data-tchmi-text-vertical-alignment="Bottom" data-tchmi-text-font-size="20" data-tchmi-is-enabled="%pp%Interface::SettingLineButtons[2]::IsEnabled%/pp%" data-tchmi-background-image="%pp%Interface::SettingLineButtons[2]::PathImageButton%/pp%">
+
+<script data-tchmi-target-attribute="data-tchmi-border-radius" type="application/json">
+{
+  "topLeft": 10.0,
+  "topRight": 10.0,
+  "bottomLeft": 10.0,
+  "bottomRight": 10.0,
+  "topLeftUnit": "px",
+  "topRightUnit": "px",
+  "bottomLeftUnit": "px",
+  "bottomRightUnit": "px"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">[
+  {
+    "event": "%pp%Interface%/pp%",
+    "actions": [
+      {
+        "objectType": "Condition",
+        "active": true,
+        "parts": [
+          {
+            "if": [
+              {
+                "compare1": {
+                  "objectType": "Symbol",
+                  "valueType": "tchmi:general#/definitions/BOOL",
+                  "symbolExpression": "%pp%Interface::SettingLineButtons[2]::IsVisibleButton%/pp%"
+                },
+                "compare2": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:general#/definitions/BOOL",
+                  "value": false
+                },
+                "compareOperator": "==",
+                "logic": null
+              }
+            ],
+            "then": [
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%ctrl%btnSettingLineButtonThree::Visibility%/ctrl%",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:framework#/definitions/Visibility",
+                  "value": "Hidden"
+                },
+                "asyncWait": true
+              }
+            ]
+          },
+          {
+            "else": [
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%ctrl%btnSettingLineButtonThree::Visibility%/ctrl%",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:framework#/definitions/Visibility",
+                  "value": "Visible"
+                },
+                "asyncWait": true
+              }
+            ]
+          }
+        ],
+        "asyncWait": true
+      }
+    ]
+  },
+  {
+    "event": "%ctx%owner::Id|EventRegistrationMode=Resolve%/ctx%.onMouseDown",
+    "actions": [
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%pp%Interface::SettingLineButtons[2]::IsPressed%/pp%",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:general#/definitions/BOOL",
+          "value": true
+        },
+        "asyncWait": true
+      }
+    ]
+  },
+  {
+    "event": "%ctx%owner::Id|EventRegistrationMode=Resolve%/ctx%.onMouseUp",
+    "actions": [
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%pp%Interface::SettingLineButtons[2]::IsPressed%/pp%",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:general#/definitions/BOOL",
+          "value": false
+        },
+        "asyncWait": true
+      }
+    ]
+  }
+]</script>
+</div>
+<div id="txtSettingLineAxisPosOne" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-grid-column-index="0" data-tchmi-grid-row-index="1" data-tchmi-height="100" data-tchmi-height-unit="%" data-tchmi-text="%pp%Interface::SettingLineButtons[0]::AxisPosition%/pp%" data-tchmi-width="100" data-tchmi-width-unit="%" data-tchmi-word-wrap="True" data-tchmi-text-horizontal-alignment="Center" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-font-size="20" data-tchmi-min-height="30">
+
+<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">[
+  {
+    "event": "%pp%Interface%/pp%",
+    "actions": [
+      {
+        "objectType": "Condition",
+        "active": true,
+        "parts": [
+          {
+            "if": [
+              {
+                "compare1": {
+                  "objectType": "Symbol",
+                  "valueType": "tchmi:general#/definitions/BOOL",
+                  "symbolExpression": "%pp%Interface::SettingLineButtons[0]::IsVisibleAxisPosition%/pp%"
+                },
+                "compare2": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:general#/definitions/BOOL",
+                  "value": false
+                },
+                "compareOperator": "==",
+                "logic": null
+              }
+            ],
+            "then": [
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%ctrl%txtSettingLineAxisPosOne::Visibility%/ctrl%",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:framework#/definitions/Visibility",
+                  "value": "Collapsed"
+                },
+                "asyncWait": true
+              }
+            ]
+          },
+          {
+            "else": [
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%ctrl%txtSettingLineAxisPosOne::Visibility%/ctrl%",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:framework#/definitions/Visibility",
+                  "value": "Visible"
+                },
+                "asyncWait": true
+              }
+            ]
+          }
+        ],
+        "asyncWait": true
+      }
+    ]
+  }
+]</script>
+</div>
+<div id="txtSettingLineAxisPosTwo" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-grid-column-index="2" data-tchmi-grid-row-index="1" data-tchmi-height="100" data-tchmi-height-unit="%" data-tchmi-text="%pp%Interface::SettingLineButtons[1]::AxisPosition%/pp%" data-tchmi-width="100" data-tchmi-width-unit="%" data-tchmi-word-wrap="True" data-tchmi-text-horizontal-alignment="Center" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-font-size="20" data-tchmi-min-height="30">
+
+<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">[
+  {
+    "event": "%pp%Interface%/pp%",
+    "actions": [
+      {
+        "objectType": "Condition",
+        "active": true,
+        "parts": [
+          {
+            "if": [
+              {
+                "compare1": {
+                  "objectType": "Symbol",
+                  "valueType": "tchmi:general#/definitions/BOOL",
+                  "symbolExpression": "%pp%Interface::SettingLineButtons[1]::IsVisibleAxisPosition%/pp%"
+                },
+                "compare2": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:general#/definitions/BOOL",
+                  "value": false
+                },
+                "compareOperator": "==",
+                "logic": null
+              }
+            ],
+            "then": [
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%ctrl%txtSettingLineAxisPosTwo::Visibility%/ctrl%",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:framework#/definitions/Visibility",
+                  "value": "Collapsed"
+                },
+                "asyncWait": true
+              }
+            ]
+          },
+          {
+            "else": [
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%ctrl%txtSettingLineAxisPosTwo::Visibility%/ctrl%",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:framework#/definitions/Visibility",
+                  "value": "Visible"
+                },
+                "asyncWait": true
+              }
+            ]
+          }
+        ],
+        "asyncWait": true
+      }
+    ]
+  }
+]</script>
+</div>
+<div id="txtSettingLineAxisPosThree" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-grid-column-index="4" data-tchmi-grid-row-index="1" data-tchmi-height="100" data-tchmi-height-unit="%" data-tchmi-text="%pp%Interface::SettingLineButtons[2]::AxisPosition%/pp%" data-tchmi-width="100" data-tchmi-width-unit="%" data-tchmi-word-wrap="True" data-tchmi-text-horizontal-alignment="Center" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-font-size="20" data-tchmi-min-height="30">
+
+
+
+<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">[
+  {
+    "event": "%pp%Interface%/pp%",
+    "actions": [
+      {
+        "objectType": "Condition",
+        "active": true,
+        "parts": [
+          {
+            "if": [
+              {
+                "compare1": {
+                  "objectType": "Symbol",
+                  "valueType": "tchmi:general#/definitions/BOOL",
+                  "symbolExpression": "%pp%Interface::SettingLineButtons[2]::IsVisibleAxisPosition%/pp%"
+                },
+                "compare2": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:general#/definitions/BOOL",
+                  "value": false
+                },
+                "compareOperator": "==",
+                "logic": null
+              }
+            ],
+            "then": [
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%ctrl%txtSettingLineAxisPosThree::Visibility%/ctrl%",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:framework#/definitions/Visibility",
+                  "value": "Collapsed"
+                },
+                "asyncWait": true
+              }
+            ]
+          },
+          {
+            "else": [
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%ctrl%txtSettingLineAxisPosThree::Visibility%/ctrl%",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:framework#/definitions/Visibility",
+                  "value": "Visible"
+                },
+                "asyncWait": true
+              }
+            ]
+          }
+        ],
+        "asyncWait": true
+      }
+    ]
+  }
+]</script>
+</div>
+<div id="rcSettingLineInPosOne" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiRectangle" data-tchmi-grid-column-index="1" data-tchmi-grid-row-index="0" data-tchmi-height="100" data-tchmi-height-unit="%" data-tchmi-width="100" data-tchmi-width-unit="%">
+
+<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">[
+  {
+    "event": "%pp%Interface%/pp%",
+    "actions": [
+      {
+        "objectType": "Condition",
+        "active": true,
+        "parts": [
+          {
+            "if": [
+              {
+                "compare1": {
+                  "objectType": "Symbol",
+                  "valueType": "tchmi:general#/definitions/BOOL",
+                  "symbolExpression": "%pp%Interface::SettingLineButtons[0]::InPosition%/pp%"
+                },
+                "compare2": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:general#/definitions/BOOL",
+                  "value": false
+                },
+                "compareOperator": "==",
+                "logic": null
+              }
+            ],
+            "then": [
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%ctrl%rcSettingLineInPosOne::BackgroundColor%/ctrl%",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:framework#/definitions/Color",
+                  "value": null
+                },
+                "asyncWait": true
+              }
+            ]
+          },
+          {
+            "else": [
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%ctrl%rcSettingLineInPosOne::BackgroundColor%/ctrl%",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:framework#/definitions/Color",
+                  "value": {
+                    "color": "rgba(19, 244, 10, 1)"
+                  }
+                },
+                "asyncWait": true
+              }
+            ]
+          }
+        ],
+        "asyncWait": true
+      }
+    ]
+  }
+]</script>
+</div>
+<div id="rcSettingLineInPosTwo" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiRectangle" data-tchmi-grid-column-index="3" data-tchmi-grid-row-index="0" data-tchmi-height="100" data-tchmi-height-unit="%" data-tchmi-width="100" data-tchmi-width-unit="%">
+
+<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">[
+  {
+    "event": "%pp%Interface%/pp%",
+    "actions": [
+      {
+        "objectType": "Condition",
+        "active": true,
+        "parts": [
+          {
+            "if": [
+              {
+                "compare1": {
+                  "objectType": "Symbol",
+                  "valueType": "tchmi:general#/definitions/BOOL",
+                  "symbolExpression": "%pp%Interface::SettingLineButtons[1]::InPosition%/pp%"
+                },
+                "compare2": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:general#/definitions/BOOL",
+                  "value": false
+                },
+                "compareOperator": "==",
+                "logic": null
+              }
+            ],
+            "then": [
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%ctrl%rcSettingLineInPosTwo::BackgroundColor%/ctrl%",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:framework#/definitions/Color",
+                  "value": null
+                },
+                "asyncWait": true
+              }
+            ]
+          },
+          {
+            "else": [
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%ctrl%rcSettingLineInPosTwo::BackgroundColor%/ctrl%",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:framework#/definitions/Color",
+                  "value": {
+                    "color": "rgba(19, 244, 10, 1)"
+                  }
+                },
+                "asyncWait": true
+              }
+            ]
+          }
+        ],
+        "asyncWait": true
+      }
+    ]
+  }
+]</script>
+</div>
+<div id="rcSettingLineInPosThree" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiRectangle" data-tchmi-grid-column-index="5" data-tchmi-grid-row-index="0" data-tchmi-height="100" data-tchmi-height-unit="%" data-tchmi-width="100" data-tchmi-width-unit="%">
+
+<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">[
+  {
+    "event": "%pp%Interface%/pp%",
+    "actions": [
+      {
+        "objectType": "Condition",
+        "active": true,
+        "parts": [
+          {
+            "if": [
+              {
+                "compare1": {
+                  "objectType": "Symbol",
+                  "valueType": "tchmi:general#/definitions/BOOL",
+                  "symbolExpression": "%pp%Interface::SettingLineButtons[2]::InPosition%/pp%"
+                },
+                "compare2": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:general#/definitions/BOOL",
+                  "value": false
+                },
+                "compareOperator": "==",
+                "logic": null
+              }
+            ],
+            "then": [
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%ctrl%rcSettingLineInPosThree::BackgroundColor%/ctrl%",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:framework#/definitions/Color",
+                  "value": null
+                },
+                "asyncWait": true
+              }
+            ]
+          },
+          {
+            "else": [
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%ctrl%rcSettingLineInPosThree::BackgroundColor%/ctrl%",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:framework#/definitions/Color",
+                  "value": {
+                    "color": "rgba(19, 244, 10, 1)"
+                  }
+                },
+                "asyncWait": true
+              }
+            ]
+          }
+        ],
+        "asyncWait": true
+      }
+    ]
+  }
+]</script>
+</div>
+</div>
+</div>
+</div>

@@ -1,0 +1,141 @@
+<div id="OverviewSection" data-tchmi-type="TcHmi.Controls.System.TcHmiContent" data-tchmi-top="0" data-tchmi-left="0" data-tchmi-width="100" data-tchmi-width-unit="%" data-tchmi-height="100" data-tchmi-height-unit="%" data-tchmi-creator-viewport-width="1024">
+
+  
+  <div id="OverviewSectionContainer" data-tchmi-type="TcHmi.Controls.System.TcHmiGrid" data-tchmi-height="100" data-tchmi-height-unit="%" data-tchmi-width="100" data-tchmi-width-unit="%">
+
+
+
+<script data-tchmi-target-attribute="data-tchmi-row-options" type="application/json">
+[
+  {
+    "height": 15.0,
+    "heightMode": "Value",
+    "heightUnit": "%",
+    "overflow": false
+  },
+  {
+    "height": 1,
+    "heightMode": "Value",
+    "heightUnit": "factor"
+  }
+]
+</script>
+<div id="TcHmiTextblock_2" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="100" data-tchmi-height-unit="%" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-text="Overview" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-width="100" data-tchmi-width-unit="%" data-tchmi-word-wrap="True" data-tchmi-text-horizontal-alignment="Center" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-font-size="60">
+</div>
+
+<script data-tchmi-target-attribute="data-tchmi-column-options" type="application/json">
+[
+  {
+    "width": 1,
+    "widthUnit": "factor",
+    "widthMode": "Value",
+    "overflow": false
+  }
+]
+</script>
+<div id="SectionContainer" data-tchmi-type="TcHmi.Controls.System.TcHmiGrid" data-tchmi-grid-column-index="0" data-tchmi-grid-row-index="1" data-tchmi-height="100" data-tchmi-height-unit="%" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-width="100" data-tchmi-width-unit="%">
+
+<script data-tchmi-target-attribute="data-tchmi-column-options" type="application/json">
+[
+  {
+    "overflow": false,
+    "width": 2.0,
+    "widthMode": "Value",
+    "widthUnit": "%"
+  },
+  {
+    "width": 1,
+    "widthMode": "Value",
+    "widthUnit": "factor"
+  },
+  {
+    "width": 2.0,
+    "widthMode": "Value",
+    "widthUnit": "%"
+  },
+  {
+    "width": 1,
+    "widthMode": "Value",
+    "widthUnit": "factor"
+  },
+  {
+    "width": 2.0,
+    "widthMode": "Value",
+    "widthUnit": "%"
+  },
+  {
+    "width": 1,
+    "widthMode": "Value",
+    "widthUnit": "factor"
+  },
+  {
+    "width": 2.0,
+    "widthMode": "Value",
+    "widthUnit": "%"
+  },
+  {
+    "width": 1,
+    "widthMode": "Value",
+    "widthUnit": "factor"
+  },
+  {
+    "width": 2.0,
+    "widthMode": "Value",
+    "widthUnit": "%"
+  }
+]
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-row-options" type="application/json">
+[
+  {
+    "height": 1,
+    "heightMode": "Value",
+    "heightUnit": "factor",
+    "overflow": false
+  },
+  {
+    "height": 1,
+    "heightMode": "Value",
+    "heightUnit": "factor"
+  }
+]
+</script>
+<div id="CraneStacker" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-grid-column-index="1" data-tchmi-grid-row-index="0" data-tchmi-height="100" data-tchmi-height-unit="%" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControls/Button_Mainscreen.usercontrol" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-width="100" data-tchmi-width-unit="%" data-tchmi-title="Crane Stacker" data-tchmi-pathimage="Images/StackerCrane.svg" data-tchmi-usedasoverview="True" data-tchmi-machinesectiontitle="StackerCrane" data-tchmi-machinesection="%i%sActorGroupName%/i%" data-tchmi-activatescreen="Contents/MachineSection.content" data-tchmi-regioncontent="%ctrl%DesktopRegion::TargetContent%/ctrl%">
+</div>
+<div id="Conveyor" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-grid-column-index="3" data-tchmi-grid-row-index="0" data-tchmi-height="100" data-tchmi-height-unit="%" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControls/Button_Mainscreen.usercontrol" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-width="100" data-tchmi-width-unit="%" data-tchmi-title="Conveyors" data-tchmi-pathimage="Images/ConveyorBelt.svg" data-tchmi-regioncontent="%ctrl%DesktopRegion::TargetContent%/ctrl%" data-tchmi-activatescreen="Contents/MachineSection.content" data-tchmi-machinesection="%i%sActorGroupName%/i%" data-tchmi-usedasoverview="True" data-tchmi-machinesectiontitle="Conveyor">
+</div>
+<div id="RFID" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-grid-column-index="5" data-tchmi-grid-row-index="0" data-tchmi-height="100" data-tchmi-height-unit="%" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControls/Button_Mainscreen.usercontrol" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-width="100" data-tchmi-width-unit="%" data-tchmi-title="RFID Reader" data-tchmi-pathimage="Images/RFID.svg" data-tchmi-usedasoverview="True" data-tchmi-machinesectiontitle="RFID" data-tchmi-regioncontent="%ctrl%DesktopRegion::TargetContent%/ctrl%" data-tchmi-activatescreen="Contents/MachineSection.content" data-tchmi-machinesection="%i%sActorGroupName%/i%">
+</div>
+<div id="Elevator" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-grid-column-index="7" data-tchmi-grid-row-index="0" data-tchmi-height="100" data-tchmi-height-unit="%" data-tchmi-target-user-control="UserControls/Button_Mainscreen.usercontrol" data-tchmi-width="100" data-tchmi-width-unit="%" data-tchmi-pathimage="Images/Elevator.svg" data-tchmi-title="Elevator" data-tchmi-activatescreen="Contents/MachineSection.content" data-tchmi-regioncontent="%ctrl%DesktopRegion::TargetContent%/ctrl%" data-tchmi-usedasoverview="True" data-tchmi-machinesectiontitle="Elevator" data-tchmi-machinesection="%i%sActorGroupName%/i%">
+</div>
+<div id="Emitter" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-grid-column-index="1" data-tchmi-grid-row-index="1" data-tchmi-height="100" data-tchmi-height-unit="%" data-tchmi-target-user-control="UserControls/Button_Mainscreen.usercontrol" data-tchmi-width="100" data-tchmi-width-unit="%" data-tchmi-pathimage="Images/Emitter.svg" data-tchmi-title="Emitters" data-tchmi-activatescreen="Contents/MachineSection.content" data-tchmi-regioncontent="%ctrl%DesktopRegion::TargetContent%/ctrl%" data-tchmi-usedasoverview="True" data-tchmi-machinesectiontitle="Emitter" data-tchmi-machinesection="%i%sActorGroupName%/i%">
+</div>
+<div id="PositingBar" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-grid-column-index="3" data-tchmi-grid-row-index="1" data-tchmi-height="100" data-tchmi-height-unit="%" data-tchmi-target-user-control="UserControls/Button_Mainscreen.usercontrol" data-tchmi-width="100" data-tchmi-width-unit="%" data-tchmi-pathimage="Images/PositingBar.svg" data-tchmi-title="PositingBar" data-tchmi-activatescreen="Contents/MachineSection.content" data-tchmi-regioncontent="%ctrl%DesktopRegion::TargetContent%/ctrl%" data-tchmi-usedasoverview="True" data-tchmi-machinesectiontitle="PositingBar" data-tchmi-machinesection="%i%sActorGroupName%/i%">
+</div>
+<div id="PickPlace" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-grid-column-index="5" data-tchmi-grid-row-index="1" data-tchmi-height="100" data-tchmi-height-unit="%" data-tchmi-target-user-control="UserControls/Button_Mainscreen.usercontrol" data-tchmi-width="100" data-tchmi-width-unit="%" data-tchmi-pathimage="Images/PickPlaceDevice.svg" data-tchmi-title="PickPlace" data-tchmi-activatescreen="Contents/MachineSection.content" data-tchmi-regioncontent="%ctrl%DesktopRegion::TargetContent%/ctrl%" data-tchmi-usedasoverview="True" data-tchmi-machinesectiontitle="PickPlace" data-tchmi-machinesection="%i%sActorGroupName%/i%">
+</div>
+<div id="Remover" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-grid-column-index="7" data-tchmi-grid-row-index="1" data-tchmi-height="100" data-tchmi-height-unit="%" data-tchmi-target-user-control="UserControls/Button_Mainscreen.usercontrol" data-tchmi-width="100" data-tchmi-width-unit="%" data-tchmi-usedasoverview="True" data-tchmi-title="Remover" data-tchmi-pathimage="Images/RemovePartRemover.svg" data-tchmi-activatescreen="Contents/MachineSection.content" data-tchmi-regioncontent="%ctrl%DesktopRegion::TargetContent%/ctrl%" data-tchmi-machinesection="%i%sActorGroupName%/i%" data-tchmi-machinesectiontitle="Remover">
+</div>
+</div>
+</div>
+
+<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">[
+  {
+    "event": "%ctx%owner::Id|EventRegistrationMode=Resolve%/ctx%.onDestroyed",
+    "actions": [
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%i%cpLastPageSaved%/i%",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:framework#/definitions/ContentPath",
+          "value": "Contents/OverviewSection.content"
+        },
+        "asyncWait": true
+      }
+    ]
+  }
+]</script>
+</div>

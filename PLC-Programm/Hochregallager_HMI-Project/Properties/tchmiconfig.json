@@ -57,9 +57,85 @@
       "type": "Stylesheet"
     }
   ],
-  "userControls": [],
+  "userControls": [
+    {
+      "url": "UserControls/Button_Mainscreen.usercontrol"
+    },
+    {
+      "url": "UserControls/Footer.usercontrol"
+    },
+    {
+      "url": "UserControls/Fork.usercontrol"
+    },
+    {
+      "url": "UserControls/FourButtonSection.usercontrol"
+    },
+    {
+      "url": "UserControls/Header.usercontrol"
+    },
+    {
+      "url": "UserControls/Movement.usercontrol"
+    },
+    {
+      "url": "UserControls/NumericalInputLine.usercontrol"
+    },
+    {
+      "url": "UserControls/RFID.usercontrol"
+    },
+    {
+      "url": "UserControls/RFIDBasicControl.usercontrol"
+    },
+    {
+      "url": "UserControls/RFIDPopUpContent.usercontrol"
+    },
+    {
+      "url": "UserControls/Runcontrol.usercontrol"
+    },
+    {
+      "url": "UserControls/SettingLine.usercontrol"
+    },
+    {
+      "url": "UserControls/Workpiece.usercontrol"
+    }
+  ],
   "controls": [],
-  "content": [],
+  "content": [
+    {
+      "url": "Contents/ADSSettings.content",
+      "preload": false,
+      "keepAlive": false,
+      "loadSync": false,
+      "preloadBindings": false
+    },
+    {
+      "url": "Contents/MachineSection.content",
+      "preload": false,
+      "keepAlive": false,
+      "loadSync": false,
+      "preloadBindings": false
+    },
+    {
+      "url": "Contents/MainSelectionDesktop.content",
+      "preload": false,
+      "keepAlive": false,
+      "loadSync": false,
+      "preloadBindings": false
+    },
+    {
+      "url": "Contents/OperatingMode.content",
+      "preload": false,
+      "keepAlive": false,
+      "loadSync": false,
+      "preloadBindings": false
+    },
+    {
+      "url": "Contents/OverviewSection.content",
+      "preload": false,
+      "keepAlive": false,
+      "loadSync": false,
+      "preloadBindings": false
+    }
+  ],
   "views": [
     {
       "url": "Desktop.view",
@@ -70,7 +146,98 @@
   ],
   "userFunctions": [],
   "symbols": {
-    "internal": {},
+    "internal": {
+      "bConnectionStatusPLCHMI": {
+        "value": false,
+        "type": "tchmi:general#/definitions/BOOL",
+        "persist": false,
+        "readonly": false
+      },
+      "bForkTabInvisible": {
+        "value": false,
+        "type": "tchmi:general#/definitions/BOOL",
+        "persist": false,
+        "readonly": false
+      },
+      "bMovementTabInvisible": {
+        "value": false,
+        "type": "tchmi:general#/definitions/BOOL",
+        "persist": false,
+        "readonly": false
+      },
+      "bRFIDTabInvisible": {
+        "value": false,
+        "type": "tchmi:general#/definitions/BOOL",
+        "persist": false,
+        "readonly": false
+      },
+      "bRuncontrolTabInvisble": {
+        "value": false,
+        "type": "tchmi:general#/definitions/BOOL",
+        "persist": false,
+        "readonly": false
+      },
+      "bWorkpieceTabInvisible": {
+        "value": false,
+        "type": "tchmi:general#/definitions/BOOL",
+        "persist": false,
+        "readonly": false
+      },
+      "cpLastPageSaved": {
+        "value": "Contents/MainSelectionDesktop.content",
+        "type": "tchmi:framework#/definitions/ContentPath",
+        "persist": false,
+        "readonly": false
+      },
+      "pActorgroupImage": {
+        "value": "Images/ConveyorBelt.svg",
+        "type": "tchmi:framework#/definitions/Path",
+        "persist": false,
+        "readonly": false
+      },
+      "sActorGroupName": {
+        "value": "",
+        "type": "tchmi:general#/definitions/String",
+        "persist": false,
+        "readonly": false
+      },
+      "sRFIDAction": {
+        "value": "",
+        "type": "tchmi:general#/definitions/String",
+        "persist": false,
+        "readonly": false
+      },
+      "tstOptionOne": {
+        "value": "Normal",
+        "type": "tchmi:framework#/definitions/ToggleState",
+        "persist": false,
+        "readonly": false
+      },
+      "tstOptionTwo": {
+        "value": "Normal",
+        "type": "tchmi:framework#/definitions/ToggleState",
+        "persist": false,
+        "readonly": false
+      },
+      "tstOptionThree": {
+        "value": "Normal",
+        "type": "tchmi:framework#/definitions/ToggleState",
+        "persist": false,
+        "readonly": false
+      },
+      "wSelectedIndex": {
+        "value": 0,
+        "type": "tchmi:general#/definitions/WORD",
+        "persist": false,
+        "readonly": false
+      },
+      "wSelectedValue": {
+        "value": 0,
+        "type": "tchmi:general#/definitions/WORD",
+        "persist": false,
+        "readonly": false
+      }
+    },
     "themedResources": {},
     "timer": {},
     "package": {}

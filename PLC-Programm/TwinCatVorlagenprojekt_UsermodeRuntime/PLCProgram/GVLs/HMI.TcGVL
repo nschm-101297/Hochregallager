@@ -28,6 +28,9 @@
 	hmiRFIDInstances	:	ARRAY[0..0] OF STRING := [
 															'FeedIn StackerCrane'
 														 ];
+	hmiRemoverInstances	:	ARRAY[0..0] OF STRING := [
+														'FeedOut'
+													];
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>
