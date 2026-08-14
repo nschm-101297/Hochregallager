@@ -5,7 +5,7 @@
   "ExportFormat": "Txt",
   "ModeOfConncetion": "Modbus TCP/IP Client",
   "ChoosenControllertype": "Beckhoff",
-  "LastChangeFactoryIOFile": "2026-08-07T15:10:10.6940083+02:00",
+  "LastChangeFactoryIOFile": "1601-01-01T01:00:00+01:00",
   "AllSignals": [
     {
       "SignalName": "Manuel",
@@ -83,7 +83,7 @@
       "SignalName": "SensorFeedInEmitter",
       "Key": "3145c671-5158-4e75-8335-475102ed49b3",
       "IOName": "BitInput9",
-      "VariableNameInControlsystem": "Bauteil_Vorh_Zufuehrb_Ein",
+      "VariableNameInControlsystem": "PartPresentConveyorInfeedBegin",
       "CommentInControlsystem": "Sensor Emitter part present",
       "IONumber": 9,
       "Signaltype": 0

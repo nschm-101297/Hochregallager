@@ -8,16 +8,16 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[instEmitterZufuehrband(PartPresent:= Bauteil_Vorh_Zufuehrb_Ein, 
-					   ActorInstanceIndex := 0,
-					   ActorInstanceName := 'Part Creation',
-					   HMIInterface := hmiMachineSectionInterface,
-					   CreatePart=> Bauteil_Erzeugen);
+      <ST><![CDATA[instEmitterConveyorFeedIn(PartPresent:= PartPresentConveyorInfeedBegin, 
+					   	  ActorInstanceIndex := 0,
+					   	  ActorInstanceName := 'Part Creation',
+					   	  HMIInterface := hmiMachineSectionInterface,
+					   	  CreatePart=> Bauteil_Erzeugen);
 					   
-IF NOT Bauteil_Vorh_Zufuehrb_Ein AND 
+IF NOT PartPresentConveyorInfeedBegin AND 
 	currentStateOperatingMode.AutomaticStart.IsActive
 THEN
-	instEmitterZufuehrband.Create();
+	instEmitterConveyorFeedIn.Create();
 END_IF]]></ST>
     </Implementation>
   </POU>

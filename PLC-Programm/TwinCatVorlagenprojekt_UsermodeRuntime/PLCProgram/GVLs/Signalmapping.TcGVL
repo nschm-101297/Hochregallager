@@ -10,7 +10,7 @@
 	Grundstellung_Automatik_Hochregallager	:	BOOL;	//Homing
 	Reset_Hochregallager	:	BOOL;	//Reset
 	Quit_Hochregallager	:	BOOL;	//Quit
-	Bauteil_Vorh_Zufuehrb_Ein	:	BOOL;	//Sensor Emitter part present
+	PartPresentConveyorInfeedBegin	:	BOOL;	//Sensor Emitter part present
 	Bauteil_Vorh_Zufuehrb_Aus	:	BOOL;	//Sensor conveyor feed in part present
 	Bauteil_Vorh_Auslaufb_Aus	:	BOOL;	//Sensor conveyor feed in stacker crane part present
 	StackerCraneOneXAxisIsMoving	:	BOOL;	//Stacker crane X axis is moving

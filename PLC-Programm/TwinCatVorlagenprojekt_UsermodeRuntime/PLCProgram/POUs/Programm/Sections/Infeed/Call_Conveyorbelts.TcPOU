@@ -5,7 +5,7 @@
     <Implementation>
       <ST><![CDATA[(*================ Zufuehrband ================*)
 instZufuehrbConveyorbelt(
-	SensorInfeed:= Bauteil_Vorh_Zufuehrb_Ein, 
+	SensorInfeed:= PartPresentConveyorInfeedBegin, 
 	SensorOutfeed:= Bauteil_Vorh_Zufuehrb_Aus, 
 	MaximumTimeRuncontrol:= T#30S, 
 	ActorInstanceIndex := 0,
@@ -15,7 +15,7 @@ instZufuehrbConveyorbelt(
 	RuncontrolForwardActive=> zufuehrbRunControlForwardActiv, 
 	OperatingMode:= instOperatingMode.StateOperatingMode);
 	
-instZufuehrbConveyorbelt.MotorForward_On((Bauteil_Vorh_Zufuehrb_Ein OR zufuehrbRunControlForwardActiv) 
+instZufuehrbConveyorbelt.MotorForward_On((PartPresentConveyorInfeedBegin OR zufuehrbRunControlForwardActiv) 
 											AND NOT Bauteil_Vorh_Auslaufb_Aus AND Gabel_InPos_Mitte);
 instZufuehrbConveyorbelt.Motor_Off(Bauteil_Vorh_Zufuehrb_Aus AND Bauteil_Vorh_Auslaufb_Aus);
 
