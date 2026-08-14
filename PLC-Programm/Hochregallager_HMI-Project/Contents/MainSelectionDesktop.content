@@ -1,0 +1,119 @@
+<div id="MainSelectionDesktop" data-tchmi-type="TcHmi.Controls.System.TcHmiContent" data-tchmi-top="0" data-tchmi-left="0" data-tchmi-width="100" data-tchmi-height="100" data-tchmi-width-unit="%" data-tchmi-height-unit="%">
+
+<div id="MainSelectionDesktopContainer" data-tchmi-type="TcHmi.Controls.System.TcHmiGrid" data-tchmi-height="100" data-tchmi-height-unit="%" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-width="100" data-tchmi-width-unit="%">
+
+<script data-tchmi-target-attribute="data-tchmi-column-options" type="application/json">
+[
+  {
+    "overflow": false,
+    "width": 2.0,
+    "widthMode": "Value",
+    "widthUnit": "%"
+  },
+  {
+    "width": 1.0,
+    "widthMode": "Value",
+    "widthUnit": "factor"
+  },
+  {
+    "width": 2.0,
+    "widthMode": "Value",
+    "widthUnit": "%"
+  },
+  {
+    "width": 1,
+    "widthMode": "Value",
+    "widthUnit": "factor"
+  },
+  {
+    "width": 2.0,
+    "widthMode": "Value",
+    "widthUnit": "%"
+  },
+  {
+    "width": 1.0,
+    "widthMode": "Value",
+    "widthUnit": "factor"
+  },
+  {
+    "width": 2.0,
+    "widthMode": "Value",
+    "widthUnit": "%"
+  }
+]
+</script>
+<div id="SectionButton" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="100" data-tchmi-height-unit="%" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControls/Button_Mainscreen.usercontrol" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-width="100" data-tchmi-width-unit="%" data-tchmi-pathimage="Images/MainScreen.svg" data-tchmi-title="Section" data-tchmi-grid-column-index="1" data-tchmi-grid-row-index="1" data-tchmi-activatescreen="Contents/OverviewSection.content" data-tchmi-regioncontent="%ctrl%DesktopRegion::TargetContent%/ctrl%">
+</div>
+<div id="ErrorWarningButton" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-grid-column-index="3" data-tchmi-grid-row-index="1" data-tchmi-height="100" data-tchmi-height-unit="%" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControls/Button_Mainscreen.usercontrol" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-width="100" data-tchmi-width-unit="%" data-tchmi-pathimage="Images/OverviewOperatingMode.svg" data-tchmi-title="Operatingmode" data-tchmi-activatescreen="Contents/OperatingMode.content" data-tchmi-regioncontent="%ctrl%DesktopRegion::TargetContent%/ctrl%">
+</div>
+<div id="SettingButton" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-grid-column-index="5" data-tchmi-grid-row-index="1" data-tchmi-height="100" data-tchmi-height-unit="%" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControls/Button_Mainscreen.usercontrol" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-width="100" data-tchmi-width-unit="%" data-tchmi-pathimage="Images/Settings.svg" data-tchmi-title="Settings" data-tchmi-activatescreen="Contents/ADSSettings.content" data-tchmi-regioncontent="%ctrl%DesktopRegion::TargetContent%/ctrl%">
+</div>
+
+<script data-tchmi-target-attribute="data-tchmi-row-options" type="application/json">
+[
+  {
+    "height": 5.0,
+    "heightMode": "Value",
+    "heightUnit": "%"
+  },
+  {
+    "height": 1,
+    "heightMode": "Value",
+    "heightUnit": "factor",
+    "overflow": false
+  },
+  {
+    "height": 5.0,
+    "heightMode": "Value",
+    "heightUnit": "%"
+  }
+]
+</script>
+</div>
+
+<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">[
+  {
+    "event": "%ctx%owner::Id|EventRegistrationMode=Resolve%/ctx%.onInitialized",
+    "actions": [
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%ctrl%DesktopFooter::Visibility%/ctrl%",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:framework#/definitions/Visibility",
+          "value": "Collapsed"
+        },
+        "asyncWait": true
+      }
+    ]
+  },
+  {
+    "event": "%ctx%owner::Id|EventRegistrationMode=Resolve%/ctx%.onDestroyed",
+    "actions": [
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%ctrl%DesktopFooter::Visibility%/ctrl%",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:framework#/definitions/Visibility",
+          "value": "Visible"
+        },
+        "asyncWait": true
+      },
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%i%cpLastPageSaved%/i%",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:framework#/definitions/ContentPath",
+          "value": "Contents/MainSelectionDesktop.content"
+        },
+        "asyncWait": true
+      }
+    ]
+  }
+]</script>
+</div>

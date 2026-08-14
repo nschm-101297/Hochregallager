@@ -1,4 +1,69 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "definitions": {}
+  "definitions": {
+    "Fork": {
+      "frameworkControlNamespace": "TcHmi.Controls.Beckhoff",
+      "frameworkControlType": "TcHmi.Controls.System.TcHmiUserControl",
+      "frameworkInstanceOf": "TcHmi.Controls.System.TcHmiControl",
+      "frameworkUserControlConfig": "UserControls\\Fork.usercontrol.json",
+      "type": "object",
+      "id": "tchmi:project#/definitions/Fork"
+    },
+    "Movement": {
+      "frameworkControlNamespace": "TcHmi.Controls.Beckhoff",
+      "frameworkControlType": "TcHmi.Controls.System.TcHmiUserControl",
+      "frameworkInstanceOf": "TcHmi.Controls.System.TcHmiControl",
+      "frameworkUserControlConfig": "UserControls\\Movement.usercontrol.json",
+      "type": "object",
+      "id": "tchmi:project#/definitions/Movement"
+    },
+    "NumericalInputLine": {
+      "frameworkControlNamespace": "TcHmi.Controls.Beckhoff",
+      "frameworkControlType": "TcHmi.Controls.System.TcHmiUserControl",
+      "frameworkInstanceOf": "TcHmi.Controls.System.TcHmiControl",
+      "frameworkUserControlConfig": "UserControls\\NumericalInputLine.usercontrol.json",
+      "type": "object",
+      "id": "tchmi:project#/definitions/NumericalInputLine"
+    },
+    "RFIDBasicControl": {
+      "frameworkControlNamespace": "TcHmi.Controls.Beckhoff",
+      "frameworkControlType": "TcHmi.Controls.System.TcHmiUserControl",
+      "frameworkInstanceOf": "TcHmi.Controls.System.TcHmiControl",
+      "frameworkUserControlConfig": "UserControls\\RFIDBasicControl.usercontrol.json",
+      "type": "object",
+      "id": "tchmi:project#/definitions/RFIDBasicControl"
+    },
+    "RFIDPopUpContent": {
+      "frameworkControlNamespace": "TcHmi.Controls.Beckhoff",
+      "frameworkControlType": "TcHmi.Controls.System.TcHmiUserControl",
+      "frameworkInstanceOf": "TcHmi.Controls.System.TcHmiControl",
+      "frameworkUserControlConfig": "UserControls\\RFIDPopUpContent.usercontrol.json",
+      "type": "object",
+      "id": "tchmi:project#/definitions/RFIDPopUpContent"
+    },
+    "Runcontrol": {
+      "frameworkControlNamespace": "TcHmi.Controls.Beckhoff",
+      "frameworkControlType": "TcHmi.Controls.System.TcHmiUserControl",
+      "frameworkInstanceOf": "TcHmi.Controls.System.TcHmiControl",
+      "frameworkUserControlConfig": "UserControls\\Runcontrol.usercontrol.json",
+      "type": "object",
+      "id": "tchmi:project#/definitions/Runcontrol"
+    },
+    "SettingLine": {
+      "frameworkControlNamespace": "TcHmi.Controls.Beckhoff",
+      "frameworkControlType": "TcHmi.Controls.System.TcHmiUserControl",
+      "frameworkInstanceOf": "TcHmi.Controls.System.TcHmiControl",
+      "frameworkUserControlConfig": "UserControls\\SettingLine.usercontrol.json",
+      "type": "object",
+      "id": "tchmi:project#/definitions/SettingLine"
+    },
+    "Workpiece": {
+      "frameworkControlNamespace": "TcHmi.Controls.Beckhoff",
+      "frameworkControlType": "TcHmi.Controls.System.TcHmiUserControl",
+      "frameworkInstanceOf": "TcHmi.Controls.System.TcHmiControl",
+      "frameworkUserControlConfig": "UserControls\\Workpiece.usercontrol.json",
+      "type": "object",
+      "id": "tchmi:project#/definitions/Workpiece"
+    }
+  }
 }

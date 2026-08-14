@@ -1,0 +1,24 @@
+{
+  "parameters": [
+    {
+      "allowSymbolExpressionsInObject": false,
+      "requiredOnCompile": false,
+      "bindable": true,
+      "propertySetterName": "setHMIMovementInterface",
+      "propertyGetterName": "getHMIMovementInterface",
+      "refTo": "",
+      "name": "data-tchmi-hmimovementinterface",
+      "displayName": "HMIMovementInterface",
+      "visible": true,
+      "type": "tchmi:server#/definitions/ADS-PLC1.FactoryIO.HMIMovementInterface",
+      "category": "",
+      "description": "",
+      "readOnly": false,
+      "heritable": true,
+      "propertyName": "HMIMovementInterface"
+    }
+  ],
+  "virtualRights": [],
+  "$schema": "./../../Packages/Beckhoff.TwinCAT.HMI.Framework.14.3.393/runtimes/native1.12-tchmi/Schema/UserControlConfig.Schema.json",
+  "description": ""
+}

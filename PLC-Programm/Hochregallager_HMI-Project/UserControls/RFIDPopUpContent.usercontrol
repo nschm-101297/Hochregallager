@@ -1,0 +1,2470 @@
+<div id="RFIDPopUpContent" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControl" data-tchmi-top="0" data-tchmi-left="0" data-tchmi-width="100" data-tchmi-height="100" data-tchmi-width-unit="%" data-tchmi-height-unit="%" data-tchmi-creator-viewport-width="1024" data-tchmi-creator-viewport-height="600" data-tchmi-min-height-unit="%" data-tchmi-min-height="100" data-tchmi-height-mode="Content">
+
+<div id="RFIDPopUpContentMainContainer" data-tchmi-type="TcHmi.Controls.System.TcHmiGrid" data-tchmi-height="100" data-tchmi-height-unit="%" data-tchmi-width="100" data-tchmi-width-unit="%" data-tchmi-width-mode="Value" data-tchmi-height-mode="Value">
+
+<script data-tchmi-target-attribute="data-tchmi-row-options" type="application/json">
+[
+  {
+    "height": 220.0,
+    "heightMode": "Value",
+    "heightUnit": "px",
+    "overflow": false
+  },
+  {
+    "height": 100.0,
+    "heightMode": "Value",
+    "heightUnit": "px",
+    "overflow": false
+  },
+  {
+    "height": 1,
+    "heightMode": "Value",
+    "heightUnit": "factor"
+  },
+  {
+    "height": 75.0,
+    "heightMode": "Value",
+    "heightUnit": "px"
+  }
+]
+</script>
+<div id="RFIDPopUpContentControlContainer" data-tchmi-type="TcHmi.Controls.System.TcHmiGrid" data-tchmi-height="100" data-tchmi-height-unit="%" data-tchmi-width="100" data-tchmi-width-unit="%">
+
+<script data-tchmi-target-attribute="data-tchmi-column-options" type="application/json">
+[
+  {
+    "overflow": false,
+    "width": 500.0,
+    "widthMode": "Value",
+    "widthUnit": "px"
+  },
+  {
+    "width": 50.0,
+    "widthMode": "Value",
+    "widthUnit": "px"
+  },
+  {
+    "width": 300.0,
+    "widthMode": "Value",
+    "widthUnit": "px"
+  },
+  {
+    "width": 1,
+    "widthMode": "Value",
+    "widthUnit": "factor"
+  }
+]
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-row-options" type="application/json">
+[
+  {
+    "height": 1,
+    "heightMode": "Value",
+    "heightUnit": "factor",
+    "overflow": false
+  },
+  {
+    "height": 1,
+    "heightMode": "Value",
+    "heightUnit": "factor"
+  },
+  {
+    "height": 1,
+    "heightMode": "Value",
+    "heightUnit": "factor"
+  }
+]
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-cell-options" type="application/json">
+[
+  {
+    "columnIndex": 0,
+    "padding": {
+      "left": 5,
+      "right": 5,
+      "top": 5,
+      "bottom": 5,
+      "leftUnit": "px",
+      "rightUnit": "px",
+      "topUnit": "px",
+      "bottomUnit": "px"
+    },
+    "rowIndex": 0
+  },
+  {
+    "columnIndex": 0,
+    "padding": {
+      "left": 5,
+      "right": 5,
+      "top": 5,
+      "bottom": 5,
+      "leftUnit": "px",
+      "rightUnit": "px",
+      "topUnit": "px",
+      "bottomUnit": "px"
+    },
+    "rowIndex": 1
+  },
+  {
+    "borderColor": {
+      "color": "rgba(0, 0, 0, 1)"
+    },
+    "borderStyle": {
+      "left": "None",
+      "right": "None",
+      "top": "None",
+      "bottom": "Solid"
+    },
+    "borderWidth": {
+      "left": 0,
+      "right": 0,
+      "top": 0,
+      "bottom": 2,
+      "leftUnit": "px",
+      "rightUnit": "px",
+      "topUnit": "px",
+      "bottomUnit": "px"
+    },
+    "columnIndex": 0,
+    "padding": {
+      "left": 5,
+      "right": 5,
+      "top": 5,
+      "bottom": 5,
+      "leftUnit": "px",
+      "rightUnit": "px",
+      "topUnit": "px",
+      "bottomUnit": "px"
+    },
+    "rowIndex": 2
+  },
+  {
+    "columnIndex": 1,
+    "padding": {
+      "left": 10,
+      "right": 10,
+      "top": 25,
+      "bottom": 25,
+      "leftUnit": "px",
+      "rightUnit": "px",
+      "topUnit": "px",
+      "bottomUnit": "px"
+    },
+    "rowIndex": 0
+  },
+  {
+    "columnIndex": 1,
+    "padding": {
+      "left": 10,
+      "right": 10,
+      "top": 25,
+      "bottom": 25,
+      "leftUnit": "px",
+      "rightUnit": "px",
+      "topUnit": "px",
+      "bottomUnit": "px"
+    },
+    "rowIndex": 1
+  },
+  {
+    "borderColor": {
+      "color": "rgba(0, 0, 0, 1)"
+    },
+    "borderStyle": {
+      "left": "None",
+      "right": "None",
+      "top": "None",
+      "bottom": "Solid"
+    },
+    "borderWidth": {
+      "left": 0,
+      "right": 0,
+      "top": 0,
+      "bottom": 2,
+      "leftUnit": "px",
+      "rightUnit": "px",
+      "topUnit": "px",
+      "bottomUnit": "px"
+    },
+    "columnIndex": 1,
+    "padding": {
+      "left": 10,
+      "right": 10,
+      "top": 25,
+      "bottom": 25,
+      "leftUnit": "px",
+      "rightUnit": "px",
+      "topUnit": "px",
+      "bottomUnit": "px"
+    },
+    "rowIndex": 2
+  },
+  {
+    "columnIndex": 2,
+    "padding": {
+      "left": 5,
+      "right": 5,
+      "top": 5,
+      "bottom": 5,
+      "leftUnit": "px",
+      "rightUnit": "px",
+      "topUnit": "px",
+      "bottomUnit": "px"
+    },
+    "rowIndex": 0
+  },
+  {
+    "columnIndex": 2,
+    "padding": {
+      "left": 5,
+      "right": 5,
+      "top": 5,
+      "bottom": 5,
+      "leftUnit": "px",
+      "rightUnit": "px",
+      "topUnit": "px",
+      "bottomUnit": "px"
+    },
+    "rowIndex": 1
+  },
+  {
+    "borderColor": {
+      "color": "rgba(0, 0, 0, 1)"
+    },
+    "borderStyle": {
+      "left": "None",
+      "right": "None",
+      "top": "None",
+      "bottom": "Solid"
+    },
+    "borderWidth": {
+      "left": 0,
+      "right": 0,
+      "top": 0,
+      "bottom": 2,
+      "leftUnit": "px",
+      "rightUnit": "px",
+      "topUnit": "px",
+      "bottomUnit": "px"
+    },
+    "columnIndex": 2,
+    "padding": {
+      "left": 5,
+      "right": 5,
+      "top": 5,
+      "bottom": 5,
+      "leftUnit": "px",
+      "rightUnit": "px",
+      "topUnit": "px",
+      "bottomUnit": "px"
+    },
+    "rowIndex": 2
+  },
+  {
+    "borderColor": {
+      "color": "rgba(0, 0, 0, 1)"
+    },
+    "borderStyle": {
+      "left": "None",
+      "right": "None",
+      "top": "None",
+      "bottom": "Solid"
+    },
+    "borderWidth": {
+      "left": 0,
+      "right": 0,
+      "top": 0,
+      "bottom": 2,
+      "leftUnit": "px",
+      "rightUnit": "px",
+      "topUnit": "px",
+      "bottomUnit": "px"
+    },
+    "columnIndex": 3,
+    "padding": {
+      "left": 5,
+      "right": 5,
+      "top": 5,
+      "bottom": 5,
+      "leftUnit": "px",
+      "rightUnit": "px",
+      "topUnit": "px",
+      "bottomUnit": "px"
+    },
+    "rowIndex": 2
+  }
+]
+</script>
+<div id="ReadSerialNumOption" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiRadioButton" data-tchmi-height="100" data-tchmi-height-unit="%" data-tchmi-text="Read Serialnumber" data-tchmi-width="100" data-tchmi-width-unit="%" data-tchmi-text-font-size="30" data-tchmi-radio-group="1" data-tchmi-radio-state="%i%tstOptionOne%/i%">
+
+<script data-tchmi-target-attribute="data-tchmi-border-color" type="application/json">
+{
+  "color": "rgba(0, 0, 0, 1)"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-border-width" type="application/json">
+{
+  "left": 2,
+  "right": 2,
+  "top": 2,
+  "bottom": 2,
+  "leftUnit": "px",
+  "rightUnit": "px",
+  "topUnit": "px",
+  "bottomUnit": "px"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-border-style" type="application/json">
+{
+  "left": "Solid",
+  "right": "Solid",
+  "top": "Solid",
+  "bottom": "Solid"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-border-radius" type="application/json">
+{
+  "topLeft": 10.0,
+  "topRight": 10.0,
+  "bottomLeft": 10.0,
+  "bottomRight": 10.0,
+  "topLeftUnit": "px",
+  "topRightUnit": "px",
+  "bottomLeftUnit": "px",
+  "bottomRightUnit": "px"
+}
+</script>
+</div>
+<div id="ReadWriteIndexOption" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiRadioButton" data-tchmi-grid-column-index="0" data-tchmi-grid-row-index="1" data-tchmi-height="100" data-tchmi-height-unit="%" data-tchmi-text="%f%%i%sRFIDAction%/i% + ' Index'%/f%" data-tchmi-width="100" data-tchmi-width-unit="%" data-tchmi-radio-group="1" data-tchmi-text-font-size="30" data-tchmi-radio-state="%i%tstOptionTwo%/i%">
+
+<script data-tchmi-target-attribute="data-tchmi-border-color" type="application/json">
+{
+  "color": "rgba(0, 0, 0, 1)"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-border-width" type="application/json">
+{
+  "left": 2,
+  "right": 2,
+  "top": 2,
+  "bottom": 2,
+  "leftUnit": "px",
+  "rightUnit": "px",
+  "topUnit": "px",
+  "bottomUnit": "px"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-border-style" type="application/json">
+{
+  "left": "Solid",
+  "right": "Solid",
+  "top": "Solid",
+  "bottom": "Solid"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-border-radius" type="application/json">
+{
+  "topLeft": 10.0,
+  "topRight": 10.0,
+  "bottomLeft": 10.0,
+  "bottomRight": 10.0,
+  "topLeftUnit": "px",
+  "topRightUnit": "px",
+  "bottomLeftUnit": "px",
+  "bottomRightUnit": "px"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">[
+  {
+    "event": "%ctx%owner::Id|EventRegistrationMode=Resolve%/ctx%.onRadioStateChanged",
+    "actions": [
+      {
+        "objectType": "Condition",
+        "active": true,
+        "parts": [
+          {
+            "if": [
+              {
+                "compare1": {
+                  "objectType": "Symbol",
+                  "valueType": "tchmi:general#/definitions/String",
+                  "symbolExpression": "%i%sRFIDAction%/i%"
+                },
+                "compare2": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:general#/definitions/String",
+                  "value": "Read"
+                },
+                "compareOperator": "==",
+                "logic": null
+              }
+            ],
+            "then": [
+              {
+                "objectType": "Condition",
+                "active": true,
+                "parts": [
+                  {
+                    "if": [
+                      {
+                        "compare1": {
+                          "objectType": "Symbol",
+                          "valueType": "tchmi:framework#/definitions/ToggleState",
+                          "symbolExpression": "%ctrl%ReadWriteIndexOption::RadioState%/ctrl%"
+                        },
+                        "compare2": {
+                          "objectType": "StaticValue",
+                          "valueType": "tchmi:framework#/definitions/ToggleState",
+                          "value": "Normal"
+                        },
+                        "compareOperator": "==",
+                        "logic": null
+                      }
+                    ],
+                    "then": [
+                      {
+                        "objectType": "WriteToSymbol",
+                        "active": true,
+                        "symbolExpression": "%ctrl%txtIndex::IsEnabled%/ctrl%",
+                        "value": {
+                          "objectType": "StaticValue",
+                          "valueType": "tchmi:general#/definitions/Boolean",
+                          "value": false
+                        },
+                        "asyncWait": true
+                      },
+                      {
+                        "objectType": "WriteToSymbol",
+                        "active": true,
+                        "symbolExpression": "%ctrl%txtData::IsEnabled%/ctrl%",
+                        "value": {
+                          "objectType": "StaticValue",
+                          "valueType": "tchmi:general#/definitions/Boolean",
+                          "value": false
+                        },
+                        "asyncWait": true
+                      }
+                    ]
+                  },
+                  {
+                    "else": [
+                      {
+                        "objectType": "WriteToSymbol",
+                        "active": true,
+                        "symbolExpression": "%ctrl%txtIndex::IsEnabled%/ctrl%",
+                        "value": {
+                          "objectType": "StaticValue",
+                          "valueType": "tchmi:general#/definitions/Boolean",
+                          "value": true
+                        },
+                        "asyncWait": true
+                      },
+                      {
+                        "objectType": "WriteToSymbol",
+                        "active": true,
+                        "symbolExpression": "%ctrl%txtData::IsEnabled%/ctrl%",
+                        "value": {
+                          "objectType": "StaticValue",
+                          "valueType": "tchmi:general#/definitions/Boolean",
+                          "value": false
+                        },
+                        "asyncWait": true
+                      }
+                    ]
+                  }
+                ],
+                "asyncWait": true
+              }
+            ]
+          },
+          {
+            "else": [
+              {
+                "objectType": "Condition",
+                "active": true,
+                "parts": [
+                  {
+                    "if": [
+                      {
+                        "compare1": {
+                          "objectType": "Symbol",
+                          "valueType": "tchmi:framework#/definitions/ToggleState",
+                          "symbolExpression": "%ctrl%ReadWriteIndexOption::RadioState%/ctrl%"
+                        },
+                        "compare2": {
+                          "objectType": "StaticValue",
+                          "valueType": "tchmi:framework#/definitions/ToggleState",
+                          "value": "Normal"
+                        },
+                        "compareOperator": "==",
+                        "logic": null
+                      }
+                    ],
+                    "then": [
+                      {
+                        "objectType": "WriteToSymbol",
+                        "active": true,
+                        "symbolExpression": "%ctrl%txtIndex::IsEnabled%/ctrl%",
+                        "value": {
+                          "objectType": "StaticValue",
+                          "valueType": "tchmi:general#/definitions/Boolean",
+                          "value": false
+                        },
+                        "asyncWait": true
+                      },
+                      {
+                        "objectType": "WriteToSymbol",
+                        "active": true,
+                        "symbolExpression": "%ctrl%txtData::IsEnabled%/ctrl%",
+                        "value": {
+                          "objectType": "StaticValue",
+                          "valueType": "tchmi:general#/definitions/Boolean",
+                          "value": false
+                        },
+                        "asyncWait": true
+                      }
+                    ]
+                  },
+                  {
+                    "else": [
+                      {
+                        "objectType": "WriteToSymbol",
+                        "active": true,
+                        "symbolExpression": "%ctrl%txtIndex::IsEnabled%/ctrl%",
+                        "value": {
+                          "objectType": "StaticValue",
+                          "valueType": "tchmi:general#/definitions/Boolean",
+                          "value": true
+                        },
+                        "asyncWait": true
+                      },
+                      {
+                        "objectType": "WriteToSymbol",
+                        "active": true,
+                        "symbolExpression": "%ctrl%txtData::IsEnabled%/ctrl%",
+                        "value": {
+                          "objectType": "StaticValue",
+                          "valueType": "tchmi:general#/definitions/Boolean",
+                          "value": true
+                        },
+                        "asyncWait": true
+                      }
+                    ]
+                  }
+                ],
+                "asyncWait": true
+              }
+            ]
+          }
+        ],
+        "asyncWait": true
+      }
+    ]
+  }
+]</script>
+</div>
+<div id="ReadWriteAllOption" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiRadioButton" data-tchmi-grid-column-index="0" data-tchmi-grid-row-index="2" data-tchmi-height="100" data-tchmi-height-unit="%" data-tchmi-text="%f%%i%sRFIDAction%/i% + ' All'%/f%" data-tchmi-width="100" data-tchmi-width-unit="%" data-tchmi-radio-group="1" data-tchmi-text-font-size="30" data-tchmi-radio-state="%i%tstOptionThree%/i%">
+
+<script data-tchmi-target-attribute="data-tchmi-border-color" type="application/json">
+{
+  "color": "rgba(0, 0, 0, 1)"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-border-width" type="application/json">
+{
+  "left": 2,
+  "right": 2,
+  "top": 2,
+  "bottom": 2,
+  "leftUnit": "px",
+  "rightUnit": "px",
+  "topUnit": "px",
+  "bottomUnit": "px"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-border-style" type="application/json">
+{
+  "left": "Solid",
+  "right": "Solid",
+  "top": "Solid",
+  "bottom": "Solid"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-border-radius" type="application/json">
+{
+  "topLeft": 10.0,
+  "topRight": 10.0,
+  "bottomLeft": 10.0,
+  "bottomRight": 10.0,
+  "topLeftUnit": "px",
+  "topRightUnit": "px",
+  "bottomLeftUnit": "px",
+  "bottomRightUnit": "px"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">[
+  {
+    "event": "%ctx%owner::Id|EventRegistrationMode=Resolve%/ctx%.onRadioStateChanged",
+    "actions": [
+      {
+        "objectType": "Condition",
+        "active": true,
+        "parts": [
+          {
+            "if": [
+              {
+                "compare1": {
+                  "objectType": "Symbol",
+                  "valueType": "tchmi:general#/definitions/String",
+                  "symbolExpression": "%i%sRFIDAction%/i%"
+                },
+                "compare2": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:general#/definitions/String",
+                  "value": "Read"
+                },
+                "compareOperator": "==",
+                "logic": null
+              }
+            ],
+            "then": [
+              {
+                "objectType": "Condition",
+                "active": true,
+                "parts": [
+                  {
+                    "if": [
+                      {
+                        "compare1": {
+                          "objectType": "Symbol",
+                          "valueType": "tchmi:framework#/definitions/ToggleState",
+                          "symbolExpression": "%ctrl%ReadWriteAllOption::RadioState%/ctrl%"
+                        },
+                        "compare2": {
+                          "objectType": "StaticValue",
+                          "valueType": "tchmi:framework#/definitions/ToggleState",
+                          "value": "Normal"
+                        },
+                        "compareOperator": "==",
+                        "logic": null
+                      }
+                    ],
+                    "then": [
+                      {
+                        "objectType": "WriteToSymbol",
+                        "active": true,
+                        "symbolExpression": "%ctrl%RFIDPopUpDataAllRead::IsEnabled%/ctrl%",
+                        "value": {
+                          "objectType": "StaticValue",
+                          "valueType": "tchmi:general#/definitions/Boolean",
+                          "value": false
+                        },
+                        "asyncWait": true
+                      }
+                    ]
+                  },
+                  {
+                    "else": [
+                      {
+                        "objectType": "WriteToSymbol",
+                        "active": true,
+                        "symbolExpression": "%ctrl%RFIDPopUpDataAllRead::IsEnabled%/ctrl%",
+                        "value": {
+                          "objectType": "StaticValue",
+                          "valueType": "tchmi:general#/definitions/Boolean",
+                          "value": true
+                        },
+                        "asyncWait": true
+                      }
+                    ]
+                  }
+                ],
+                "asyncWait": true
+              }
+            ]
+          },
+          {
+            "else": [
+              {
+                "objectType": "Condition",
+                "active": true,
+                "parts": [
+                  {
+                    "if": [
+                      {
+                        "compare1": {
+                          "objectType": "Symbol",
+                          "valueType": "tchmi:framework#/definitions/ToggleState",
+                          "symbolExpression": "%ctrl%ReadWriteAllOption::RadioState%/ctrl%"
+                        },
+                        "compare2": {
+                          "objectType": "StaticValue",
+                          "valueType": "tchmi:framework#/definitions/ToggleState",
+                          "value": "Normal"
+                        },
+                        "compareOperator": "==",
+                        "logic": null
+                      }
+                    ],
+                    "then": [
+                      {
+                        "objectType": "WriteToSymbol",
+                        "active": true,
+                        "symbolExpression": "%ctrl%RFIDPopUpDataAllWrite::IsEnabled%/ctrl%",
+                        "value": {
+                          "objectType": "StaticValue",
+                          "valueType": "tchmi:general#/definitions/Boolean",
+                          "value": false
+                        },
+                        "asyncWait": true
+                      }
+                    ]
+                  },
+                  {
+                    "else": [
+                      {
+                        "objectType": "WriteToSymbol",
+                        "active": true,
+                        "symbolExpression": "%ctrl%RFIDPopUpDataAllWrite::IsEnabled%/ctrl%",
+                        "value": {
+                          "objectType": "StaticValue",
+                          "valueType": "tchmi:general#/definitions/Boolean",
+                          "value": true
+                        },
+                        "asyncWait": true
+                      }
+                    ]
+                  }
+                ],
+                "asyncWait": true
+              }
+            ]
+          }
+        ],
+        "asyncWait": true
+      }
+    ]
+  }
+]</script>
+</div>
+<div id="rtReadWriteFM" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiRectangle" data-tchmi-grid-column-index="1" data-tchmi-grid-row-index="1" data-tchmi-height="100" data-tchmi-height-unit="%" data-tchmi-width="100" data-tchmi-width-unit="%">
+
+<script data-tchmi-target-attribute="data-tchmi-border-color" type="application/json">
+{
+  "color": "rgba(0, 0, 0, 1)"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-border-width" type="application/json">
+{
+  "left": 1,
+  "right": 1,
+  "top": 1,
+  "bottom": 1,
+  "leftUnit": "px",
+  "rightUnit": "px",
+  "topUnit": "px",
+  "bottomUnit": "px"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-border-style" type="application/json">
+{
+  "left": "Solid",
+  "right": "Solid",
+  "top": "Solid",
+  "bottom": "Solid"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">[
+  {
+    "event": "%pp%StatusInterface%/pp%",
+    "actions": [
+      {
+        "objectType": "Condition",
+        "active": true,
+        "parts": [
+          {
+            "if": [
+              {
+                "compare1": {
+                  "objectType": "Symbol",
+                  "valueType": "tchmi:general#/definitions/String",
+                  "symbolExpression": "%i%sRFIDAction%/i%"
+                },
+                "compare2": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:general#/definitions/String",
+                  "value": "Read"
+                },
+                "compareOperator": "==",
+                "logic": null
+              }
+            ],
+            "then": [
+              {
+                "objectType": "Condition",
+                "active": true,
+                "parts": [
+                  {
+                    "if": [
+                      {
+                        "compare1": {
+                          "objectType": "Symbol",
+                          "valueType": "tchmi:general#/definitions/BOOL",
+                          "symbolExpression": "%pp%StatusInterface::FMReading%/pp%"
+                        },
+                        "compare2": {
+                          "objectType": "StaticValue",
+                          "valueType": "tchmi:general#/definitions/BOOL",
+                          "value": false
+                        },
+                        "compareOperator": "==",
+                        "logic": null
+                      }
+                    ],
+                    "then": [
+                      {
+                        "objectType": "WriteToSymbol",
+                        "active": true,
+                        "symbolExpression": "%ctrl%rtReadWriteFM::BackgroundColor%/ctrl%",
+                        "value": {
+                          "objectType": "StaticValue",
+                          "valueType": "tchmi:framework#/definitions/Color",
+                          "value": null
+                        },
+                        "asyncWait": true
+                      }
+                    ]
+                  },
+                  {
+                    "else": [
+                      {
+                        "objectType": "WriteToSymbol",
+                        "active": true,
+                        "symbolExpression": "%ctrl%rtReadWriteFM::BackgroundColor%/ctrl%",
+                        "value": {
+                          "objectType": "StaticValue",
+                          "valueType": "tchmi:framework#/definitions/Color",
+                          "value": {
+                            "color": "rgba(19, 244, 10, 1)"
+                          }
+                        },
+                        "asyncWait": true
+                      }
+                    ]
+                  }
+                ],
+                "asyncWait": true
+              }
+            ]
+          },
+          {
+            "elseif": [
+              {
+                "compare1": {
+                  "objectType": "Symbol",
+                  "valueType": "tchmi:general#/definitions/String",
+                  "symbolExpression": "%i%sRFIDAction%/i%"
+                },
+                "compare2": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:general#/definitions/String",
+                  "value": "Write"
+                },
+                "compareOperator": "==",
+                "logic": null
+              }
+            ],
+            "then": [
+              {
+                "objectType": "Condition",
+                "active": true,
+                "parts": [
+                  {
+                    "if": [
+                      {
+                        "compare1": {
+                          "objectType": "Symbol",
+                          "valueType": "tchmi:general#/definitions/BOOL",
+                          "symbolExpression": "%pp%StatusInterface::FMWritting%/pp%"
+                        },
+                        "compare2": {
+                          "objectType": "StaticValue",
+                          "valueType": "tchmi:general#/definitions/BOOL",
+                          "value": false
+                        },
+                        "compareOperator": "==",
+                        "logic": null
+                      }
+                    ],
+                    "then": [
+                      {
+                        "objectType": "WriteToSymbol",
+                        "active": true,
+                        "symbolExpression": "%ctrl%rtReadWriteFM::BackgroundColor%/ctrl%",
+                        "value": {
+                          "objectType": "StaticValue",
+                          "valueType": "tchmi:framework#/definitions/Color",
+                          "value": null
+                        },
+                        "asyncWait": true
+                      }
+                    ]
+                  },
+                  {
+                    "else": [
+                      {
+                        "objectType": "WriteToSymbol",
+                        "active": true,
+                        "symbolExpression": "%ctrl%rtReadWriteFM::BackgroundColor%/ctrl%",
+                        "value": {
+                          "objectType": "StaticValue",
+                          "valueType": "tchmi:framework#/definitions/Color",
+                          "value": {
+                            "color": "rgba(19, 244, 10, 1)"
+                          }
+                        },
+                        "asyncWait": true
+                      }
+                    ]
+                  }
+                ],
+                "asyncWait": true
+              }
+            ]
+          },
+          {
+            "else": [
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%ctrl%rtReadWriteFM::BackgroundColor%/ctrl%",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:framework#/definitions/Color",
+                  "value": {
+                    "color": "rgba(248, 21, 49, 1)"
+                  }
+                },
+                "asyncWait": true
+              }
+            ]
+          }
+        ],
+        "asyncWait": true
+      }
+    ]
+  }
+]</script>
+</div>
+<div id="rtErrorActive" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiRectangle" data-tchmi-grid-column-index="1" data-tchmi-grid-row-index="2" data-tchmi-height="100" data-tchmi-height-unit="%" data-tchmi-width="100" data-tchmi-width-unit="%">
+
+<script data-tchmi-target-attribute="data-tchmi-border-color" type="application/json">
+{
+  "color": "rgba(0, 0, 0, 1)"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-border-width" type="application/json">
+{
+  "left": 1,
+  "right": 1,
+  "top": 1,
+  "bottom": 1,
+  "leftUnit": "px",
+  "rightUnit": "px",
+  "topUnit": "px",
+  "bottomUnit": "px"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-border-style" type="application/json">
+{
+  "left": "Solid",
+  "right": "Solid",
+  "top": "Solid",
+  "bottom": "Solid"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">[
+  {
+    "event": "%s%ADS.PLC1.HMI.hmiMachineSectionInterface.RFID.RFIDStatus%/s%",
+    "actions": [
+      {
+        "objectType": "Condition",
+        "active": true,
+        "parts": [
+          {
+            "if": [
+              {
+                "compare1": {
+                  "objectType": "Symbol",
+                  "valueType": "tchmi:general#/definitions/BOOL",
+                  "symbolExpression": "%s%ADS.PLC1.HMI.hmiMachineSectionInterface.RFID.RFIDStatus::ErrorActive%/s%"
+                },
+                "compare2": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:general#/definitions/BOOL",
+                  "value": false
+                },
+                "compareOperator": "==",
+                "logic": null
+              }
+            ],
+            "then": [
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%ctrl%rtErrorActive::BackgroundColor%/ctrl%",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:framework#/definitions/Color",
+                  "value": null
+                },
+                "asyncWait": true
+              }
+            ]
+          },
+          {
+            "else": [
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%ctrl%rtErrorActive::BackgroundColor%/ctrl%",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:framework#/definitions/Color",
+                  "value": {
+                    "color": "rgba(248, 21, 49, 1)"
+                  }
+                },
+                "asyncWait": true
+              }
+            ]
+          }
+        ],
+        "asyncWait": true
+      }
+    ]
+  }
+]</script>
+</div>
+<div id="lbReadWriteFM" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-grid-column-index="2" data-tchmi-grid-row-index="1" data-tchmi-height="100" data-tchmi-height-unit="%" data-tchmi-text="%f%%i%sRFIDAction%/i% + ' FM'%/f%" data-tchmi-width="100" data-tchmi-width-unit="%" data-tchmi-word-wrap="True" data-tchmi-text-horizontal-alignment="Left" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-font-size="30">
+</div>
+<div id="lbErrorActive" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-grid-column-index="2" data-tchmi-grid-row-index="2" data-tchmi-height="100" data-tchmi-height-unit="%" data-tchmi-text="Error active" data-tchmi-width="100" data-tchmi-width-unit="%" data-tchmi-word-wrap="True" data-tchmi-text-horizontal-alignment="Left" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-font-size="30">
+</div>
+</div>
+<div id="RFIDPopUpDataAllRead" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiDatagrid" data-tchmi-grid-column-index="0" data-tchmi-grid-row-index="2" data-tchmi-height="100" data-tchmi-height-unit="%" data-tchmi-width="100" data-tchmi-width-unit="%" data-tchmi-header-height="50" data-tchmi-row-height="50" data-tchmi-header-font-size="30" data-tchmi-row-numbers-font-size="30" data-tchmi-src-data="%pp%DataInterface::AllReadData%/pp%" data-tchmi-grid-font-size="30" data-tchmi-row-numbers-width="50">
+<script data-tchmi-target-attribute="data-tchmi-src-column" type="application/json">
+[
+  {
+    "label": "Data Read",
+    "control": "NumericInput",
+    "width": 100,
+    "widthUnit": "%",
+    "resize": true,
+    "minWidth": 100,
+    "minWidthUnit": "px",
+    "editable": false,
+    "horizontalAlignment": "Left",
+    "verticalAlignment": "Center"
+  }
+]
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-cell-content-padding" type="application/json">
+{
+  "left": 3,
+  "leftUnit": "px",
+  "right": 3,
+  "rightUnit": "px",
+  "top": 0,
+  "topUnit": "px",
+  "bottom": 0,
+  "bottomUnit": "px"
+}
+</script>
+
+
+<script data-tchmi-target-attribute="data-tchmi-border-color" type="application/json">
+{
+  "color": "rgba(0, 0, 0, 1)"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-border-width" type="application/json">
+{
+  "left": 2,
+  "right": 2,
+  "top": 2,
+  "bottom": 2,
+  "leftUnit": "px",
+  "rightUnit": "px",
+  "topUnit": "px",
+  "bottomUnit": "px"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-border-style" type="application/json">
+{
+  "left": "Solid",
+  "right": "Solid",
+  "top": "Solid",
+  "bottom": "Solid"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-table-border-style" type="application/json">
+{
+  "left": "Solid",
+  "right": "Solid",
+  "top": "Solid",
+  "bottom": "Solid"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-table-border-color" type="application/json">
+{
+  "color": "rgba(0, 0, 0, 1)"
+}
+</script>
+</div>
+
+<script data-tchmi-target-attribute="data-tchmi-cell-options" type="application/json">
+[
+  {
+    "columnIndex": 0,
+    "padding": {
+      "left": 5,
+      "right": 5,
+      "top": 5,
+      "bottom": 5,
+      "leftUnit": "px",
+      "rightUnit": "px",
+      "topUnit": "px",
+      "bottomUnit": "px"
+    },
+    "rowIndex": 2
+  }
+]
+</script>
+<div id="RFIDPopUpIndexDataContainer" data-tchmi-type="TcHmi.Controls.System.TcHmiGrid" data-tchmi-grid-column-index="0" data-tchmi-grid-row-index="1" data-tchmi-height="100" data-tchmi-height-unit="%" data-tchmi-width="100" data-tchmi-width-unit="%">
+
+<script data-tchmi-target-attribute="data-tchmi-column-options" type="application/json">
+[
+  {
+    "overflow": false,
+    "width": 100.0,
+    "widthMode": "Value",
+    "widthUnit": "px"
+  },
+  {
+    "width": 300.0,
+    "widthMode": "Value",
+    "widthUnit": "px"
+  },
+  {
+    "overflow": false,
+    "width": 100.0,
+    "widthMode": "Value",
+    "widthUnit": "px"
+  },
+  {
+    "width": 300.0,
+    "widthMode": "Value",
+    "widthUnit": "px"
+  },
+  {
+    "width": 1,
+    "widthMode": "Value",
+    "widthUnit": "factor"
+  }
+]
+</script>
+<div id="lbIndex" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="100" data-tchmi-height-unit="%" data-tchmi-text="Index:" data-tchmi-width="100" data-tchmi-width-unit="%" data-tchmi-word-wrap="True" data-tchmi-text-horizontal-alignment="Right" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-font-size="30">
+</div>
+<div id="txtIndex" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextbox" data-tchmi-grid-column-index="1" data-tchmi-grid-row-index="0" data-tchmi-height="100" data-tchmi-height-unit="%" data-tchmi-horizontal-scroll="Auto" data-tchmi-reset-to-last-valid-value="True" data-tchmi-text="%i%wSelectedIndex%/i%" data-tchmi-vertical-scroll="Auto" data-tchmi-width="100" data-tchmi-width-unit="%" data-tchmi-input-processing-point="InteractionFinished" data-tchmi-text-font-size="30" data-tchmi-text-horizontal-alignment="Left" data-tchmi-max-text-length="3" data-tchmi-system-keyboard-input-mode="numeric" data-tchmi-placeholder="Index 0 .. 127">
+<script data-tchmi-target-attribute="data-tchmi-content-padding" type="application/json">
+{
+  "top": 3,
+  "right": 3,
+  "bottom": 3,
+  "left": 3
+}
+</script>
+
+
+<script data-tchmi-target-attribute="data-tchmi-border-color" type="application/json">
+{
+  "color": "rgba(0, 0, 0, 1)"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-border-width" type="application/json">
+{
+  "left": 2,
+  "right": 2,
+  "top": 2,
+  "bottom": 2,
+  "leftUnit": "px",
+  "rightUnit": "px",
+  "topUnit": "px",
+  "bottomUnit": "px"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-border-style" type="application/json">
+{
+  "left": "Solid",
+  "right": "Solid",
+  "top": "Solid",
+  "bottom": "Solid"
+}
+</script>
+</div>
+
+<script data-tchmi-target-attribute="data-tchmi-cell-options" type="application/json">
+[
+  {
+    "borderColor": {
+      "color": "rgba(0, 0, 0, 1)"
+    },
+    "borderStyle": {
+      "left": "None",
+      "right": "None",
+      "top": "None",
+      "bottom": "Solid"
+    },
+    "borderWidth": {
+      "left": 0,
+      "right": 0,
+      "top": 0,
+      "bottom": 2,
+      "leftUnit": "px",
+      "rightUnit": "px",
+      "topUnit": "px",
+      "bottomUnit": "px"
+    },
+    "columnIndex": 0,
+    "padding": {
+      "left": 5,
+      "right": 5,
+      "top": 5,
+      "bottom": 5,
+      "leftUnit": "px",
+      "rightUnit": "px",
+      "topUnit": "px",
+      "bottomUnit": "px"
+    },
+    "rowIndex": 0
+  },
+  {
+    "borderColor": {
+      "color": "rgba(0, 0, 0, 1)"
+    },
+    "borderStyle": {
+      "left": "None",
+      "right": "None",
+      "top": "None",
+      "bottom": "Solid"
+    },
+    "borderWidth": {
+      "left": 0,
+      "right": 0,
+      "top": 0,
+      "bottom": 2,
+      "leftUnit": "px",
+      "rightUnit": "px",
+      "topUnit": "px",
+      "bottomUnit": "px"
+    },
+    "columnIndex": 1,
+    "padding": {
+      "left": 10,
+      "right": 10,
+      "top": 25,
+      "bottom": 25,
+      "leftUnit": "px",
+      "rightUnit": "px",
+      "topUnit": "px",
+      "bottomUnit": "px"
+    },
+    "rowIndex": 0
+  },
+  {
+    "borderColor": {
+      "color": "rgba(0, 0, 0, 1)"
+    },
+    "borderStyle": {
+      "left": "None",
+      "right": "None",
+      "top": "None",
+      "bottom": "Solid"
+    },
+    "borderWidth": {
+      "left": 0,
+      "right": 0,
+      "top": 0,
+      "bottom": 2,
+      "leftUnit": "px",
+      "rightUnit": "px",
+      "topUnit": "px",
+      "bottomUnit": "px"
+    },
+    "columnIndex": 2,
+    "padding": {
+      "left": 5,
+      "right": 5,
+      "top": 5,
+      "bottom": 5,
+      "leftUnit": "px",
+      "rightUnit": "px",
+      "topUnit": "px",
+      "bottomUnit": "px"
+    },
+    "rowIndex": 0
+  },
+  {
+    "borderColor": {
+      "color": "rgba(0, 0, 0, 1)"
+    },
+    "borderStyle": {
+      "left": "None",
+      "right": "None",
+      "top": "None",
+      "bottom": "Solid"
+    },
+    "borderWidth": {
+      "left": 0,
+      "right": 0,
+      "top": 0,
+      "bottom": 2,
+      "leftUnit": "px",
+      "rightUnit": "px",
+      "topUnit": "px",
+      "bottomUnit": "px"
+    },
+    "columnIndex": 3,
+    "padding": {
+      "left": 10,
+      "right": 10,
+      "top": 25,
+      "bottom": 25,
+      "leftUnit": "px",
+      "rightUnit": "px",
+      "topUnit": "px",
+      "bottomUnit": "px"
+    },
+    "rowIndex": 0
+  },
+  {
+    "borderColor": {
+      "color": "rgba(0, 0, 0, 1)"
+    },
+    "borderStyle": {
+      "left": "None",
+      "right": "None",
+      "top": "None",
+      "bottom": "Solid"
+    },
+    "borderWidth": {
+      "left": 0,
+      "right": 0,
+      "top": 0,
+      "bottom": 2,
+      "leftUnit": "px",
+      "rightUnit": "px",
+      "topUnit": "px",
+      "bottomUnit": "px"
+    },
+    "columnIndex": 4,
+    "padding": {
+      "left": 5,
+      "right": 5,
+      "top": 5,
+      "bottom": 5,
+      "leftUnit": "px",
+      "rightUnit": "px",
+      "topUnit": "px",
+      "bottomUnit": "px"
+    },
+    "rowIndex": 0
+  }
+]
+</script>
+<div id="lbData" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-grid-column-index="2" data-tchmi-grid-row-index="0" data-tchmi-height="100" data-tchmi-height-unit="%" data-tchmi-text="Data:" data-tchmi-width="100" data-tchmi-width-unit="%" data-tchmi-word-wrap="True" data-tchmi-text-horizontal-alignment="Right" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-font-size="30">
+</div>
+<div id="txtData" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextbox" data-tchmi-grid-column-index="3" data-tchmi-grid-row-index="0" data-tchmi-height="100" data-tchmi-height-unit="%" data-tchmi-horizontal-scroll="Auto" data-tchmi-reset-to-last-valid-value="True" data-tchmi-text="%i%wSelectedValue%/i%" data-tchmi-vertical-scroll="Auto" data-tchmi-width="100" data-tchmi-width-unit="%" data-tchmi-text-font-size="30" data-tchmi-text-horizontal-alignment="Left">
+<script data-tchmi-target-attribute="data-tchmi-content-padding" type="application/json">
+{
+  "top": 3,
+  "right": 3,
+  "bottom": 3,
+  "left": 3
+}
+</script>
+
+
+<script data-tchmi-target-attribute="data-tchmi-border-color" type="application/json">
+{
+  "color": "rgba(0, 0, 0, 1)"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-border-width" type="application/json">
+{
+  "left": 2,
+  "right": 2,
+  "top": 2,
+  "bottom": 2,
+  "leftUnit": "px",
+  "rightUnit": "px",
+  "topUnit": "px",
+  "bottomUnit": "px"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-border-style" type="application/json">
+{
+  "left": "Solid",
+  "right": "Solid",
+  "top": "Solid",
+  "bottom": "Solid"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">[
+  {
+    "event": "%pp%DataInterface%/pp%",
+    "actions": [
+      {
+        "objectType": "Condition",
+        "active": true,
+        "parts": [
+          {
+            "if": [
+              {
+                "compare1": {
+                  "objectType": "Symbol",
+                  "valueType": "tchmi:general#/definitions/String",
+                  "symbolExpression": "%i%sRFIDAction%/i%"
+                },
+                "compare2": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:general#/definitions/String",
+                  "value": "Read"
+                },
+                "compareOperator": "==",
+                "logic": null
+              }
+            ],
+            "then": [
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%i%wSelectedValue%/i%",
+                "value": {
+                  "objectType": "Symbol",
+                  "valueType": "tchmi:general#/definitions/WORD",
+                  "symbolExpression": "%pp%DataInterface::SingleReadValue%/pp%"
+                },
+                "asyncWait": true
+              }
+            ]
+          },
+          {
+            "else": []
+          }
+        ],
+        "asyncWait": true
+      }
+    ]
+  }
+]</script>
+</div>
+</div>
+<div id="RFIDPopUpClosingContainer" data-tchmi-type="TcHmi.Controls.System.TcHmiGrid" data-tchmi-grid-column-index="0" data-tchmi-grid-row-index="3" data-tchmi-height="100" data-tchmi-height-unit="%" data-tchmi-width="100" data-tchmi-width-unit="%">
+
+<script data-tchmi-target-attribute="data-tchmi-column-options" type="application/json">
+[
+  {
+    "overflow": false,
+    "width": 1,
+    "widthMode": "Value",
+    "widthUnit": "factor"
+  },
+  {
+    "width": 200.0,
+    "widthMode": "Value",
+    "widthUnit": "px"
+  },
+  {
+    "width": 200.0,
+    "widthMode": "Value",
+    "widthUnit": "px"
+  }
+]
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-cell-options" type="application/json">
+[
+  {
+    "borderStyle": {
+      "left": "None",
+      "right": "None",
+      "top": "Solid",
+      "bottom": "None"
+    },
+    "borderWidth": {
+      "left": 0,
+      "right": 0,
+      "top": 2,
+      "bottom": 0,
+      "leftUnit": "px",
+      "rightUnit": "px",
+      "topUnit": "px",
+      "bottomUnit": "px"
+    },
+    "columnIndex": 0,
+    "rowIndex": 0
+  },
+  {
+    "borderStyle": {
+      "left": "None",
+      "right": "None",
+      "top": "Solid",
+      "bottom": "None"
+    },
+    "borderWidth": {
+      "left": 0,
+      "right": 0,
+      "top": 2,
+      "bottom": 0,
+      "leftUnit": "px",
+      "rightUnit": "px",
+      "topUnit": "px",
+      "bottomUnit": "px"
+    },
+    "columnIndex": 1,
+    "padding": {
+      "left": 5,
+      "right": 5,
+      "top": 5,
+      "bottom": 5,
+      "leftUnit": "px",
+      "rightUnit": "px",
+      "topUnit": "px",
+      "bottomUnit": "px"
+    },
+    "rowIndex": 0
+  },
+  {
+    "borderStyle": {
+      "left": "None",
+      "right": "None",
+      "top": "Solid",
+      "bottom": "None"
+    },
+    "borderWidth": {
+      "left": 0,
+      "right": 0,
+      "top": 2,
+      "bottom": 0,
+      "leftUnit": "px",
+      "rightUnit": "px",
+      "topUnit": "px",
+      "bottomUnit": "px"
+    },
+    "columnIndex": 2,
+    "padding": {
+      "left": 5,
+      "right": 5,
+      "top": 5,
+      "bottom": 5,
+      "leftUnit": "px",
+      "rightUnit": "px",
+      "topUnit": "px",
+      "bottomUnit": "px"
+    },
+    "rowIndex": 0
+  }
+]
+</script>
+<div id="btnExecute" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiButton" data-tchmi-grid-column-index="1" data-tchmi-grid-row-index="0" data-tchmi-height="100" data-tchmi-height-unit="%" data-tchmi-text="Execute" data-tchmi-width="100" data-tchmi-width-unit="%" data-tchmi-word-wrap="True" data-tchmi-text-horizontal-alignment="Center" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-font-size="30">
+
+<script data-tchmi-target-attribute="data-tchmi-border-color" type="application/json">
+{
+  "color": "rgba(0, 0, 0, 1)"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-border-width" type="application/json">
+{
+  "left": 1,
+  "right": 1,
+  "top": 1,
+  "bottom": 1,
+  "leftUnit": "px",
+  "rightUnit": "px",
+  "topUnit": "px",
+  "bottomUnit": "px"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-border-style" type="application/json">
+{
+  "left": "Solid",
+  "right": "Solid",
+  "top": "Solid",
+  "bottom": "Solid"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-border-radius" type="application/json">
+{
+  "topLeft": 10.0,
+  "topRight": 10.0,
+  "bottomLeft": 10.0,
+  "bottomRight": 10.0,
+  "topLeftUnit": "px",
+  "topRightUnit": "px",
+  "bottomLeftUnit": "px",
+  "bottomRightUnit": "px"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">[
+  {
+    "event": "%ctx%owner::Id|EventRegistrationMode=Resolve%/ctx%.onMouseDown",
+    "actions": [
+      {
+        "objectType": "Condition",
+        "active": true,
+        "parts": [
+          {
+            "if": [
+              {
+                "compare1": {
+                  "objectType": "Symbol",
+                  "valueType": "tchmi:general#/definitions/String",
+                  "symbolExpression": "%i%sRFIDAction%/i%"
+                },
+                "compare2": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:general#/definitions/String",
+                  "value": "Read"
+                },
+                "compareOperator": "==",
+                "logic": null
+              }
+            ],
+            "then": [
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%pp%DataInterface::SingleReadValue%/pp%",
+                "value": {
+                  "objectType": "Symbol",
+                  "valueType": "tchmi:general#/definitions/WORD",
+                  "symbolExpression": "%i%wSelectedValue%/i%"
+                },
+                "asyncWait": true
+              },
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%pp%ControlInterface::SelectedMemoryIndex%/pp%",
+                "value": {
+                  "objectType": "Symbol",
+                  "valueType": "tchmi:general#/definitions/WORD",
+                  "symbolExpression": "%i%wSelectedIndex%/i%"
+                },
+                "asyncWait": true
+              },
+              {
+                "objectType": "Condition",
+                "active": true,
+                "parts": [
+                  {
+                    "if": [
+                      {
+                        "compare1": {
+                          "objectType": "Symbol",
+                          "valueType": "tchmi:framework#/definitions/ToggleState",
+                          "symbolExpression": "%ctrl%ReadSerialNumOption::RadioState%/ctrl%"
+                        },
+                        "compare2": {
+                          "objectType": "StaticValue",
+                          "valueType": "tchmi:framework#/definitions/ToggleState",
+                          "value": "Active"
+                        },
+                        "compareOperator": "==",
+                        "logic": null
+                      }
+                    ],
+                    "then": [
+                      {
+                        "objectType": "WriteToSymbol",
+                        "active": true,
+                        "symbolExpression": "%pp%ControlInterface::SelectedCommand%/pp%",
+                        "value": {
+                          "objectType": "StaticValue",
+                          "valueType": "tchmi:general#/definitions/WORD",
+                          "value": 1
+                        },
+                        "asyncWait": true
+                      }
+                    ]
+                  },
+                  {
+                    "elseif": [
+                      {
+                        "compare1": {
+                          "objectType": "Symbol",
+                          "valueType": "tchmi:framework#/definitions/ToggleState",
+                          "symbolExpression": "%ctrl%ReadWriteAllOption::RadioState%/ctrl%"
+                        },
+                        "compare2": {
+                          "objectType": "StaticValue",
+                          "valueType": "tchmi:framework#/definitions/ToggleState",
+                          "value": "Active"
+                        },
+                        "compareOperator": "==",
+                        "logic": null
+                      }
+                    ],
+                    "then": [
+                      {
+                        "objectType": "WriteToSymbol",
+                        "active": true,
+                        "symbolExpression": "%pp%ControlInterface::SelectedCommand%/pp%",
+                        "value": {
+                          "objectType": "StaticValue",
+                          "valueType": "tchmi:general#/definitions/WORD",
+                          "value": 2
+                        },
+                        "asyncWait": true
+                      }
+                    ]
+                  },
+                  {
+                    "elseif": [
+                      {
+                        "compare1": {
+                          "objectType": "Symbol",
+                          "valueType": "tchmi:framework#/definitions/ToggleState",
+                          "symbolExpression": "%ctrl%ReadWriteIndexOption::RadioState%/ctrl%"
+                        },
+                        "compare2": {
+                          "objectType": "StaticValue",
+                          "valueType": "tchmi:framework#/definitions/ToggleState",
+                          "value": "Active"
+                        },
+                        "compareOperator": "==",
+                        "logic": null
+                      }
+                    ],
+                    "then": [
+                      {
+                        "objectType": "WriteToSymbol",
+                        "active": true,
+                        "symbolExpression": "%pp%ControlInterface::SelectedCommand%/pp%",
+                        "value": {
+                          "objectType": "StaticValue",
+                          "valueType": "tchmi:general#/definitions/WORD",
+                          "value": 2
+                        },
+                        "asyncWait": true
+                      }
+                    ]
+                  },
+                  {
+                    "else": [
+                      {
+                        "objectType": "WriteToSymbol",
+                        "active": true,
+                        "symbolExpression": "%pp%ControlInterface::SelectedCommand%/pp%",
+                        "value": {
+                          "objectType": "StaticValue",
+                          "valueType": "tchmi:general#/definitions/WORD",
+                          "value": 65536
+                        },
+                        "asyncWait": true
+                      }
+                    ]
+                  }
+                ],
+                "asyncWait": true
+              }
+            ]
+          },
+          {
+            "elseif": [
+              {
+                "compare1": {
+                  "objectType": "Symbol",
+                  "valueType": "tchmi:general#/definitions/String",
+                  "symbolExpression": "%i%sRFIDAction%/i%"
+                },
+                "compare2": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:general#/definitions/String",
+                  "value": "Write"
+                },
+                "compareOperator": "==",
+                "logic": null
+              }
+            ],
+            "then": [
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%pp%DataInterface::SingleWriteValue%/pp%",
+                "value": {
+                  "objectType": "Symbol",
+                  "valueType": "tchmi:general#/definitions/WORD",
+                  "symbolExpression": "%i%wSelectedValue%/i%"
+                },
+                "asyncWait": true
+              },
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%pp%ControlInterface::SelectedMemoryIndex%/pp%",
+                "value": {
+                  "objectType": "Symbol",
+                  "valueType": "tchmi:general#/definitions/WORD",
+                  "symbolExpression": "%i%wSelectedIndex%/i%"
+                },
+                "asyncWait": true
+              },
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%pp%ControlInterface::SelectedCommand%/pp%",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:general#/definitions/WORD",
+                  "value": 3
+                },
+                "asyncWait": true
+              },
+              {
+                "objectType": "Condition",
+                "active": true,
+                "parts": [
+                  {
+                    "if": [
+                      {
+                        "compare1": {
+                          "objectType": "Symbol",
+                          "valueType": "tchmi:framework#/definitions/ToggleState",
+                          "symbolExpression": "%ctrl%ReadWriteAllOption::RadioState%/ctrl%"
+                        },
+                        "compare2": {
+                          "objectType": "StaticValue",
+                          "valueType": "tchmi:framework#/definitions/ToggleState",
+                          "value": "Active"
+                        },
+                        "compareOperator": "==",
+                        "logic": null
+                      }
+                    ],
+                    "then": [
+                      {
+                        "objectType": "WriteToSymbol",
+                        "active": true,
+                        "symbolExpression": "%pp%ControlInterface::SelectedCommand%/pp%",
+                        "value": {
+                          "objectType": "StaticValue",
+                          "valueType": "tchmi:general#/definitions/WORD",
+                          "value": 3
+                        },
+                        "asyncWait": true
+                      }
+                    ]
+                  },
+                  {
+                    "elseif": [
+                      {
+                        "compare1": {
+                          "objectType": "Symbol",
+                          "valueType": "tchmi:framework#/definitions/ToggleState",
+                          "symbolExpression": "%ctrl%ReadWriteIndexOption::RadioState%/ctrl%"
+                        },
+                        "compare2": {
+                          "objectType": "StaticValue",
+                          "valueType": "tchmi:framework#/definitions/ToggleState",
+                          "value": "Active"
+                        },
+                        "compareOperator": "==",
+                        "logic": null
+                      }
+                    ],
+                    "then": [
+                      {
+                        "objectType": "WriteToSymbol",
+                        "active": true,
+                        "symbolExpression": "%pp%ControlInterface::SelectedCommand%/pp%",
+                        "value": {
+                          "objectType": "StaticValue",
+                          "valueType": "tchmi:general#/definitions/WORD",
+                          "value": 3
+                        },
+                        "asyncWait": true
+                      }
+                    ]
+                  },
+                  {
+                    "else": [
+                      {
+                        "objectType": "WriteToSymbol",
+                        "active": true,
+                        "symbolExpression": "%pp%ControlInterface::SelectedCommand%/pp%",
+                        "value": {
+                          "objectType": "StaticValue",
+                          "valueType": "tchmi:general#/definitions/WORD",
+                          "value": 65536
+                        },
+                        "asyncWait": true
+                      }
+                    ]
+                  }
+                ],
+                "asyncWait": true
+              }
+            ]
+          },
+          {
+            "else": [
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%pp%DataInterface::SingleWriteValue%/pp%",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:general#/definitions/WORD",
+                  "value": 65536
+                },
+                "asyncWait": true
+              },
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%pp%ControlInterface::SelectedMemoryIndex%/pp%",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:general#/definitions/WORD",
+                  "value": 65536
+                },
+                "asyncWait": true
+              },
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%pp%ControlInterface::SelectedCommand%/pp%",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:general#/definitions/WORD",
+                  "value": 65536
+                },
+                "asyncWait": true
+              }
+            ]
+          }
+        ],
+        "asyncWait": true
+      },
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%pp%ControlInterface::ExecuteCommand%/pp%",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:general#/definitions/BOOL",
+          "value": true
+        },
+        "asyncWait": true
+      }
+    ]
+  },
+  {
+    "event": "%ctx%owner::Id|EventRegistrationMode=Resolve%/ctx%.onMouseUp",
+    "actions": [
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%pp%ControlInterface::ExecuteCommand%/pp%",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:general#/definitions/BOOL",
+          "value": false
+        },
+        "asyncWait": true
+      },
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%pp%DataInterface::SingleReadValue%/pp%",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:general#/definitions/WORD",
+          "value": 0
+        },
+        "asyncWait": true
+      },
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%pp%ControlInterface::SelectedMemoryIndex%/pp%",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:general#/definitions/WORD",
+          "value": 65535
+        },
+        "asyncWait": true
+      }
+    ]
+  }
+]</script>
+</div>
+<div id="btnClosingPopUp" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiButton" data-tchmi-grid-column-index="2" data-tchmi-grid-row-index="0" data-tchmi-height="100" data-tchmi-height-unit="%" data-tchmi-text="Close" data-tchmi-width="100" data-tchmi-width-unit="%" data-tchmi-word-wrap="True" data-tchmi-text-horizontal-alignment="Center" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-font-size="30">
+
+<script data-tchmi-target-attribute="data-tchmi-border-color" type="application/json">
+{
+  "color": "rgba(0, 0, 0, 1)"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-border-width" type="application/json">
+{
+  "left": 1,
+  "right": 1,
+  "top": 1,
+  "bottom": 1,
+  "leftUnit": "px",
+  "rightUnit": "px",
+  "topUnit": "px",
+  "bottomUnit": "px"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-border-style" type="application/json">
+{
+  "left": "Solid",
+  "right": "Solid",
+  "top": "Solid",
+  "bottom": "Solid"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-border-radius" type="application/json">
+{
+  "topLeft": 10.0,
+  "topRight": 10.0,
+  "bottomLeft": 10.0,
+  "bottomRight": 10.0,
+  "topLeftUnit": "px",
+  "topRightUnit": "px",
+  "bottomLeftUnit": "px",
+  "bottomRightUnit": "px"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">[
+  {
+    "event": "%ctx%owner::Id|EventRegistrationMode=Resolve%/ctx%.onPressed",
+    "actions": [
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%i%sRFIDAction%/i%",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:general#/definitions/String",
+          "value": "Empty"
+        },
+        "asyncWait": true
+      },
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%i%wSelectedIndex%/i%",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:general#/definitions/WORD",
+          "value": 0
+        },
+        "asyncWait": true
+      },
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%i%wSelectedValue%/i%",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:general#/definitions/WORD",
+          "value": 0
+        },
+        "asyncWait": true
+      },
+      {
+        "objectType": "JavaScript",
+        "active": true,
+        "sourceLines": [
+          "TcHmi.Symbol.readEx2('%pp%PopUpId%/pp%', function(data){",
+          "   if(data.error === TcHmi.Errors.NONE){",
+          "\tvar popUpId = data.value;",
+          "\tvar popUp = TcHmi.Controls.get(popUpId);",
+          "\t",
+          "\tif(popUp && typeof popUp.close === 'function'){",
+          "\t\tpopUp.close();",
+          "\t\t}else{",
+          "\t\tconsole.log('Not able to close PopUp!');",
+          "\t\t}",
+          "",
+          "}else{",
+          "\tconsole.log('PopUpId not readable: ',data.error);",
+          "}                     \t\t",
+          "                     \t",
+          "});"
+        ],
+        "asyncWait": true,
+        "waitMode": "Synchronous"
+      }
+    ]
+  }
+]</script>
+</div>
+</div>
+<div id="RFIDPopUpDataAllWrite" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiDatagrid" data-tchmi-grid-column-index="0" data-tchmi-grid-row-index="2" data-tchmi-height="100" data-tchmi-height-unit="%" data-tchmi-width="100" data-tchmi-width-unit="%" data-tchmi-src-data="%pp%DataInterface::AllWriteData|BindingMode=TwoWay|BindingEvent=onDataChanged%/pp%" data-tchmi-row-height="50" data-tchmi-grid-font-size="30" data-tchmi-header-height="50" data-tchmi-header-font-size="30" data-tchmi-row-numbers-font-size="30" data-tchmi-row-numbers-width="50">
+
+
+<script data-tchmi-target-attribute="data-tchmi-cell-content-padding" type="application/json">
+{
+  "left": 3,
+  "leftUnit": "px",
+  "right": 3,
+  "rightUnit": "px",
+  "top": 0,
+  "topUnit": "px",
+  "bottom": 0,
+  "bottomUnit": "px"
+}
+</script>
+
+
+<script data-tchmi-target-attribute="data-tchmi-table-border-color" type="application/json">
+{
+  "color": "rgba(0, 0, 0, 1)"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-border-color" type="application/json">
+{
+  "color": "rgba(0, 0, 0, 1)"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-src-column" type="application/json">
+[
+  {
+    "label": "Data Write",
+    "control": "TextBox",
+    "width": 100,
+    "widthUnit": "%",
+    "resize": false,
+    "minWidth": 100,
+    "minWidthUnit": "px",
+    "editable": true,
+    "horizontalAlignment": "Left",
+    "verticalAlignment": "Center",
+    "headerHorizontalAlignment": "Center",
+    "headerVerticalAlignment": "Center",
+    "ignoreEscapeSequences": false,
+    "autoFocusOut": true,
+    "autoSelectText": false,
+    "sortable": true
+  }
+]
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-border-width" type="application/json">
+{
+  "left": 2,
+  "right": 2,
+  "top": 2,
+  "bottom": 2,
+  "leftUnit": "px",
+  "rightUnit": "px",
+  "topUnit": "px",
+  "bottomUnit": "px"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-border-style" type="application/json">
+{
+  "left": "Solid",
+  "right": "Solid",
+  "top": "Solid",
+  "bottom": "Solid"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-table-border-style" type="application/json">
+{
+  "left": "Solid",
+  "right": "Solid",
+  "top": "Solid",
+  "bottom": "Solid"
+}
+</script>
+</div>
+</div>
+
+<script data-tchmi-target-attribute="data-tchmi-border-color" type="application/json">
+{
+  "color": "rgba(0, 0, 0, 1)"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-border-width" type="application/json">
+{
+  "left": 2,
+  "right": 2,
+  "top": 2,
+  "bottom": 2,
+  "leftUnit": "px",
+  "rightUnit": "px",
+  "topUnit": "px",
+  "bottomUnit": "px"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-border-style" type="application/json">
+{
+  "left": "Solid",
+  "right": "Solid",
+  "top": "Solid",
+  "bottom": "Solid"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">[
+  {
+    "event": "%ctx%owner::Id|EventRegistrationMode=Resolve%/ctx%.onInitialized",
+    "actions": [
+      {
+        "objectType": "Condition",
+        "active": true,
+        "parts": [
+          {
+            "if": [
+              {
+                "compare1": {
+                  "objectType": "Symbol",
+                  "valueType": "tchmi:general#/definitions/String",
+                  "symbolExpression": "%i%sRFIDAction%/i%"
+                },
+                "compare2": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:general#/definitions/String",
+                  "value": "Read"
+                },
+                "compareOperator": "==",
+                "logic": null
+              }
+            ],
+            "then": [
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%ctrl%ReadSerialNumOption::Visibility%/ctrl%",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:framework#/definitions/Visibility",
+                  "value": "Visible"
+                },
+                "asyncWait": true
+              },
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%ctrl%RFIDPopUpDataAllRead::Visibility%/ctrl%",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:framework#/definitions/Visibility",
+                  "value": "Visible"
+                },
+                "asyncWait": true
+              },
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%ctrl%RFIDPopUpDataAllWrite::Visibility%/ctrl%",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:framework#/definitions/Visibility",
+                  "value": "Collapsed"
+                },
+                "asyncWait": true
+              },
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%ctrl%RFIDPopUpDataAllRead::IsEnabled%/ctrl%",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:general#/definitions/Boolean",
+                  "value": false
+                },
+                "asyncWait": true
+              }
+            ]
+          },
+          {
+            "elseif": [
+              {
+                "compare1": {
+                  "objectType": "Symbol",
+                  "valueType": "tchmi:general#/definitions/String",
+                  "symbolExpression": "%i%sRFIDAction%/i%"
+                },
+                "compare2": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:general#/definitions/String",
+                  "value": "Write"
+                },
+                "compareOperator": "==",
+                "logic": null
+              }
+            ],
+            "then": [
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%ctrl%ReadSerialNumOption::Visibility%/ctrl%",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:framework#/definitions/Visibility",
+                  "value": "Hidden"
+                },
+                "asyncWait": true
+              },
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%ctrl%RFIDPopUpDataAllWrite::Visibility%/ctrl%",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:framework#/definitions/Visibility",
+                  "value": "Visible"
+                },
+                "asyncWait": true
+              },
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%ctrl%RFIDPopUpDataAllRead::Visibility%/ctrl%",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:framework#/definitions/Visibility",
+                  "value": "Collapsed"
+                },
+                "asyncWait": true
+              },
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%ctrl%RFIDPopUpDataAllWrite::IsEnabled%/ctrl%",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:general#/definitions/Boolean",
+                  "value": false
+                },
+                "asyncWait": true
+              }
+            ]
+          },
+          {
+            "else": [
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%ctrl%ReadSerialNumOption::Visibility%/ctrl%",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:framework#/definitions/Visibility",
+                  "value": "Hidden"
+                },
+                "asyncWait": true
+              },
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%ctrl%RFIDPopUpDataAllRead::Visibility%/ctrl%",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:framework#/definitions/Visibility",
+                  "value": "Collapsed"
+                },
+                "asyncWait": true
+              },
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%ctrl%RFIDPopUpDataAllWrite::Visibility%/ctrl%",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:framework#/definitions/Visibility",
+                  "value": "Collapsed"
+                },
+                "asyncWait": true
+              },
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%ctrl%RFIDPopUpDataAllRead::IsEnabled%/ctrl%",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:general#/definitions/Boolean",
+                  "value": false
+                },
+                "asyncWait": true
+              },
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%ctrl%RFIDPopUpDataAllWrite::IsEnabled%/ctrl%",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:general#/definitions/Boolean",
+                  "value": false
+                },
+                "asyncWait": true
+              }
+            ]
+          }
+        ],
+        "asyncWait": true
+      }
+    ]
+  }
+]</script>
+</div>

@@ -127,6 +127,116 @@
   <Target Name="Clean" DependsOnTargets="$(CleanDependsOn)" />
   <Target Name="ReBuild" DependsOnTargets="Clean; Build" />
   <ItemGroup>
+    <Content Include="Contents\ADSSettings.content">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Contents\MachineSection.content">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Contents\MainSelectionDesktop.content">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Contents\OperatingMode.content">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Contents\OverviewSection.content">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Desktop.view">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UserControls\Button_Mainscreen.usercontrol">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UserControls\Button_Mainscreen.usercontrol.json">
+      <SubType>Content</SubType>
+      <DependentUpon>UserControls\Button_Mainscreen.usercontrol</DependentUpon>
+    </Content>
+    <Content Include="UserControls\Footer.usercontrol">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UserControls\Footer.usercontrol.json">
+      <SubType>Content</SubType>
+      <DependentUpon>UserControls\Footer.usercontrol</DependentUpon>
+    </Content>
+    <Content Include="UserControls\Fork.usercontrol">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UserControls\Fork.usercontrol.json">
+      <SubType>Content</SubType>
+      <DependentUpon>UserControls\Fork.usercontrol</DependentUpon>
+    </Content>
+    <Content Include="UserControls\FourButtonSection.usercontrol">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UserControls\FourButtonSection.usercontrol.json">
+      <SubType>Content</SubType>
+      <DependentUpon>UserControls\FourButtonSection.usercontrol</DependentUpon>
+    </Content>
+    <Content Include="UserControls\Header.usercontrol">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UserControls\Header.usercontrol.json">
+      <SubType>Content</SubType>
+      <DependentUpon>UserControls\Header.usercontrol</DependentUpon>
+    </Content>
+    <Content Include="UserControls\Movement.usercontrol">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UserControls\Movement.usercontrol.json">
+      <SubType>Content</SubType>
+      <DependentUpon>UserControls\Movement.usercontrol</DependentUpon>
+    </Content>
+    <Content Include="UserControls\NumericalInputLine.usercontrol">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UserControls\NumericalInputLine.usercontrol.json">
+      <SubType>Content</SubType>
+      <DependentUpon>UserControls\NumericalInputLine.usercontrol</DependentUpon>
+    </Content>
+    <Content Include="UserControls\RFID.usercontrol">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UserControls\RFID.usercontrol.json">
+      <SubType>Content</SubType>
+      <DependentUpon>UserControls\RFID.usercontrol</DependentUpon>
+    </Content>
+    <Content Include="UserControls\RFIDBasicControl.usercontrol">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UserControls\RFIDBasicControl.usercontrol.json">
+      <SubType>Content</SubType>
+      <DependentUpon>UserControls\RFIDBasicControl.usercontrol</DependentUpon>
+    </Content>
+    <Content Include="UserControls\RFIDPopUpContent.usercontrol">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UserControls\RFIDPopUpContent.usercontrol.json">
+      <SubType>Content</SubType>
+      <DependentUpon>UserControls\RFIDPopUpContent.usercontrol</DependentUpon>
+    </Content>
+    <Content Include="UserControls\Runcontrol.usercontrol">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UserControls\Runcontrol.usercontrol.json">
+      <SubType>Content</SubType>
+      <DependentUpon>UserControls\Runcontrol.usercontrol</DependentUpon>
+    </Content>
+    <Content Include="UserControls\SettingLine.usercontrol">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UserControls\SettingLine.usercontrol.json">
+      <SubType>Content</SubType>
+      <DependentUpon>UserControls\SettingLine.usercontrol</DependentUpon>
+    </Content>
+    <Content Include="UserControls\Workpiece.usercontrol">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UserControls\Workpiece.usercontrol.json">
+      <SubType>Content</SubType>
+      <DependentUpon>UserControls\Workpiece.usercontrol</DependentUpon>
+    </Content>
+    <Folder Include="Contents" />
     <Folder Include="Fonts\" />
     <Folder Include="Images" />
     <Folder Include="Images\Manifest" />
@@ -145,6 +255,99 @@
     <Folder Include="Properties" />
     <Content Include=".eslintrc.json">
       <Visible>false</Visible>
+    </Content>
+    <Content Include="Images\ActiveRuncontrol.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\Automatic_Mode.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\BackwardConveyor.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\Beckhoff_Logo.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\Clamp.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\ConveyorBelt.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\CreatePartEmitter.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\DownElevator.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\Elevator.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\Emitter.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\Favicon.ico">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\ForwardConveyor.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\Home-Symbol.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\Machine_Error.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\Machine_Run.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\Machine_Stop.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\MainScreen.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\Manual_Mode.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\OverviewOperatingMode.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\page_navigation_backward.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\page_navigation_forward.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\PickPlaceDevice.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\PositingBar.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\RemovePartRemover.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\ResetRuncontrol.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\RFID.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\Settings.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\StackerCrane.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\StopConveyor.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\Unclamp.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\UpElevator.svg">
+      <SubType>Content</SubType>
     </Content>
     <Content Include="Server\TcHmiLua\TcHmiLua.Config.default.json">
       <SubType>Content</SubType>
@@ -290,14 +493,6 @@
       <SubType>Content</SubType>
       <Visible>true</Visible>
     </Content>
-    <Content Include="Images\Favicon.ico">
-      <SubType>Content</SubType>
-      <Visible>true</Visible>
-    </Content>
-    <Content Include="Images\Beckhoff_Logo.svg">
-      <SubType>Content</SubType>
-      <Visible>true</Visible>
-    </Content>
     <Content Include="Images\Manifest\launcher-icon-0-75x.png">
       <SubType>Content</SubType>
       <Visible>true</Visible>
@@ -319,10 +514,6 @@
       <Visible>true</Visible>
     </Content>
     <Content Include="Images\Manifest\launcher-icon-4x.png">
-      <SubType>Content</SubType>
-      <Visible>true</Visible>
-    </Content>
-    <Content Include="Desktop.view">
       <SubType>Content</SubType>
       <Visible>true</Visible>
     </Content>
@@ -386,6 +577,7 @@
       <Visible>false</Visible>
     </Content>
     <Folder Include="Themes\Base\Images\" />
+    <Folder Include="UserControls" />
   </ItemGroup>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

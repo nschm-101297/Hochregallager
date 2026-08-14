@@ -24,7 +24,7 @@ instAbholbConveyor(
 	SensorInfeed:= Bauteil_Vorh_Zufuehrb_Aus, 
 	SensorOutfeed:= Bauteil_Vorh_Auslaufb_Aus, 
 	MaximumTimeRuncontrol:= T#30S,  
-	ActorInstanceIndex := 0,
+	ActorInstanceIndex := 1,
 	ActorInstanceName := 'FeedIn Stacker Crane',
 	HMIInterface := hmiMachineSectionInterface,
 	MotorForward=> Abholband_Vor, 
