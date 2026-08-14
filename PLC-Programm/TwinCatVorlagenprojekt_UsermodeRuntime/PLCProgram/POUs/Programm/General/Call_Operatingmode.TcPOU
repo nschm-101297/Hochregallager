@@ -3,17 +3,17 @@
   <POU Name="Call_Operatingmode" Id="{b6b8fca4-252c-44b2-a398-fb83b9e36074}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION Call_Operatingmode]]></Declaration>
     <Implementation>
-      <ST><![CDATA[Betriebsarten.instOperatingmode(PermissionHardware := permissionHardware,
-								PermissionSoftware := permissionSafety,
-								E_Stop := NotAus_Hochregallager,
-								OperatingModeManual:= BA_Manuel, 
-				  				OperatingModeAutomatic:= BA_Automatik, 
-								HMIInterface := hmiOperatingmodeInterface,
-				  				LEDStart=> Button_Start_LED, 
-				  				LEDStop=> Button_Stop_LED, 
-				  				LEDHome=> Button_Grundstellung_LED, 
-				  				LEDReset=> Button_Reset_LED, 
-				  				LEDQuit=> Button_Quit_LED);
+      <ST><![CDATA[instOperatingmode(PermissionHardware := permissionHardware,
+				  PermissionSoftware := permissionSafety,
+				  E_Stop := NotAus_Hochregallager,
+				  OperatingModeManual:= BA_Manuel, 
+				  OperatingModeAutomatic:= BA_Automatik, 
+				  HMIInterface := hmiOperatingmodeInterface,
+				  LEDStart=> Button_Start_LED, 
+				  LEDStop=> Button_Stop_LED, 
+				  LEDHome=> Button_Grundstellung_LED, 
+				  LEDReset=> Button_Reset_LED, 
+				  LEDQuit=> Button_Quit_LED);
 
 instOperatingMode.Start_On(Start_Automatik_Hochregallager);
 instOperatingMode.Stop_On(Stop_Automatik_Hochregallager);
