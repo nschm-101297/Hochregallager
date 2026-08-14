@@ -171,7 +171,7 @@
         "persist": false,
         "readonly": false
       },
-      "bRuncontrolTabInvisble": {
+      "bRuncontrolTabInvisible": {
         "value": false,
         "type": "tchmi:general#/definitions/BOOL",
         "persist": false,

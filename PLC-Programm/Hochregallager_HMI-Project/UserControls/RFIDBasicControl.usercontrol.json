@@ -10,7 +10,7 @@
       "name": "data-tchmi-statusrfid",
       "displayName": "StatusRFID",
       "visible": true,
-      "type": "tchmi:server#/definitions/ADS-PLC1.HMIRFIDStatusInterface",
+      "type": "tchmi:server#/definitions/ADS-PLC1.FactoryIO.HMIRFIDStatusInterface",
       "category": "",
       "description": "",
       "readOnly": false,

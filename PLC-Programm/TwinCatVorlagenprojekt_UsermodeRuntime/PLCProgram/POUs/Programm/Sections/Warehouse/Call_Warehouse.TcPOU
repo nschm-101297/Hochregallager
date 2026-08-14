@@ -6,7 +6,7 @@
     <Implementation>
       <ST><![CDATA[instStackerCrane(XAxisMoving := StackerCraneOneXAxisIsMoving,
 				 ZAxisMoving := StackerCraneOneZAxisIsMoving,
-				 ActorInstanceIndex := 1,
+				 ActorInstanceIndex := 0,
 				 ActorInstanceName := 'Zufuehrung',
 				 ForkInPosLeft := Gabel_InPos_Links,
 				 ForkInPosMiddle := Gabel_InPos_Mitte,

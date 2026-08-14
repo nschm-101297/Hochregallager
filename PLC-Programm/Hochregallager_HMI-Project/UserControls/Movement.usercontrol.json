@@ -10,7 +10,7 @@
       "name": "data-tchmi-hmimovementinterface",
       "displayName": "HMIMovementInterface",
       "visible": true,
-      "type": "tchmi:server#/definitions/ADS-PLC1.HMIMovementInterface",
+      "type": "tchmi:server#/definitions/ADS-PLC1.FactoryIO.HMIMovementInterface",
       "category": "",
       "description": "",
       "readOnly": false,

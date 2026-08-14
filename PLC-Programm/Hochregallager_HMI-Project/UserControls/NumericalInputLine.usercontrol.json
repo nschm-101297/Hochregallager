@@ -10,7 +10,7 @@
       "name": "data-tchmi-interface",
       "displayName": "Interface",
       "visible": true,
-      "type": "tchmi:server#/definitions/ADS-PLC1.HMINumericalInputInterface",
+      "type": "tchmi:server#/definitions/ADS-PLC1.FactoryIO.HMINumericalInputInterface",
       "category": "",
       "description": "",
       "readOnly": false,

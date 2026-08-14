@@ -10,7 +10,7 @@
       "name": "data-tchmi-hmiforkinterface",
       "displayName": "HmiForkInterface",
       "visible": true,
-      "type": "tchmi:server#/definitions/ADS-PLC1.HMIMovementForkInterface",
+      "type": "tchmi:server#/definitions/ADS-PLC1.FactoryIO.HMIMovementForkInterface",
       "category": "",
       "description": "",
       "readOnly": false,

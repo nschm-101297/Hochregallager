@@ -10,7 +10,7 @@
       "name": "data-tchmi-hmiworkpieceinterface",
       "displayName": "HMIWorkpieceInterface",
       "visible": true,
-      "type": "tchmi:server#/definitions/ADS-PLC1.HMIWorkpieceInterface",
+      "type": "tchmi:server#/definitions/ADS-PLC1.FactoryIO.HMIWorkpieceInterface",
       "category": "",
       "description": "",
       "readOnly": false,

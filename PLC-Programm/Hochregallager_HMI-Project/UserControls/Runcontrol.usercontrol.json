@@ -10,7 +10,7 @@
       "name": "data-tchmi-hmiruncontrolinterface",
       "displayName": "HMIRuncontrolInterface",
       "visible": true,
-      "type": "tchmi:server#/definitions/ADS-PLC1.HMIRuncontrolInterface",
+      "type": "tchmi:server#/definitions/ADS-PLC1.FactoryIO.HMIRuncontrolInterface",
       "category": "",
       "description": "",
       "readOnly": false,

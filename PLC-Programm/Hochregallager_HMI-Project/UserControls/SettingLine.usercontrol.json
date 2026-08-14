@@ -10,7 +10,7 @@
       "name": "data-tchmi-interface",
       "displayName": "Interface",
       "visible": true,
-      "type": "tchmi:server#/definitions/ADS-PLC1.HMISettingLineInterface",
+      "type": "tchmi:server#/definitions/ADS-PLC1.FactoryIO.HMISettingLineInterface",
       "category": "",
       "description": "",
       "readOnly": false,
