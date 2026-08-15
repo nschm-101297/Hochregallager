@@ -5,11 +5,11 @@
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[instRemoverConveyorOutfeedLong(PartPresent:= SensorConveyorOutfeedEnd, 
-					   	  ActorInstanceIndex := 0,
-					   	  ActorInstanceName := 'FeedOut',
-					   	  HMIInterface := hmiMachineSectionInterface,
-						  OperatingModeSection := instOperatingMode.StateOperatingMode,
-					   	  RemovePart=> ConveyorFeedOutLongRemover);
+					   	  	   ActorInstanceIndex := 0,
+					   	  	   ActorInstanceName := 'FeedOut',
+					   	  	   HMIInterface := hmiMachineSectionInterface,
+						  	   OperatingModeSection := instOperatingMode.StateOperatingMode,
+					   	  	   RemovePart=> ConveyorFeedOutLongRemover);
 
 instRemoverConveyorOutfeedLong.Remove();]]></ST>
     </Implementation>
