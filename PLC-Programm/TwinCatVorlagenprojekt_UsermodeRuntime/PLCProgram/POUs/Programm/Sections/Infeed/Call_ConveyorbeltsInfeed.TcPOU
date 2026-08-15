@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <POU Name="Call_ConveyorbeltsInfeed" Id="{2454d1c3-e996-4d20-af1e-35424b2544e8}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION Call_ConveyorbeltsInfeed]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[(*================ FeedIn ================*)
+instConveyorFeedIn(
+	SensorInfeed:= PartPresentConveyorInfeedBegin, 
+	SensorOutfeed:= PartPresentConveyorInfeedEnd, 
+	MaximumTimeRuncontrol:= T#30S, 
+	ActorInstanceIndex := 0,
+	ActorInstanceName := 'FeedIn',
+	HMIInterface := hmiMachineSectionInterface,
+	MotorForward=> FeedInForward, 
+	RuncontrolForwardActive=> conFdIRunControlForwardActiv, 
+	OperatingMode:= instOperatingMode.StateOperatingMode);
+	
+instConveyorFeedIn.MotorForward_On((PartPresentConveyorInfeedBegin OR conFdIRunControlForwardActiv) 
+											AND NOT PartPresentConveyorInfeedStCEnd AND Gabel_InPos_Mitte);
+instConveyorFeedIn.Motor_Off(PartPresentConveyorInfeedEnd AND PartPresentConveyorInfeedStCEnd);
+
+(*================ FeedIn Stacker Crane ================*)
+instConveyorFeedInStackerCrane(
+	SensorInfeed:= PartPresentConveyorInfeedEnd, 
+	SensorOutfeed:= PartPresentConveyorInfeedStCEnd, 
+	MaximumTimeRuncontrol:= T#30S,  
+	ActorInstanceIndex := 1,
+	ActorInstanceName := 'FeedIn Stacker Crane',
+	HMIInterface := hmiMachineSectionInterface,
+	MotorForward=> FeedInStackerCraneForward, 
+	RuncontrolForwardActive=> conFdIStCRunControlForwardActiv, 
+	OperatingMode:= instOperatingMode.StateOperatingMode);
+	
+instConveyorFeedInStackerCrane.MotorForward_On(PartPresentConveyorInfeedEnd AND NOT PartPresentConveyorInfeedStCEnd
+									AND Gabel_InPos_Mitte);
+instConveyorFeedInStackerCrane.Motor_Off(PartPresentConveyorInfeedStCEnd);]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

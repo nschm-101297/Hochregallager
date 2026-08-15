@@ -92,7 +92,7 @@
       "SignalName": "SensorConveyorFeedInOutput",
       "Key": "94e1ef6c-a7d7-4287-a52b-23d47a7fb32e",
       "IOName": "BitInput10",
-      "VariableNameInControlsystem": "Bauteil_Vorh_Zufuehrb_Aus",
+      "VariableNameInControlsystem": "PartPresentConveyorInfeedEnd",
       "CommentInControlsystem": "Sensor conveyor feed in part present",
       "IONumber": 10,
       "Signaltype": 0
@@ -101,7 +101,7 @@
       "SignalName": "SensorFeedInConveyorStackerCrane",
       "Key": "051d23c3-fcf9-48bc-892d-f0e1249d34ef",
       "IOName": "BitInput11",
-      "VariableNameInControlsystem": "Bauteil_Vorh_Auslaufb_Aus",
+      "VariableNameInControlsystem": "PartPresentConveyorInfeedStCEnd",
       "CommentInControlsystem": "Sensor conveyor feed in stacker crane part present",
       "IONumber": 11,
       "Signaltype": 0
@@ -227,7 +227,7 @@
       "SignalName": "ConveyorFeedIn",
       "Key": "018fd2da-a3fd-4a7d-8fba-21e57d2da848",
       "IOName": "BitOutput10",
-      "VariableNameInControlsystem": "Zufuehrb_Vor",
+      "VariableNameInControlsystem": "FeedInForward",
       "CommentInControlsystem": "Conveyor feed in forward",
       "IONumber": 10,
       "Signaltype": 1
@@ -236,7 +236,7 @@
       "SignalName": "ConveyorFeedInStackerCrane",
       "Key": "4e561bfb-277b-41ab-ae22-93abe295631c",
       "IOName": "BitOutput11",
-      "VariableNameInControlsystem": "Abholband_Vor",
+      "VariableNameInControlsystem": "FeedInStackerCraneForward",
       "CommentInControlsystem": "Conveyor feed in stacker crane forward",
       "IONumber": 11,
       "Signaltype": 1

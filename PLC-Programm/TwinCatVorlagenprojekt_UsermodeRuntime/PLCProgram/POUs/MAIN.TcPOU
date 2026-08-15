@@ -11,8 +11,9 @@ END_VAR
 Call_Operatingmode();
 Call_HMI();
 Call_Emitter();
-Call_Conveyorbelts();
+Call_ConveyorbeltsInfeed();
 Call_Warehouse();
+Call_ConveyorbeltsOutfeed();
 SignalmappingOutput();]]></ST>
     </Implementation>
   </POU>

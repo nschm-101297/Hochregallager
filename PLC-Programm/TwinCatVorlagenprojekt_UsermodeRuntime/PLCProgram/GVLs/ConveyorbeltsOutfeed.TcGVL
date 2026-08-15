@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <GVL Name="ConveyorbeltsOutfeed" Id="{308910a0-8f79-4f67-9fa4-29ffd7c77145}">
+    <Declaration><![CDATA[VAR_GLOBAL
+	instConveyorFeedOutStackerCrane	:	FactoryIO.FB_Foerderband;
+	instConveyorFeedOutTwoMeter	:	FactoryIO.FB_Foerderband;
+	instConveyorFeedOutCurve	:	FactoryIO.FB_Foerderband;
+	instConveyorFeedOutLong	:	FactoryIO.FB_Foerderband;
+	instPartMovingOut	:	FB_RunControl;
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

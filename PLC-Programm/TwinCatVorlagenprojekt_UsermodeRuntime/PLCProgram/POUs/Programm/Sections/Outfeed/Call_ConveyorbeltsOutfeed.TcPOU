@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <POU Name="Call_ConveyorbeltsOutfeed" Id="{5ea1b665-5aaa-40ae-8f9a-5a2aea29c74c}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION Call_ConveyorbeltsOutfeed]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[(*================ Runcontrol ================*)
+instPartMovingOut.ActivateRunControl(SensorConveyorOutfeedStackerCrane AND Gabel_InPos_Mitte);
+instPartMovingOut.DeactivateRunControl(SensorConveyorOutfeedEnd);
+
+(*================ FeedOut Stacker Crane ================*)
+instConveyorFeedOutStackerCrane( 
+	MaximumTimeRuncontrol:= T#30S, 
+	ActorInstanceIndex := 2,
+	ActorInstanceName := 'FeedOut StackerCrane',
+	HMIInterface := hmiMachineSectionInterface,
+	OperatingMode:= instOperatingMode.StateOperatingMode,
+	MotorForward=> ConveyorFeedOutStackerCrane);
+	
+instConveyorFeedOutStackerCrane.MotorForward_On(instPartMovingOut.IsActive);
+instConveyorFeedOutStackerCrane.Motor_Off(NOT instPartMovingOut.IsActive);
+
+(*================ FeedOut Two Meter ================*)
+instConveyorFeedOutTwoMeter(
+	MaximumTimeRuncontrol:= T#30S,  
+	ActorInstanceIndex := 3,
+	ActorInstanceName := 'FeedOut Two meter',
+	HMIInterface := hmiMachineSectionInterface, 
+	OperatingMode:= instOperatingMode.StateOperatingMode,
+	MotorForward=> ConveyorFeedOutTwoMeter);
+	
+instConveyorFeedOutTwoMeter.MotorForward_On(instPartMovingOut.IsActive);
+instConveyorFeedOutTwoMeter.Motor_Off(NOT instPartMovingOut.IsActive);
+
+(*================ FeedOut Curve ================*)
+instConveyorFeedOutCurve(
+	MaximumTimeRuncontrol:= T#30S,  
+	ActorInstanceIndex := 4,
+	ActorInstanceName := 'FeedOut Curve',
+	HMIInterface := hmiMachineSectionInterface, 
+	OperatingMode:= instOperatingMode.StateOperatingMode,
+	MotorForward=> ConveyorCurveFeedOut);
+	
+instConveyorFeedOutCurve.MotorForward_On(instPartMovingOut.IsActive);
+instConveyorFeedOutCurve.Motor_Off(NOT instPartMovingOut.IsActive);
+
+(*================ FeedOut Long ================*)
+instConveyorFeedOutLong(
+	MaximumTimeRuncontrol:= T#30S,  
+	ActorInstanceIndex := 5,
+	ActorInstanceName := 'FeedOut Long',
+	HMIInterface := hmiMachineSectionInterface, 
+	OperatingMode:= instOperatingMode.StateOperatingMode,
+	MotorForward=> ConveyorFeedOutLong);
+	
+instConveyorFeedOutLong.MotorForward_On(instPartMovingOut.IsActive);
+instConveyorFeedOutLong.Motor_Off(NOT instPartMovingOut.IsActive);]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

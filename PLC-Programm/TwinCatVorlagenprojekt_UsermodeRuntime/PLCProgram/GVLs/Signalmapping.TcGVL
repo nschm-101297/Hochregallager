@@ -11,8 +11,8 @@
 	Reset_Hochregallager	:	BOOL;	//Reset
 	Quit_Hochregallager	:	BOOL;	//Quit
 	PartPresentConveyorInfeedBegin	:	BOOL;	//Sensor Emitter part present
-	Bauteil_Vorh_Zufuehrb_Aus	:	BOOL;	//Sensor conveyor feed in part present
-	Bauteil_Vorh_Auslaufb_Aus	:	BOOL;	//Sensor conveyor feed in stacker crane part present
+	PartPresentConveyorInfeedEnd	:	BOOL;	//Sensor conveyor feed in part present
+	PartPresentConveyorInfeedStCEnd	:	BOOL;	//Sensor conveyor feed in stacker crane part present
 	StackerCraneOneXAxisIsMoving	:	BOOL;	//Stacker crane X axis is moving
 	StackerCraneOneZAxisIsMoving	:	BOOL;	//Stacker crane Z axis is moving
 	Gabel_InPos_Links	:	BOOL;	//Stacker crane fork in pos left
@@ -26,8 +26,8 @@
 	Button_Reset_LED	:	BOOL;	//LED reset button
 	Button_Quit_LED	:	BOOL;	//LED quit button
 	Bauteil_Erzeugen	:	BOOL;	//Emitter
-	Zufuehrb_Vor	:	BOOL;	//Conveyor feed in forward
-	Abholband_Vor	:	BOOL;	//Conveyor feed in stacker crane forward
+	FeedInForward	:	BOOL;	//Conveyor feed in forward
+	FeedInStackerCraneForward	:	BOOL;	//Conveyor feed in stacker crane forward
 	RFID_Zufuehr_Aufuehren	:	BOOL;	//RFID feed in stacker crane execute command
 	Gabel_zu_Pos_Links	:	BOOL;	//Stacker crane fork left
 	Gabel_zu_Pos_Rechts	:	BOOL;	//Stacker crane fork right

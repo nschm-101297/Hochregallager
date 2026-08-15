@@ -32,7 +32,7 @@ CASE processSteps OF
 StackerCraneSteps.DriveToLoadingPosition:
 		instStackerCrane.MoveAxesStackerCrane_ON(TRUE, 55);
 		IF instStackerCrane.InPositionXAxis AND instStackerCrane.InPositionZAxis   
-		AND Bauteil_Vorh_Auslaufb_Aus
+		AND PartPresentConveyorInfeedStCEnd
 		THEN
 			InUnloading	:= FALSE;
 			processSteps := StackerCraneSteps.ForkUnderLoad;
