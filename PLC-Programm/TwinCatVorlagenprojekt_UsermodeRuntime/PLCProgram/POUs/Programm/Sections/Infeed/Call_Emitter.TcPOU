@@ -10,9 +10,9 @@ END_VAR
     <Implementation>
       <ST><![CDATA[instEmitterConveyorFeedIn(PartPresent:= PartPresentConveyorInfeedBegin, 
 					   	  ActorInstanceIndex := 0,
-					   	  ActorInstanceName := 'Part Creation',
+					   	  ActorInstanceName := 'FeedIn',
 					   	  HMIInterface := hmiMachineSectionInterface,
-					   	  CreatePart=> Bauteil_Erzeugen);
+					   	  CreatePart=> EmitterFeedIn);
 					   
 IF NOT PartPresentConveyorInfeedBegin AND 
 	currentStateOperatingMode.AutomaticStart.IsActive

@@ -25,7 +25,7 @@
 	Button_Grundstellung_LED	:	BOOL;	//LED homing button
 	Button_Reset_LED	:	BOOL;	//LED reset button
 	Button_Quit_LED	:	BOOL;	//LED quit button
-	Bauteil_Erzeugen	:	BOOL;	//Emitter
+	EmitterFeedIn	:	BOOL;	//Emitter
 	FeedInForward	:	BOOL;	//Conveyor feed in forward
 	FeedInStackerCraneForward	:	BOOL;	//Conveyor feed in stacker crane forward
 	RFID_Zufuehr_Aufuehren	:	BOOL;	//RFID feed in stacker crane execute command

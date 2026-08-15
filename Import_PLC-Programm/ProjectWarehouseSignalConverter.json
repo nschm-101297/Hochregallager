@@ -218,7 +218,7 @@
       "SignalName": "FeedInEmitter",
       "Key": "f4563f6d-ebe4-44f2-96e2-3679deecd782",
       "IOName": "BitOutput9",
-      "VariableNameInControlsystem": "Bauteil_Erzeugen",
+      "VariableNameInControlsystem": "EmitterFeedIn",
       "CommentInControlsystem": "Emitter",
       "IONumber": 9,
       "Signaltype": 1
