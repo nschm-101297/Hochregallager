@@ -33,7 +33,12 @@ instAbholbConveyor(
 	
 instAbholbConveyor.MotorForward_On(Bauteil_Vorh_Zufuehrb_Aus AND NOT Bauteil_Vorh_Auslaufb_Aus
 									AND Gabel_InPos_Mitte);
-instAbholbConveyor.Motor_Off(Bauteil_Vorh_Auslaufb_Aus);]]></ST>
+instAbholbConveyor.Motor_Off(Bauteil_Vorh_Auslaufb_Aus);
+
+(*================ Runcontrol ================*)
+instRunControl.ActivateRunControl(simuActivateRunControl);
+instRunControl.DeactivateRunControl(simuDeactivateRunControl);
+simuRunControlActive := instRunControl.IsActive;]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

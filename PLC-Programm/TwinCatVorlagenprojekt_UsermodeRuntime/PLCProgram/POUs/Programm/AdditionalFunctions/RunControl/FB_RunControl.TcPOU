@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <POU Name="FB_RunControl" Id="{ca2eaa5d-b744-4f82-9238-240684bd257a}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK PUBLIC FB_RunControl
+VAR
+	statRuncontrolActive	:	BOOL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="ActivateRunControl" Id="{34162a8a-9518-40b6-9439-52e0599e4c5b}">
+      <Declaration><![CDATA[METHOD PUBLIC ActivateRunControl
+VAR_INPUT
+	Activate	:	BOOL;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[IF Activate	THEN
+	statRuncontrolActive := TRUE;
+END_IF]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="DeactivateRunControl" Id="{00b61f17-8e7a-4b0f-9b26-56c7cea82755}">
+      <Declaration><![CDATA[METHOD PUBLIC DeactivateRunControl
+VAR_INPUT
+	Deactivate	:	BOOL;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[IF Deactivate THEN
+	statRuncontrolActive := FALSE;
+END_IF]]></ST>
+      </Implementation>
+    </Method>
+    <Property Name="IsActive" Id="{e89aaee9-99a8-4638-b76b-de6f9adebe2c}">
+      <Declaration><![CDATA[PROPERTY PUBLIC IsActive : BOOL]]></Declaration>
+      <Get Name="Get" Id="{42b13b13-458a-4c0b-a357-1400f6782730}">
+        <Declaration><![CDATA[
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[IsActive := statRuncontrolActive;]]></ST>
+        </Implementation>
+      </Get>
+    </Property>
+  </POU>
+</TcPlcObject>
