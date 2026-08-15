@@ -3,6 +3,7 @@
   <GVL Name="Remover" Id="{4cbc536a-47e3-4fc1-95fa-ad5e0e7be6b2}">
     <Declaration><![CDATA[VAR_GLOBAL
 	ConveyorFeedOutLongRemover	:	BOOL;	//Conveyor feed out long remover
+	instRemoverConveyorOutfeedLong	: FactoryIO.FB_Remover;	//Instance of FB_Remover
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <POU Name="Call_Remover" Id="{4486a922-5b20-46e7-8b7f-272c76e02a85}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION Call_Remover
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[instRemoverConveyorOutfeedLong(PartPresent:= SensorConveyorOutfeedEnd, 
+					   	  ActorInstanceIndex := 0,
+					   	  ActorInstanceName := 'FeedOut',
+					   	  HMIInterface := hmiMachineSectionInterface,
+						  OperatingModeSection := instOperatingMode.StateOperatingMode,
+					   	  RemovePart=> ConveyorFeedOutLongRemover);
+
+instRemoverConveyorOutfeedLong.Remove();]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

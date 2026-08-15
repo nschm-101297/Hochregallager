@@ -78,6 +78,9 @@
     <Compile Include="POUs\Programm\Sections\Outfeed\Call_ConveyorbeltsOutfeed.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\Programm\Sections\Outfeed\Call_Remover.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\Programm\Sections\Warehouse\Call_Warehouse.TcPOU">
       <SubType>Code</SubType>
     </Compile>
