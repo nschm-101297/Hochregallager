@@ -8,7 +8,8 @@ instPartMovingOut.ActivateRunControl(SensorConveyorOutfeedStackerCrane AND Gabel
 instPartMovingOut.DeactivateRunControl(SensorConveyorOutfeedEnd);
 
 (*================ FeedOut Stacker Crane ================*)
-instConveyorFeedOutStackerCrane( 
+instConveyorFeedOutStackerCrane(  
+	SensorOutfeed:= TRUE,
 	MaximumTimeRuncontrol:= T#30S, 
 	ActorInstanceIndex := 2,
 	ActorInstanceName := 'FeedOut StackerCrane',
@@ -17,10 +18,11 @@ instConveyorFeedOutStackerCrane(
 	MotorForward=> ConveyorFeedOutStackerCrane);
 	
 instConveyorFeedOutStackerCrane.MotorForward_On(instPartMovingOut.IsActive);
-instConveyorFeedOutStackerCrane.Motor_Off(NOT instPartMovingOut.IsActive);
+instConveyorFeedOutStackerCrane.Motor_Off(NOT instPartMovingOut.IsActive AND NOT instOperatingmode.StateOperatingMode.ManuelIsActive);
 
 (*================ FeedOut Two Meter ================*)
-instConveyorFeedOutTwoMeter(
+instConveyorFeedOutTwoMeter(  
+	SensorOutfeed:= TRUE,
 	MaximumTimeRuncontrol:= T#30S,  
 	ActorInstanceIndex := 3,
 	ActorInstanceName := 'FeedOut Two meter',
@@ -29,10 +31,11 @@ instConveyorFeedOutTwoMeter(
 	MotorForward=> ConveyorFeedOutTwoMeter);
 	
 instConveyorFeedOutTwoMeter.MotorForward_On(instPartMovingOut.IsActive);
-instConveyorFeedOutTwoMeter.Motor_Off(NOT instPartMovingOut.IsActive);
+instConveyorFeedOutTwoMeter.Motor_Off(NOT instPartMovingOut.IsActive AND NOT instOperatingmode.StateOperatingMode.ManuelIsActive);
 
 (*================ FeedOut Curve ================*)
-instConveyorFeedOutCurve(
+instConveyorFeedOutCurve(  
+	SensorOutfeed:= TRUE,
 	MaximumTimeRuncontrol:= T#30S,  
 	ActorInstanceIndex := 4,
 	ActorInstanceName := 'FeedOut Curve',
@@ -41,10 +44,11 @@ instConveyorFeedOutCurve(
 	MotorForward=> ConveyorCurveFeedOut);
 	
 instConveyorFeedOutCurve.MotorForward_On(instPartMovingOut.IsActive);
-instConveyorFeedOutCurve.Motor_Off(NOT instPartMovingOut.IsActive);
+instConveyorFeedOutCurve.Motor_Off(NOT instPartMovingOut.IsActive AND NOT instOperatingmode.StateOperatingMode.ManuelIsActive);
 
 (*================ FeedOut Long ================*)
-instConveyorFeedOutLong(
+instConveyorFeedOutLong(  
+	SensorOutfeed:= TRUE,
 	MaximumTimeRuncontrol:= T#30S,  
 	ActorInstanceIndex := 5,
 	ActorInstanceName := 'FeedOut Long',
@@ -53,7 +57,7 @@ instConveyorFeedOutLong(
 	MotorForward=> ConveyorFeedOutLong);
 	
 instConveyorFeedOutLong.MotorForward_On(instPartMovingOut.IsActive);
-instConveyorFeedOutLong.Motor_Off(NOT instPartMovingOut.IsActive);]]></ST>
+instConveyorFeedOutLong.Motor_Off(NOT instPartMovingOut.IsActive AND NOT instOperatingmode.StateOperatingMode.ManuelIsActive);]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>
