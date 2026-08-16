@@ -34,7 +34,14 @@ instConveyorFeedInStackerCrane(
 	
 instConveyorFeedInStackerCrane.MotorForward_On(PartPresentConveyorInfeedEnd AND NOT PartPresentConveyorInfeedStCEnd
 									AND Gabel_InPos_Mitte AND finishedMessageReadSerialNumber);
-instConveyorFeedInStackerCrane.Motor_Off(PartPresentConveyorInfeedStCEnd);]]></ST>
+instConveyorFeedInStackerCrane.Motor_Off(PartPresentConveyorInfeedStCEnd);
+
+(*================ Data shifting ================*)
+feConveyorInfeedEnd(CLK := PartPresentConveyorInfeedEnd);
+IF feConveyorInfeedEnd.Q THEN
+	readData.FeedInStackerCrane := readData.FeedInReadingPoint;
+	//readData.FeedInReadingPoint := 0;
+END_IF]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

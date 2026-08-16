@@ -21,7 +21,7 @@
 		   	   MemoryIndex => RFIDFeedInMemoryIndex);
 			   
 reFinishedMessageReadSerialNumber(CLK := finishedMessageReadSerialNumber);
-
+instRFIDInfeed.ReadSerialNumber(PartPresentConveyorInfeedEnd AND NOT finishedMessageReadSerialNumber);
 IF reFinishedMessageReadSerialNumber.Q THEN
 	readData.FeedInReadingPoint := RFIDFeedInReadData;
 END_IF]]></ST>

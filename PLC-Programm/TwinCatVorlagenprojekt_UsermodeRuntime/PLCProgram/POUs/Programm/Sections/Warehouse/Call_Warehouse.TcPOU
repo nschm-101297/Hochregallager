@@ -53,7 +53,7 @@ StackerCraneSteps.LiftLoadItem:
 		END_IF
 StackerCraneSteps.ForkToMiddle:
 		instStackerCrane.MoveForkToMiddle_ON(TRUE);
-		IF Gabel_InPos_Mitte AND NOT InUnloading AND FALSE THEN
+		IF Gabel_InPos_Mitte AND NOT InUnloading THEN
 			processSteps := StackerCraneSteps.DriveToUnloadPrePosition;
 		ELSIF Gabel_InPos_Mitte AND InUnloading THEN
 			processSteps := StackerCraneSteps.DriveToLoadingPosition;

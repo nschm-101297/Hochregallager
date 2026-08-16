@@ -6,6 +6,7 @@
 	instConveyorFeedInStackerCrane	:	FactoryIO.FB_Foerderband;
 	conFdIRunControlForwardActiv	:	BOOL;	//Runcontrol forward activ
 	conFdIStCRunControlForwardActiv	:	BOOL;	//Runcontrol forward activ
+	feConveyorInfeedEnd	:	F_TRIG;	//Falling edge sensor end conveyor infeed
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>
