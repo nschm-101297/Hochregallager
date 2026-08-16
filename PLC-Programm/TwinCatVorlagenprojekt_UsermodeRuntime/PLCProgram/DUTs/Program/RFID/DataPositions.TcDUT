@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <DUT Name="DataPositions" Id="{62d3f8c5-02f8-48fd-a0b0-c021127c544f}">
+    <Declaration><![CDATA[TYPE DataPositions :
+STRUCT
+	FeedInReadingPoint	:	WORD;
+	FeedInStackerCrane	:	WORD;
+	StackerCraneFork	:	WORD;
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

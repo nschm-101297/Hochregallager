@@ -28,7 +28,7 @@
 	EmitterFeedIn	:	BOOL;	//Emitter
 	FeedInForward	:	BOOL;	//Conveyor feed in forward
 	FeedInStackerCraneForward	:	BOOL;	//Conveyor feed in stacker crane forward
-	RFID_Zufuehr_Aufuehren	:	BOOL;	//RFID feed in stacker crane execute command
+	RFIDFeedInExecuteCommand	:	BOOL;	//RFID feed in stacker crane execute command
 	Gabel_zu_Pos_Links	:	BOOL;	//Stacker crane fork left
 	Gabel_zu_Pos_Rechts	:	BOOL;	//Stacker crane fork right
 	StackerCraneOneLiftFork	:	BOOL;	//Stacker crane lift fork
@@ -36,12 +36,12 @@
 	ConveyorFeedOutTwoMeter  	:	BOOL;	//Conveyor feed out forward
 	ConveyorCurveFeedOut  	:	BOOL;	//Conveyor curvefeed out forward
 	ConveyorFeedOutLong  	:	BOOL;	//Conveyor feed out long forward
-	RFID_Zufuehr_Auslauf_Rueck_Kommand_ID	:	WORD;	//RFID feed in stacker crane feedback command ID
-	RFID_Zufuehr_Auslauf_Status	:	WORD;	//RFID feed in stacker crane status
-	RFID_Zufuehr_Auslauf_Dat_Gelesen	:	WORD;	//RFID feed in stacker crane read data
-	RFID_Zufuehr_Auslauf_Kommando	:	WORD;	//RFID stacker crane feed in command
-	RFID_Zufuehr_Auslauf_Speich_Ind	:	WORD;	//RFID stacker crane feed in memory index
-	RFID_Zufuehr_Auslauf_Dat_Schr	:	WORD;	//RFID stacker crane feed in data write
+	RFIDFeedInReceivedCommandID	:	WORD;	//RFID feed in stacker crane feedback command ID
+	RFIDFeedInStatus	:	WORD;	//RFID feed in stacker crane status
+	RFIDFeedInReadData	:	WORD;	//RFID feed in stacker crane read data
+	RFIDFeedInCommand	:	WORD;	//RFID stacker crane feed in command
+	RFIDFeedInMemoryIndex	:	WORD;	//RFID stacker crane feed in memory index
+	RFIDFeedInWriteData	:	WORD;	//RFID stacker crane feed in data write
 	StackerCraneOneTargetPos  	:	WORD;	//Stacker crane one index position
 END_VAR]]></Declaration>
   </GVL>

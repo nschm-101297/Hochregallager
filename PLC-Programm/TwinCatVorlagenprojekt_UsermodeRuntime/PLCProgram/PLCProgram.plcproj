@@ -18,6 +18,9 @@
     <LibraryReferences>{3125a2d2-4046-486a-8164-24d971afc251}</LibraryReferences>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="DUTs\Program\RFID\DataPositions.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="DUTs\Program\Warehouse\StackerCraneSteps.TcDUT">
       <SubType>Code</SubType>
     </Compile>
@@ -49,6 +52,10 @@
       <SubType>Code</SubType>
       <LinkAlways>true</LinkAlways>
     </Compile>
+    <Compile Include="GVLs\RFID.TcGVL">
+      <SubType>Code</SubType>
+      <LinkAlways>true</LinkAlways>
+    </Compile>
     <Compile Include="GVLs\Signalmapping.TcGVL">
       <SubType>Code</SubType>
       <LinkAlways>true</LinkAlways>
@@ -75,6 +82,9 @@
     <Compile Include="POUs\Programm\Sections\Infeed\Call_Emitter.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\Programm\Sections\Infeed\Call_RFID.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\Programm\Sections\Outfeed\Call_ConveyorbeltsOutfeed.TcPOU">
       <SubType>Code</SubType>
     </Compile>
@@ -97,6 +107,7 @@
   <ItemGroup>
     <Folder Include="DUTs" />
     <Folder Include="DUTs\Program" />
+    <Folder Include="DUTs\Program\RFID" />
     <Folder Include="DUTs\Program\Warehouse" />
     <Folder Include="GVLs" />
     <Folder Include="POUs\Programm" />

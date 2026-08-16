@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <POU Name="Call_RFID" Id="{d35ef5f1-c2a8-47ea-9556-60581a4cf8a1}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION Call_RFID
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[instRFIDInfeed(PermissionHardware := permissionHardware,
+		   	   QuitError := instOperatingMode.StateOperatingMode.Quit.IsActive,
+		   	   Reset := instOperatingMode.StateOperatingMode.Reset.IsActive,
+		   	   SensorPartDetected := PartPresentConveyorInfeedEnd,
+		   	   CommandID := RFIDFeedInReceivedCommandID,
+		   	   ReadData := RFIDFeedInReadData,
+		   	   Status := RFIDFeedInStatus,
+		   	   ActorInstanceIndex := 0,
+		   	   ActorInstanceName := 'FeedIn StackerCrane',
+		   	   HMIInterface := HMI.hmiMachineSectionInterface,
+		   	   FMReadingSerialNumber => finishedMessageReadSerialNumber,
+		   	   ExecuteCommand => RFIDFeedInExecuteCommand,
+		   	   Command => RFIDFeedInCommand,
+		   	   WriteData => RFIDFeedInWriteData,
+		   	   MemoryIndex => RFIDFeedInMemoryIndex);
+			   
+reFinishedMessageReadSerialNumber(CLK := finishedMessageReadSerialNumber);
+
+IF reFinishedMessageReadSerialNumber.Q THEN
+	readData.FeedInReadingPoint := RFIDFeedInReadData;
+END_IF]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

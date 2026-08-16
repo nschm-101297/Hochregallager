@@ -25,9 +25,9 @@ SensorConveyorOutfeedStackerCrane	:=	GVL.mb_Output_Coils[19];
 SensorConveyorOutfeedEnd	:=	GVL.mb_Output_Coils[20];
 
 (*=============== Analoge Eingaenge ===============*)
-RFID_Zufuehr_Auslauf_Rueck_Kommand_ID	:=	GVL.mb_Output_Registers[3];
-RFID_Zufuehr_Auslauf_Status	:=	GVL.mb_Output_Registers[4];
-RFID_Zufuehr_Auslauf_Dat_Gelesen	:=	GVL.mb_Output_Registers[5];
+RFIDFeedInReceivedCommandID	:=	GVL.mb_Output_Registers[3];
+RFIDFeedInStatus	:=	GVL.mb_Output_Registers[4];
+RFIDFeedInReadData	:=	GVL.mb_Output_Registers[5];
 ]]></ST>
     </Implementation>
   </POU>

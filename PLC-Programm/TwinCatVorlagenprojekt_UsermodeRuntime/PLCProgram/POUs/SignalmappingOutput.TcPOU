@@ -12,7 +12,7 @@ GVL.mb_Input_Coils[7]	:=	Button_Quit_LED;
 GVL.mb_Input_Coils[9]	:=	EmitterFeedIn;
 GVL.mb_Input_Coils[10]	:=	FeedInForward;
 GVL.mb_Input_Coils[11]	:=	FeedInStackerCraneForward;
-GVL.mb_Input_Coils[12]	:=	RFID_Zufuehr_Aufuehren;
+GVL.mb_Input_Coils[12]	:=	RFIDFeedInExecuteCommand;
 GVL.mb_Input_Coils[15]	:=	Gabel_zu_Pos_Links;
 GVL.mb_Input_Coils[16]	:=	Gabel_zu_Pos_Rechts;
 GVL.mb_Input_Coils[17]	:=	StackerCraneOneLiftFork;
@@ -23,9 +23,9 @@ GVL.mb_Input_Coils[22]	:=	ConveyorFeedOutLong;
 GVL.mb_Input_Coils[23]	:=	ConveyorFeedOutLongRemover;
 
 (*=============== Analoge Ausgaenge ===============*)
-GVL.mb_Input_Registers[3]	:=	RFID_Zufuehr_Auslauf_Kommando;
-GVL.mb_Input_Registers[4]	:=	RFID_Zufuehr_Auslauf_Speich_Ind;
-GVL.mb_Input_Registers[5]	:=	RFID_Zufuehr_Auslauf_Dat_Schr;
+GVL.mb_Input_Registers[3]	:=	RFIDFeedInCommand;
+GVL.mb_Input_Registers[4]	:=	RFIDFeedInMemoryIndex;
+GVL.mb_Input_Registers[5]	:=	RFIDFeedInWriteData;
 GVL.mb_Input_Registers[7]	:=	StackerCraneOneTargetPos;
 ]]></ST>
     </Implementation>

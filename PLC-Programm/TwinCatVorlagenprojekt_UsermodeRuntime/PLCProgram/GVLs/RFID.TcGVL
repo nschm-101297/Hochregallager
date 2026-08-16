@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <GVL Name="RFID" Id="{c44171e8-d4bd-45d7-b43c-8561eeeb76b4}">
+    <Declaration><![CDATA[VAR_GLOBAL
+	instRFIDInfeed	:	FactoryIO.FB_RFID;	//Instance of the RFID-Sensor
+	finishedMessageReadSerialNumber	:	BOOL;
+	reFinishedMessageReadSerialNumber	:	R_TRIG;
+	readData	:	DataPositions;
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

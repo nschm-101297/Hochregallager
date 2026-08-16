@@ -245,7 +245,7 @@
       "SignalName": "RFIDFeedInOutputExecuteCommand",
       "Key": "b4c5b391-244c-4937-bb1f-d783f44d5f6b",
       "IOName": "BitOutput12",
-      "VariableNameInControlsystem": "RFID_Zufuehr_Aufuehren",
+      "VariableNameInControlsystem": "RFIDFeedInExecuteCommand",
       "CommentInControlsystem": "RFID feed in stacker crane execute command",
       "IONumber": 12,
       "Signaltype": 1
@@ -326,7 +326,7 @@
       "SignalName": "RFIDFeedInOutputCommandID",
       "Key": "84792a42-7fd4-4b9e-94ac-616c3e9e53a9",
       "IOName": "NumericInput3",
-      "VariableNameInControlsystem": "RFID_Zufuehr_Auslauf_Rueck_Kommand_ID",
+      "VariableNameInControlsystem": "RFIDFeedInReceivedCommandID",
       "CommentInControlsystem": "RFID feed in stacker crane feedback command ID",
       "IONumber": 3,
       "Signaltype": 2
@@ -335,7 +335,7 @@
       "SignalName": "RFIDFeedInOutputStatus",
       "Key": "cd96049b-63df-4822-a22b-999ca0eb2f12",
       "IOName": "NumericInput4",
-      "VariableNameInControlsystem": "RFID_Zufuehr_Auslauf_Status",
+      "VariableNameInControlsystem": "RFIDFeedInStatus",
       "CommentInControlsystem": "RFID feed in stacker crane status",
       "IONumber": 4,
       "Signaltype": 2
@@ -344,7 +344,7 @@
       "SignalName": "RFIDFeedInOutputReadData",
       "Key": "6f22b29f-3d94-47c9-9cbc-07c0ba2d7130",
       "IOName": "NumericInput5",
-      "VariableNameInControlsystem": "RFID_Zufuehr_Auslauf_Dat_Gelesen",
+      "VariableNameInControlsystem": "RFIDFeedInReadData",
       "CommentInControlsystem": "RFID feed in stacker crane read data",
       "IONumber": 5,
       "Signaltype": 2
@@ -353,7 +353,7 @@
       "SignalName": "RFIDFeedInOutputFeedbackCommand",
       "Key": "9198395e-d8c5-4da1-8984-0727b1430226",
       "IOName": "NumericOutput3",
-      "VariableNameInControlsystem": "RFID_Zufuehr_Auslauf_Kommando",
+      "VariableNameInControlsystem": "RFIDFeedInCommand",
       "CommentInControlsystem": "RFID stacker crane feed in command",
       "IONumber": 3,
       "Signaltype": 3
@@ -362,7 +362,7 @@
       "SignalName": "RFIDFeedInOutputMemoryIndex",
       "Key": "ca5cece8-c343-43b1-9fae-50ff7bb6da8b",
       "IOName": "NumericOutput4",
-      "VariableNameInControlsystem": "RFID_Zufuehr_Auslauf_Speich_Ind",
+      "VariableNameInControlsystem": "RFIDFeedInMemoryIndex",
       "CommentInControlsystem": "RFID stacker crane feed in memory index",
       "IONumber": 4,
       "Signaltype": 3
@@ -371,7 +371,7 @@
       "SignalName": "RFIDFeedInOutputWriteData",
       "Key": "9e9d2cae-ba9e-4dbd-b8ad-5c53f54ed63b",
       "IOName": "NumericOutput5",
-      "VariableNameInControlsystem": "RFID_Zufuehr_Auslauf_Dat_Schr",
+      "VariableNameInControlsystem": "RFIDFeedInWriteData",
       "CommentInControlsystem": "RFID stacker crane feed in data write",
       "IONumber": 5,
       "Signaltype": 3

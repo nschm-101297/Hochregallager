@@ -15,9 +15,10 @@ instConveyorFeedIn(
 	RuncontrolForwardActive=> conFdIRunControlForwardActiv, 
 	OperatingMode:= instOperatingMode.StateOperatingMode);
 	
-instConveyorFeedIn.MotorForward_On((PartPresentConveyorInfeedBegin OR conFdIRunControlForwardActiv) 
+instConveyorFeedIn.MotorForward_On((PartPresentConveyorInfeedBegin OR conFdIRunControlForwardActiv OR
+									(PartPresentConveyorInfeedEnd AND finishedMessageReadSerialNumber)) 
 											AND NOT PartPresentConveyorInfeedStCEnd AND Gabel_InPos_Mitte);
-instConveyorFeedIn.Motor_Off(PartPresentConveyorInfeedEnd AND PartPresentConveyorInfeedStCEnd);
+instConveyorFeedIn.Motor_Off(PartPresentConveyorInfeedEnd AND NOT finishedMessageReadSerialNumber);
 
 (*================ FeedIn Stacker Crane ================*)
 instConveyorFeedInStackerCrane(
@@ -32,7 +33,7 @@ instConveyorFeedInStackerCrane(
 	OperatingMode:= instOperatingMode.StateOperatingMode);
 	
 instConveyorFeedInStackerCrane.MotorForward_On(PartPresentConveyorInfeedEnd AND NOT PartPresentConveyorInfeedStCEnd
-									AND Gabel_InPos_Mitte);
+									AND Gabel_InPos_Mitte AND finishedMessageReadSerialNumber);
 instConveyorFeedInStackerCrane.Motor_Off(PartPresentConveyorInfeedStCEnd);]]></ST>
     </Implementation>
   </POU>
