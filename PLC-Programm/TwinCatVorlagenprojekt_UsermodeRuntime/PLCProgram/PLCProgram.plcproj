@@ -57,6 +57,10 @@
       <SubType>Code</SubType>
       <LinkAlways>true</LinkAlways>
     </Compile>
+    <Compile Include="GVLs\OrderManagement.TcGVL">
+      <SubType>Code</SubType>
+      <LinkAlways>true</LinkAlways>
+    </Compile>
     <Compile Include="GVLs\Remover.TcGVL">
       <SubType>Code</SubType>
       <LinkAlways>true</LinkAlways>
@@ -98,6 +102,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\Programm\Sections\Outfeed\Call_Remover.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\Programm\Sections\Warehouse\Call_OrderManagement.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\Programm\Sections\Warehouse\Call_Warehouse.TcPOU">

@@ -4,7 +4,26 @@
     <Declaration><![CDATA[FUNCTION Call_OrderManagement
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[]]></ST>
+      <ST><![CDATA[reNewOrderSend(CLK := currentOrderData.NewOrderSend);
+
+IF reNewOrderSend.Q THEN
+	currentOrderData.NewOrderReceived := TRUE;
+END_IF
+
+reOrderDone(CLK := currentOrderData.OrderDone);
+
+IF reOrderDone.Q THEN
+	currentOrderData.JobType := OrderType.None;
+	currentOrderData.SerialNumberItem := 0;
+	currentOrderData.WarehousePlace := 0;
+	currentOrderData.OrderDone := FALSE;
+END_IF
+
+nextJobReady := currentOrderData.JobType <> OrderType.None AND
+				currentOrderData.WarehousePlace <> 0 AND NOT
+				currentOrderData.OrderDone;
+				
+]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

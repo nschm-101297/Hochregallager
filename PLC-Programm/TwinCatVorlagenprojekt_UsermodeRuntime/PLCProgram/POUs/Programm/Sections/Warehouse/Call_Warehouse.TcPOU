@@ -26,13 +26,15 @@ END_IF
 CASE processStepsLoading OF
 	StackerCraneStepsLoading.Waiting:
 		instStackerCrane.MoveForkToMiddle_ON(TRUE);
-		IF instOperatingMode.StateOperatingMode.AutomaticStart.IsActive THEN
+		IF instOperatingMode.StateOperatingMode.AutomaticStart.IsActive AND nextJobReady
+			AND currentOrderData.JobType = OrderType.Loading
+		THEN
 			processStepsLoading := StackerCraneStepsLoading.DriveToLoadingPosition;
 		END_IF
 StackerCraneStepsLoading.DriveToLoadingPosition:
-		instStackerCrane.MoveAxesStackerCrane_ON(TRUE, 55);
-		IF instStackerCrane.InPositionXAxis AND instStackerCrane.InPositionZAxis   
-		AND PartPresentConveyorInfeedStCEnd
+		instStackerCrane.MoveAxesStackerCrane_ON(TRUE, 55);	
+		IF instStackerCrane.InPositionXAxis AND instStackerCrane.InPositionZAxis
+		AND NOT instStackerCrane.NewOrderActive AND PartPresentConveyorInfeedStCEnd
 		THEN
 			InUnloading	:= FALSE;
 			processStepsLoading := StackerCraneStepsLoading.ForkUnderLoad;
@@ -46,8 +48,7 @@ StackerCraneStepsLoading.ForkUnderLoad:
 StackerCraneStepsLoading.LiftLoadItem:
 		instStackerCrane.MoveForkToLeft_ON(TRUE);
 		instStackerCrane.LiftForkUp(TRUE);
-		IF instStackerCrane.InPositionXAxis AND instStackerCrane.InPositionZAxis 
-		AND TRUE
+		IF instStackerCrane.InPositionXAxis AND instStackerCrane.InPositionZAxis
 		THEN
 			processStepsLoading := StackerCraneStepsLoading.ForkToMiddle;
 		END_IF
@@ -56,12 +57,13 @@ StackerCraneStepsLoading.ForkToMiddle:
 		IF Gabel_InPos_Mitte AND NOT InUnloading THEN
 			processStepsLoading := StackerCraneStepsLoading.DriveToUnloadPrePosition;
 		ELSIF Gabel_InPos_Mitte AND InUnloading THEN
-			processStepsLoading := StackerCraneStepsLoading.DriveToLoadingPosition;
+			currentOrderData.OrderDone := TRUE;
+			processStepsLoading := StackerCraneStepsLoading.Waiting;
 		END_IF
 StackerCraneStepsLoading.DriveToUnloadPrePosition:
-		instStackerCrane.MoveAxesStackerCrane_ON(TRUE, 1);
-		IF instStackerCrane.InPositionXAxis AND instStackerCrane.InPositionZAxis   
-		AND TRUE
+		instStackerCrane.MoveAxesStackerCrane_ON(TRUE, currentOrderData.WarehousePlace);
+		IF instStackerCrane.InPositionXAxis AND instStackerCrane.InPositionZAxis
+		AND NOT instStackerCrane.NewOrderActive
 		THEN
 			processStepsLoading := StackerCraneStepsLoading.ForkInWarehouse;
 		END_IF
@@ -73,13 +75,19 @@ StackerCraneStepsLoading.ForkInWarehouse:
 StackerCraneStepsLoading.DriveToUnloadPosition:
 		instStackerCrane.MoveForkToRight_ON(TRUE);
 		instStackerCrane.LowerForkUp(TRUE);
-		IF instStackerCrane.InPositionXAxis AND instStackerCrane.InPositionZAxis  
-		AND TRUE
+		IF instStackerCrane.InPositionXAxis AND instStackerCrane.InPositionZAxis
 		THEN
 			InUnloading	:= TRUE;
 			processStepsLoading := StackerCraneStepsLoading.ForkToMiddle;
 		END_IF
-END_CASE]]></ST>
+END_CASE
+
+(*================ Data shifting ================*)
+reShiftSerialNumber(CLK := processStepsLoading = StackerCraneStepsLoading.LiftLoadItem);
+IF reShiftSerialNumber.Q THEN
+	readData.StackerCraneFork := readData.FeedInStackerCrane;
+	currentOrderData.SerialNumberItem := readData.StackerCraneFork;
+END_IF]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

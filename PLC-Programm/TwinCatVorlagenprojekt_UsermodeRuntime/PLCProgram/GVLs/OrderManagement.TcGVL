@@ -6,6 +6,7 @@
 	nextJobReady	:	BOOL;
 	reOrderDone	:	R_TRIG;
 	reNewOrderSend	:	R_TRIG;
+	reShiftSerialNumber	:	R_TRIG;
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>
