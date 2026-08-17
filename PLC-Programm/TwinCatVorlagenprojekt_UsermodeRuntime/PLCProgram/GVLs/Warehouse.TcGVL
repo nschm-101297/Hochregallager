@@ -4,7 +4,7 @@
     <Declaration><![CDATA[VAR_GLOBAL
 	InUnloading	:	BOOL;
 	instStackerCrane	:	FB_StackerCrane_Numerical;
-	processSteps	: StackerCraneSteps;	
+	processStepsLoading	: StackerCraneStepsLoading;	
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>

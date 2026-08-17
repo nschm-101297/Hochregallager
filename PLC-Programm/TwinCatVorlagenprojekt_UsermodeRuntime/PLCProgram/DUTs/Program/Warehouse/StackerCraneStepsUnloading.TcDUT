@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <DUT Name="StackerCraneStepsUnloading" Id="{47dd2897-8a05-4e66-9c8a-c6eac9afdc2b}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+{attribute 'strict'}
+{attribute 'to_string'}
+TYPE StackerCraneStepsUnloading :
+(
+	Waiting := 0,
+	DriveToWarehousePlace,
+	ForkInWarehouse,
+	LiftPart,
+	ForkToMiddle,
+	DriveToUnloadingPlace,
+	ForkToRight,
+	LowerPart
+);
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

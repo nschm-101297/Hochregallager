@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1">
-  <DUT Name="StackerCraneSteps" Id="{ad15095a-c874-4d94-aa8b-9e325c07147b}">
+  <DUT Name="StackerCraneStepsLoading" Id="{ad15095a-c874-4d94-aa8b-9e325c07147b}">
     <Declaration><![CDATA[{attribute 'qualified_only'}
 {attribute 'strict'}
 {attribute 'to_string'}
-TYPE StackerCraneSteps :
+TYPE StackerCraneStepsLoading :
 (
 	Waiting := 0,
 	DriveToLoadingPosition,

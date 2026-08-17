@@ -13,6 +13,7 @@ Call_HMI();
 Call_Emitter();
 Call_ConveyorbeltsInfeed();
 Call_RFID();
+Call_OrderManagement();
 Call_Warehouse();
 Call_ConveyorbeltsOutfeed();
 Call_Remover();

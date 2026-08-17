@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <DUT Name="OrderType" Id="{bb6aa89e-efce-4a0b-9963-ca123115e4ce}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+{attribute 'strict'}
+{attribute 'to_string'}
+TYPE OrderType :
+(
+	None := 0,
+	Loading,
+	Unloading
+);
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

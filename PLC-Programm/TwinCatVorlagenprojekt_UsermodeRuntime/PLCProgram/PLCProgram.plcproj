@@ -18,10 +18,19 @@
     <LibraryReferences>{3125a2d2-4046-486a-8164-24d971afc251}</LibraryReferences>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="DUTs\Program\OrderManagement\OrderData.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\Program\OrderManagement\OrderType.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="DUTs\Program\RFID\DataPositions.TcDUT">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DUTs\Program\Warehouse\StackerCraneSteps.TcDUT">
+    <Compile Include="DUTs\Program\Warehouse\StackerCraneStepsLoading.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\Program\Warehouse\StackerCraneStepsUnloading.TcDUT">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="GVLs\ConveyorbeltsInfeed.TcGVL">
@@ -107,6 +116,7 @@
   <ItemGroup>
     <Folder Include="DUTs" />
     <Folder Include="DUTs\Program" />
+    <Folder Include="DUTs\Program\OrderManagement" />
     <Folder Include="DUTs\Program\RFID" />
     <Folder Include="DUTs\Program\Warehouse" />
     <Folder Include="GVLs" />

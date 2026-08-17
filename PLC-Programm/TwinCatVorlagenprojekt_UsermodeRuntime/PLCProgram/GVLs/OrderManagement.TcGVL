@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <GVL Name="OrderManagement" Id="{3d1cffef-548e-4995-89bf-e9fb4ff0ce2e}">
+    <Declaration><![CDATA[VAR_GLOBAL
+	currentOrderData	:	OrderData;
+	nextJobReady	:	BOOL;
+	reOrderDone	:	R_TRIG;
+	reNewOrderSend	:	R_TRIG;
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

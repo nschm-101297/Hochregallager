@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <POU Name="Call_OrderManagement" Id="{3ae359b9-2e2c-427f-bdfc-b48721c7806b}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION Call_OrderManagement
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

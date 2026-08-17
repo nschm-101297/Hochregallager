@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <DUT Name="OrderData" Id="{5c1c9598-ed79-455f-9cd2-3d172a8854b3}">
+    <Declaration><![CDATA[TYPE OrderData :
+STRUCT
+	JobType	:	OrderType;	//Kind of Order; None, Loading, Unloading
+	WarehousePlace	:	WORD;	//Place in the warehouse whre part should be picked or put
+	SerialNumberItem	:	WORD;	//Serialnumber of the part
+	OrderDone	:	BOOL;	//Current order is finished
+	NewOrderSend	:	BOOL;	//Order application has sent new order
+	NewOrderReceived	:	BOOL;	//PLC has received new data
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>
