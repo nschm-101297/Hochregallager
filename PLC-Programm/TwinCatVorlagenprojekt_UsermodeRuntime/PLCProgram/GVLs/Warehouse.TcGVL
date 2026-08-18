@@ -9,7 +9,8 @@
 	instStackerCrane	:	FB_StackerCrane_Numerical;
 	processStepsLoading	: StackerCraneStepsLoading;	
 	processStepsUnloading	: StackerCraneStepsUnloading;
-	LiftLowerPart	:	TON;
+	LiftLowerPartLoadingprocess	:	TON;
+	LiftLowerPartUnloadingprocess	:	TON;
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>

@@ -19,6 +19,9 @@
 				 TargetPos => StackerCraneOneTargetPos);
 				 
 (*================ Steps Loading ================*)
+LiftLowerPartLoadingprocess(IN := processStepsLoading = StackerCraneStepsLoading.LiftLoadItem OR
+					processStepsLoading = StackerCraneStepsLoading.DriveToUnloadPosition,
+			  		PT := T#1S);
 IF instOperatingMode.StateOperatingMode.Reset.IsActive THEN
 	processStepsLoading := StackerCraneStepsLoading.Waiting;
 	processStepsUnloading := StackerCraneStepsLoading.Waiting;
@@ -50,7 +53,7 @@ StackerCraneStepsLoading.ForkUnderLoad:
 StackerCraneStepsLoading.LiftLoadItem:
 		instStackerCrane.MoveForkToLeft_ON(TRUE);
 		instStackerCrane.LiftForkUp(TRUE);
-		IF instStackerCrane.InPositionXAxis AND instStackerCrane.InPositionZAxis
+		IF LiftLowerPartLoadingprocess.Q
 		THEN
 			processStepsLoading := StackerCraneStepsLoading.ForkToMiddle;
 		END_IF
@@ -77,7 +80,7 @@ StackerCraneStepsLoading.ForkInWarehouse:
 StackerCraneStepsLoading.DriveToUnloadPosition:
 		instStackerCrane.MoveForkToRight_ON(TRUE);
 		instStackerCrane.LowerForkUp(TRUE);
-		IF instStackerCrane.InPositionXAxis AND instStackerCrane.InPositionZAxis
+		IF LiftLowerPartLoadingprocess.Q
 		THEN
 			InUnloading	:= TRUE;
 			processStepsLoading := StackerCraneStepsLoading.ForkToMiddle;
@@ -85,9 +88,9 @@ StackerCraneStepsLoading.DriveToUnloadPosition:
 END_CASE
 
 (*================ Steps Unloading ================*)
-LiftLowerPart(IN := processStepsUnloading = StackerCraneStepsUnloading.LiftPart OR
+LiftLowerPartUnloadingprocess(IN := processStepsUnloading = StackerCraneStepsUnloading.LiftPart OR
 					processStepsUnloading = StackerCraneStepsUnloading.LowerPart,
-			  PT := T#8S);
+			  		PT := T#1S);
 CASE processStepsUnloading OF
 StackerCraneStepsUnloading.Waiting:
 		UnloadingSequenceActive := FALSE;
@@ -112,7 +115,7 @@ StackerCraneStepsUnloading.ForkInWarehouse:
 StackerCraneStepsUnloading.LiftPart:
 		instStackerCrane.LiftForkUp(TRUE);
 		PartPresent	:= TRUE;
-		IF LiftLowerPart.Q THEN			
+		IF LiftLowerPartUnloadingprocess.Q THEN			
 		processStepsUnloading := StackerCraneStepsUnloading.ForkToMiddle;
 		END_IF
 StackerCraneStepsUnloading.ForkToMiddle:
@@ -138,7 +141,7 @@ StackerCraneStepsUnloading.ForkToRight:
 StackerCraneStepsUnloading.LowerPart:
 		instStackerCrane.LowerForkUp(TRUE);
 		PartPresent	:= FALSE;
-		IF LiftLowerPart.Q THEN
+		IF LiftLowerPartUnloadingprocess.Q THEN
 		processStepsUnloading := StackerCraneStepsUnloading.ForkToMiddle;
 		END_IF
 END_CASE
