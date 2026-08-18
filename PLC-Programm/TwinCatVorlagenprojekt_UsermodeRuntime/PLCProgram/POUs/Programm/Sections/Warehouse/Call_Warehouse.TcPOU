@@ -26,10 +26,11 @@ END_IF
 
 CASE processStepsLoading OF
 	StackerCraneStepsLoading.Waiting:
-		instStackerCrane.MoveForkToMiddle_ON(TRUE);
+		LoadingSequenceActive := FALSE;
 		IF instOperatingMode.StateOperatingMode.AutomaticStart.IsActive AND nextJobReady
-			AND currentOrderData.JobType = OrderType.Loading
+			AND currentOrderData.JobType = OrderType.Loading AND NOT UnloadingSequenceActive
 		THEN
+			LoadingSequenceActive := TRUE;
 			processStepsLoading := StackerCraneStepsLoading.DriveToLoadingPosition;
 		END_IF
 StackerCraneStepsLoading.DriveToLoadingPosition:
@@ -89,10 +90,11 @@ LiftLowerPart(IN := processStepsUnloading = StackerCraneStepsUnloading.LiftPart 
 			  PT := T#8S);
 CASE processStepsUnloading OF
 StackerCraneStepsUnloading.Waiting:
-		//instStackerCrane.MoveForkToMiddle_ON(TRUE);
+		UnloadingSequenceActive := FALSE;
 		IF instOperatingMode.StateOperatingMode.AutomaticStart.IsActive AND nextJobReady
-			AND currentOrderData.JobType = OrderType.Unloading
+			AND currentOrderData.JobType = OrderType.Unloading AND NOT LoadingSequenceActive
 		THEN
+			UnloadingSequenceActive := TRUE;
 			processStepsUnloading := StackerCraneStepsUnloading.DriveToWarehousePlace;
 		END_IF
 StackerCraneStepsUnloading.DriveToWarehousePlace:
@@ -100,7 +102,6 @@ StackerCraneStepsUnloading.DriveToWarehousePlace:
 		IF instStackerCrane.InPositionXAxis AND instStackerCrane.InPositionZAxis
 		AND NOT instStackerCrane.NewOrderActive
 		THEN
-			//PartPresent	:= FALSE;
 			processStepsUnloading := StackerCraneStepsUnloading.ForkInWarehouse;
 		END_IF
 StackerCraneStepsUnloading.ForkInWarehouse:

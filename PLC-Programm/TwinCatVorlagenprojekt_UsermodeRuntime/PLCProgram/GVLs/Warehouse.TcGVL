@@ -4,6 +4,8 @@
     <Declaration><![CDATA[VAR_GLOBAL
 	InUnloading	:	BOOL;
 	PartPresent	:	BOOL;
+	LoadingSequenceActive	:	BOOL;
+	UnloadingSequenceActive	:	BOOL;
 	instStackerCrane	:	FB_StackerCrane_Numerical;
 	processStepsLoading	: StackerCraneStepsLoading;	
 	processStepsUnloading	: StackerCraneStepsUnloading;
