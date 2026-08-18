@@ -4,6 +4,7 @@
     <Declaration><![CDATA[VAR_GLOBAL
 	instRFIDInfeed	:	FactoryIO.FB_RFID;	//Instance of the RFID-Sensor
 	finishedMessageReadSerialNumber	:	BOOL;
+	reReadSerialNumber	:	R_TRIG;
 	reFinishedMessageReadSerialNumber	:	R_TRIG;
 	readData	:	DataPositions;
 END_VAR]]></Declaration>
