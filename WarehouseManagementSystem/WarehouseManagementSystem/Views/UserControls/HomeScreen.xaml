@@ -1,0 +1,114 @@
+﻿<UserControl x:Class="WarehouseManagementSystem.Views.UserControls.HomeScreen"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WarehouseManagementSystem.Views.UserControls"
+             mc:Ignorable="d"
+             Background="Beige"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <DropShadowEffect x:Key="ShadowNormal" BlurRadius="12" ShadowDepth="14" Opacity="0.35" />
+        <DropShadowEffect x:Key="ShadowHover"  BlurRadius="16" ShadowDepth="16" Opacity="0.45" />
+        <DropShadowEffect x:Key="ShadowPressed" BlurRadius="8" ShadowDepth="20" Opacity="0.20" />
+
+        <Style x:Key="ShadowButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="Beige"/>
+            <Setter Property="BorderBrush" Value="Black"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="Padding" Value="12,6"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="Face"
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="10"
+                                Padding="{TemplateBinding Padding}"
+                                SnapsToDevicePixels="True"
+                                Effect="{StaticResource ShadowNormal}">
+
+                            <ContentPresenter
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                RecognizesAccessKey="True"/>
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="Face" Property="Effect" Value="{StaticResource ShadowHover}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="Face" Property="Effect" Value="{StaticResource ShadowPressed}"/>
+                                <Setter TargetName="Face" Property="RenderTransform">
+                                    <Setter.Value>
+                                        <TranslateTransform Y="1"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="Face" Property="Effect" Value="{x:Null}"/>
+                                <Setter TargetName="Face" Property="Opacity" Value="0.5"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Button Grid.Column="0"
+                Grid.Row="0"
+                Style="{StaticResource ShadowButtonStyle}"
+                Command=""
+                ToolTip="ADS-Connection">
+            <Image Source="/Images/connection.png" Stretch="Uniform" MinWidth="20" MaxWidth="400"/>
+        </Button>
+        <Button Grid.Column="1"
+                Grid.Row="0"
+                Style="{StaticResource ShadowButtonStyle}"
+                Command=""
+                ToolTip="ADS-Variables">
+            <Image Source="/Images/adsCommunication.png" Stretch="Uniform" MinWidth="50" MaxWidth="400"/>
+        </Button>
+        <Button Grid.Column="2"
+                Grid.Row="0"
+                Style="{StaticResource ShadowButtonStyle}"
+                Command=""
+                ToolTip="ADS-Connection">
+            <Image Source="/Images/orders.png" Stretch="Uniform" MinWidth="50" MaxWidth="400"/>
+        </Button>
+        <Button Grid.Column="0"
+                Grid.Row="1"
+                Style="{StaticResource ShadowButtonStyle}"
+                Command=""
+                ToolTip="Warehouse overview">
+            <Image Source="/Images/storageOverview.png" Stretch="Uniform" MinWidth="50" MaxWidth="400"/>
+        </Button>
+        <Button Grid.Column="1"
+                Grid.Row="1"
+                Style="{StaticResource ShadowButtonStyle}"
+                Command="{Binding HomeScreen}">
+        </Button>
+        <Button Grid.Column="2"
+                Grid.Row="1"
+                Style="{StaticResource ShadowButtonStyle}"
+                Command="{Binding HomeScreen}">
+        </Button>
+    </Grid>
+</UserControl>
