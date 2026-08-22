@@ -75,40 +75,58 @@
         <Button Grid.Column="0"
                 Grid.Row="0"
                 Style="{StaticResource ShadowButtonStyle}"
-                Command=""
+                Command="{Binding ADSConnection}"
+                Visibility="{Binding ADSConnectionButton,
+                             Mode=TwoWay,
+                             UpdateSourceTrigger=PropertyChanged}"
                 ToolTip="ADS-Connection">
             <Image Source="/Images/connection.png" Stretch="Uniform" MinWidth="20" MaxWidth="400"/>
         </Button>
         <Button Grid.Column="1"
                 Grid.Row="0"
                 Style="{StaticResource ShadowButtonStyle}"
-                Command=""
+                Command="{Binding ADSVariableConnection}"
+                Visibility="{Binding ADSVariableConnectionButton,
+                             Mode=TwoWay,
+                             UpdateSourceTrigger=PropertyChanged}"
                 ToolTip="ADS-Variables">
             <Image Source="/Images/adsCommunication.png" Stretch="Uniform" MinWidth="50" MaxWidth="400"/>
         </Button>
         <Button Grid.Column="2"
                 Grid.Row="0"
                 Style="{StaticResource ShadowButtonStyle}"
-                Command=""
-                ToolTip="ADS-Connection">
+                Command="{Binding OrderManagement}"
+                Visibility="{Binding OrderManagementButton,
+                             Mode=TwoWay,
+                             UpdateSourceTrigger=PropertyChanged}"
+                ToolTip="Order management">
             <Image Source="/Images/orders.png" Stretch="Uniform" MinWidth="50" MaxWidth="400"/>
         </Button>
         <Button Grid.Column="0"
                 Grid.Row="1"
                 Style="{StaticResource ShadowButtonStyle}"
-                Command=""
+                Command="{Binding WarehouseOverview}"
+                Visibility="{Binding WarehouseOverviewButton,
+                             Mode=TwoWay,
+                             UpdateSourceTrigger=PropertyChanged}"
                 ToolTip="Warehouse overview">
             <Image Source="/Images/storageOverview.png" Stretch="Uniform" MinWidth="50" MaxWidth="400"/>
         </Button>
         <Button Grid.Column="1"
                 Grid.Row="1"
                 Style="{StaticResource ShadowButtonStyle}"
-                Command="{Binding HomeScreen}">
+                Command="{Binding FreeCommandOne}"
+                Visibility="{Binding FreeCommandOneButton,
+                             Mode=TwoWay,
+                             UpdateSourceTrigger=PropertyChanged}">
         </Button>
         <Button Grid.Column="2"
                 Grid.Row="1"
                 Style="{StaticResource ShadowButtonStyle}"
-                Command="{Binding HomeScreen}">
+                Command="{Binding FreeCommandTwo}"
+                Visibility="{Binding FreeCommandTwoButton,
+                             Mode=TwoWay,
+                             UpdateSourceTrigger=PropertyChanged}">
         </Button>
     </Grid>
 </UserControl>
