@@ -9,15 +9,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\adsCommunication.png" />
+    <None Remove="Images\connection.png" />
     <None Remove="Images\home.png" />
+    <None Remove="Images\orders.png" />
+    <None Remove="Images\settings.png" />
+    <None Remove="Images\storageOverview.png" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Converters\" />
     <Folder Include="Models\" />
-    <Folder Include="ViewModels\" />
     <Folder Include="Services\" />
-    <Folder Include="Views\UserControls\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -25,7 +28,22 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Images\adsCommunication.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\connection.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Images\home.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\orders.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\settings.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\storageOverview.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
