@@ -8,11 +8,10 @@ using System.Threading.Tasks;
 
 namespace WarehouseManagementSystem.Models.ADS
 {
-    public sealed class AdsConnection : INotifyPropertyChanged
+    public sealed class AdsClientConnection : INotifyPropertyChanged
     {
         #region Properties
         private IAdsConnectionProperty _amsNetID;
-
         public IAdsConnectionProperty AmsNetID
         {
             get { return _amsNetID; }
@@ -89,7 +88,7 @@ namespace WarehouseManagementSystem.Models.ADS
         #endregion
 
         #region Constructors
-        public AdsConnection()
+        public AdsClientConnection()
         {
             AmsNetID = new AdsConnectionProperty("Ams-Net-ID:", "0.0.0.0.0.0");
             AdsState = new AdsConnectionProperty("ADS state:", "Idle");

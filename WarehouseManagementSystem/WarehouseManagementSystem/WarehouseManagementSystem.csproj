@@ -18,10 +18,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Services\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Beckhoff.TwinCAT.Ads" Version="7.0.317" />
   </ItemGroup>
 
