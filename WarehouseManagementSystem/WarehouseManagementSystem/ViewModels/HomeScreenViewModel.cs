@@ -137,7 +137,12 @@ namespace WarehouseManagementSystem.ViewModels
         #region Command-Methods
         public void ADSConnectionExecute(object par)
         {
-            
+            if(_parentViewModel == null)
+            {
+                return;
+            }
+            _parentViewModel.Header = "ADS-Connection";
+            _parentViewModel.SubScreen = new ADSConnectionScreenViewModel();
         }
         public bool ADSConnectionCanExecute(object par)
         {
