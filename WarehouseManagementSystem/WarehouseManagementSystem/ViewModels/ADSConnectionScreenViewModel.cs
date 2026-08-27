@@ -26,7 +26,17 @@ namespace WarehouseManagementSystem.ViewModels
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(AdsClientConnection)));
             }
         }
-        public ObservableCollection<IAdsConnectionProperty> AdsClientConnectionProperties { get; set; }
+        private ObservableCollection<IAdsConnectionProperty> _adsClientConnectionProperties;
+
+        public ObservableCollection<IAdsConnectionProperty> AdsClientConnectionProperties
+        {
+            get { return _adsClientConnectionProperties; }
+            set 
+            { 
+                _adsClientConnectionProperties = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(AdsClientConnectionProperties)));
+            }
+        }
         #endregion
 
         #region Events
@@ -38,8 +48,7 @@ namespace WarehouseManagementSystem.ViewModels
         {
             App app = (App)Application.Current;
             _clientService = app?.AdsClient;
-            GetAdsConnectionClient();
-            GetClientConnectionAsList();
+            InitializeConnectionData();
         }
         #endregion
 
@@ -48,6 +57,11 @@ namespace WarehouseManagementSystem.ViewModels
         #endregion
 
         #region Methods
+        private async Task InitializeConnectionData()
+        {
+            await GetAdsConnectionClient();
+            GetClientConnectionAsList();
+        }
         private async Task GetAdsConnectionClient()
         {
             if (_clientService == null)

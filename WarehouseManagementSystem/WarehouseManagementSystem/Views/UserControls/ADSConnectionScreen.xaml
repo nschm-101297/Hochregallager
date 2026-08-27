@@ -9,13 +9,21 @@
              Background="Beige"
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
+        <Style TargetType="TabItem">
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+        </Style>
+        <Style TargetType="Label">
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Margin" Value="5"/>
+        </Style>
         <conv:BoolAsStringToBackgroundConverter x:Key="ConnectionStatus"/>
         <DataTemplate x:Key="BoolTemplate">
             <StackPanel Orientation="Horizontal">
-                <Label Margin="3"
-                       Content="{Binding Description,
+                <Label Content="{Binding Description,
                                  UpdateSourceTrigger=PropertyChanged}"/>
-                <Border Margin="3"
+                <Border Margin="5"
                         HorizontalAlignment="Left"
                         MinWidth="50"
                         BorderBrush="Black"
@@ -27,10 +35,9 @@
         </DataTemplate>
         <DataTemplate x:Key="TextTemplate">
             <StackPanel Orientation="Horizontal">
-                <Label Margin="3"
-                       Content="{Binding Description,
+                <Label Content="{Binding Description,
                                  UpdateSourceTrigger=PropertyChanged}"/>
-                <Label Margin="3"
+                <Label Margin="5"
                        Content="{Binding CurrentValue,
                                  UpdateSourceTrigger=PropertyChanged}"/>
             </StackPanel>
@@ -38,10 +45,6 @@
         <conv:TemplateSelectorADSConnectionView x:Key="TemplateSelectorADSConnection"
                                                 BoolTemplate="{StaticResource BoolTemplate}"
                                                 TextTemplate="{StaticResource TextTemplate}"/>
-        <Style TargetType="TabItem">
-            <Setter Property="FontSize" Value="20"/>
-            <Setter Property="FontWeight" Value="Bold"/>
-        </Style>
     </UserControl.Resources>
     <Grid>
         <TabControl TabStripPlacement="Left"
@@ -63,7 +66,6 @@
                     </Grid.RowDefinitions>
                     <Label Grid.Column="0"
                            Grid.Row="0"
-                           Margin="5"
                            Content="Connected:"/>
                     <Border Grid.Column="1"
                             Grid.Row="0"
@@ -77,20 +79,16 @@
                                                 Converter={StaticResource ConnectionStatus}}"/>
                     <Label Grid.Column="0"
                            Grid.Row="1"
-                           Margin="5"
                            Content="AMS-NET-ID:"/>
                     <Label Grid.Column="1"
                            Grid.Row="1"
-                           Margin="5"
                            Content="{Binding AdsClientConnection.AmsNetID.CurrentValue,
                                      UpdateSourceTrigger=PropertyChanged}"/>
                     <Label Grid.Column="0"
                            Grid.Row="2"
-                           Margin="5"
                            Content="ADS-State:"/>
                     <Label Grid.Column="1"
                            Grid.Row="2"
-                           Margin="5"
                            Content="{Binding AdsClientConnection.AdsState.CurrentValue,
                                      UpdateSourceTrigger=PropertyChanged}"/>
                 </Grid>
@@ -98,7 +96,8 @@
             <TabItem Header="Detailed"
                      IsSelected="False">
                 <ItemsControl Background="Transparent"
-                              ItemsSource="{Binding AdsClientConnectionProperties}"
+                              ItemsSource="{Binding AdsClientConnectionProperties,
+                                                    UpdateSourceTrigger=PropertyChanged}"
                               ItemTemplateSelector="{StaticResource TemplateSelectorADSConnection}"/>
             </TabItem>
         </TabControl>   
