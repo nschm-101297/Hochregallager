@@ -50,14 +50,17 @@ namespace WarehouseManagementSystem.Services.ADS
         {
             _adsClient.Disconnect();
         }
-        public AdsClientConnection GetAdsConnection()
+        public async Task<AdsClientConnection> GetAdsConnection()
         {
             AdsClientConnection adsConncetionClient = new AdsClientConnection();
 
             adsConncetionClient.AmsNetID.CurrentValue = _adsClient.Address.ToString();
-            var clientState = _adsClient.ReadState();
-            adsConncetionClient.AdsState.CurrentValue = clientState.AdsState.ToString();
-            adsConncetionClient.DeviceState.CurrentValue = clientState.DeviceState.ToString();
+            var clientState = await _adsClient.ReadStateAsync(CancellationToken.None);
+            if (clientState.Succeeded)
+            {
+                adsConncetionClient.AdsState.CurrentValue = clientState.State.AdsState.ToString();
+                adsConncetionClient.DeviceState.CurrentValue = clientState.State.DeviceState.ToString();
+            }
             adsConncetionClient.ChannelPortType.CurrentValue = _adsClient.ChannelPortType.ToString();
             adsConncetionClient.ChannelProtocol.CurrentValue = _adsClient.ChannelProtocol.ToString();
             adsConncetionClient.SourceAddress.CurrentValue = _adsClient.SourceAddress.ToString();
