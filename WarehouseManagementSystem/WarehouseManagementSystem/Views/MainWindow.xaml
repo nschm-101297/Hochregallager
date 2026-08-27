@@ -15,6 +15,9 @@
         <DataTemplate DataType="{x:Type vm:HomeScreenViewModel}">
             <uc:HomeScreen/>
         </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:ADSConnectionScreenViewModel}">
+            <uc:ADSConnectionScreen/>
+        </DataTemplate>
         <Style TargetType="Label">
             <Setter Property="Background" Value="Transparent"/>
             <Setter Property="VerticalContentAlignment" Value="Center"/>
