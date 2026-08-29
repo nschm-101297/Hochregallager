@@ -19,6 +19,7 @@
 
   <ItemGroup>
     <PackageReference Include="Beckhoff.TwinCAT.Ads" Version="7.0.317" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="7.0.2" />
   </ItemGroup>
 
   <ItemGroup>
