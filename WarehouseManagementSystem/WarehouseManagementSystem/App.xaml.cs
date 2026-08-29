@@ -4,6 +4,7 @@ using System.Configuration;
 using System.Data;
 using System.Windows;
 using WarehouseManagementSystem.Services.ADS;
+using WarehouseManagementSystem.Services.Database;
 using WarehouseManagementSystem.ViewModels;
 using WarehouseManagementSystem.Views;
 
@@ -16,6 +17,7 @@ namespace WarehouseManagementSystem
     {
         #region Properties
         public AdsClientService AdsClient { get; set; }
+        public DatabaseService DatabaseClient { get; set; }
         public static IConfiguration Configuration { get; private set; } = null!;
         #endregion
 
@@ -49,6 +51,7 @@ namespace WarehouseManagementSystem
             .Build();
 
             AdsClient.ClientConnect("199.4.42.250.1.1",851);
+            DatabaseClient = new DatabaseService();
             MainWindow mainWindow = new MainWindow();
             MainWindow = mainWindow;
             mainWindow.Show();
