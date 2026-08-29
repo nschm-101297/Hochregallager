@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using Microsoft.Extensions.Configuration;
+using System.ComponentModel;
 using System.Configuration;
 using System.Data;
 using System.Windows;
@@ -15,6 +16,7 @@ namespace WarehouseManagementSystem
     {
         #region Properties
         public AdsClientService AdsClient { get; set; }
+        public static IConfiguration Configuration { get; private set; } = null!;
         #endregion
 
         #region Events
@@ -37,6 +39,14 @@ namespace WarehouseManagementSystem
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
+
+            Configuration = new ConfigurationBuilder()
+            .SetBasePath(AppContext.BaseDirectory)
+            .AddJsonFile(
+                path: "appsettings.json",
+                optional: false,
+                reloadOnChange: true)
+            .Build();
 
             AdsClient.ClientConnect("199.4.42.250.1.1",851);
             MainWindow mainWindow = new MainWindow();
