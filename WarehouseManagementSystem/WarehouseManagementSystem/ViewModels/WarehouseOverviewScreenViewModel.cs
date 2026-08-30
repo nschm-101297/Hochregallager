@@ -101,16 +101,13 @@ namespace WarehouseManagementSystem.ViewModels
         }
         public void GetDefaultConfigurationWarehousePlaces()
         {
-            int placenumber = 54;
-            for (int level = 6; level > 0; level--)
+            for (int placeNumber = 1; placeNumber < 55; placeNumber++)
             {
-                for (int column = 9; column > 0; column--)
-                {
-                    WarehousePlace place = new WarehousePlace(placenumber, WarehouseStatePlace.Free);
-                    WarehousePlaces.Add(place);
-                    placenumber--;
-                }
+                WarehousePlace place = new WarehousePlace(placeNumber, WarehouseStatePlace.Free);
+                WarehousePlaces.Add(place);
             }
+
+            WarehousePlaces = new ObservableCollection<WarehousePlace>(WarehousePlaces.OrderByDescending(wp => wp.PlaceNumber));
         }
         public async Task LoadStoredItemsFromDatabase()
         {
@@ -136,11 +133,11 @@ namespace WarehouseManagementSystem.ViewModels
                 searchedWarehousePlace.Status = WarehouseStatePlace.Occupied;
                 if (item.InputTime.HasValue)
                 {
-                    SelectedWarehousePlace.StoredPlaceItem = new StoredItem(item.SerialNumber, item.InputTime.Value);
+                    searchedWarehousePlace.StoredPlaceItem = new StoredItem(item.SerialNumber, item.InputTime.Value);
                 }
                 else
                 {
-                    SelectedWarehousePlace.StoredPlaceItem = new StoredItem(item.SerialNumber);
+                    searchedWarehousePlace.StoredPlaceItem = new StoredItem(item.SerialNumber);
                 }
             }
         }

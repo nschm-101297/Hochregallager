@@ -54,7 +54,7 @@ namespace WarehouseManagementSystem.Services.Database
             await using SqlConnection databaseConnection = new SqlConnection(_databaseConfiguration.ConnectionString);
             await databaseConnection.OpenAsync();
 
-            string queryString = "SELECT * FROM CREATE WarehouseManagement.prod.StoredItems WHERE OutputTime IS NULL";
+            string queryString = "SELECT * FROM WarehouseManagement.prod.StoredItems WHERE OutputTime IS NULL";
 
             SqlCommand storedItemsCommand = new SqlCommand(queryString, databaseConnection);
 

@@ -17,6 +17,14 @@
             <Setter Property="FontSize" Value="20"/>
             <Setter Property="FontWeight" Value="Bold"/>
         </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+        </Style>
         <Style TargetType="Button">
             <Setter Property="Margin" Value="5"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
@@ -32,6 +40,8 @@
             <Setter Property="Background" Value="Transparent"/>
             <Setter Property="FontSize" Value="20"/>
             <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="BorderBrush" Value="Black"/>
+            <Setter Property="BorderThickness" Value="2"/>
         </Style>
     </UserControl.Resources>
     <Grid>
@@ -40,7 +50,8 @@
             <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
         <ItemsControl Grid.Column="0"
-                      Margin="5">
+                      Margin="5"
+                      ItemsSource="{Binding WarehousePlaces}">
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
                     <UniformGrid Columns="9"
@@ -74,11 +85,14 @@
                                 </Style.Triggers>
                             </Style>
                         </Border.Style>
-                        <TextBlock>
+                        <TextBlock HorizontalAlignment="Center"
+                                   VerticalAlignment="Center">
                             <Hyperlink Command="{Binding DataContext.ShowDetailedView,
                                                          ElementName=WarehouseOverview}" 
                                        CommandParameter="{Binding .}">
-                                <TextBlock Text="{Binding Placenumber}"/>
+                                <Run Text="{Binding PlaceNumber}" 
+                                     FontSize="20"
+                                     FontWeight="Bold"/>
                             </Hyperlink>
                         </TextBlock>
                     </Border>
@@ -87,7 +101,7 @@
         </ItemsControl>
         <GroupBox Grid.Column="1"
                   Header="Details"
-                  Visibility="{Binding DetailViewVisible,
+                  Visibility="{Binding DetailedViewVisible,
                   Mode=TwoWay,
                   UpdateSourceTrigger=PropertyChanged}">
             <Grid>
@@ -106,76 +120,76 @@
                 <Label Grid.Column="0"
                        Grid.Row="0"
                        Content="Placenumber:"
-                       Visibility="{Binding DetailViewVisible,
+                       Visibility="{Binding DetailedViewVisible,
                                     Mode=TwoWay,
                                     UpdateSourceTrigger=PropertyChanged}"/>
                 <Label Grid.Column="1"
                        Grid.Row="0"
-                       Content="{Binding SelectedWarehousePlace.Placenumber,
-                                 UpdateSourceTrigger=PropertyChanged,
-                                 TargetNullValue='No item stored'}"
-                       Visibility="{Binding DetailViewVisible,
+                       Content="{Binding SelectedWarehousePlace.PlaceNumber,
+                                 UpdateSourceTrigger=PropertyChanged}"
+                       Visibility="{Binding DetailedViewVisible,
                                     Mode=TwoWay,
                                     UpdateSourceTrigger=PropertyChanged}"/>
                 <Label Grid.Column="0"
                        Grid.Row="1"
                        Content="Status:"
-                       Visibility="{Binding DetailViewVisible,
+                       Visibility="{Binding DetailedViewVisible,
                                     Mode=TwoWay,
                                     UpdateSourceTrigger=PropertyChanged}"/>
                 <Label Grid.Column="1"
                        Grid.Row="1"
-                       Content="{Binding SelectedWarehousePlace.Stored,
-                                 UpdateSourceTrigger=PropertyChanged,
-                                 TargetNullValue='No item stored'}"
-                       Visibility="{Binding DetailViewVisible,
+                       Content="{Binding SelectedWarehousePlace.Status,
+                                 UpdateSourceTrigger=PropertyChanged}"
+                       Visibility="{Binding DetailedViewVisible,
                                     Mode=TwoWay,
                                     UpdateSourceTrigger=PropertyChanged}"/>
                 <Label Grid.Column="0"
                        Grid.Row="2"
                        Content="Serialnumber:"
-                       Visibility="{Binding DetailViewVisible,
+                       Visibility="{Binding DetailedViewVisible,
                                     Mode=TwoWay,
                                     UpdateSourceTrigger=PropertyChanged}"/>
                 <Label Grid.Column="1"
                        Grid.Row="2"
-                       Content="{Binding SelectedWarehousePlace.StoredPlaceItem.Serialnumber,
+                       Content="{Binding SelectedWarehousePlace.StoredPlaceItem.SerialNumber,
                                  UpdateSourceTrigger=PropertyChanged,
-                                 TargetNullValue='No item stored'}"
-                       Visibility="{Binding DetailViewVisible,
+                                 FallbackValue='No item stored'}"
+                       Visibility="{Binding DetailedViewVisible,
                                     Mode=TwoWay,
                                     UpdateSourceTrigger=PropertyChanged}"/>
                 <Label Grid.Column="0"
                        Grid.Row="3"
                        Content="Input time:"
-                       Visibility="{Binding DetailViewVisible,
+                       Visibility="{Binding DetailedViewVisible,
                                     Mode=TwoWay,
                                     UpdateSourceTrigger=PropertyChanged}"/>
                 <Label Grid.Column="1"
                        Grid.Row="3"
                        Content="{Binding SelectedWarehousePlace.StoredPlaceItem.InputTime,
                                  UpdateSourceTrigger=PropertyChanged,
-                                 TargetNullValue='No item stored'}"
-                       Visibility="{Binding DetailViewVisible,
+                                 FallbackValue='No item stored',
+                                 TargetNullValue='-'}"
+                       Visibility="{Binding DetailedViewVisible,
                                     Mode=TwoWay,
                                     UpdateSourceTrigger=PropertyChanged}"/>
                 <Label Grid.Column="0"
                        Grid.Row="4"
                        Content="Output time:"
-                       Visibility="{Binding DetailViewVisible,
+                       Visibility="{Binding DetailedViewVisible,
                                     Mode=TwoWay,
                                     UpdateSourceTrigger=PropertyChanged}"/>
                 <Label Grid.Column="1"
                        Grid.Row="4"
                        Content="{Binding SelectedWarehousePlace.StoredPlaceItem.OutputTime,
                                  UpdateSourceTrigger=PropertyChanged,
-                                 TargetNullValue='No item stored'}"
-                       Visibility="{Binding DetailViewVisible,
+                                 FallbackValue='No item stored',
+                                 TargetNullValue='-'}"
+                       Visibility="{Binding DetailedViewVisible,
                                     Mode=TwoWay,
                                     UpdateSourceTrigger=PropertyChanged}"/>
                 <Button Grid.ColumnSpan="2"
                         Grid.Row="5"
-                        Visibility="{Binding DetailViewVisible,
+                        Visibility="{Binding DetailedViewVisible,
                         Mode=TwoWay,
                         UpdateSourceTrigger=PropertyChanged}"
                         Content="Close"
