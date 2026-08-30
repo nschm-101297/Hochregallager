@@ -158,7 +158,12 @@ namespace WarehouseManagementSystem.ViewModels
         }
         public void WarehouseOverviewExecute(object par)
         {
-
+            if (_parentViewModel == null)
+            {
+                return;
+            }
+            _parentViewModel.Header = "Warehouse overview";
+            _parentViewModel.SubScreen = new WarehouseOverviewScreenViewModel();
         }
         public bool WarehouseOverviewCanExecute(object par)
         {

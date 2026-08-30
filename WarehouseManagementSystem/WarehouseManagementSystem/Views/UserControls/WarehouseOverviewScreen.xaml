@@ -1,0 +1,201 @@
+﻿<UserControl x:Class="WarehouseManagementSystem.Views.UserControls.WarehouseOverviewScreen"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WarehouseManagementSystem.Views.UserControls"
+             mc:Ignorable="d" 
+             Background="Beige"
+             Name="WarehouseOverview"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <Style TargetType="Label">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+        </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="MinHeight" Value="40"/>
+            <Setter Property="MinWidth" Value="75"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+        </Style>
+        <Style TargetType="GroupBox">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="BorderBrush" Value="Black"/>
+            <Setter Property="BorderThickness" Value="2"/>
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <ItemsControl Grid.Column="0"
+                      Margin="5"
+                      ItemsSource="{Binding WarehousePlaces}">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <UniformGrid Columns="9"
+                                 Rows="6"/>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Border BorderBrush="Black"
+                            BorderThickness="2"
+                            Padding="5"
+                            CornerRadius="5">
+                        <Border.Style>
+                            <Style TargetType="Border">
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding Status}"
+                                                 Value="Free">
+                                        <Setter Property="Background"
+                                                Value="LightGreen"/>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding Status}"
+                                                 Value="Occupied">
+                                        <Setter Property="Background"
+                                                Value="Red"/>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding Status}"
+                                                 Value="Reserved">
+                                        <Setter Property="Background"
+                                                Value="DarkGray"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Border.Style>
+                        <TextBlock HorizontalAlignment="Center"
+                                   VerticalAlignment="Center">
+                            <Hyperlink Command="{Binding DataContext.ShowDetailedView,
+                                                         ElementName=WarehouseOverview}" 
+                                       CommandParameter="{Binding .}">
+                                <Run Text="{Binding PlaceNumber}" 
+                                     FontSize="20"
+                                     FontWeight="Bold"/>
+                            </Hyperlink>
+                        </TextBlock>
+                    </Border>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+        <GroupBox Grid.Column="1"
+                  Header="Details"
+                  Visibility="{Binding DetailedViewVisible,
+                  Mode=TwoWay,
+                  UpdateSourceTrigger=PropertyChanged}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Label Grid.Column="0"
+                       Grid.Row="0"
+                       Content="Placenumber:"
+                       Visibility="{Binding DetailedViewVisible,
+                                    Mode=TwoWay,
+                                    UpdateSourceTrigger=PropertyChanged}"/>
+                <Label Grid.Column="1"
+                       Grid.Row="0"
+                       Content="{Binding SelectedWarehousePlace.PlaceNumber,
+                                 UpdateSourceTrigger=PropertyChanged}"
+                       Visibility="{Binding DetailedViewVisible,
+                                    Mode=TwoWay,
+                                    UpdateSourceTrigger=PropertyChanged}"/>
+                <Label Grid.Column="0"
+                       Grid.Row="1"
+                       Content="Status:"
+                       Visibility="{Binding DetailedViewVisible,
+                                    Mode=TwoWay,
+                                    UpdateSourceTrigger=PropertyChanged}"/>
+                <Label Grid.Column="1"
+                       Grid.Row="1"
+                       Content="{Binding SelectedWarehousePlace.Status,
+                                 UpdateSourceTrigger=PropertyChanged}"
+                       Visibility="{Binding DetailedViewVisible,
+                                    Mode=TwoWay,
+                                    UpdateSourceTrigger=PropertyChanged}"/>
+                <Label Grid.Column="0"
+                       Grid.Row="2"
+                       Content="Serialnumber:"
+                       Visibility="{Binding DetailedViewVisible,
+                                    Mode=TwoWay,
+                                    UpdateSourceTrigger=PropertyChanged}"/>
+                <Label Grid.Column="1"
+                       Grid.Row="2"
+                       Content="{Binding SelectedWarehousePlace.StoredPlaceItem.SerialNumber,
+                                 UpdateSourceTrigger=PropertyChanged,
+                                 FallbackValue='No item stored'}"
+                       Visibility="{Binding DetailedViewVisible,
+                                    Mode=TwoWay,
+                                    UpdateSourceTrigger=PropertyChanged}"/>
+                <Label Grid.Column="0"
+                       Grid.Row="3"
+                       Content="Input time:"
+                       Visibility="{Binding DetailedViewVisible,
+                                    Mode=TwoWay,
+                                    UpdateSourceTrigger=PropertyChanged}"/>
+                <Label Grid.Column="1"
+                       Grid.Row="3"
+                       Content="{Binding SelectedWarehousePlace.StoredPlaceItem.InputTime,
+                                 UpdateSourceTrigger=PropertyChanged,
+                                 FallbackValue='No item stored',
+                                 TargetNullValue='-'}"
+                       Visibility="{Binding DetailedViewVisible,
+                                    Mode=TwoWay,
+                                    UpdateSourceTrigger=PropertyChanged}"/>
+                <Label Grid.Column="0"
+                       Grid.Row="4"
+                       Content="Output time:"
+                       Visibility="{Binding DetailedViewVisible,
+                                    Mode=TwoWay,
+                                    UpdateSourceTrigger=PropertyChanged}"/>
+                <Label Grid.Column="1"
+                       Grid.Row="4"
+                       Content="{Binding SelectedWarehousePlace.StoredPlaceItem.OutputTime,
+                                 UpdateSourceTrigger=PropertyChanged,
+                                 FallbackValue='No item stored',
+                                 TargetNullValue='-'}"
+                       Visibility="{Binding DetailedViewVisible,
+                                    Mode=TwoWay,
+                                    UpdateSourceTrigger=PropertyChanged}"/>
+                <Button Grid.ColumnSpan="2"
+                        Grid.Row="5"
+                        Visibility="{Binding DetailedViewVisible,
+                        Mode=TwoWay,
+                        UpdateSourceTrigger=PropertyChanged}"
+                        Content="Close"
+                        Command="{Binding DataContext.CloseDetailedView,
+                                          ElementName=WarehouseOverview}"/>
+            </Grid>
+        </GroupBox>
+    </Grid>
+</UserControl>
