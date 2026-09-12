@@ -10,8 +10,13 @@
 
   <ItemGroup>
     <None Remove="appsettings.json" />
+    <None Remove="Images\add.png" />
     <None Remove="Images\adsCommunication.png" />
+    <None Remove="Images\cancel.png" />
+    <None Remove="Images\confirm.png" />
     <None Remove="Images\connection.png" />
+    <None Remove="Images\delete.png" />
+    <None Remove="Images\edit.png" />
     <None Remove="Images\home.png" />
     <None Remove="Images\orders.png" />
     <None Remove="Images\settings.png" />
@@ -29,10 +34,25 @@
     <Content Include="appsettings.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Resource Include="Images\add.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Images\adsCommunication.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Images\cancel.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\confirm.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Images\connection.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\delete.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\edit.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Images\home.png">
