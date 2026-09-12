@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:WarehouseManagementSystem.Views.UserControls"
              mc:Ignorable="d"  
              Background="Beige"
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="500" d:DesignWidth="800">
     <UserControl.Resources>
         <Style TargetType="Label">
             <Setter Property="Margin" Value="5"/>
@@ -32,6 +32,14 @@
             <Setter Property="MinWidth" Value="75"/>
             <Setter Property="Background" Value="Transparent"/>
             <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+        </Style>
+        <Style TargetType="RadioButton">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="FontSize" Value="15"/>
             <Setter Property="FontWeight" Value="Bold"/>
         </Style>
         <Style TargetType="GroupBox">
@@ -98,5 +106,54 @@
                 Command="{Binding DeleteOrder}">
             <Image Source="/Images/delete.png" Width="30"/>
         </Button>
+        <StackPanel Grid.Column="2" Grid.RowSpan="4"
+                    Orientation="Vertical">
+            <GroupBox Header="Filter combination">
+                <StackPanel Orientation="Vertical">
+                    <RadioButton GroupName="filterCombination"
+                             VerticalContentAlignment="Center"
+                             Content="OR"/>
+                    <RadioButton GroupName="filterCombination"
+                              VerticalContentAlignment="Center"
+                              Content="AND"/>
+                </StackPanel>
+            </GroupBox>
+            <GroupBox Header="Type">
+                <StackPanel Orientation="Vertical">
+                    <RadioButton GroupName="type"
+                                 VerticalContentAlignment="Center"
+                                 Content="Infeed"/>
+                    <RadioButton GroupName="type"
+                                 VerticalContentAlignment="Center"
+                                 Content="Outfeed"/>
+                </StackPanel>
+            </GroupBox>
+            <GroupBox Header="Priority">
+                <StackPanel Orientation="Vertical">
+                    <RadioButton GroupName="priority"
+                                 VerticalContentAlignment="Center"
+                                 Content="Low"/>
+                    <RadioButton GroupName="priority"
+                                 VerticalContentAlignment="Center"
+                                 Content="Middle"/>
+                    <RadioButton GroupName="priority"
+                                 VerticalContentAlignment="Center"
+                                 Content="High"/>
+                </StackPanel>
+            </GroupBox>
+            <GroupBox Header="Status">
+                <StackPanel Orientation="Vertical">
+                    <RadioButton GroupName="status"
+                                 VerticalContentAlignment="Center"
+                                 Content="Open"/>
+                    <RadioButton GroupName="status"
+                                 VerticalContentAlignment="Center"
+                                 Content="In progress"/>
+                    <RadioButton GroupName="status"
+                                 VerticalContentAlignment="Center"
+                                 Content="Done"/>
+                </StackPanel>
+            </GroupBox>
+        </StackPanel>
     </Grid>
 </UserControl>
