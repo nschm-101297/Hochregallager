@@ -179,10 +179,10 @@ namespace WarehouseManagementSystem.Services.Database
             await databaseConnection.OpenAsync();
 
             string writeInstruction = "Update WarehouseManagement.ord.Orders" +
-                                      "SET OrderType = @OrderType" +
-                                      "OrderPriority = @OrderPriority" +
-                                      "OrderStatus = @OrderStatus" +
-                                      "CreationDate = @CreationDate" +
+                                      "SET OrderType = @OrderType," +
+                                      "OrderPriority = @OrderPriority," +
+                                      "OrderStatus = @OrderStatus," +
+                                      "CreationDate = @CreationDate," +
                                       "DoneDate = @DoneDate" +
                                       "WHERE OrderId = @OrderId";
 
