@@ -236,23 +236,96 @@ namespace WarehouseManagementSystem.ViewModels
         #region Methods
         private async Task InitializeOrders()
         {
+            bool? result = await LoadOrdersFromDatabase();
+            if (!result.HasValue || result.Value == false)
+            {
+                Orders = new ObservableCollection<Order>();
+                ShownOrders = new ListCollectionView(Orders);
+            }
+        }
+        private async Task<bool?> LoadOrdersFromDatabase()
+        {
             if (_databaseServiceClient == null)
             {
-                return;
+                return null;
             }
 
             Orders = await _databaseServiceClient.GetAllOrders();
 
-            if(Orders == null)
+            if (Orders == null)
             {
                 MessageBox.Show("Loading doesn't worked!",
                                 "Loading deleting",
                                 MessageBoxButton.OK,
                                 MessageBoxImage.Error);
-                return;
+                return false;
             }
 
             ShownOrders = new ListCollectionView(Orders);
+            return true;
+        }
+        public bool FilterOrder(object ord)
+        {
+            Order order = ord as Order;
+            if (order == null)
+            {
+                return false;
+            }
+
+            if (OrConditionActive)
+            {
+                return OrCondition(order);
+            }
+            else
+            {
+                return AndCondition(order);
+            }
+        }
+        private bool OrCondition(Order ord)
+        {
+            bool resultOrderType = FilterOrderType(ord);
+            bool resultOrderPriority = FilterOrderPriority(ord);
+            bool resultOrderStatus = FilterOrderStatus(ord);
+
+            return resultOrderType || 
+                   resultOrderPriority ||
+                   resultOrderStatus;
+        }
+        private bool AndCondition(Order ord)
+        {
+            return true;
+        }
+        private bool FilterOrderType(Order ord)
+        {
+            return ord.TypeOfOrder switch
+            {
+                OrderType.None => false,
+                OrderType.Infeed => FilterTypeInfeedActive,
+                OrderType.Outfeed => FilterTypeOutfeedActive,
+                _ => false
+            };
+        }
+        private bool FilterOrderPriority(Order ord)
+        {
+            return ord.Priority switch
+            {
+                OrderPriority.None => false,
+                OrderPriority.Low => FilterPriorityLowActive,
+                OrderPriority.Middle => FilterPriorityMiddleActive,
+                OrderPriority.High => FilterPriorityHighActive,
+                _ => false
+            };
+        }
+        private bool FilterOrderStatus(Order ord)
+        {
+            return ord.Status switch
+            {
+                OrderStatus.Unknown => false,
+                OrderStatus.Open => FilterStatusOpenActive,
+                OrderStatus.InProgress => FilterStatusInProgressActive,
+                OrderStatus.Done => FilterStatusDoneActive,
+                _ => false
+            };
         }
         #endregion
 
