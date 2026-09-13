@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using WarehouseManagementSystem.Commands;
 using WarehouseManagementSystem.Services.Database;
 using WarehouseManagementSystem.Models.Orders;
+using WarehouseManagementSystem.Models.Database;
 using System.Windows.Input;
 using System.Collections.ObjectModel;
 using System.Windows.Data;
@@ -212,6 +213,17 @@ namespace WarehouseManagementSystem.ViewModels
                 return;
             }
 
+            int? writtingDatabaseResult = await _databaseServiceClient.WriteOrder(editorViewModel.ShownOrder);
+            if (!writtingDatabaseResult.HasValue || writtingDatabaseResult.Value == 0)
+            {
+                MessageBox.Show("Writting to database doesn't work!",
+                                "Error database",
+                                MessageBoxButton.OK,
+                                MessageBoxImage.Error);
+                return;
+            }
+
+            editorViewModel.ShownOrder.ItemStatus = DatabaseItemStatus.Unchanged;
             ShownOrders.AddNewItem(editorViewModel.ShownOrder);
             ShownOrders.Refresh();
         }
@@ -242,6 +254,17 @@ namespace WarehouseManagementSystem.ViewModels
             selectedOrder.TypeOfOrder = editorViewModel.ShownOrder.TypeOfOrder;
             selectedOrder.Priority = editorViewModel.ShownOrder.Priority;
             selectedOrder.Status = editorViewModel.ShownOrder.Status;
+
+            bool? updatingDatabaseResult = await _databaseServiceClient.ModifyOrder(selectedOrder);
+            if (!updatingDatabaseResult.HasValue || updatingDatabaseResult.Value == false)
+            {
+                MessageBox.Show("Updating database doesn't work!",
+                                "Error database",
+                                MessageBoxButton.OK,
+                                MessageBoxImage.Error);
+                return;
+            }
+            selectedOrder.ItemStatus = DatabaseItemStatus.Unchanged;
         }
         public bool OpenEditingViewCanExecute(object par)
         {

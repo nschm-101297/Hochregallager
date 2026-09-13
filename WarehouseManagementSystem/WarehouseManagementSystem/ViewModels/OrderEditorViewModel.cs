@@ -75,7 +75,9 @@ namespace WarehouseManagementSystem.ViewModels
         }
         public bool ConfirmCanExecute(object par)
         {
-            return true;
+            return ShownOrder.TypeOfOrder != OrderType.None &&
+                   ShownOrder.Priority != OrderPriority.None && 
+                   ShownOrder.Status != OrderStatus.Unknown;
         }
         #endregion
 
