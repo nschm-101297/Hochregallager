@@ -4,10 +4,14 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WarehouseManagementSystem.Views"
+        xmlns:cv="clr-namespace:WarehouseManagementSystem.Converters"
         mc:Ignorable="d"
         Background="Beige"
         Title="Order Editor" Height="450" Width="500">
     <Window.Resources>
+        <cv:StringToOrderTypeConverter x:Key="OrderTypeConverter"/>
+        <cv:StringToOrderPriorityConverter x:Key="OrderPriorityConverter"/>
+        <cv:StringToOrderStatus x:Key="OrderStatusConverter"/>
         <Style TargetType="Label">
             <Setter Property="Margin" Value="5"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
@@ -61,26 +65,46 @@
         </Grid.RowDefinitions>
         <Label Grid.Column="0" Grid.Row="0"
                Content="Type:"/>
-        <ComboBox Grid.Column="1" Grid.Row="0"/>
+        <ComboBox Grid.Column="1" Grid.Row="0"
+                  ItemsSource="{Binding Types}"
+                  SelectedItem="{Binding ShownOrder.TypeOfOrder,
+                                 Mode=TwoWay,
+                                 UpdateSourceTrigger=PropertyChanged,
+                                 Converter={StaticResource OrderTypeConverter}}"/>
         <Label Grid.Column="0" Grid.Row="1"
                Content="Priority:"/>
-        <ComboBox Grid.Column="1" Grid.Row="1"/>
+        <ComboBox Grid.Column="1" Grid.Row="1"
+                  ItemsSource="{Binding Prioriets}"
+                  SelectedItem="{Binding ShownOrder.Priority,
+                                 Mode=TwoWay,
+                                 UpdateSourceTrigger=PropertyChanged,
+                                 Converter={StaticResource OrderPriorityConverter}}"/>
         <Label Grid.Column="0" Grid.Row="2"
                Content="Status:"/>
         <ComboBox Grid.Column="1" Grid.Row="2"
-                  IsReadOnly="True"/>
+                  ItemsSource="{Binding Statuses}"
+                  SelectedItem="{Binding ShownOrder.Status,
+                                 Mode=TwoWay,
+                                 UpdateSourceTrigger=PropertyChanged,
+                                 Converter={StaticResource OrderStatusConverter}}"/>
         <Label Grid.Column="0" Grid.Row="3"
                Content="Type:"/>
         <TextBlock Grid.Column="1" Grid.Row="3"
-                   IsEnabled="False"/>
-        <Button Grid.Column="0" Grid.Row="4">
+                   IsEnabled="False"
+                   Text="{Binding ShownOrder.CreationTime,
+                          Mode=OneWay,
+                          UpdateSourceTrigger=PropertyChanged,
+                          StringFormat={}{0:dd.MM.yyyy HH:mm}}"/>
+        <Button Grid.Column="0" Grid.Row="4"
+                Command="{Binding Cancel}">
             <StackPanel Orientation="Horizontal">
                 <Image Source="/Images/cancel.png"/>
                 <Label Content="Cancel"/>
             </StackPanel>
         </Button>
         <Button Grid.Column="1" Grid.Row="4"
-                HorizontalAlignment="Right">
+                HorizontalAlignment="Right"
+                Command="{Binding Confirm}">
             <StackPanel Orientation="Horizontal">
                 <Image Source="/Images/confirm.png"/>
                 <Label Content="Confirm"/>

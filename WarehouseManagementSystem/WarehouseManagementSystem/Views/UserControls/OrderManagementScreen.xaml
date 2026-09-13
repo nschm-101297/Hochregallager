@@ -66,7 +66,8 @@
         <DataGrid Grid.Column="0" Grid.RowSpan="4"
                   Name="dtOrders"
                   CanUserAddRows="False"
-                  AutoGenerateColumns="False">
+                  AutoGenerateColumns="False"
+                  ItemsSource="{Binding Orders}">
             <DataGrid.InputBindings>
                 <MouseBinding MouseAction="LeftDoubleClick"
                               Command="{Binding OpenEditingView}"
@@ -78,7 +79,7 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Typ"
                                     Width="*"
-                                    Binding="{Binding OrderTyp,
+                                    Binding="{Binding TypeOfOrder,
                                                 Mode=OneWay,
                                                 UpdateSourceTrigger=PropertyChanged}"/>
                 <DataGridTextColumn Header="Priority"
@@ -104,11 +105,11 @@
             </DataGrid.Columns>
         </DataGrid>
         <Button Grid.Column="1" Grid.Row="0"
-                Command="{Binding AddOrder}">
+                Command="{Binding AddNewOrder}">
             <Image Source="/Images/add.png" Width="30"/>
         </Button>
         <Button Grid.Column="1" Grid.Row="1"
-                Command="{Binding EditOrder}">
+                Command="{Binding OpenEditingView}">
             <Image Source="/Images/edit.png" Width="30"/>
         </Button>
         <Button Grid.Column="1" Grid.Row="2"
@@ -120,47 +121,77 @@
             <GroupBox Header="Filter combination">
                 <StackPanel Orientation="Vertical">
                     <RadioButton GroupName="filterCombination"
-                             VerticalContentAlignment="Center"
-                             Content="OR"/>
+                                 VerticalContentAlignment="Center"
+                                 Content="OR"
+                                 IsChecked="{Binding OrConditionActive,
+                                             Mode=TwoWay,
+                                             UpdateSourceTrigger=PropertyChanged}"/>
                     <RadioButton GroupName="filterCombination"
-                              VerticalContentAlignment="Center"
-                              Content="AND"/>
+                                 VerticalContentAlignment="Center"
+                                 Content="AND"
+                                 IsChecked="{Binding AndConditionActive,
+                                             Mode=TwoWay,
+                                             UpdateSourceTrigger=PropertyChanged}"/>
                 </StackPanel>
             </GroupBox>
             <GroupBox Header="Type">
                 <StackPanel Orientation="Vertical">
                     <RadioButton GroupName="type"
                                  VerticalContentAlignment="Center"
-                                 Content="Infeed"/>
+                                 Content="Infeed"
+                                 IsChecked="{Binding FilterTypeInfeedActive,
+                                             Mode=TwoWay,
+                                             UpdateSourceTrigger=PropertyChanged}"/>
                     <RadioButton GroupName="type"
                                  VerticalContentAlignment="Center"
-                                 Content="Outfeed"/>
+                                 Content="Outfeed"
+                                 IsChecked="{Binding FilterTypeOutfeedActive,
+                                             Mode=TwoWay,
+                                             UpdateSourceTrigger=PropertyChanged}"/>
                 </StackPanel>
             </GroupBox>
             <GroupBox Header="Priority">
                 <StackPanel Orientation="Vertical">
                     <RadioButton GroupName="priority"
                                  VerticalContentAlignment="Center"
-                                 Content="Low"/>
+                                 Content="Low"
+                                 IsChecked="{Binding FilterPriorityLowActive,
+                                             Mode=TwoWay,
+                                             UpdateSourceTrigger=PropertyChanged}"/>
                     <RadioButton GroupName="priority"
                                  VerticalContentAlignment="Center"
-                                 Content="Middle"/>
+                                 Content="Middle"
+                                 IsChecked="{Binding FilterPriorityMiddleActive,
+                                             Mode=TwoWay,
+                                             UpdateSourceTrigger=PropertyChanged}"/>
                     <RadioButton GroupName="priority"
                                  VerticalContentAlignment="Center"
-                                 Content="High"/>
+                                 Content="High"
+                                 IsChecked="{Binding FilterPriorityHighActive,
+                                             Mode=TwoWay,
+                                             UpdateSourceTrigger=PropertyChanged}"/>
                 </StackPanel>
             </GroupBox>
             <GroupBox Header="Status">
                 <StackPanel Orientation="Vertical">
                     <RadioButton GroupName="status"
                                  VerticalContentAlignment="Center"
-                                 Content="Open"/>
+                                 Content="Open"
+                                 IsChecked="{Binding FilterStatusOpenActive,
+                                             Mode=TwoWay,
+                                             UpdateSourceTrigger=PropertyChanged}"/>
                     <RadioButton GroupName="status"
                                  VerticalContentAlignment="Center"
-                                 Content="In progress"/>
+                                 Content="In progress"
+                                 IsChecked="{Binding FilterStatusInProgressActive,
+                                             Mode=TwoWay,
+                                             UpdateSourceTrigger=PropertyChanged}"/>
                     <RadioButton GroupName="status"
                                  VerticalContentAlignment="Center"
-                                 Content="Done"/>
+                                 Content="Done"
+                                 IsChecked="{Binding FilterStatusDoneActive,
+                                             Mode=TwoWay,
+                                             UpdateSourceTrigger=PropertyChanged}"/>
                 </StackPanel>
             </GroupBox>
         </StackPanel>
