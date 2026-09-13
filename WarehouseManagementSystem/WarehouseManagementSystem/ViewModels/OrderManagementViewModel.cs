@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Collections.ObjectModel;
 using System.Windows.Data;
 using WarehouseManagementSystem.Commands;
+using WarehouseManagementSystem.Views;
 using System.Windows;
 
 namespace WarehouseManagementSystem.ViewModels
@@ -28,6 +29,7 @@ namespace WarehouseManagementSystem.ViewModels
             { 
                 _orConditionActive = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(OrConditionActive)));
+                ShownOrders?.Refresh();
             }
         }
         private bool _andConditionActive;
@@ -39,6 +41,7 @@ namespace WarehouseManagementSystem.ViewModels
             { 
                 _andConditionActive = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(AndConditionActive)));
+                ShownOrders?.Refresh();
             }
         }
         private bool _filterTypeInfeedActive;
@@ -50,6 +53,7 @@ namespace WarehouseManagementSystem.ViewModels
             { 
                 _filterTypeInfeedActive = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(FilterTypeInfeedActive)));
+                ShownOrders?.Refresh();
             }
         }
         private bool _filterTypeOutfeedActive;
@@ -61,6 +65,7 @@ namespace WarehouseManagementSystem.ViewModels
             { 
                 _filterTypeOutfeedActive = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(FilterTypeOutfeedActive)));
+                ShownOrders?.Refresh();
             }
         }
         private bool _filterPriorityLowActive;
@@ -72,6 +77,7 @@ namespace WarehouseManagementSystem.ViewModels
             { 
                 _filterPriorityLowActive = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(FilterPriorityLowActive)));
+                ShownOrders?.Refresh();
             }
         }
         private bool _filterPriorityMiddleActive;
@@ -83,6 +89,7 @@ namespace WarehouseManagementSystem.ViewModels
             { 
                 _filterPriorityMiddleActive = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(FilterPriorityMiddleActive)));
+                ShownOrders?.Refresh();
             }
         }
         private bool _filterPriorityHighActive;
@@ -94,6 +101,7 @@ namespace WarehouseManagementSystem.ViewModels
             { 
                 _filterPriorityHighActive = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(FilterPriorityHighActive)));
+                ShownOrders?.Refresh();
             }
         }
         private bool _filterStatusOpenActive;
@@ -105,6 +113,7 @@ namespace WarehouseManagementSystem.ViewModels
             { 
                 _filterStatusOpenActive = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(FilterStatusOpenActive)));
+                ShownOrders?.Refresh();
             }
         }
         private bool _filterStatusInProgressActive;
@@ -116,6 +125,7 @@ namespace WarehouseManagementSystem.ViewModels
             { 
                 _filterStatusInProgressActive = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(FilterStatusInProgressActive)));
+                ShownOrders?.Refresh();
             }
         }
         private bool _filterStatusDoneActive;
@@ -127,6 +137,7 @@ namespace WarehouseManagementSystem.ViewModels
             { 
                 _filterStatusDoneActive = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(FilterStatusDoneActive)));
+                ShownOrders?.Refresh();
             }
         }
         public ICommand AddNewOrder { get; set; }
@@ -181,13 +192,28 @@ namespace WarehouseManagementSystem.ViewModels
             OpenEditingView = new RelayCommand(OpenEditingViewExecute, OpenEditingViewCanExecute);
             DeleteOrder = new RelayCommand(DeleteOrderExecute, DeleteOrderCanExecute);
             InitializeOrders();
+            ShownOrders.Filter = new Predicate<object>(FilterOrder);
+            ShownOrders?.Refresh();
         }
         #endregion
 
         #region Command-Methods
         public async void AddNewOrderExecute(object par)
         {
+            OrderEditorScreen editor = new OrderEditorScreen();
+            OrderEditorViewModel editorViewModel = new OrderEditorViewModel(editor);
+            editor.DataContext = editorViewModel;
+            editor.Owner = Application.Current.MainWindow;
+            editor.WindowStartupLocation = WindowStartupLocation.CenterOwner;
 
+            bool? editorResult = editor.ShowDialog();
+            if (!editorResult.HasValue || editorResult.Value == false)
+            {
+                return;
+            }
+
+            ShownOrders.AddNewItem(editorViewModel.ShownOrder);
+            ShownOrders.Refresh();
         }
         public bool AddNewOrderCanExecute(object par)
         {
@@ -196,7 +222,26 @@ namespace WarehouseManagementSystem.ViewModels
         }
         public async void OpenEditingViewExecute(object par)
         {
+            Order selectedOrder = par as Order;
+            if(selectedOrder == null)
+            {
+                return;
+            }
+            OrderEditorScreen editor = new OrderEditorScreen();
+            OrderEditorViewModel editorViewModel = new OrderEditorViewModel(editor, selectedOrder);
+            editor.DataContext = editorViewModel;
+            editor.Owner = Application.Current.MainWindow;
+            editor.WindowStartupLocation = WindowStartupLocation.CenterOwner;
 
+            bool? editorResult = editor.ShowDialog();
+            if (!editorResult.HasValue || editorResult.Value == false)
+            {
+                return;
+            }
+
+            selectedOrder.TypeOfOrder = editorViewModel.ShownOrder.TypeOfOrder;
+            selectedOrder.Priority = editorViewModel.ShownOrder.Priority;
+            selectedOrder.Status = editorViewModel.ShownOrder.Status;
         }
         public bool OpenEditingViewCanExecute(object par)
         {
@@ -280,6 +325,7 @@ namespace WarehouseManagementSystem.ViewModels
             {
                 return AndCondition(order);
             }
+
         }
         private bool OrCondition(Order ord)
         {
@@ -293,7 +339,16 @@ namespace WarehouseManagementSystem.ViewModels
         }
         private bool AndCondition(Order ord)
         {
-            return true;
+            bool resultOrderType = (!FilterTypeInfeedActive && !FilterTypeOutfeedActive) || 
+                                    FilterOrderType(ord);
+            bool resultOrderPriority = (!FilterPriorityLowActive && !FilterPriorityMiddleActive && !FilterPriorityHighActive) ||
+                                    FilterOrderPriority(ord);
+            bool resultOrderStatus = (!FilterStatusOpenActive && !FilterStatusInProgressActive && !FilterStatusDoneActive) || 
+                                    FilterOrderStatus(ord);
+
+            return resultOrderType &&
+                   resultOrderPriority &&
+                   resultOrderStatus;
         }
         private bool FilterOrderType(Order ord)
         {
