@@ -30,6 +30,10 @@ namespace WarehouseManagementSystem.ViewModels
             { 
                 _orConditionActive = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(OrConditionActive)));
+                if (value)
+                {
+                    SetFilterSelectionOr();
+                }
                 ShownOrders?.Refresh();
             }
         }
@@ -42,6 +46,10 @@ namespace WarehouseManagementSystem.ViewModels
             { 
                 _andConditionActive = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(AndConditionActive)));
+                if (value)
+                {
+                    SetFilterSelectionAnd();
+                }
                 ShownOrders?.Refresh();
             }
         }
@@ -181,14 +189,7 @@ namespace WarehouseManagementSystem.ViewModels
             _databaseServiceClient = app?.DatabaseClient;
             OrConditionActive = true;
             AndConditionActive = false;
-            FilterTypeInfeedActive = true;
-            FilterTypeOutfeedActive = true;
-            FilterPriorityLowActive = true;
-            FilterPriorityMiddleActive = true;
-            FilterPriorityHighActive = true;
-            FilterStatusOpenActive = true;
-            FilterStatusInProgressActive = true;
-            FilterStatusDoneActive = true;
+            SetFilterSelectionOr();
             AddNewOrder = new RelayCommand(AddNewOrderExecute, AddNewOrderCanExecute);
             OpenEditingView = new RelayCommand(OpenEditingViewExecute, OpenEditingViewCanExecute);
             DeleteOrder = new RelayCommand(DeleteOrderExecute, DeleteOrderCanExecute);
@@ -404,6 +405,28 @@ namespace WarehouseManagementSystem.ViewModels
                 OrderStatus.Done => FilterStatusDoneActive,
                 _ => false
             };
+        }
+        private void SetFilterSelectionOr()
+        {
+            FilterTypeInfeedActive = true;
+            FilterTypeOutfeedActive = true;
+            FilterPriorityLowActive = true;
+            FilterPriorityMiddleActive = true;
+            FilterPriorityHighActive = true;
+            FilterStatusOpenActive = true;
+            FilterStatusInProgressActive = true;
+            FilterStatusDoneActive = true;
+        }
+        private void SetFilterSelectionAnd()
+        {
+            FilterTypeInfeedActive = true;
+            FilterTypeOutfeedActive = false;
+            FilterPriorityLowActive = true;
+            FilterPriorityMiddleActive = false;
+            FilterPriorityHighActive = false;
+            FilterStatusOpenActive = true;
+            FilterStatusInProgressActive = false;
+            FilterStatusDoneActive = false;
         }
         #endregion
 

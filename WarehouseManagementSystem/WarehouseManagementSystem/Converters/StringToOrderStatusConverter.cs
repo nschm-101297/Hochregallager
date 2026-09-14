@@ -9,7 +9,7 @@ using WarehouseManagementSystem.Models.Orders;
 
 namespace WarehouseManagementSystem.Converters
 {
-    internal class StringToOrderStatus : IValueConverter
+    internal class StringToOrderStatusConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
@@ -30,7 +30,11 @@ namespace WarehouseManagementSystem.Converters
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            throw new NotImplementedException();
+            if (value is OrderStatus status)
+            {
+                return Enum.GetName(typeof(OrderStatus), status) ?? "";
+            }
+            return "";
         }
     }
 }

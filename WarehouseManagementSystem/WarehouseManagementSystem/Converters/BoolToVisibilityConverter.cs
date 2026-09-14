@@ -4,38 +4,34 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Data;
-using System.Windows.Media;
 using WarehouseManagementSystem.Models.Orders;
 
 namespace WarehouseManagementSystem.Converters
 {
-    public class StringToOrderTypeConverter : IValueConverter
+    public class BoolToVisibilityConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            if (value is string orderType)
+            if (value is bool filterCombination)
             {
-                if (Enum.TryParse<OrderType>(orderType, out OrderType result))
+                if (filterCombination)
                 {
-                    return result;
+                    return Visibility.Visible;
                 }
                 else
                 {
-                    return OrderType.None;
+                    return Visibility.Hidden;
                 }
             }
 
-            return OrderType.None;
+            return Visibility.Hidden;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            if (value is OrderType orderType)
-            {
-                return Enum.GetName(typeof(OrderType), orderType) ?? "";
-            }
-            return "";
+            throw new NotImplementedException();
         }
     }
 }
