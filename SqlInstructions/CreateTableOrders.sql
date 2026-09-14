@@ -1,0 +1,8 @@
+CREATE TABLE ord.Orders(
+OrderId INT IDENTITY PRIMARY KEY, 
+OrderType TINYINT NULL,
+OrderPriority TINYINT NULL,
+OrderStatus TINYINT NULL,
+CreationDate DATETIME2 NULL,
+DoneDate DATETIME2 NULL
+);
