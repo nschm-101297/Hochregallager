@@ -83,33 +83,62 @@ namespace WarehouseManagementSystem.Services.Database
                 return null;
             }
 
-            ObservableCollection<Order> storedItems = new ObservableCollection<Order>();
+            ObservableCollection<Order> storedOrders = new ObservableCollection<Order>();
             await using SqlConnection databaseConnection = new SqlConnection(_databaseConfiguration.ConnectionString);
             await databaseConnection.OpenAsync();
 
             string queryString = "SELECT * FROM WarehouseManagement.ord.Orders";
 
-            SqlCommand storedItemsCommand = new SqlCommand(queryString, databaseConnection);
+            SqlCommand storedOrdersCommand = new SqlCommand(queryString, databaseConnection);
 
-            SqlDataReader readData = await storedItemsCommand.ExecuteReaderAsync();
+            SqlDataReader readData = await storedOrdersCommand.ExecuteReaderAsync();
 
-            DataTable dataTableStoredItems = new DataTable();
-            dataTableStoredItems.Load(readData);
+            DataTable dataTableStoredOrders = new DataTable();
+            dataTableStoredOrders.Load(readData);
 
-            foreach (DataRow row in dataTableStoredItems.Rows)
+            foreach (DataRow row in dataTableStoredOrders.Rows)
             {
+                //Order readItem = new Order(
+                //    (int)row["OrderId"],
+                //    (OrderType)row["OrderType"],
+                //    (OrderPriority)row["OrderPriority"],
+                //    (OrderStatus)row["OrderStatus"],
+                //    (DateTime?)row["CreationDate"],
+                //    (DateTime?)row["DoneDate"]
+                //    );
+                //storedOrders.Add(readItem);
+                OrderType orderType = row.IsNull("OrderType")
+                    ? OrderType.None
+                    : (OrderType)Convert.ToByte(row["OrderType"]);
+
+                OrderPriority orderPriority = row.IsNull("OrderPriority")
+                    ? OrderPriority.None
+                    : (OrderPriority)Convert.ToByte(row["OrderPriority"]);
+
+                OrderStatus orderStatus = row.IsNull("OrderStatus")
+                    ? OrderStatus.Unknown
+                    : (OrderStatus)Convert.ToByte(row["OrderStatus"]);
+
+                DateTime? creationDate = row.IsNull("CreationDate")
+                    ? null
+                    : (DateTime)row["CreationDate"];
+
+                DateTime? doneDate = row.IsNull("DoneDate")
+                    ? null
+                    : (DateTime)row["DoneDate"];
+
                 Order readItem = new Order(
                     (int)row["OrderId"],
-                    (OrderType)row["OrderType"],
-                    (OrderPriority)row["OrderPriority"],
-                    (OrderStatus)row["OrderStatus"],
-                    (DateTime?)row["CreationDate"],
-                    (DateTime?)row["DoneDate"]
-                    );
-                storedItems.Add(readItem);
+                    orderType,
+                    orderPriority,
+                    orderStatus,
+                    creationDate,
+                    doneDate);
+
+                storedOrders.Add(readItem);
             }
 
-            return storedItems;
+            return storedOrders;
         }
         public async Task<int?> WriteOrder(Order addingOrder)
         {
@@ -130,7 +159,7 @@ namespace WarehouseManagementSystem.Services.Database
             writeCommand.Parameters.AddWithValue("@OrderType", addingOrder.TypeOfOrder);
             writeCommand.Parameters.AddWithValue("@OrderPriority", addingOrder.Priority);
             writeCommand.Parameters.AddWithValue("@OrderStatus", addingOrder.Status);
-            writeCommand.Parameters.AddWithValue("@CreationDate", addingOrder.CreationTime);
+            writeCommand.Parameters.AddWithValue("@CreationDate", addingOrder.CreationDate);
             object writeResult = await writeCommand.ExecuteScalarAsync(CancellationToken.None);
 
             if (writeResult == null || writeResult == DBNull.Value)
@@ -190,10 +219,10 @@ namespace WarehouseManagementSystem.Services.Database
             writeCommand.Parameters.AddWithValue("@OrderType", modifingOrder.TypeOfOrder);
             writeCommand.Parameters.AddWithValue("@OrderPriority", modifingOrder.Priority);
             writeCommand.Parameters.AddWithValue("@OrderStatus", modifingOrder.Status);
-            writeCommand.Parameters.AddWithValue("@CreationDate", modifingOrder.CreationTime);
-            if(modifingOrder.DoneTime != null)
+            writeCommand.Parameters.AddWithValue("@CreationDate", modifingOrder.CreationDate);
+            if(modifingOrder.DoneDate != null)
             {
-                writeCommand.Parameters.AddWithValue("@DoneDate", modifingOrder.DoneTime);
+                writeCommand.Parameters.AddWithValue("@DoneDate", modifingOrder.DoneDate);
             }
             writeCommand.Parameters.AddWithValue("@OrderId", modifingOrder.OrderID);
             int affectedRows = await writeCommand.ExecuteNonQueryAsync(CancellationToken.None);

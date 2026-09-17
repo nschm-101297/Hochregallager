@@ -50,7 +50,7 @@ namespace WarehouseManagementSystem.ViewModels
             _screen = screen;
             ShownOrder = new Order(shownOrder.OrderID, shownOrder.TypeOfOrder,
                                    shownOrder.Priority, shownOrder.Status,
-                                   shownOrder.CreationTime,shownOrder.DoneTime);
+                                   shownOrder.CreationDate,shownOrder.DoneDate);
             Cancel = new RelayCommand(CancelExecute, CancelCanExecute);
             Confirm = new RelayCommand(ConfirmExecute, ConfirmCanExecute);
             InitializeTypes();

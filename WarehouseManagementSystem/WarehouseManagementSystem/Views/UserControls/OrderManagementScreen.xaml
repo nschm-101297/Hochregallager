@@ -168,8 +168,8 @@
                                               UpdateSourceTrigger=PropertyChanged,
                                               Converter={StaticResource VisibiltyConverter}}"/>
                     <CheckBox VerticalContentAlignment="Center"
-                              Content="Infeed"
-                              IsChecked="{Binding FilterTypeInfeedActive,
+                              Content="Outfeed"
+                              IsChecked="{Binding FilterTypeOutfeedActive,
                                           Mode=TwoWay,
                                           UpdateSourceTrigger=PropertyChanged}"
                                  Visibility="{Binding OrConditionActive,

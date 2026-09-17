@@ -91,7 +91,7 @@
                Content="Type:"/>
         <TextBlock Grid.Column="1" Grid.Row="3"
                    IsEnabled="False"
-                   Text="{Binding ShownOrder.CreationTime,
+                   Text="{Binding ShownOrder.CreationDate,
                           Mode=OneWay,
                           UpdateSourceTrigger=PropertyChanged,
                           StringFormat={}{0:dd.MM.yyyy HH:mm}}"/>

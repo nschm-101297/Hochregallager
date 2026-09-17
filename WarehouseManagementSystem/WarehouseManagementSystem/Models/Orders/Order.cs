@@ -47,13 +47,13 @@ namespace WarehouseManagementSystem.Models.Orders
                 ItemStatus = DatabaseItemStatus.Modified;
                 if(value == OrderStatus.Done)
                 {
-                    DoneTime = DateTime.Now;
+                    DoneDate = DateTime.Now;
                 }
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Status)));
             }
         }
-        public DateTime? CreationTime { get; private set; }
-        public DateTime? DoneTime { get; private set; }
+        public DateTime? CreationDate { get; private set; }
+        public DateTime? DoneDate { get; private set; }
         public DatabaseItemStatus ItemStatus { get; set; }
         #endregion
 
@@ -65,7 +65,7 @@ namespace WarehouseManagementSystem.Models.Orders
         public Order() 
         {
             OrderID = 0;
-            CreationTime = DateTime.Now;
+            CreationDate = DateTime.Now;
             ItemStatus = DatabaseItemStatus.Added;
         }
         public Order(OrderType type,  OrderPriority priority, OrderStatus status)
@@ -74,7 +74,7 @@ namespace WarehouseManagementSystem.Models.Orders
             TypeOfOrder = type;
             Priority = priority;
             Status = status;
-            CreationTime = DateTime.Now;
+            CreationDate = DateTime.Now;
             ItemStatus = DatabaseItemStatus.Added;
         }
         public Order(int orderID, OrderType type, OrderPriority priority, OrderStatus status, DateTime? creationTime, DateTime? doneTime)
@@ -85,11 +85,11 @@ namespace WarehouseManagementSystem.Models.Orders
             Status = status;
             if (creationTime != null)
             {
-                CreationTime = creationTime;
+                CreationDate = creationTime;
             }
             if (doneTime != null)
             {
-                DoneTime = doneTime;
+                DoneDate = doneTime;
             }
             ItemStatus = DatabaseItemStatus.Unchanged;
         }

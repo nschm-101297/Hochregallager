@@ -189,13 +189,13 @@ namespace WarehouseManagementSystem.ViewModels
             _databaseServiceClient = app?.DatabaseClient;
             OrConditionActive = true;
             AndConditionActive = false;
-            SetFilterSelectionOr();
             AddNewOrder = new RelayCommand(AddNewOrderExecute, AddNewOrderCanExecute);
             OpenEditingView = new RelayCommand(OpenEditingViewExecute, OpenEditingViewCanExecute);
             DeleteOrder = new RelayCommand(DeleteOrderExecute, DeleteOrderCanExecute);
-            InitializeOrders();
+            Orders = new ObservableCollection<Order>();
+            ShownOrders = new ListCollectionView(Orders);
             ShownOrders.Filter = new Predicate<object>(FilterOrder);
-            ShownOrders?.Refresh();
+            _ = InitializeOrders();
         }
         #endregion
 
@@ -306,11 +306,11 @@ namespace WarehouseManagementSystem.ViewModels
         private async Task InitializeOrders()
         {
             bool? result = await LoadOrdersFromDatabase();
-            if (!result.HasValue || result.Value == false)
-            {
-                Orders = new ObservableCollection<Order>();
-                ShownOrders = new ListCollectionView(Orders);
-            }
+            //if (!result.HasValue || result.Value == false)
+            //{
+            //    Orders = new ObservableCollection<Order>();
+            //    ShownOrders = new ListCollectionView(Orders);
+            //}
         }
         private async Task<bool?> LoadOrdersFromDatabase()
         {
@@ -319,9 +319,9 @@ namespace WarehouseManagementSystem.ViewModels
                 return null;
             }
 
-            Orders = await _databaseServiceClient.GetAllOrders();
+            ObservableCollection<Order> loadedOrders = await _databaseServiceClient.GetAllOrders();
 
-            if (Orders == null)
+            if (loadedOrders == null)
             {
                 MessageBox.Show("Loading doesn't worked!",
                                 "Loading deleting",
@@ -330,7 +330,10 @@ namespace WarehouseManagementSystem.ViewModels
                 return false;
             }
 
-            ShownOrders = new ListCollectionView(Orders);
+            foreach (Order order in loadedOrders)
+            {
+                Orders.Add(order);
+            }
             return true;
         }
         public bool FilterOrder(object ord)
@@ -408,6 +411,7 @@ namespace WarehouseManagementSystem.ViewModels
         }
         private void SetFilterSelectionOr()
         {
+            AndConditionActive = false;
             FilterTypeInfeedActive = true;
             FilterTypeOutfeedActive = true;
             FilterPriorityLowActive = true;
@@ -419,6 +423,7 @@ namespace WarehouseManagementSystem.ViewModels
         }
         private void SetFilterSelectionAnd()
         {
+            OrConditionActive = false;
             FilterTypeInfeedActive = true;
             FilterTypeOutfeedActive = false;
             FilterPriorityLowActive = true;
