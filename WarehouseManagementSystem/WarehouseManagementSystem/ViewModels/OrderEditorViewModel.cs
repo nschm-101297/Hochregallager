@@ -75,9 +75,9 @@ namespace WarehouseManagementSystem.ViewModels
         }
         public bool ConfirmCanExecute(object par)
         {
-            return ShownOrder.TypeOfOrder != OrderType.None &&
-                   ShownOrder.Priority != OrderPriority.None && 
-                   ShownOrder.Status != OrderStatus.Unknown;
+            return ShownOrder?.TypeOfOrder != OrderType.None &&
+                   ShownOrder?.Priority != OrderPriority.None && 
+                   ShownOrder?.Status != OrderStatus.Unknown;
         }
         #endregion
 
@@ -96,25 +96,25 @@ namespace WarehouseManagementSystem.ViewModels
         }
         private void InitializePriorities()
         {
-            Types = new ObservableCollection<String>();
-            string[] membersTypes = Enum.GetNames(typeof(OrderType));
+            Prioriets = new ObservableCollection<String>();
+            string[] membersTypes = Enum.GetNames(typeof(OrderPriority));
             if (membersTypes.Length > 0)
             {
                 for (int i = 1; i < membersTypes.Length; i++)
                 {
-                    Types.Add(membersTypes[i]);
+                    Prioriets.Add(membersTypes[i]);
                 }
             }
         }
         private void InitializeStatues()
         {
-            Types = new ObservableCollection<String>();
-            string[] membersTypes = Enum.GetNames(typeof(OrderType));
+            Statuses = new ObservableCollection<String>();
+            string[] membersTypes = Enum.GetNames(typeof(OrderStatus));
             if (membersTypes.Length > 0)
             {
                 for (int i = 1; i < membersTypes.Length; i++)
                 {
-                    Types.Add(membersTypes[i]);
+                    Statuses.Add(membersTypes[i]);
                 }
             }
         }
