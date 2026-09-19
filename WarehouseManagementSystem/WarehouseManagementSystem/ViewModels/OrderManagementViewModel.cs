@@ -224,14 +224,14 @@ namespace WarehouseManagementSystem.ViewModels
                 return;
             }
 
+            editorViewModel.ShownOrder.OrderAddedToDatabase(writtingDatabaseResult.Value);
             editorViewModel.ShownOrder.ItemStatus = DatabaseItemStatus.Unchanged;
-            ShownOrders.AddNewItem(editorViewModel.ShownOrder);
+            Orders?.Add(editorViewModel.ShownOrder);
             ShownOrders.Refresh();
         }
         public bool AddNewOrderCanExecute(object par)
         {
-            Order selectedOrder = par as Order;
-            return selectedOrder is not null;
+            return true;
         }
         public async void OpenEditingViewExecute(object par)
         {
@@ -255,7 +255,7 @@ namespace WarehouseManagementSystem.ViewModels
             selectedOrder.TypeOfOrder = editorViewModel.ShownOrder.TypeOfOrder;
             selectedOrder.Priority = editorViewModel.ShownOrder.Priority;
             selectedOrder.Status = editorViewModel.ShownOrder.Status;
-
+            
             bool? updatingDatabaseResult = await _databaseServiceClient.ModifyOrder(selectedOrder);
             if (!updatingDatabaseResult.HasValue || updatingDatabaseResult.Value == false)
             {
@@ -284,7 +284,7 @@ namespace WarehouseManagementSystem.ViewModels
             {
                 return;
             }
-
+            selectedOrder.ItemStatus = DatabaseItemStatus.Deleted;
             bool? deleteResult = await _databaseServiceClient.DeleteOrder(selectedOrder);
             if (!deleteResult.HasValue || deleteResult.Value==false)
             {
@@ -294,6 +294,8 @@ namespace WarehouseManagementSystem.ViewModels
                                 MessageBoxImage.Error);
                 return;
             }
+            Orders.Remove(selectedOrder);
+            ShownOrders.Refresh();
         }
         public bool DeleteOrderCanExecute(object par)
         {

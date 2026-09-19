@@ -69,7 +69,8 @@
                   Name="dtOrders"
                   CanUserAddRows="False"
                   AutoGenerateColumns="False"
-                  ItemsSource="{Binding Orders}">
+                  ItemsSource="{Binding ShownOrders,
+                                Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
             <DataGrid.InputBindings>
                 <MouseBinding MouseAction="LeftDoubleClick"
                               Command="{Binding OpenEditingView}"
@@ -111,11 +112,19 @@
             <Image Source="/Images/add.png" Width="30"/>
         </Button>
         <Button Grid.Column="1" Grid.Row="1"
-                Command="{Binding OpenEditingView}">
+                Command="{Binding OpenEditingView}"
+                CommandParameter="{Binding SelectedItem,
+                                   ElementName=dtOrders,
+                                   Mode=OneWay,
+                                   UpdateSourceTrigger=PropertyChanged}">
             <Image Source="/Images/edit.png" Width="30"/>
         </Button>
         <Button Grid.Column="1" Grid.Row="2"
-                Command="{Binding DeleteOrder}">
+                Command="{Binding DeleteOrder}"
+                CommandParameter="{Binding SelectedItem,
+                                   ElementName=dtOrders,
+                                   Mode=OneWay,
+                                   UpdateSourceTrigger=PropertyChanged}">
             <Image Source="/Images/delete.png" Width="30"/>
         </Button>
         <StackPanel Grid.Column="2" Grid.RowSpan="4"

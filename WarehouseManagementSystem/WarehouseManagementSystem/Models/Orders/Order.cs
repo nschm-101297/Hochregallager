@@ -49,11 +49,25 @@ namespace WarehouseManagementSystem.Models.Orders
                 {
                     DoneDate = DateTime.Now;
                 }
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Status)));
+                else
+                {
+                    DoneDate = null;
+                }
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Status)));
             }
         }
         public DateTime? CreationDate { get; private set; }
-        public DateTime? DoneDate { get; private set; }
+        private DateTime? _doneDate;
+        public DateTime? DoneDate 
+        {
+            get { return _doneDate; }
+            private set
+            {
+                _doneDate = value;
+                ItemStatus = DatabaseItemStatus.Modified;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(DoneDate)));
+            }
+        }
         public DatabaseItemStatus ItemStatus { get; set; }
         #endregion
 
@@ -100,7 +114,21 @@ namespace WarehouseManagementSystem.Models.Orders
         #endregion
 
         #region Methods
+        public void OrderAddedToDatabase(int orderId)
+        {
+            if(orderId <= 0)
+            {
+                throw new ArgumentOutOfRangeException(nameof(orderId));
+            }
 
+            if(OrderID != 0)
+            {
+                throw new InvalidOperationException(
+                        "Dem Auftrag wurde bereits eine Datenbank-ID zugewiesen.");
+            }
+
+            OrderID = orderId;
+        }
         #endregion
 
         #region Interface-Methods

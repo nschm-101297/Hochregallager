@@ -182,9 +182,8 @@ namespace WarehouseManagementSystem.Services.Database
             await using SqlConnection databaseConnection = new SqlConnection(_databaseConfiguration.ConnectionString);
             await databaseConnection.OpenAsync();
 
-            string writeInstruction = "Delete From WarehouseManagement.ord.Orders Where" +
-                                      "(OrderId)" +
-                                      "VALUES (@OrderId)";
+            string writeInstruction = "Delete From WarehouseManagement.ord.Orders Where " +
+                                      "OrderId = @OrderId";
 
             SqlCommand writeCommand = new SqlCommand(writeInstruction, databaseConnection);
             writeCommand.Parameters.AddWithValue("@OrderId", deletingOrder.OrderID);
@@ -207,12 +206,12 @@ namespace WarehouseManagementSystem.Services.Database
             await using SqlConnection databaseConnection = new SqlConnection(_databaseConfiguration.ConnectionString);
             await databaseConnection.OpenAsync();
 
-            string writeInstruction = "Update WarehouseManagement.ord.Orders" +
+            string writeInstruction = "Update WarehouseManagement.ord.Orders " +
                                       "SET OrderType = @OrderType," +
                                       "OrderPriority = @OrderPriority," +
                                       "OrderStatus = @OrderStatus," +
                                       "CreationDate = @CreationDate," +
-                                      "DoneDate = @DoneDate" +
+                                      "DoneDate = @DoneDate " +
                                       "WHERE OrderId = @OrderId";
 
             SqlCommand writeCommand = new SqlCommand(writeInstruction, databaseConnection);
@@ -224,7 +223,11 @@ namespace WarehouseManagementSystem.Services.Database
             {
                 writeCommand.Parameters.AddWithValue("@DoneDate", modifingOrder.DoneDate);
             }
-            writeCommand.Parameters.AddWithValue("@OrderId", modifingOrder.OrderID);
+            else
+            {
+                writeCommand.Parameters.AddWithValue("@DoneDate", DBNull.Value);
+            }
+                writeCommand.Parameters.AddWithValue("@OrderId", modifingOrder.OrderID);
             int affectedRows = await writeCommand.ExecuteNonQueryAsync(CancellationToken.None);
 
             return affectedRows > 0;
