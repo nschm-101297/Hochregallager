@@ -1,0 +1,138 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using WarehouseManagementSystem.Models.Database;
+
+namespace WarehouseManagementSystem.Models.Orders
+{
+    public class Order : INotifyPropertyChanged
+    {
+        #region Properties
+        public int OrderID { get; private set; }
+        private OrderType _typeOfOrder;
+
+        public OrderType TypeOfOrder
+        {
+            get { return _typeOfOrder; }
+            set 
+            { 
+                _typeOfOrder = value; 
+                ItemStatus = DatabaseItemStatus.Modified;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(TypeOfOrder)));
+            }
+        }
+        private OrderPriority _priority;
+
+        public OrderPriority Priority
+        {
+            get { return _priority; }
+            set 
+            { 
+                _priority = value;
+                ItemStatus = DatabaseItemStatus.Modified;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Priority)));
+            }
+        }
+        private OrderStatus _status;
+
+        public OrderStatus Status
+        {
+            get { return _status; }
+            set 
+            { 
+                _status = value;
+                ItemStatus = DatabaseItemStatus.Modified;
+                if(value == OrderStatus.Done)
+                {
+                    DoneDate = DateTime.Now;
+                }
+                else
+                {
+                    DoneDate = null;
+                }
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Status)));
+            }
+        }
+        public DateTime? CreationDate { get; private set; }
+        private DateTime? _doneDate;
+        public DateTime? DoneDate 
+        {
+            get { return _doneDate; }
+            private set
+            {
+                _doneDate = value;
+                ItemStatus = DatabaseItemStatus.Modified;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(DoneDate)));
+            }
+        }
+        public DatabaseItemStatus ItemStatus { get; set; }
+        #endregion
+
+        #region Events
+        public event PropertyChangedEventHandler PropertyChanged;
+        #endregion
+
+        #region Constructors
+        public Order() 
+        {
+            OrderID = 0;
+            CreationDate = DateTime.Now;
+            ItemStatus = DatabaseItemStatus.Added;
+        }
+        public Order(OrderType type,  OrderPriority priority, OrderStatus status)
+        {
+            OrderID = 0;
+            TypeOfOrder = type;
+            Priority = priority;
+            Status = status;
+            CreationDate = DateTime.Now;
+            ItemStatus = DatabaseItemStatus.Added;
+        }
+        public Order(int orderID, OrderType type, OrderPriority priority, OrderStatus status, DateTime? creationTime, DateTime? doneTime)
+        {
+            OrderID = orderID;
+            TypeOfOrder = type;
+            Priority = priority;
+            Status = status;
+            if (creationTime != null)
+            {
+                CreationDate = creationTime;
+            }
+            if (doneTime != null)
+            {
+                DoneDate = doneTime;
+            }
+            ItemStatus = DatabaseItemStatus.Unchanged;
+        }
+        #endregion
+
+        #region Command-Methods
+
+        #endregion
+
+        #region Methods
+        public void OrderAddedToDatabase(int orderId)
+        {
+            if(orderId <= 0)
+            {
+                throw new ArgumentOutOfRangeException(nameof(orderId));
+            }
+
+            if(OrderID != 0)
+            {
+                throw new InvalidOperationException(
+                        "Dem Auftrag wurde bereits eine Datenbank-ID zugewiesen.");
+            }
+
+            OrderID = orderId;
+        }
+        #endregion
+
+        #region Interface-Methods
+
+        #endregion
+    }
+}

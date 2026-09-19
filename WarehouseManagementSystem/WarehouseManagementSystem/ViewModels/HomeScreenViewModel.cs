@@ -171,7 +171,12 @@ namespace WarehouseManagementSystem.ViewModels
         }
         public void OrderManagementExecute(object par)
         {
-
+            if (_parentViewModel == null)
+            {
+                return;
+            }
+            _parentViewModel.Header = "Order overview";
+            _parentViewModel.SubScreen = new OrderManagementViewModel();
         }
         public bool OrderManagementCanExecute(object par)
         {
