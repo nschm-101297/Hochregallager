@@ -13,6 +13,7 @@ using System.Collections.ObjectModel;
 using System.Windows.Data;
 using WarehouseManagementSystem.Commands;
 using WarehouseManagementSystem.Views;
+using WarehouseManagementSystem.Models.Filter;
 using System.Windows;
 
 namespace WarehouseManagementSystem.ViewModels
@@ -21,134 +22,15 @@ namespace WarehouseManagementSystem.ViewModels
     {
         #region Properties
         private DatabaseService _databaseServiceClient;
-        private bool _orConditionActive;
+        
+        private FilterSelection _filterOrders;
 
-        public bool OrConditionActive
+        public FilterSelection FilterOrders
         {
-            get { return _orConditionActive; }
-            set 
-            { 
-                _orConditionActive = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(OrConditionActive)));
-                if (value)
-                {
-                    SetFilterSelectionOr();
-                }
-                ShownOrders?.Refresh();
-            }
+            get { return _filterOrders; }
+            set { _filterOrders = value; }
         }
-        private bool _andConditionActive;
 
-        public bool AndConditionActive
-        {
-            get { return _andConditionActive; }
-            set 
-            { 
-                _andConditionActive = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(AndConditionActive)));
-                if (value)
-                {
-                    SetFilterSelectionAnd();
-                }
-                ShownOrders?.Refresh();
-            }
-        }
-        private bool _filterTypeInfeedActive;
-
-        public bool FilterTypeInfeedActive
-        {
-            get { return _filterTypeInfeedActive; }
-            set 
-            { 
-                _filterTypeInfeedActive = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(FilterTypeInfeedActive)));
-                ShownOrders?.Refresh();
-            }
-        }
-        private bool _filterTypeOutfeedActive;
-
-        public bool FilterTypeOutfeedActive
-        {
-            get { return _filterTypeOutfeedActive; }
-            set 
-            { 
-                _filterTypeOutfeedActive = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(FilterTypeOutfeedActive)));
-                ShownOrders?.Refresh();
-            }
-        }
-        private bool _filterPriorityLowActive;
-
-        public bool FilterPriorityLowActive
-        {
-            get { return _filterPriorityLowActive; }
-            set 
-            { 
-                _filterPriorityLowActive = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(FilterPriorityLowActive)));
-                ShownOrders?.Refresh();
-            }
-        }
-        private bool _filterPriorityMiddleActive;
-
-        public bool FilterPriorityMiddleActive
-        {
-            get { return _filterPriorityMiddleActive; }
-            set 
-            { 
-                _filterPriorityMiddleActive = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(FilterPriorityMiddleActive)));
-                ShownOrders?.Refresh();
-            }
-        }
-        private bool _filterPriorityHighActive;
-
-        public bool FilterPriorityHighActive
-        {
-            get { return _filterPriorityHighActive; }
-            set 
-            { 
-                _filterPriorityHighActive = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(FilterPriorityHighActive)));
-                ShownOrders?.Refresh();
-            }
-        }
-        private bool _filterStatusOpenActive;
-
-        public bool FilterStatusOpenActive
-        {
-            get { return _filterStatusOpenActive; }
-            set 
-            { 
-                _filterStatusOpenActive = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(FilterStatusOpenActive)));
-                ShownOrders?.Refresh();
-            }
-        }
-        private bool _filterStatusInProgressActive;
-
-        public bool FilterStatusInProgressActive
-        {
-            get { return _filterStatusInProgressActive; }
-            set 
-            { 
-                _filterStatusInProgressActive = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(FilterStatusInProgressActive)));
-                ShownOrders?.Refresh();
-            }
-        }
-        private bool _filterStatusDoneActive;
-
-        public bool FilterStatusDoneActive
-        {
-            get { return _filterStatusDoneActive; }
-            set 
-            { 
-                _filterStatusDoneActive = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(FilterStatusDoneActive)));
-                ShownOrders?.Refresh();
-            }
-        }
         public ICommand AddNewOrder { get; set; }
         public ICommand OpenEditingView { get; set; }
         public ICommand DeleteOrder { get; set; }
@@ -187,13 +69,12 @@ namespace WarehouseManagementSystem.ViewModels
         {
             App app = (App)Application.Current;
             _databaseServiceClient = app?.DatabaseClient;
-            OrConditionActive = true;
-            AndConditionActive = false;
             AddNewOrder = new RelayCommand(AddNewOrderExecute, AddNewOrderCanExecute);
             OpenEditingView = new RelayCommand(OpenEditingViewExecute, OpenEditingViewCanExecute);
             DeleteOrder = new RelayCommand(DeleteOrderExecute, DeleteOrderCanExecute);
             Orders = new ObservableCollection<Order>();
             ShownOrders = new ListCollectionView(Orders);
+            FilterOrders = new FilterSelection(ShownOrders);
             ShownOrders.Filter = new Predicate<object>(FilterOrder);
             _ = InitializeOrders();
         }
@@ -308,11 +189,6 @@ namespace WarehouseManagementSystem.ViewModels
         private async Task InitializeOrders()
         {
             bool? result = await LoadOrdersFromDatabase();
-            //if (!result.HasValue || result.Value == false)
-            //{
-            //    Orders = new ObservableCollection<Order>();
-            //    ShownOrders = new ListCollectionView(Orders);
-            //}
         }
         private async Task<bool?> LoadOrdersFromDatabase()
         {
@@ -346,94 +222,70 @@ namespace WarehouseManagementSystem.ViewModels
                 return false;
             }
 
-            if (OrConditionActive)
+            if (FilterOrders.OrConditionActive)
             {
-                return OrCondition(order);
+                return OrCondition(order, FilterOrders.OrFilters);
             }
             else
             {
-                return AndCondition(order);
+                return AndCondition(order, FilterOrders.AndFilters);
             }
 
         }
-        private bool OrCondition(Order ord)
+        private bool OrCondition(Order ord, Filtergroup filtergroup)
         {
-            bool resultOrderType = FilterOrderType(ord);
-            bool resultOrderPriority = FilterOrderPriority(ord);
-            bool resultOrderStatus = FilterOrderStatus(ord);
+            bool resultOrderType = FilterOrderType(ord, filtergroup);
+            bool resultOrderPriority = FilterOrderPriority(ord, filtergroup);
+            bool resultOrderStatus = FilterOrderStatus(ord, filtergroup);
 
             return resultOrderType || 
                    resultOrderPriority ||
                    resultOrderStatus;
         }
-        private bool AndCondition(Order ord)
+        private bool AndCondition(Order ord, Filtergroup filtergroup)
         {
-            bool resultOrderType = (!FilterTypeInfeedActive && !FilterTypeOutfeedActive) || 
-                                    FilterOrderType(ord);
-            bool resultOrderPriority = (!FilterPriorityLowActive && !FilterPriorityMiddleActive && !FilterPriorityHighActive) ||
-                                    FilterOrderPriority(ord);
-            bool resultOrderStatus = (!FilterStatusOpenActive && !FilterStatusInProgressActive && !FilterStatusDoneActive) || 
-                                    FilterOrderStatus(ord);
+            bool resultOrderType = (!filtergroup.FilterTypeInfeedActive && !filtergroup.FilterTypeOutfeedActive) || 
+                                    FilterOrderType(ord, filtergroup);
+            bool resultOrderPriority = (!filtergroup.FilterPriorityLowActive && !filtergroup.FilterPriorityMiddleActive && !filtergroup.FilterPriorityHighActive) ||
+                                    FilterOrderPriority(ord, filtergroup);
+            bool resultOrderStatus = (!filtergroup.FilterStatusOpenActive && !filtergroup.FilterStatusInProgressActive && !filtergroup.FilterStatusDoneActive) || 
+                                    FilterOrderStatus(ord, filtergroup);
 
             return resultOrderType &&
                    resultOrderPriority &&
                    resultOrderStatus;
         }
-        private bool FilterOrderType(Order ord)
+        private bool FilterOrderType(Order ord, Filtergroup filtergroup)
         {
             return ord.TypeOfOrder switch
             {
                 OrderType.None => false,
-                OrderType.Infeed => FilterTypeInfeedActive,
-                OrderType.Outfeed => FilterTypeOutfeedActive,
+                OrderType.Infeed => filtergroup.FilterTypeInfeedActive,
+                OrderType.Outfeed => filtergroup.FilterTypeOutfeedActive,
                 _ => false
             };
         }
-        private bool FilterOrderPriority(Order ord)
+        private bool FilterOrderPriority(Order ord, Filtergroup filtergroup)
         {
             return ord.Priority switch
             {
                 OrderPriority.None => false,
-                OrderPriority.Low => FilterPriorityLowActive,
-                OrderPriority.Middle => FilterPriorityMiddleActive,
-                OrderPriority.High => FilterPriorityHighActive,
+                OrderPriority.Low => filtergroup.FilterPriorityLowActive,
+                OrderPriority.Middle => filtergroup.FilterPriorityMiddleActive,
+                OrderPriority.High => filtergroup.FilterPriorityHighActive,
                 _ => false
             };
         }
-        private bool FilterOrderStatus(Order ord)
+        private bool FilterOrderStatus(Order ord, Filtergroup filtergroup)
         {
             return ord.Status switch
             {
                 OrderStatus.Unknown => false,
-                OrderStatus.Open => FilterStatusOpenActive,
-                OrderStatus.InProgress => FilterStatusInProgressActive,
-                OrderStatus.Done => FilterStatusDoneActive,
+                OrderStatus.Open => filtergroup.FilterStatusOpenActive,
+                OrderStatus.InProgress => filtergroup.FilterStatusInProgressActive,
+                OrderStatus.Done => filtergroup.FilterStatusDoneActive,
                 _ => false
             };
-        }
-        private void SetFilterSelectionOr()
-        {
-            AndConditionActive = false;
-            FilterTypeInfeedActive = true;
-            FilterTypeOutfeedActive = true;
-            FilterPriorityLowActive = true;
-            FilterPriorityMiddleActive = true;
-            FilterPriorityHighActive = true;
-            FilterStatusOpenActive = true;
-            FilterStatusInProgressActive = true;
-            FilterStatusDoneActive = true;
-        }
-        private void SetFilterSelectionAnd()
-        {
-            OrConditionActive = false;
-            FilterTypeInfeedActive = true;
-            FilterTypeOutfeedActive = false;
-            FilterPriorityLowActive = true;
-            FilterPriorityMiddleActive = false;
-            FilterPriorityHighActive = false;
-            FilterStatusOpenActive = true;
-            FilterStatusInProgressActive = false;
-            FilterStatusDoneActive = false;
         }
         #endregion
 
