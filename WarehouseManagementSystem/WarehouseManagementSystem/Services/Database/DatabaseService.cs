@@ -98,15 +98,6 @@ namespace WarehouseManagementSystem.Services.Database
 
             foreach (DataRow row in dataTableStoredOrders.Rows)
             {
-                //Order readItem = new Order(
-                //    (int)row["OrderId"],
-                //    (OrderType)row["OrderType"],
-                //    (OrderPriority)row["OrderPriority"],
-                //    (OrderStatus)row["OrderStatus"],
-                //    (DateTime?)row["CreationDate"],
-                //    (DateTime?)row["DoneDate"]
-                //    );
-                //storedOrders.Add(readItem);
                 OrderType orderType = row.IsNull("OrderType")
                     ? OrderType.None
                     : (OrderType)Convert.ToByte(row["OrderType"]);
