@@ -51,7 +51,7 @@
         </Grid.ColumnDefinitions>
         <ItemsControl Grid.Column="0"
                       Margin="5"
-                      ItemsSource="{Binding WarehousePlaces}">
+                      ItemsSource="{Binding StorageDataService.WarehousePlaces}">
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
                     <UniformGrid Columns="9"

@@ -7,12 +7,15 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using WarehouseManagementSystem.Commands;
+using WarehouseManagementSystem.Services.Database;
+using WarehouseManagementSystem.Services.Warehouse;
 
 namespace WarehouseManagementSystem.ViewModels
 {
     public class HomeScreenViewModel : INotifyPropertyChanged
     {
         #region Properties
+        private App _appReference;
         private MainWindowViewModel _parentViewModel;
         public ICommand ADSConnection { get; set; }
         public ICommand ADSVariableConnection { get; set; }
@@ -115,6 +118,7 @@ namespace WarehouseManagementSystem.ViewModels
             FreeCommandOneButton = Visibility.Hidden;
             FreeCommandTwoButton = Visibility.Hidden;
             _parentViewModel = null;
+            _appReference = (App)Application.Current;
         }
         public HomeScreenViewModel(MainWindowViewModel mainViewModel)
         {
@@ -131,6 +135,7 @@ namespace WarehouseManagementSystem.ViewModels
             FreeCommandOneButton = Visibility.Hidden;
             FreeCommandTwoButton = Visibility.Hidden;
             _parentViewModel = mainViewModel;
+            _appReference = (App)Application.Current;
         }
         #endregion
 
@@ -162,8 +167,10 @@ namespace WarehouseManagementSystem.ViewModels
             {
                 return;
             }
+            DatabaseService databaseService = _appReference.DatabaseClient;
+            WarehouseStoragePlaceService storagePlaceService = _appReference.StoragePlaceService;
             _parentViewModel.Header = "Warehouse overview";
-            _parentViewModel.SubScreen = new WarehouseOverviewScreenViewModel();
+            _parentViewModel.SubScreen = new WarehouseOverviewScreenViewModel(databaseService, storagePlaceService);
         }
         public bool WarehouseOverviewCanExecute(object par)
         {
