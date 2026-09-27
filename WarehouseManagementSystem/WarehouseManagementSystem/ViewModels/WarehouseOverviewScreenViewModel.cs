@@ -10,6 +10,7 @@ using System.Windows.Input;
 using System.Collections.ObjectModel;
 using System.Windows;
 using WarehouseManagementSystem.Services.Database;
+using WarehouseManagementSystem.Services.Warehouse;
 
 namespace WarehouseManagementSystem.ViewModels
 {
@@ -18,6 +19,17 @@ namespace WarehouseManagementSystem.ViewModels
         #region Properties
         private DatabaseService _databaseServiceClient;
         private WarehousePlace _selectedWarehousePlace;
+        private WarehouseStoragePlaceService _storageDataService;
+
+        public WarehouseStoragePlaceService StorageDataService
+        {
+            get { return _storageDataService; }
+            set
+            {
+                _storageDataService = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(StorageDataService)));
+            }
+        }
 
         public WarehousePlace SelectedWarehousePlace
         {
@@ -28,17 +40,17 @@ namespace WarehouseManagementSystem.ViewModels
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SelectedWarehousePlace)));
             }
         }
-        private ObservableCollection<WarehousePlace> _warehousePlaces;
+        //private ObservableCollection<WarehousePlace> _warehousePlaces;
 
-        public ObservableCollection<WarehousePlace> WarehousePlaces
-        {
-            get { return _warehousePlaces; }
-            set 
-            { 
-                _warehousePlaces = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(WarehousePlaces)));
-            }
-        }
+        //public ObservableCollection<WarehousePlace> WarehousePlaces
+        //{
+        //    get { return _warehousePlaces; }
+        //    set 
+        //    { 
+        //        _warehousePlaces = value;
+        //        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(WarehousePlaces)));
+        //    }
+        //}
         private Visibility _detailedViewVisible;
 
         public Visibility DetailedViewVisible
@@ -62,13 +74,25 @@ namespace WarehouseManagementSystem.ViewModels
         #region Constructors
         public WarehouseOverviewScreenViewModel()
         {
+            _databaseServiceClient = null;
+            StorageDataService = null;
             SelectedWarehousePlace = null;
-            WarehousePlaces = new ObservableCollection<WarehousePlace>();
+            //WarehousePlaces = new ObservableCollection<WarehousePlace>();
             DetailedViewVisible = Visibility.Collapsed;
             ShowDetailedView = new RelayCommand(ShowDetailedViewExecute, ShowDetailedViewCanExecute);
             CloseDetailedView = new RelayCommand(CloseDetailedViewExecute, CloseDetailedViewCanExecute);
-            App app = (App)Application.Current;
-            _databaseServiceClient = app?.DatabaseClient;
+            //App app = (App)Application.Current;
+            //_databaseServiceClient = app?.DatabaseClient;
+            InitializeWarehousePlaces();
+        }
+        public WarehouseOverviewScreenViewModel(DatabaseService databaseService, WarehouseStoragePlaceService storagePlaceService)
+        {
+            _databaseServiceClient = databaseService;
+            StorageDataService = storagePlaceService;
+            SelectedWarehousePlace = null;
+            DetailedViewVisible = Visibility.Collapsed;
+            ShowDetailedView = new RelayCommand(ShowDetailedViewExecute, ShowDetailedViewCanExecute);
+            CloseDetailedView = new RelayCommand(CloseDetailedViewExecute, CloseDetailedViewCanExecute);
             InitializeWarehousePlaces();
         }
         #endregion
@@ -96,50 +120,52 @@ namespace WarehouseManagementSystem.ViewModels
         #region Methods
         public async Task InitializeWarehousePlaces()
         {
-            GetDefaultConfigurationWarehousePlaces();
+            //GetDefaultConfigurationWarehousePlaces();
             await LoadStoredItemsFromDatabase();
         }
-        public void GetDefaultConfigurationWarehousePlaces()
-        {
-            for (int placeNumber = 1; placeNumber < 55; placeNumber++)
-            {
-                WarehousePlace place = new WarehousePlace(placeNumber, WarehouseStatePlace.Free);
-                WarehousePlaces.Add(place);
-            }
+        //public void GetDefaultConfigurationWarehousePlaces()
+        //{
+        //    for (int placeNumber = 1; placeNumber < 55; placeNumber++)
+        //    {
+        //        WarehousePlace place = new WarehousePlace(placeNumber, WarehouseStatePlace.Free);
+        //        WarehousePlaces.Add(place);
+        //    }
 
-            WarehousePlaces = new ObservableCollection<WarehousePlace>(WarehousePlaces.OrderByDescending(wp => wp.PlaceNumber));
-        }
+        //    WarehousePlaces = new ObservableCollection<WarehousePlace>(WarehousePlaces.OrderByDescending(wp => wp.PlaceNumber));
+        //}
         public async Task LoadStoredItemsFromDatabase()
         {
-            if(_databaseServiceClient == null)
-            {
-                return;
-            }
+            //if(_databaseServiceClient == null)
+            //{
+            //    return;
+            //}
 
+            //ObservableCollection<StoredItemDatabaseModel> loadedItems = await _databaseServiceClient.GetStoredItems();
+            //if(loadedItems == null)
+            //{
+            //    return;
+            //}
+
+            //foreach(StoredItemDatabaseModel item in loadedItems)
+            //{
+            //    WarehousePlace searchedWarehousePlace = WarehousePlaces.Where(sp => sp.PlaceNumber == item.PlaceNumber).FirstOrDefault();
+            //    if(searchedWarehousePlace == null)
+            //    {
+            //        continue;
+            //    }
+            //    searchedWarehousePlace.PlaceNumber = item.PlaceNumber;
+            //    searchedWarehousePlace.Status = WarehouseStatePlace.Occupied;
+            //    if (item.InputTime.HasValue)
+            //    {
+            //        searchedWarehousePlace.StoredPlaceItem = new StoredItem(item.SerialNumber, item.InputTime.Value);
+            //    }
+            //    else
+            //    {
+            //        searchedWarehousePlace.StoredPlaceItem = new StoredItem(item.SerialNumber);
+            //    }
+            //}
             ObservableCollection<StoredItemDatabaseModel> loadedItems = await _databaseServiceClient.GetStoredItems();
-            if(loadedItems == null)
-            {
-                return;
-            }
-
-            foreach(StoredItemDatabaseModel item in loadedItems)
-            {
-                WarehousePlace searchedWarehousePlace = WarehousePlaces.Where(sp => sp.PlaceNumber == item.PlaceNumber).FirstOrDefault();
-                if(searchedWarehousePlace == null)
-                {
-                    continue;
-                }
-                searchedWarehousePlace.PlaceNumber = item.PlaceNumber;
-                searchedWarehousePlace.Status = WarehouseStatePlace.Occupied;
-                if (item.InputTime.HasValue)
-                {
-                    searchedWarehousePlace.StoredPlaceItem = new StoredItem(item.SerialNumber, item.InputTime.Value);
-                }
-                else
-                {
-                    searchedWarehousePlace.StoredPlaceItem = new StoredItem(item.SerialNumber);
-                }
-            }
+            StorageDataService.SyncronizeStoredItemsWithDatabase(loadedItems);
         }
         #endregion
 
