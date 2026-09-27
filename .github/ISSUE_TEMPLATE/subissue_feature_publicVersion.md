@@ -1,7 +1,7 @@
 ---
 name: SubIssueFeaturePublicVersion
 about: Sub issue for a new feature to implement this in the public version
-title: "[Name Feature] Public version"
+title: "[Name Feature] - Public version"
 labels: ["Task", "XAML", "Project", "C#", "enhancement"]
 ---
 

@@ -1,7 +1,7 @@
 ---
 name: SubIssueFeatureNewBranch
 about: Sub issue for a new feature creating a new branch
-title: "[Name Feature] Views"
+title: "[Name Feature] - Views"
 labels: ["Task", "GitHub", "Project"]
 ---
 

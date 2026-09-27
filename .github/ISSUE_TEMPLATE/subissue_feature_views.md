@@ -1,7 +1,7 @@
 ---
 name: SubIssueFeatureViews
 about: Sub issue for changes in views to implement a new feature
-title: "[Name Feature] Views"
+title: "[Name Feature] - Views"
 labels: ["Task", "XAML", "Project"]
 ---
 

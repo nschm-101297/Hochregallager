@@ -1,7 +1,7 @@
 ---
 name: SubIssueFeatureCode
 about: Sub issue for changes in code to implement a new feature
-title: "[Name Feature] Code"
+title: "[Name Feature] - Code"
 labels: ["Task", "C#"]
 ---
 

@@ -1,7 +1,7 @@
 ---
 name: SubIssueFeatureConcept
 about: Sub issue for a new feature in special for the concept creation
-title: "[Name Feature] Concept"
+title: "[Name Feature] - Concept"
 labels: ["Task", "C#", "XAML", "help wanted"]
 ---
 

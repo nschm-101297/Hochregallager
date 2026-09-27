@@ -1,7 +1,7 @@
 ---
 name: SubIssueFeatureTesting
 about: Sub issue for a new feature to test
-title: "[Name Feature] Testing"
+title: "[Name Feature] - Testing"
 labels: ["Task", "XAML", "C#"]
 ---
 
