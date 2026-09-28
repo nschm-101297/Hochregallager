@@ -8,6 +8,7 @@ using System.Windows;
 using System.Windows.Input;
 using WarehouseManagementSystem.Commands;
 using WarehouseManagementSystem.Services.Database;
+using WarehouseManagementSystem.Services.Orders;
 using WarehouseManagementSystem.Services.Warehouse;
 
 namespace WarehouseManagementSystem.ViewModels
@@ -182,8 +183,10 @@ namespace WarehouseManagementSystem.ViewModels
             {
                 return;
             }
+            DatabaseService databaseService = _appReference.DatabaseClient;
+            OrderManagementService orderService = _appReference.OrderManagementServiceClient;
             _parentViewModel.Header = "Order overview";
-            _parentViewModel.SubScreen = new OrderManagementViewModel();
+            _parentViewModel.SubScreen = new OrderManagementViewModel(databaseService, orderService);
         }
         public bool OrderManagementCanExecute(object par)
         {

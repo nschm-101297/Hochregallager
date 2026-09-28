@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using WarehouseManagementSystem.Commands;
 using WarehouseManagementSystem.Services.Database;
+using WarehouseManagementSystem.Services.Orders;
 using WarehouseManagementSystem.Models.Orders;
 using WarehouseManagementSystem.Models.Database;
 using System.Windows.Input;
@@ -22,7 +23,16 @@ namespace WarehouseManagementSystem.ViewModels
     {
         #region Properties
         private DatabaseService _databaseServiceClient;
-        
+        private OrderManagementService _orderManagementServiceClient;
+        public OrderManagementService OrderManagementServiceClient
+        {
+            get { return _orderManagementServiceClient; }
+            set 
+            { 
+                _orderManagementServiceClient = value; 
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(OrderManagementServiceClient)));
+            }
+        }
         private FilterSelection _filterOrders;
 
         public FilterSelection FilterOrders
@@ -35,17 +45,17 @@ namespace WarehouseManagementSystem.ViewModels
         public ICommand OpenEditingView { get; set; }
         public ICommand DeleteOrder { get; set; }
 
-        private ObservableCollection<Order>? _orders;
+        //private ObservableCollection<Order>? _orders;
 
-        public ObservableCollection<Order>? Orders
-        {
-            get { return _orders; }
-            set 
-            { 
-                _orders = value; 
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Orders)));
-            }
-        }
+        //public ObservableCollection<Order>? Orders
+        //{
+        //    get { return _orders; }
+        //    set 
+        //    { 
+        //        _orders = value; 
+        //        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Orders)));
+        //    }
+        //}
         private ListCollectionView _shownOrders;
 
         public ListCollectionView ShownOrders
@@ -65,15 +75,32 @@ namespace WarehouseManagementSystem.ViewModels
         #endregion
 
         #region Constructors
-        public OrderManagementViewModel()
+        public OrderManagementViewModel(OrderManagementService orderManagement)
         {
-            App app = (App)Application.Current;
-            _databaseServiceClient = app?.DatabaseClient;
+            //App app = (App)Application.Current;
+            //_databaseServiceClient = app?.DatabaseClient;
+            _databaseServiceClient = null;
+            OrderManagementServiceClient = orderManagement;
             AddNewOrder = new RelayCommand(AddNewOrderExecute, AddNewOrderCanExecute);
             OpenEditingView = new RelayCommand(OpenEditingViewExecute, OpenEditingViewCanExecute);
             DeleteOrder = new RelayCommand(DeleteOrderExecute, DeleteOrderCanExecute);
-            Orders = new ObservableCollection<Order>();
-            ShownOrders = new ListCollectionView(Orders);
+            //Orders = new ObservableCollection<Order>();
+            ShownOrders = new ListCollectionView(OrderManagementServiceClient.Orders);
+            FilterOrders = new FilterSelection(ShownOrders);
+            ShownOrders.Filter = new Predicate<object>(FilterOrder);
+            _ = InitializeOrders();
+        }
+        public OrderManagementViewModel(DatabaseService databaseService, OrderManagementService orderManagement)
+        {
+            //App app = (App)Application.Current;
+            //_databaseServiceClient = app?.DatabaseClient;
+            _databaseServiceClient = databaseService;
+            OrderManagementServiceClient = orderManagement;
+            AddNewOrder = new RelayCommand(AddNewOrderExecute, AddNewOrderCanExecute);
+            OpenEditingView = new RelayCommand(OpenEditingViewExecute, OpenEditingViewCanExecute);
+            DeleteOrder = new RelayCommand(DeleteOrderExecute, DeleteOrderCanExecute);
+            //Orders = new ObservableCollection<Order>();
+            ShownOrders = new ListCollectionView(OrderManagementServiceClient.Orders);
             FilterOrders = new FilterSelection(ShownOrders);
             ShownOrders.Filter = new Predicate<object>(FilterOrder);
             _ = InitializeOrders();
@@ -106,8 +133,9 @@ namespace WarehouseManagementSystem.ViewModels
             }
 
             editorViewModel.ShownOrder.OrderAddedToDatabase(writtingDatabaseResult.Value);
-            editorViewModel.ShownOrder.ItemStatus = DatabaseItemStatus.Unchanged;
-            Orders?.Add(editorViewModel.ShownOrder);
+            //editorViewModel.ShownOrder.ItemStatus = DatabaseItemStatus.Unchanged;
+            //Orders?.Add(editorViewModel.ShownOrder);
+            _orderManagementServiceClient.AddNewOrder(editorViewModel.ShownOrder);
             ShownOrders.Refresh();
         }
         public bool AddNewOrderCanExecute(object par)
@@ -175,7 +203,8 @@ namespace WarehouseManagementSystem.ViewModels
                                 MessageBoxImage.Error);
                 return;
             }
-            Orders.Remove(selectedOrder);
+            //Orders.Remove(selectedOrder);
+            _orderManagementServiceClient.DeleteOrder(selectedOrder);
             ShownOrders.Refresh();
         }
         public bool DeleteOrderCanExecute(object par)
@@ -188,32 +217,41 @@ namespace WarehouseManagementSystem.ViewModels
         #region Methods
         private async Task InitializeOrders()
         {
-            bool? result = await LoadOrdersFromDatabase();
-        }
-        private async Task<bool?> LoadOrdersFromDatabase()
-        {
-            if (_databaseServiceClient == null)
-            {
-                return null;
-            }
-
+            //bool? result = await LoadOrdersFromDatabase();
             ObservableCollection<Order> loadedOrders = await _databaseServiceClient.GetAllOrders();
-
-            if (loadedOrders == null)
+            bool syncronizingResult = _orderManagementServiceClient.SyncronizeOrdersWithDatabase(loadedOrders);
+            if (syncronizingResult == false)
             {
-                MessageBox.Show("Loading doesn't worked!",
-                                "Loading deleting",
+                MessageBox.Show("Syncronizing doesn't worked!",
+                                "Synconizing error",
                                 MessageBoxButton.OK,
                                 MessageBoxImage.Error);
-                return false;
             }
-
-            foreach (Order order in loadedOrders)
-            {
-                Orders.Add(order);
-            }
-            return true;
         }
+        //private async Task<bool?> LoadOrdersFromDatabase()
+        //{
+        //    if (_databaseServiceClient == null)
+        //    {
+        //        return null;
+        //    }
+
+        //    ObservableCollection<Order> loadedOrders = await _databaseServiceClient.GetAllOrders();
+
+        //    if (loadedOrders == null)
+        //    {
+        //        MessageBox.Show("Loading doesn't worked!",
+        //                        "Loading deleting",
+        //                        MessageBoxButton.OK,
+        //                        MessageBoxImage.Error);
+        //        return false;
+        //    }
+
+        //    foreach (Order order in loadedOrders)
+        //    {
+        //        Orders.Add(order);
+        //    }
+        //    return true;
+        //}
         public bool FilterOrder(object ord)
         {
             Order order = ord as Order;
