@@ -45,17 +45,6 @@ namespace WarehouseManagementSystem.ViewModels
         public ICommand OpenEditingView { get; set; }
         public ICommand DeleteOrder { get; set; }
 
-        //private ObservableCollection<Order>? _orders;
-
-        //public ObservableCollection<Order>? Orders
-        //{
-        //    get { return _orders; }
-        //    set 
-        //    { 
-        //        _orders = value; 
-        //        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Orders)));
-        //    }
-        //}
         private ListCollectionView _shownOrders;
 
         public ListCollectionView ShownOrders
@@ -77,14 +66,11 @@ namespace WarehouseManagementSystem.ViewModels
         #region Constructors
         public OrderManagementViewModel(OrderManagementService orderManagement)
         {
-            //App app = (App)Application.Current;
-            //_databaseServiceClient = app?.DatabaseClient;
             _databaseServiceClient = null;
             OrderManagementServiceClient = orderManagement;
             AddNewOrder = new RelayCommand(AddNewOrderExecute, AddNewOrderCanExecute);
             OpenEditingView = new RelayCommand(OpenEditingViewExecute, OpenEditingViewCanExecute);
             DeleteOrder = new RelayCommand(DeleteOrderExecute, DeleteOrderCanExecute);
-            //Orders = new ObservableCollection<Order>();
             ShownOrders = new ListCollectionView(OrderManagementServiceClient.Orders);
             FilterOrders = new FilterSelection(ShownOrders);
             ShownOrders.Filter = new Predicate<object>(FilterOrder);
@@ -92,14 +78,11 @@ namespace WarehouseManagementSystem.ViewModels
         }
         public OrderManagementViewModel(DatabaseService databaseService, OrderManagementService orderManagement)
         {
-            //App app = (App)Application.Current;
-            //_databaseServiceClient = app?.DatabaseClient;
             _databaseServiceClient = databaseService;
             OrderManagementServiceClient = orderManagement;
             AddNewOrder = new RelayCommand(AddNewOrderExecute, AddNewOrderCanExecute);
             OpenEditingView = new RelayCommand(OpenEditingViewExecute, OpenEditingViewCanExecute);
             DeleteOrder = new RelayCommand(DeleteOrderExecute, DeleteOrderCanExecute);
-            //Orders = new ObservableCollection<Order>();
             ShownOrders = new ListCollectionView(OrderManagementServiceClient.Orders);
             FilterOrders = new FilterSelection(ShownOrders);
             ShownOrders.Filter = new Predicate<object>(FilterOrder);
@@ -133,8 +116,6 @@ namespace WarehouseManagementSystem.ViewModels
             }
 
             editorViewModel.ShownOrder.OrderAddedToDatabase(writtingDatabaseResult.Value);
-            //editorViewModel.ShownOrder.ItemStatus = DatabaseItemStatus.Unchanged;
-            //Orders?.Add(editorViewModel.ShownOrder);
             _orderManagementServiceClient.AddNewOrder(editorViewModel.ShownOrder);
             ShownOrders.Refresh();
         }
@@ -203,7 +184,6 @@ namespace WarehouseManagementSystem.ViewModels
                                 MessageBoxImage.Error);
                 return;
             }
-            //Orders.Remove(selectedOrder);
             _orderManagementServiceClient.DeleteOrder(selectedOrder);
             ShownOrders.Refresh();
         }
@@ -217,7 +197,6 @@ namespace WarehouseManagementSystem.ViewModels
         #region Methods
         private async Task InitializeOrders()
         {
-            //bool? result = await LoadOrdersFromDatabase();
             ObservableCollection<Order> loadedOrders = await _databaseServiceClient.GetAllOrders();
             bool syncronizingResult = _orderManagementServiceClient.SyncronizeOrdersWithDatabase(loadedOrders);
             if (syncronizingResult == false)
@@ -228,30 +207,6 @@ namespace WarehouseManagementSystem.ViewModels
                                 MessageBoxImage.Error);
             }
         }
-        //private async Task<bool?> LoadOrdersFromDatabase()
-        //{
-        //    if (_databaseServiceClient == null)
-        //    {
-        //        return null;
-        //    }
-
-        //    ObservableCollection<Order> loadedOrders = await _databaseServiceClient.GetAllOrders();
-
-        //    if (loadedOrders == null)
-        //    {
-        //        MessageBox.Show("Loading doesn't worked!",
-        //                        "Loading deleting",
-        //                        MessageBoxButton.OK,
-        //                        MessageBoxImage.Error);
-        //        return false;
-        //    }
-
-        //    foreach (Order order in loadedOrders)
-        //    {
-        //        Orders.Add(order);
-        //    }
-        //    return true;
-        //}
         public bool FilterOrder(object ord)
         {
             Order order = ord as Order;
