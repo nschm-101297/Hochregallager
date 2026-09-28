@@ -5,6 +5,7 @@ using System.Data;
 using System.Windows;
 using WarehouseManagementSystem.Services.ADS;
 using WarehouseManagementSystem.Services.Database;
+using WarehouseManagementSystem.Services.Orders;
 using WarehouseManagementSystem.Services.Warehouse;
 using WarehouseManagementSystem.ViewModels;
 using WarehouseManagementSystem.Views;
@@ -20,6 +21,7 @@ namespace WarehouseManagementSystem
         public AdsClientService AdsClient { get; set; }
         public DatabaseService DatabaseClient { get; set; }
         public WarehouseStoragePlaceService StoragePlaceService { get; set; }
+        public OrderManagementService OrderManagementServiceClient { get; set; }
         public static IConfiguration Configuration { get; private set; } = null!;
         #endregion
 
@@ -55,6 +57,7 @@ namespace WarehouseManagementSystem
             AdsClient.ClientConnect("199.4.42.250.1.1",851);
             DatabaseClient = new DatabaseService();
             StoragePlaceService = new WarehouseStoragePlaceService();
+            OrderManagementServiceClient = new OrderManagementService();
             MainWindow mainWindow = new MainWindow();
             MainWindow = mainWindow;
             mainWindow.Show();
