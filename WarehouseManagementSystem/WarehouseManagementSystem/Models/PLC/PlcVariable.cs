@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TwinCAT.Ads.TypeSystem;
 
 namespace WarehouseManagementSystem.Models.PLC
 {
@@ -11,7 +12,9 @@ namespace WarehouseManagementSystem.Models.PLC
     {
         #region Properties
         private string _variableName = String.Empty;
-
+        [Category("Variable")]
+        [DisplayName("Variable name")]
+        [ReadOnly(true)]
         public string VariableName
         {
             get { return _variableName = String.Empty; }
@@ -22,7 +25,9 @@ namespace WarehouseManagementSystem.Models.PLC
             }
         }
         private string _variablePath = String.Empty;
-
+        [Category("Variable")]
+        [DisplayName("Full name")]
+        [ReadOnly(true)]
         public string VariablePath
         {
             get { return _variablePath; }
@@ -33,7 +38,9 @@ namespace WarehouseManagementSystem.Models.PLC
             }
         }
         private string _nameVariableList = String.Empty;
-
+        [Category("Variable")]
+        [DisplayName("Variable list")]
+        [ReadOnly(true)]
         public string NameVariableList
         {
             get { return _nameVariableList; }
@@ -44,7 +51,9 @@ namespace WarehouseManagementSystem.Models.PLC
             }
         }
         private string _dataTypeName = typeof(T).Name;
-
+        [Category("Variable")]
+        [DisplayName("Data type")]
+        [ReadOnly(true)]
         public string DataTypeName
         {
             get { return _dataTypeName; }
@@ -63,6 +72,17 @@ namespace WarehouseManagementSystem.Models.PLC
             { 
                 _readValue = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ReadValue)));
+            }
+        }
+        private Symbol _adsVariableReference;
+
+        public Symbol AdsVariableReference
+        {
+            get { return _adsVariableReference; }
+            private set 
+            { 
+                _adsVariableReference = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(AdsVariableReference)));
             }
         }
 

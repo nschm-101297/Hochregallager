@@ -22,7 +22,8 @@ namespace WarehouseManagementSystem.Models.PLC
             }
         }
         private ValueChangedAction _reactionValueChanged;
-
+        [Category("Subscription")]
+        [DisplayName("Reaction value changed")]
         public ValueChangedAction ReactionValueChanged
         {
             get { return _reactionValueChanged; }
@@ -33,6 +34,9 @@ namespace WarehouseManagementSystem.Models.PLC
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(IsSubscribed)));
             }
         }
+        [Category("Subscription")]
+        [DisplayName("Is subscribed")]
+        [ReadOnly(true)]
         public bool IsSubscribed
         {
             get { return ReactionValueChanged != ValueChangedAction.None; }
