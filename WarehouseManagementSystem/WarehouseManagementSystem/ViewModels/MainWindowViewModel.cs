@@ -13,7 +13,7 @@ namespace WarehouseManagementSystem.ViewModels
     public class MainWindowViewModel : INotifyPropertyChanged
     {
         #region Properties
-        private string _header;
+        private string _header = "";
 
         public string Header
         {
@@ -40,7 +40,7 @@ namespace WarehouseManagementSystem.ViewModels
         #endregion
 
         #region Events
-        public event PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler? PropertyChanged;
         #endregion
 
         #region Constructors
@@ -59,7 +59,7 @@ namespace WarehouseManagementSystem.ViewModels
         }
         public bool GoToHomeCanExecute(object par)
         {
-            return true;
+            return SubScreen.GetType() != typeof(HomeScreenViewModel);
         }
         #endregion
 
